@@ -44,6 +44,21 @@
         "total_interactions": 0,
         "follows": null
       }
+    },
+    {
+      "at": "2026-11-10T22:35:25.380958+00:00",
+      "values": {
+        "reach": null,
+        "views": null,
+        "ig_reels_avg_watch_time": null,
+        "shares": null,
+        "saved": null,
+        "likes": null,
+        "comments": null,
+        "reels_skip_rate": null,
+        "total_interactions": null,
+        "follows": null
+      }
     }
   ],
   "first_test": {
