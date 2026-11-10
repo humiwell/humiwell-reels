@@ -88,12 +88,15 @@ def check(cfg, graph):
     for t in eligible[:3]:
         print(f"    cleared: {t['title']} | {t['artist']} | id {t['id']}")
 
-    cases = [("trending music (not cleared), by link", silent, trial, full, "url")]
-    for t in eligible[:2]:
-        cases.append((f"CLEARED music '{t['title'][:30]}', by link", silent, trial, audio_config(cfg, t), "url"))
-    for t in [t for t in tracks.get("original_sound", [])[2:4]]:
-        cases.append((f"original sound '{t['title'][:30]}' by {t['artist']}, by link", silent, trial,
-                      audio_config(cfg, t), "url"))
+    # Community fix for 2207082: a silent video needs video_volume 0 (docs say 1 to 100).
+    zero = dict(full or {}, video_volume=0)
+    cases = [
+        ("music, video_volume 100, by link", silent, trial, full, "url"),
+        ("music, video_volume 0, by link", silent, trial, zero, "url"),
+        ("original sound, video_volume 0, by link", silent, trial,
+         dict(audio_config(cfg, orig) or {}, video_volume=0), "url"),
+        ("music, video_volume 0, no trial, by link", silent, None, zero, "url"),
+    ]
     out["containers"] = {}
     for label, video, strat, aud, upload in cases:
         try:
