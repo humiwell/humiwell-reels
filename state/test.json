@@ -1,5 +1,5 @@
 {
-  "token_days_left_before": 60.0,
+  "token_days_left_before": 59.9,
   "audio": {
     "id": null,
     "note": "off for test"
@@ -13,7 +13,7 @@
     "music id only, video WITH sound, trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
     "music full config, silent video, trial, API v22.0": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082"
   },
-  "token_days_left_after_renew": 60.0,
+  "token_days_left_after_renew": 59.9,
   "media_id": "18116264501113366",
   "posted_at": "2026-11-10T22:01:51.195099+00:00",
   "host": "release",
