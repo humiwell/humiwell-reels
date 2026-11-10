@@ -49,9 +49,11 @@ audio:
   block_ids: []
   # Never use tracks whose title or artist contains any of these words.
   block_words: []
-  # Loudness from 1 to 100.
+  # Loudness of the trending track, 1 to 100.
   audio_volume: 100
-  video_volume: 100
+  # Loudness of the video's own sound. Keep 0: our videos are silent, and
+  # Instagram refuses the audio (error 2207082) if this is above 0 (tested 2026-11-10).
+  video_volume: 0
 
 results:
   # Hours to wait after a reel's last version before judging it.

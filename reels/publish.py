@@ -70,7 +70,7 @@ def audio_config(cfg, audio):
     a = cfg["audio"]
     return {"audio_id": audio["id"],
             "audio_volume": int(a.get("audio_volume", 100)),
-            "video_volume": int(a.get("video_volume", 100))}
+            "video_volume": int(a.get("video_volume", 0))}
 
 
 def run(cfg, state, graph, manifests, now, log=print):

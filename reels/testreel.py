@@ -131,7 +131,7 @@ def post(cfg, graph, host, confirm, with_audio=True):
     print(f"Audio: {audio.get('title')} by {audio.get('artist')} (id {audio.get('id')})")
     video = HOSTS[host].replace("test.mp4", "test-silent.mp4")
     cid = graph.create_reel_container(video, "", cfg.get("graduation_strategy", "MANUAL"),
-                                      audio_config(cfg, audio), upload=cfg.get("upload_method", "file_url"))
+                                      audio_config(cfg, audio), upload="url")
     status = graph.wait_for_container(cid, tries=20)
     print(f"Container: {status}")
     if status != "FINISHED":
