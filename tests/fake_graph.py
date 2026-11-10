@@ -3,11 +3,12 @@ from reels.graph import GraphError
 
 
 class FakeGraph:
-    def __init__(self, limit_after=None, busy_first=False):
+    def __init__(self, limit_after=None, busy_first=False, audio_fails=False):
         self.posts = []
         self.containers = {}
         self.limit_after = limit_after
         self.busy_first = busy_first
+        self.audio_fails = audio_fails
         self.token = "fake"
 
     def publishing_limit(self):
@@ -24,8 +25,10 @@ class FakeGraph:
         if self.limit_after is not None and len(self.posts) >= self.limit_after:
             raise GraphError(400, 9, 2207042, "You reached maximum number of posts")
         cid = f"c{len(self.containers) + 1}"
-        self.containers[cid] = {"url": url, "audio": audio, "strategy": strategy,
-                                "status": "IN_PROGRESS" if self.busy_first else "FINISHED"}
+        status = "IN_PROGRESS" if self.busy_first else "FINISHED"
+        if audio and self.audio_fails:
+            status = "ERROR"
+        self.containers[cid] = {"url": url, "audio": audio, "strategy": strategy, "status": status}
         self.busy_first = False
         return cid
 
@@ -33,7 +36,10 @@ class FakeGraph:
         return self.containers[cid]["status"], None
 
     def wait_for_container(self, cid, tries=10, every=30):
-        return self.containers[cid]["status"]
+        status = self.containers[cid]["status"]
+        if status == "ERROR":
+            raise GraphError(400, message="container ERROR: Media upload has failed with error code 2207082")
+        return status
 
     def publish(self, cid):
         self.containers[cid]["status"] = "PUBLISHED"

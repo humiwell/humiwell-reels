@@ -184,25 +184,23 @@ def post_one(cfg, state, graph, manifests, d, vid, now, log=print):
                 rec["status"] = "pending"
         if rec["status"] == "pending":
             try:
-                cid = graph.create_reel_container(url, manifest["caption"], cfg.get("graduation_strategy", "MANUAL"),
-                                                  audio_config(cfg, day["audio"]))
+                status = _upload(cfg, state, graph, rec, url, manifest["caption"], day["audio"])
             except GraphError as e:
                 nobody_posted = all(x["status"] != "posted" for x in day["variants"].values())
-                if "audio" in e.message.lower() and day["audio"].get("id") and nobody_posted:
-                    # Keep the test fair: the whole day switches to no audio, not just this version.
-                    log(f"  Instagram refused the audio ({e}). This whole reel will go out without audio.")
-                    open_issue(f"Audio refused for {d}",
-                               f"Instagram refused track {day['audio'].get('title')!r} "
-                               f"(id {day['audio']['id']}): {e.message}\n\nAll versions of this reel "
-                               "will post without audio so the test stays fair.", dry)
-                    day["audio"] = {"id": None, "note": f"audio refused: {e.message}"}
-                    cid = graph.create_reel_container(url, manifest["caption"],
-                                                      cfg.get("graduation_strategy", "MANUAL"), None)
-                else:
+                if e.is_limit or not (day["audio"] or {}).get("id") or not nobody_posted:
                     raise
-            rec.update(status="container", container_id=cid)
-            save_state(state)
-        status = graph.wait_for_container(rec["container_id"])
+                # Keep the test fair: the whole reel switches to no audio, not just this version.
+                # Every new reel tries audio again, so it comes back by itself once Instagram allows it.
+                log(f"  Instagram refused the upload with audio ({e}). This reel goes out without audio.")
+                open_issue("Trending audio is not attaching",
+                           f"On {d} Instagram refused the upload with track {day['audio'].get('title')!r} "
+                           f"(id {day['audio']['id']}):\n\n```\n{e.message}\n```\n\nAll versions of that reel "
+                           "post without audio so the test stays fair. Each new reel tries audio again. "
+                           "Close this issue once you have looked; it reopens if it happens again.", dry)
+                day["audio"] = {"id": None, "note": f"audio refused: {e.message}", "tried": day["audio"]}
+                status = _upload(cfg, state, graph, rec, url, manifest["caption"], None)
+        else:
+            status = graph.wait_for_container(rec["container_id"])
         if status == "IN_PROGRESS":
             log("  Instagram is still processing the video. Will finish on the next run.")
             return "busy"
@@ -233,6 +231,15 @@ def post_one(cfg, state, graph, manifests, d, vid, now, log=print):
         pass
     log(f"  posted. media id {media_id}")
     return "ok"
+
+
+def _upload(cfg, state, graph, rec, url, caption, audio):
+    """Hands the video to Instagram and waits for it to be processed."""
+    cid = graph.create_reel_container(url, caption, cfg.get("graduation_strategy", "MANUAL"),
+                                      audio_config(cfg, audio))
+    rec.update(status="container", container_id=cid)
+    save_state(state)
+    return graph.wait_for_container(cid)
 
 
 def _limit_reached(state, today, why, dry):

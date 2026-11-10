@@ -124,6 +124,18 @@ def test_results_after_72h(env):
     assert (tmp / "results.csv").read_text().count("\n") == 9
 
 
+def test_audio_refused_whole_reel_goes_without(env, capsys):
+    cfg, tmp = env
+    manifests = {"2026-11-16": manifest("2026-11-16")}
+    state, graph = common.load_state(), FakeGraph(audio_fails=True)
+    start = datetime(2026, 11, 16, 0, 0, tzinfo=timezone.utc)
+    tick_through(cfg, state, graph, manifests, start, start + timedelta(days=1), lambda *_: None)
+    assert len(graph.posts) == 8
+    assert all(p["audio"] is None for p in graph.posts)
+    assert state["days"]["2026-11-16"]["audio"]["tried"]["id"] == "222"
+    assert capsys.readouterr().out.count("Trending audio is not attaching") == 1
+
+
 def test_verdict_rules():
     a = {"reach": 200, "watch_pct": 60, "sends_per_1k": 5}
     b = {"reach": 200, "watch_pct": 49, "sends_per_1k": 9}
