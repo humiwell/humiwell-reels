@@ -46,11 +46,14 @@ def check(cfg, graph):
         print(f"failed: {e}")
 
     print("\n== 3. Trending audio (top 5 of each) ==")
+    tracks = {}
     for kind in ("music", "original_sound"):
         try:
-            for t in graph.trending_audio(kind)[:5]:
-                print(f"  {kind}: {t['title']} | {t['artist']} | id {t['id']}")
+            tracks[kind] = graph.trending_audio(kind)
+            for t in tracks[kind][:5]:
+                print(f"  {kind}: {t['title']} | {t['artist']} | id {t['id']} | ads_eligible {t['ads_eligible']}")
         except GraphError as e:
+            tracks[kind] = []
             print(f"  {kind}: failed: {e}")
 
     print("\n== 4. Can the video links be reached? ==")
@@ -63,14 +66,15 @@ def check(cfg, graph):
             print(f"  {host}: failed {e}")
 
     print("\n== 5. Upload-only tests (nothing is published) ==")
-    audio = choose_audio(cfg, graph, "test")
-    print(f"  audio chosen: {audio.get('title')} by {audio.get('artist')} (id {audio.get('id')})")
-    out["audio"] = audio
     trial = cfg.get("graduation_strategy", "MANUAL")
-    cases = [("release, trial + audio", HOSTS["release"], trial, audio_config(cfg, audio)),
-             ("release, trial only", HOSTS["release"], trial, None),
-             ("pages, trial + audio", HOSTS["pages"], trial, audio_config(cfg, audio)),
-             ("raw, trial + audio", HOSTS["raw"], trial, audio_config(cfg, audio))]
+    url = HOSTS["release"]
+    cases = [("trial only", url, trial, None)]
+    for kind in ("music", "original_sound"):
+        for t in tracks.get(kind, [])[:2]:
+            aud = audio_config(cfg, t)
+            name = f"{kind} '{t['title'][:30]}' (ads_eligible {t['ads_eligible']})"
+            cases.append((f"{name}, no trial", url, None, aud))
+            cases.append((f"{name}, with trial", url, trial, aud))
     out["containers"] = {}
     for label, url, strat, aud in cases:
         try:
