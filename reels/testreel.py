@@ -122,19 +122,20 @@ def check(cfg, graph):
     _save(out)
 
 
-def post(cfg, graph, host, confirm, with_audio=False):
+def post(cfg, graph, host, confirm, with_audio=True):
     if confirm != "POST":
         print("Not posted. Type POST in the confirm box to publish the one test reel.")
         return
     out = _load()
-    if out.get("media_id"):
-        print(f"A test reel was already posted (media id {out['media_id']}). Not posting another.")
+    if out.get("audio_test"):
+        print(f"The audio test reel was already posted ({out['audio_test']['media_id']}). Not posting another.")
         return
-    # Audio uploads fail with 2207082 for now (see the check step), so the test reel posts without audio.
     audio = choose_audio(cfg, graph, "test") if with_audio else {"id": None, "note": "off for test"}
     print(f"Audio: {audio.get('title')} by {audio.get('artist')} (id {audio.get('id')})")
-    cid = graph.create_reel_container(HOSTS[host], "Test reel, please ignore.",
-                                      cfg.get("graduation_strategy", "MANUAL"), audio_config(cfg, audio))
+    video = HOSTS[host].replace("test.mp4", "test-silent.mp4")
+    cid = graph.create_reel_container(video, "Test reel, please ignore.",
+                                      cfg.get("graduation_strategy", "MANUAL"), audio_config(cfg, audio),
+                                      upload=cfg.get("upload_method", "file_url"))
     status = graph.wait_for_container(cid, tries=20)
     print(f"Container: {status}")
     if status != "FINISHED":
@@ -142,6 +143,9 @@ def post(cfg, graph, host, confirm, with_audio=False):
     media_id = graph.publish(cid)
     info = graph.media_info(media_id)
     print(f"Posted. media id {media_id}. Details: {info}")
+    # The newest test reel is the one insights reads; the first (no audio) one stays on record.
+    out.setdefault("first_test", {k: out.get(k) for k in ("media_id", "posted_at", "media_info")})
+    out["audio_test"] = {"media_id": media_id, "audio": audio, "media_info": info}
     out.update(media_id=media_id, posted_at=now_utc().isoformat(), host=host, audio=audio, media_info=info)
     _save(out)
 

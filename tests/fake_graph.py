@@ -21,7 +21,7 @@ class FakeGraph:
     def audio_info(self, audio_id):
         return {"id": audio_id, "title": "Pinned", "artist": "Someone", "type": "music"}
 
-    def create_reel_container(self, url, caption, strategy=None, audio=None):
+    def create_reel_container(self, url, caption, strategy=None, audio=None, upload="url"):
         if self.limit_after is not None and len(self.posts) >= self.limit_after:
             raise GraphError(400, 9, 2207042, "You reached maximum number of posts")
         cid = f"c{len(self.containers) + 1}"

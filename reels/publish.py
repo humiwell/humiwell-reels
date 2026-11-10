@@ -268,8 +268,9 @@ def _audio_blocked(state, now, d, why, dry):
 
 def _upload(cfg, state, graph, rec, url, caption, audio):
     """Hands the video to Instagram and waits for it to be processed."""
+    # "file_url" (resumable upload) is the method that works with audio; "url" fails with 2207082.
     cid = graph.create_reel_container(url, caption, cfg.get("graduation_strategy", "MANUAL"),
-                                      audio_config(cfg, audio))
+                                      audio_config(cfg, audio), upload=cfg.get("upload_method", "file_url"))
     rec.update(status="container", container_id=cid)
     save_state(state)
     return graph.wait_for_container(cid)
