@@ -124,8 +124,29 @@ def test_results_after_72h(env):
     assert (tmp / "results.csv").read_text().count("\n") == 9
 
 
+def test_audio_required_posts_nothing_and_tries_next_track(env, capsys):
+    cfg, tmp = env
+    manifests = {"2026-11-16": manifest("2026-11-16")}
+    state, graph = common.load_state(), FakeGraph(audio_fails=True)
+    start = datetime(2026, 11, 16, 7, 0, tzinfo=timezone.utc)
+    tick_through(cfg, state, graph, manifests, start, start + timedelta(hours=3), lambda *_: None)
+    assert graph.posts == []
+    day = state["days"]["2026-11-16"]
+    assert "222" in day["audio_refused"]
+    # only one upload attempt per hour, not every 15 minutes
+    assert len(graph.containers) <= 4
+    assert all(v["status"] == "pending" for v in day["variants"].values())
+    # once audio works again, posting resumes with audio
+    graph.audio_fails = False
+    day["audio_refused"] = []
+    tick_through(cfg, state, graph, manifests, start + timedelta(hours=4), start + timedelta(hours=5),
+                 lambda *_: None)
+    assert graph.posts and all(p["audio"] for p in graph.posts)
+
+
 def test_audio_refused_whole_reel_goes_without(env, capsys):
     cfg, tmp = env
+    cfg["audio"]["required"] = False
     manifests = {"2026-11-16": manifest("2026-11-16")}
     state, graph = common.load_state(), FakeGraph(audio_fails=True)
     start = datetime(2026, 11, 16, 0, 0, tzinfo=timezone.utc)

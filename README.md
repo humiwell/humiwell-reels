@@ -56,11 +56,23 @@ The sound used for each reel (title, artist, id) is in the run log and in the re
 | Daily limit reached on ... | Instagram stopped posts for today | Nothing. The rest posts tomorrow. If it repeats, remove a slot |
 | Skipped N version(s) of ... | Versions waited more than 2 days | Nothing. That day's results compare only what went out |
 | Could not post ... variant X | Failed 3 times | Read the error. Often a video link problem |
-| Trending audio is not attaching | Instagram refused the upload with a sound | Nothing. That whole reel posts without sound. Each new reel tries again |
+| Trending audio is not attaching | Instagram refused the sound. Nothing is posted | See "Audio problems" below. The robot retries every hour |
 | No batch for ... | A slot came but there is no manifest for today | Ask the render session to push the week |
 | Broken batch file | A manifest has a mistake | Fix it using docs/BATCH_CONTRACT.md |
 | Instagram token runs out on ... | Token ends soon | Follow "Renew the token" below |
 | Instagram token is not valid / check failed | Token expired or was revoked | Follow "Renew the token" below |
+
+## Audio problems
+
+Trending audio is required (`audio: required: true`): a reel is never posted without it.
+If Instagram refuses a track, the robot tries the next trending track an hour later, and the
+queue waits. Common causes:
+
+- The Meta app is not published (Live). Meta for Developers, your app, Dashboard: the line
+  "Check that all requirements are met, then publish your app" must have a green tick.
+- The token was made before the app went Live. Make a new one ("Renew the token" below).
+
+To allow posting without audio instead, set `required: false`.
 
 ## Renew the token
 

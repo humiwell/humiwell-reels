@@ -27,7 +27,7 @@ def register_day(state, manifest):
     }
 
 
-def choose_audio(cfg, graph, post_date, log=print):
+def choose_audio(cfg, graph, post_date, log=print, refused=()):
     """Picks ONE track for all versions of a reel, so the test stays fair."""
     a = cfg["audio"]
     if not a.get("enabled", True):
@@ -43,7 +43,7 @@ def choose_audio(cfg, graph, post_date, log=print):
         info["id"] = pin
         info["note"] = "pinned in config"
         return info
-    blocked_ids = {str(x) for x in a.get("block_ids") or []}
+    blocked_ids = {str(x) for x in a.get("block_ids") or []} | set(refused)
     blocked_words = [w.lower() for w in a.get("block_words") or []]
     first = a.get("prefer", "music")
     kinds = [first]
@@ -77,7 +77,6 @@ def run(cfg, state, graph, manifests, now, log=print):
     dry = cfg.get("dry_run", True)
     tz = local_tz(cfg)
     today = now.astimezone(tz).date()
-    tag = "[DRY RUN] " if dry else ""
     if cfg.get("paused"):
         log("Paused in config.yml. Nothing posted.")
         return
@@ -132,6 +131,12 @@ def run(cfg, state, graph, manifests, now, log=print):
                        "See docs/BATCH_CONTRACT.md.", dry)
         return
 
+    # Audio is required and was refused recently: wait before trying again.
+    retry = state.get("audio_retry_after")
+    if retry and now < datetime.fromisoformat(retry):
+        log(f"Waiting for audio to work again. Next try after {retry}. Nothing posted.")
+        return
+
     # 4. Check the official daily allowance before posting.
     if not dry:
         try:
@@ -146,7 +151,7 @@ def run(cfg, state, graph, manifests, now, log=print):
         result = post_one(cfg, state, graph, manifests, d, vid, now, log)
         if result == "limit":
             return _limit_reached(state, today, state["days"][d]["variants"][vid].get("error", ""), dry)
-        if result in ("busy", "error"):
+        if result in ("busy", "error", "audio"):
             return
         if not dry:
             save_state(state)
@@ -164,10 +169,14 @@ def post_one(cfg, state, graph, manifests, d, vid, now, log=print):
     url = video_url(cfg, d, v["file"])
     slot_no = day["order"].index(vid) + 1
 
+    required = cfg["audio"].get("required", True) and cfg["audio"].get("enabled", True)
     if day["audio"] is None:
-        audio = choose_audio(cfg, graph, d, log) if graph else {"id": None, "note": "no API in dry run"}
+        audio = (choose_audio(cfg, graph, d, log, day.get("audio_refused", [])) if graph
+                 else {"id": None, "note": "no API in dry run"})
         log(f"Audio for {d}: {audio.get('title') or '-'} by {audio.get('artist') or '-'} "
             f"(id {audio.get('id')}, {audio['note']})")
+        if required and not audio.get("id") and not dry:
+            return _audio_blocked(state, now, d, f"No usable trending audio was found ({audio['note']}).", dry)
         if not dry:
             day["audio"] = audio
             save_state(state)
@@ -187,7 +196,20 @@ def post_one(cfg, state, graph, manifests, d, vid, now, log=print):
                 status = _upload(cfg, state, graph, rec, url, manifest["caption"], day["audio"])
             except GraphError as e:
                 nobody_posted = all(x["status"] != "posted" for x in day["variants"].values())
-                if e.is_limit or not (day["audio"] or {}).get("id") or not nobody_posted:
+                if e.is_limit or not (day["audio"] or {}).get("id"):
+                    raise
+                if required:
+                    # Never post without audio. If nothing went out yet, try the next trending track
+                    # later; otherwise keep the same track so every version still matches.
+                    track = day["audio"]
+                    rec.update(status="pending", error=str(e))
+                    rec.pop("container_id", None)
+                    if nobody_posted:
+                        day.setdefault("audio_refused", []).append(track["id"])
+                        day["audio"] = None
+                    return _audio_blocked(state, now, d, f"Instagram refused the upload with track "
+                                          f"{track.get('title')!r} (id {track['id']}):\n\n```\n{e.message}\n```", dry)
+                if not nobody_posted:
                     raise
                 # Keep the test fair: the whole reel switches to no audio, not just this version.
                 # Every new reel tries audio again, so it comes back by itself once Instagram allows it.
@@ -231,6 +253,17 @@ def post_one(cfg, state, graph, manifests, d, vid, now, log=print):
         pass
     log(f"  posted. media id {media_id}")
     return "ok"
+
+
+def _audio_blocked(state, now, d, why, dry):
+    """Audio is required but did not work: post nothing, try again in an hour."""
+    state["audio_retry_after"] = (now + timedelta(hours=1)).isoformat()
+    open_issue("Trending audio is not attaching",
+               f"{why}\n\nOn {d} nothing was posted, because posting without audio is turned off "
+               "(`audio: required: true`). The robot tries again every hour, and the queue waits. "
+               "See 'Audio problems' in the README.", dry)
+    save_state(state)
+    return "audio"
 
 
 def _upload(cfg, state, graph, rec, url, caption, audio):

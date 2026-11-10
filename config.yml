@@ -31,6 +31,9 @@ graduation_strategy: MANUAL
 
 audio:
   enabled: true
+  # true = never post without trending audio. If Instagram refuses the audio,
+  # nothing is posted, the queue waits, and the robot tries again every hour.
+  required: true
   # Which kind of trending sound to use first: music | original_sound
   prefer: music
   # If nothing usable is found in the first kind, try the other kind.
