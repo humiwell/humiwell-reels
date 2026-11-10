@@ -26,9 +26,8 @@ max_carry_days: 2
 #   raw     = plain file links from the "media" branch
 hosting: release
 
-# How the video is handed to Instagram. Keep "file_url": it is the only way
-# trending audio attaches (tested 2026-11-10). Other options: bytes | url
-upload_method: file_url
+# Note: videos are always handed to Instagram by link. The other ("resumable") upload
+# was tested on 2026-11-10 and drops BOTH the audio and the trial setting.
 
 # Trial reel setting. MANUAL = you decide which reel to share with followers.
 graduation_strategy: MANUAL
