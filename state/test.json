@@ -9,15 +9,13 @@
     "note": "trending music, rank 1"
   },
   "containers": {
-    "trial only": "FINISHED",
-    "music 'Last Post for Remembrance Day' (ads_eligible False), no trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
-    "music 'Last Post for Remembrance Day' (ads_eligible False), with trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
-    "music 'Feelinga' (ads_eligible False), no trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
-    "music 'Feelinga' (ads_eligible False), with trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
-    "original_sound 'Original audio' (ads_eligible None), no trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
-    "original_sound 'Original audio' (ads_eligible None), with trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
-    "original_sound 'follow us for more funny conte' (ads_eligible None), no trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
-    "original_sound 'follow us for more funny conte' (ads_eligible None), with trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082"
+    "trial only, silent video": "FINISHED",
+    "music full config, silent video, trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
+    "music id only, silent video, trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
+    "music id only, silent video, no trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
+    "original sound id only, silent video, trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
+    "music id only, video WITH sound, trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
+    "music full config, silent video, trial, API v22.0": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082"
   },
   "token_days_left_after_renew": 60.0
 }
