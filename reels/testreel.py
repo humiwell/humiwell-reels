@@ -156,6 +156,10 @@ def insights(cfg, graph):
         print("No test reel posted yet.")
         return
     print(f"Insights for test reel {out['media_id']} (posted {out['posted_at']}):")
+    try:
+        print(f"  details now: {graph.media_info(out['media_id'])}")
+    except GraphError as e:
+        print(f"  details failed: {e}")
     found = {}
     for m in METRICS:
         try:
