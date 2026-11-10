@@ -10,9 +10,10 @@
     "note": "trending music, rank 1"
   },
   "containers": {
-    "trending music (not cleared), by link": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
-    "original sound 'Original audio' by usman_12404, by link": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
-    "original sound 'Original audio' by tush_reels_creations, by link": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082"
+    "music, video_volume 100, by link": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
+    "music, video_volume 0, by link": "FINISHED",
+    "original sound, video_volume 0, by link": "FINISHED",
+    "music, video_volume 0, no trial, by link": "FINISHED"
   },
   "token_days_left_after_renew": 59.9,
   "media_id": "18289650940294400",
