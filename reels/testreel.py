@@ -73,31 +73,27 @@ def check(cfg, graph):
     orig = (tracks.get("original_sound") or [{}])[0]
     full = audio_config(cfg, music)
 
-    print("  looking up each track on its own:")
-    for t in (music, orig):
+    # Theory: a Business account may only use music cleared for business (is_ads_eligible true).
+    print("  searching for music that IS cleared for business use:")
+    eligible, counts = [], {}
+    for q in ("upbeat", "happy", "morning", "chill", "wellness", "pop", "acoustic", "summer"):
         try:
-            print(f"    {t.get('id')}: {graph.audio_info(t.get('id'))}")
+            found = graph.trending_audio("music", search=q)
         except GraphError as e:
-            print(f"    {t.get('id')}: lookup failed: {e}")
-    print("  trending search with ig_user_id instead of user_id:")
-    try:
-        alt = graph.trending_audio("music", id_param="ig_user_id")
-        print(f"    first ids: {[a['id'] for a in alt[:3]]} (user_id gave {music.get('id')})")
-    except GraphError as e:
-        alt = []
-        print(f"    failed: {e}")
-    alt_music = alt[0] if alt else music
+            print(f"    '{q}': failed: {e}")
+            continue
+        counts[q] = (sum(1 for t in found if t["ads_eligible"]), len(found))
+        eligible += [t for t in found if t["ads_eligible"] and t["id"] not in {e["id"] for e in eligible}]
+    print(f"    cleared / total per search: {counts}")
+    for t in eligible[:3]:
+        print(f"    cleared: {t['title']} | {t['artist']} | id {t['id']}")
 
-    # Fake values: if Instagram still says FINISHED, it is ignoring that setting.
-    fake_audio = {"audio_id": "123", "audio_volume": 100, "video_volume": 100}
-    cases = [
-        ("real music, by link", silent, trial, full, "url"),
-        ("real music, resumable", silent, trial, full, "file_url"),
-        ("FAKE audio id, by link", silent, trial, fake_audio, "url"),
-        ("FAKE audio id, resumable", silent, trial, fake_audio, "file_url"),
-        ("FAKE trial setting, by link", silent, "BOGUS", None, "url"),
-        ("FAKE trial setting, resumable", silent, "BOGUS", None, "file_url"),
-    ]
+    cases = [("trending music (not cleared), by link", silent, trial, full, "url")]
+    for t in eligible[:2]:
+        cases.append((f"CLEARED music '{t['title'][:30]}', by link", silent, trial, audio_config(cfg, t), "url"))
+    for t in [t for t in tracks.get("original_sound", [])[2:4]]:
+        cases.append((f"original sound '{t['title'][:30]}' by {t['artist']}, by link", silent, trial,
+                      audio_config(cfg, t), "url"))
     out["containers"] = {}
     for label, video, strat, aud, upload in cases:
         try:
