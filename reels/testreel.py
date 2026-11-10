@@ -68,22 +68,33 @@ def check(cfg, graph):
     print("\n== 5. Upload-only tests (nothing is published) ==")
     trial = cfg.get("graduation_strategy", "MANUAL")
     url = HOSTS["release"]
-    cases = [("trial only", url, trial, None)]
-    for kind in ("music", "original_sound"):
-        for t in tracks.get(kind, [])[:2]:
-            aud = audio_config(cfg, t)
-            name = f"{kind} '{t['title'][:30]}' (ads_eligible {t['ads_eligible']})"
-            cases.append((f"{name}, no trial", url, None, aud))
-            cases.append((f"{name}, with trial", url, trial, aud))
+    silent = HOSTS["release"].replace("test.mp4", "test-silent.mp4")
+    music = (tracks.get("music") or [{}])[0]
+    orig = (tracks.get("original_sound") or [{}])[0]
+    full = audio_config(cfg, music)
+    id_only = {"audio_id": music.get("id")}
+    cases = [
+        ("trial only, silent video", silent, trial, None, None),
+        ("music full config, silent video, trial", silent, trial, full, None),
+        ("music id only, silent video, trial", silent, trial, id_only, None),
+        ("music id only, silent video, no trial", silent, None, id_only, None),
+        ("original sound id only, silent video, trial", silent, trial, {"audio_id": orig.get("id")}, None),
+        ("music id only, video WITH sound, trial", url, trial, id_only, None),
+        ("music full config, silent video, trial, API v22.0", silent, trial, full, "v22.0"),
+    ]
     out["containers"] = {}
-    for label, url, strat, aud in cases:
+    for label, video, strat, aud, version in cases:
+        saved_version = graph.version
+        graph.version = version or saved_version
         try:
-            cid = graph.create_reel_container(url, "test", strat, aud)
+            cid = graph.create_reel_container(video, "test", strat, aud)
             status = graph.wait_for_container(cid)
             print(f"  {label}: {status}")
         except GraphError as e:
             status = f"FAILED {e}"
             print(f"  {label}: {status}")
+        finally:
+            graph.version = saved_version
         out["containers"][label] = status
 
     print("\n== 6. Can the token be renewed? (new token is NOT saved) ==")

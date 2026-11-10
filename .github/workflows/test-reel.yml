@@ -38,6 +38,15 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
+      - name: Make a silent copy of the test video (once)
+        if: inputs.step == 'check'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view test --json assets -q '.assets[].name' | grep -qx test-silent.mp4; then exit 0; fi
+          gh release download test -p test.mp4 -D /tmp
+          ffmpeg -loglevel error -i /tmp/test.mp4 -an -c:v copy /tmp/test-silent.mp4
+          gh release upload test /tmp/test-silent.mp4
       - name: Run test step
         env:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
