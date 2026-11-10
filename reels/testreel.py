@@ -72,29 +72,40 @@ def check(cfg, graph):
     music = (tracks.get("music") or [{}])[0]
     orig = (tracks.get("original_sound") or [{}])[0]
     full = audio_config(cfg, music)
-    id_only = {"audio_id": music.get("id")}
+
+    print("  looking up each track on its own:")
+    for t in (music, orig):
+        try:
+            print(f"    {t.get('id')}: {graph.audio_info(t.get('id'))}")
+        except GraphError as e:
+            print(f"    {t.get('id')}: lookup failed: {e}")
+    print("  trending search with ig_user_id instead of user_id:")
+    try:
+        alt = graph.trending_audio("music", id_param="ig_user_id")
+        print(f"    first ids: {[a['id'] for a in alt[:3]]} (user_id gave {music.get('id')})")
+    except GraphError as e:
+        alt = []
+        print(f"    failed: {e}")
+    alt_music = alt[0] if alt else music
+
     cases = [
-        ("trial only, silent video", silent, trial, None, None),
-        ("music full config, silent video, trial", silent, trial, full, None),
-        ("music id only, silent video, trial", silent, trial, id_only, None),
-        ("music id only, silent video, no trial", silent, None, id_only, None),
-        ("original sound id only, silent video, trial", silent, trial, {"audio_id": orig.get("id")}, None),
-        ("music id only, video WITH sound, trial", url, trial, id_only, None),
-        ("music full config, silent video, trial, API v22.0", silent, trial, full, "v22.0"),
+        ("trial only, silent, by link", silent, trial, None, "url"),
+        ("music, silent, by link", silent, trial, full, "url"),
+        ("music, silent, resumable file_url", silent, trial, full, "file_url"),
+        ("music, silent, resumable bytes", silent, trial, full, "bytes"),
+        ("music, silent, resumable bytes, no trial", silent, None, full, "bytes"),
+        ("original sound, silent, resumable bytes", silent, trial, audio_config(cfg, orig), "bytes"),
+        ("music from ig_user_id search, silent, by link", silent, trial, audio_config(cfg, alt_music), "url"),
     ]
     out["containers"] = {}
-    for label, video, strat, aud, version in cases:
-        saved_version = graph.version
-        graph.version = version or saved_version
+    for label, video, strat, aud, upload in cases:
         try:
-            cid = graph.create_reel_container(video, "test", strat, aud)
+            cid = graph.create_reel_container(video, "test", strat, aud, upload=upload)
             status = graph.wait_for_container(cid)
             print(f"  {label}: {status}")
         except GraphError as e:
             status = f"FAILED {e}"
             print(f"  {label}: {status}")
-        finally:
-            graph.version = saved_version
         out["containers"][label] = status
 
     print("\n== 6. Can the token be renewed? (new token is NOT saved) ==")

@@ -104,13 +104,34 @@ class Graph:
         data = (body.get("data") or [{}])[0]
         return data.get("quota_usage"), (data.get("config") or {}).get("quota_total")
 
-    def create_reel_container(self, video_url, caption, trial_strategy=None, audio=None):
-        params = {"media_type": "REELS", "video_url": video_url, "caption": caption}
+    def create_reel_container(self, video_url, caption, trial_strategy=None, audio=None, upload="url"):
+        """upload: "url" (Instagram downloads video_url), "file_url" or "bytes" (resumable upload)."""
+        params = {"media_type": "REELS", "caption": caption}
+        if upload == "url":
+            params["video_url"] = video_url
+        else:
+            params["upload_type"] = "resumable"
         if trial_strategy:
             params["trial_params"] = {"graduation_strategy": trial_strategy}
         if audio:
             params["audio_configuration"] = audio
-        return self._call("POST", f"{self.ig_user_id}/media", params, retries=2)["id"]
+        cid = self._call("POST", f"{self.ig_user_id}/media", params, retries=2)["id"]
+        if upload != "url":
+            self._resumable_upload(cid, video_url, upload)
+        return cid
+
+    def _resumable_upload(self, cid, video_url, how):
+        url = f"https://rupload.facebook.com/ig-api-upload/{self.version}/{cid}"
+        headers = {"Authorization": f"OAuth {self.token}"}
+        if how == "file_url":
+            headers["file_url"] = video_url
+            r = requests.post(url, headers=headers, timeout=300)
+        else:
+            data = requests.get(video_url, timeout=300).content
+            headers.update(offset="0", file_size=str(len(data)))
+            r = requests.post(url, headers=headers, data=data, timeout=300)
+        if not r.ok:
+            raise GraphError(r.status_code, message=_scrub(r.text[:300], [self.token]))
 
     def container_status(self, container_id):
         body = self._call("GET", container_id, {"fields": "status_code,status"})
@@ -137,8 +158,8 @@ class Graph:
                           {"fields": "permalink,media_product_type,timestamp,media_audio_type"})
 
     # ---- audio -----------------------------------------------------------
-    def trending_audio(self, audio_type):
-        body = self._call("GET", "ig_audio", {"audio_type": audio_type, "user_id": self.ig_user_id})
+    def trending_audio(self, audio_type, id_param="user_id"):
+        body = self._call("GET", "ig_audio", {"audio_type": audio_type, id_param: self.ig_user_id})
         items = body.get("audio") or body.get("data") or []
         return [normalise_audio(a, audio_type) for a in items]
 
