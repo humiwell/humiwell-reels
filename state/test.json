@@ -10,13 +10,12 @@
     "note": "trending music, rank 1"
   },
   "containers": {
-    "trial only, silent, by link": "FINISHED",
-    "music, silent, by link": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
-    "music, silent, resumable file_url": "FINISHED",
-    "music, silent, resumable bytes": "FINISHED",
-    "music, silent, resumable bytes, no trial": "FINISHED",
-    "original sound, silent, resumable bytes": "FINISHED",
-    "music from ig_user_id search, silent, by link": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082"
+    "real music, by link": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
+    "real music, resumable": "FINISHED",
+    "FAKE audio id, by link": "FAILED HTTP 500, code 1, subcode None: An unknown error has occurred.",
+    "FAKE audio id, resumable": "FAILED HTTP 500, code 1, subcode None: An unknown error has occurred.",
+    "FAKE trial setting, by link": "FAILED HTTP 400, code 100, subcode 2207075: The graduation strategy \"BOGUS\" specified in the trial reel configuration parameters is unknown.",
+    "FAKE trial setting, resumable": "FAILED HTTP 400, code 100, subcode 2207075: The graduation strategy \"BOGUS\" specified in the trial reel configuration parameters is unknown."
   },
   "token_days_left_after_renew": 59.9,
   "media_id": "18148014628604857",
