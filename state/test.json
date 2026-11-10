@@ -23,5 +23,22 @@
     "media_audio_type": "ORIGINAL_SOUND",
     "permalink": "https://www.instagram.com/reel/Dfk7lYmvvVy/",
     "timestamp": "2026-11-10T22:01:44+0000"
-  }
+  },
+  "insights": [
+    {
+      "at": "2026-11-10T22:02:49.293941+00:00",
+      "values": {
+        "reach": 0,
+        "views": 0,
+        "ig_reels_avg_watch_time": 0,
+        "shares": 0,
+        "saved": 0,
+        "likes": 0,
+        "comments": 0,
+        "reels_skip_rate": 0,
+        "total_interactions": 0,
+        "follows": null
+      }
+    }
+  ]
 }
