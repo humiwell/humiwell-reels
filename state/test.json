@@ -5,13 +5,13 @@
     "note": "off for test"
   },
   "containers": {
-    "trial only, silent video": "FINISHED",
-    "music full config, silent video, trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
-    "music id only, silent video, trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
-    "music id only, silent video, no trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
-    "original sound id only, silent video, trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
-    "music id only, video WITH sound, trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
-    "music full config, silent video, trial, API v22.0": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082"
+    "trial only, silent, by link": "FINISHED",
+    "music, silent, by link": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
+    "music, silent, resumable file_url": "FINISHED",
+    "music, silent, resumable bytes": "FINISHED",
+    "music, silent, resumable bytes, no trial": "FINISHED",
+    "original sound, silent, resumable bytes": "FINISHED",
+    "music from ig_user_id search, silent, by link": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082"
   },
   "token_days_left_after_renew": 59.9,
   "media_id": "18116264501113366",
