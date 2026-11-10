@@ -88,14 +88,15 @@ def check(cfg, graph):
         print(f"    failed: {e}")
     alt_music = alt[0] if alt else music
 
+    # Fake values: if Instagram still says FINISHED, it is ignoring that setting.
+    fake_audio = {"audio_id": "123", "audio_volume": 100, "video_volume": 100}
     cases = [
-        ("trial only, silent, by link", silent, trial, None, "url"),
-        ("music, silent, by link", silent, trial, full, "url"),
-        ("music, silent, resumable file_url", silent, trial, full, "file_url"),
-        ("music, silent, resumable bytes", silent, trial, full, "bytes"),
-        ("music, silent, resumable bytes, no trial", silent, None, full, "bytes"),
-        ("original sound, silent, resumable bytes", silent, trial, audio_config(cfg, orig), "bytes"),
-        ("music from ig_user_id search, silent, by link", silent, trial, audio_config(cfg, alt_music), "url"),
+        ("real music, by link", silent, trial, full, "url"),
+        ("real music, resumable", silent, trial, full, "file_url"),
+        ("FAKE audio id, by link", silent, trial, fake_audio, "url"),
+        ("FAKE audio id, resumable", silent, trial, fake_audio, "file_url"),
+        ("FAKE trial setting, by link", silent, "BOGUS", None, "url"),
+        ("FAKE trial setting, resumable", silent, "BOGUS", None, "file_url"),
     ]
     out["containers"] = {}
     for label, video, strat, aud, upload in cases:
