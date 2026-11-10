@@ -111,7 +111,7 @@ def check(cfg, graph):
     _save(out)
 
 
-def post(cfg, graph, host, confirm):
+def post(cfg, graph, host, confirm, with_audio=False):
     if confirm != "POST":
         print("Not posted. Type POST in the confirm box to publish the one test reel.")
         return
@@ -119,7 +119,8 @@ def post(cfg, graph, host, confirm):
     if out.get("media_id"):
         print(f"A test reel was already posted (media id {out['media_id']}). Not posting another.")
         return
-    audio = choose_audio(cfg, graph, "test")
+    # Audio uploads fail with 2207082 for now (see the check step), so the test reel posts without audio.
+    audio = choose_audio(cfg, graph, "test") if with_audio else {"id": None, "note": "off for test"}
     print(f"Audio: {audio.get('title')} by {audio.get('artist')} (id {audio.get('id')})")
     cid = graph.create_reel_container(HOSTS[host], "Test reel, please ignore.",
                                       cfg.get("graduation_strategy", "MANUAL"), audio_config(cfg, audio))
