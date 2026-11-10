@@ -1,12 +1,8 @@
 {
   "token_days_left_before": 60.0,
   "audio": {
-    "id": "5222682084423870",
-    "title": "Last Post for Remembrance Day",
-    "artist": "The Last Post",
-    "type": "music",
-    "duration_ms": 74386,
-    "note": "trending music, rank 1"
+    "id": null,
+    "note": "off for test"
   },
   "containers": {
     "trial only, silent video": "FINISHED",
@@ -17,5 +13,15 @@
     "music id only, video WITH sound, trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
     "music full config, silent video, trial, API v22.0": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082"
   },
-  "token_days_left_after_renew": 60.0
+  "token_days_left_after_renew": 60.0,
+  "media_id": "18116264501113366",
+  "posted_at": "2026-11-10T22:01:51.195099+00:00",
+  "host": "release",
+  "media_info": {
+    "id": "18116264501113366",
+    "media_product_type": "REELS",
+    "media_audio_type": "ORIGINAL_SOUND",
+    "permalink": "https://www.instagram.com/reel/Dfk7lYmvvVy/",
+    "timestamp": "2026-11-10T22:01:44+0000"
+  }
 }
