@@ -1,0 +1,58 @@
+# One-off tests for the unknowns. Run by hand from the Actions tab.
+#   check    = read-only checks + uploads that are never published (safe)
+#   post     = publishes ONE test trial reel (only if confirm is POST)
+#   insights = reads the numbers of that test reel
+name: Test reel
+
+on:
+  workflow_dispatch:
+    inputs:
+      step:
+        type: choice
+        options: [check, post, insights]
+        default: check
+      host:
+        description: "Video host for the post step"
+        type: choice
+        options: [release, pages, raw]
+        default: release
+      confirm:
+        description: "Type POST to allow the post step to publish"
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reels-robot
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Run test step
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          FB_APP_ID: ${{ secrets.FB_APP_ID }}
+          FB_APP_SECRET: ${{ secrets.FB_APP_SECRET }}
+          TEST_HOST: ${{ inputs.host }}
+          CONFIRM: ${{ inputs.confirm }}
+        run: python -m reels test-${{ inputs.step }}
+      - name: Save test notes
+        if: always()
+        run: |
+          git config user.name "reels-robot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -e state/test.json ]; then git add state/test.json; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Robot: test notes"
+          git pull --rebase --quiet && git push --quiet

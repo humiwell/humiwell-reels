@@ -1,0 +1,66 @@
+# Humiwell trial reel auto-publisher settings.
+# Edit this file on GitHub (pencil icon), then "Commit changes".
+# The next run (within 15 minutes) uses the new settings.
+
+# true = post nothing at all. Results and token reminders still run.
+paused: false
+
+# true = practice mode. The robot shows what it WOULD post, but posts nothing.
+# Set to false only after the test reel has passed.
+dry_run: true
+
+# Posting times, UK time (summer time is handled for you).
+timezone: Europe/London
+slots: ["07:00", "08:30", "10:00", "12:00", "14:00", "17:00", "19:00", "21:00"]
+
+# If runs were missed, the robot catches up, but posts at most this many per run.
+max_posts_per_run: 2
+
+# Videos left unposted (for example after a daily limit) wait in the queue.
+# Videos older than this many days are dropped instead (an issue tells you).
+max_carry_days: 2
+
+# Where Instagram downloads the videos from: release | pages | raw
+#   release = GitHub Release files (default)
+#   pages   = GitHub Pages copy (needs Pages turned on for the "media" branch)
+#   raw     = plain file links from the "media" branch
+hosting: release
+
+# Trial reel setting. MANUAL = you decide which reel to share with followers.
+graduation_strategy: MANUAL
+
+audio:
+  enabled: true
+  # Which kind of trending sound to use first: music | original_sound
+  prefer: music
+  # If nothing usable is found in the first kind, try the other kind.
+  fallback_to_other_type: true
+  # Put a track id here to use that track for every reel ("" = top trending).
+  pin_audio_id: ""
+  # Or pin a track for one day only, for example:  "2026-11-16": "1234567890"
+  pin_by_date: {}
+  # Never use these track ids.
+  block_ids: []
+  # Never use tracks whose title or artist contains any of these words.
+  block_words: []
+  # Loudness from 1 to 100.
+  audio_volume: 100
+  video_volume: 100
+
+results:
+  # Hours to wait after a reel's last version before judging it.
+  wait_hours: 72
+  # A lead is trusted only if both top versions reach this many people...
+  min_reach: 150
+  # ...and the watch % gap is at least this many points.
+  min_gap_points: 10
+  # Unit Instagram uses for average watch time: ms or s
+  avg_watch_time_unit: ms
+
+token:
+  # Open a reminder issue this many days before the Instagram token runs out.
+  warn_days_before_expiry: 10
+  # Try to renew the token automatically (needs the GH_SECRETS_TOKEN secret, see README).
+  auto_renew: true
+
+graph_api_version: v27.0
