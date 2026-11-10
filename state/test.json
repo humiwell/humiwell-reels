@@ -1,0 +1,18 @@
+{
+  "token_days_left_before": 60.0,
+  "audio": {
+    "id": "5222682084423870",
+    "title": "Last Post for Remembrance Day",
+    "artist": "The Last Post",
+    "type": "music",
+    "duration_ms": 74386,
+    "note": "trending music, rank 1"
+  },
+  "containers": {
+    "release, trial + audio": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
+    "release, trial only": "FINISHED",
+    "pages, trial + audio": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207076",
+    "raw, trial + audio": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082"
+  },
+  "token_days_left_after_renew": 60.0
+}
