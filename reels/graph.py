@@ -190,6 +190,7 @@ def normalise_audio(a, audio_type):
         "artist": a.get("display_artist") or a.get("ig_username") or "",
         "type": a.get("audio_type") or audio_type,
         "duration_ms": a.get("duration_in_ms"),
+        "ads_eligible": a.get("is_ads_eligible"),
     }
 
 
