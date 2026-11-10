@@ -128,15 +128,11 @@ def post(cfg, graph, host, confirm, with_audio=True):
         print("Not posted. Type POST in the confirm box to publish the one test reel.")
         return
     out = _load()
-    if out.get("audio_test"):
-        print(f"The audio test reel was already posted ({out['audio_test']['media_id']}). Not posting another.")
-        return
     audio = choose_audio(cfg, graph, "test") if with_audio else {"id": None, "note": "off for test"}
     print(f"Audio: {audio.get('title')} by {audio.get('artist')} (id {audio.get('id')})")
     video = HOSTS[host].replace("test.mp4", "test-silent.mp4")
-    cid = graph.create_reel_container(video, "Test reel, please ignore.",
-                                      cfg.get("graduation_strategy", "MANUAL"), audio_config(cfg, audio),
-                                      upload=cfg.get("upload_method", "file_url"))
+    cid = graph.create_reel_container(video, "", cfg.get("graduation_strategy", "MANUAL"),
+                                      audio_config(cfg, audio), upload=cfg.get("upload_method", "file_url"))
     status = graph.wait_for_container(cid, tries=20)
     print(f"Container: {status}")
     if status != "FINISHED":
@@ -144,6 +140,16 @@ def post(cfg, graph, host, confirm, with_audio=True):
     media_id = graph.publish(cid)
     info = graph.media_info(media_id)
     print(f"Posted. media id {media_id}. Details: {info}")
+    # Instagram may finish attaching audio a little later, so look again.
+    for wait in (60, 120, 180):
+        graph.sleep(wait)
+        try:
+            later = graph.media_info(media_id)
+            feed = graph._call("GET", media_id, {"fields": "is_shared_to_feed"}).get("is_shared_to_feed")
+            print(f"  after {wait}s more: audio type {later.get('media_audio_type')}, shared to feed {feed}")
+            info = later
+        except GraphError as e:
+            print(f"  after {wait}s more: {e}")
     # The newest test reel is the one insights reads; the first (no audio) one stays on record.
     out.setdefault("first_test", {k: out.get(k) for k in ("media_id", "posted_at", "media_info")})
     out["audio_test"] = {"media_id": media_id, "audio": audio, "media_info": info}
