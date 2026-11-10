@@ -9,10 +9,15 @@
     "note": "trending music, rank 1"
   },
   "containers": {
-    "release, trial + audio": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
-    "release, trial only": "FINISHED",
-    "pages, trial + audio": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207076",
-    "raw, trial + audio": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082"
+    "trial only": "FINISHED",
+    "music 'Last Post for Remembrance Day' (ads_eligible False), no trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
+    "music 'Last Post for Remembrance Day' (ads_eligible False), with trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
+    "music 'Feelinga' (ads_eligible False), no trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
+    "music 'Feelinga' (ads_eligible False), with trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
+    "original_sound 'Original audio' (ads_eligible None), no trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
+    "original_sound 'Original audio' (ads_eligible None), with trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
+    "original_sound 'follow us for more funny conte' (ads_eligible None), no trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
+    "original_sound 'follow us for more funny conte' (ads_eligible None), with trial": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082"
   },
   "token_days_left_after_renew": 60.0
 }
