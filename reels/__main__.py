@@ -47,7 +47,11 @@ def main(argv):
         if graph is None:
             print("IG_ACCESS_TOKEN is missing. Run it from GitHub: Actions, Test reel, step audio-shortlist.")
             return 1
-        shortlist.run(graph)
+        terms = [t.strip() for t in os.environ.get("AUDIO_SEARCH", "").split(",") if t.strip()]
+        if terms:
+            shortlist.run_search(graph, terms)
+        else:
+            shortlist.run(graph)
         return 0
     if cmd.startswith("test-"):
         if graph is None:
@@ -56,7 +60,8 @@ def main(argv):
         if cmd == "test-check":
             testreel.check(cfg, graph)
         elif cmd == "test-post":
-            testreel.post(cfg, graph, os.environ.get("TEST_HOST", "release"), os.environ.get("CONFIRM", ""))
+            testreel.post(cfg, graph, os.environ.get("TEST_HOST", "release"), os.environ.get("CONFIRM", ""),
+                          audio_id=os.environ.get("TEST_AUDIO_ID", "").strip())
         elif cmd == "test-insights":
             testreel.insights(cfg, graph)
         return 0

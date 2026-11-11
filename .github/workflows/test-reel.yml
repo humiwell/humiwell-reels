@@ -2,7 +2,7 @@
 #   check    = read-only checks + uploads that are never published (safe)
 #   post     = publishes ONE test trial reel (only if confirm is POST)
 #   insights = reads the numbers of that test reel
-#   audio-shortlist = lists trending music with every field (read-only)
+#   audio-shortlist = lists trending music with every field, or search results (read-only)
 name: Test reel
 
 on:
@@ -19,6 +19,12 @@ on:
         default: release
       confirm:
         description: "Type POST to allow the post step to publish"
+        default: ""
+      search:
+        description: "audio-shortlist only: search words, comma separated (empty = trending list)"
+        default: ""
+      audio_id:
+        description: "post only: track id to use (empty = normal choice)"
         default: ""
 
 permissions:
@@ -57,6 +63,8 @@ jobs:
           FB_APP_SECRET: ${{ secrets.FB_APP_SECRET }}
           TEST_HOST: ${{ inputs.host }}
           CONFIRM: ${{ inputs.confirm }}
+          AUDIO_SEARCH: ${{ inputs.search }}
+          TEST_AUDIO_ID: ${{ inputs.audio_id }}
         run: |
           if [ "${{ inputs.step }}" = "audio-shortlist" ]; then python -m reels audio-shortlist
           else python -m reels test-${{ inputs.step }}; fi

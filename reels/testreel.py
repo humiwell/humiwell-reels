@@ -122,12 +122,16 @@ def check(cfg, graph):
     _save(out)
 
 
-def post(cfg, graph, host, confirm, with_audio=True):
+def post(cfg, graph, host, confirm, with_audio=True, audio_id=""):
     if confirm != "POST":
         print("Not posted. Type POST in the confirm box to publish the one test reel.")
         return
     out = _load()
-    audio = choose_audio(cfg, graph, "test") if with_audio else {"id": None, "note": "off for test"}
+    if audio_id and not audio_id.isdigit():
+        print(f"Not posted. audio_id must be digits only, got {audio_id!r}.")
+        return
+    manifest = {"audio_id": audio_id} if audio_id else None
+    audio = choose_audio(cfg, graph, "test", manifest=manifest) if with_audio else {"id": None, "note": "off for test"}
     print(f"Audio: {audio.get('title')} by {audio.get('artist')} (id {audio.get('id')})")
     video = HOSTS[host].replace("test.mp4", "test-silent.mp4")
     cid = graph.create_reel_container(video, "", cfg.get("graduation_strategy", "MANUAL"),
