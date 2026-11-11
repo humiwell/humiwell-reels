@@ -1,0 +1,66 @@
+{
+  "contract_version": 1,
+  "reel": "japanese-walking",
+  "post_date": "2026-11-16",
+  "caption": "A simple way to get more from the walks you already do.\n\nIt was developed by researchers at Shinshu University. In their studies, middle-aged and older adults who did it regularly for a few months improved their fitness and leg strength more than people who walked at an even pace.\n\nThree minutes fast, three minutes slow, five rounds. You can do it on a lunch break or round the block after tea.\n\nSave this for your next walk, and send it to the friend you'd do it with.\n\n#JapaneseWalking #WalkingUK #FitnessOver40 #MoveMore #UKWellness",
+  "audio_id": "1478915717468599",
+  "audio_title": "You Can't Always Get What You Want (Sam Fender)",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "JAPANESE WALKING: THE 30-MINUTE WALK EVERYONE'S TALKING ABOUT",
+      "file": "2026-11-16_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "STOP WALKING AT ONE PACE. TRY THIS INSTEAD",
+      "file": "2026-11-16_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "C",
+      "lever": "Curiosity gap (statement)",
+      "hook": "THE 3-MINUTE TRICK THAT CHANGES YOUR DAILY WALK",
+      "file": "2026-11-16_C.mp4",
+      "length_s": 10.3
+    },
+    {
+      "id": "D",
+      "lever": "Identity call-out + number",
+      "hook": "OVER 40S: THE 30-MINUTE WALK WORTH TRYING",
+      "file": "2026-11-16_D.mp4",
+      "length_s": 10.03
+    },
+    {
+      "id": "E",
+      "lever": "Contrarian / price anchor",
+      "hook": "SKIP THE £40 GYM MEMBERSHIP. TRY THIS WALK INSTEAD",
+      "file": "2026-11-16_E.mp4",
+      "length_s": 9.8
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "THE EASIEST 30-MINUTE WORKOUT. JUST WALK",
+      "file": "2026-11-16_F.mp4",
+      "length_s": 9.53
+    },
+    {
+      "id": "G",
+      "lever": "Authority",
+      "hook": "A NUTRITIONIST EXPLAINS JAPANESE WALKING",
+      "file": "2026-11-16_G.mp4",
+      "length_s": 10.0
+    },
+    {
+      "id": "H",
+      "lever": "Timely + local",
+      "hook": "UK WINTER WALKS CAN WORK HARDER. TRY JAPANESE WALKING",
+      "file": "2026-11-16_H.mp4",
+      "length_s": 9.9
+    }
+  ]
+}

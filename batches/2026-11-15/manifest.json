@@ -1,0 +1,66 @@
+{
+  "contract_version": 1,
+  "reel": "vitamin-d-advice",
+  "post_date": "2026-11-15",
+  "caption": "One small thing to add to your shopping list from October to March.\n\nFrom October to March the sun here is too low in the sky for your skin to make enough vitamin D, even on a bright day like this one. So the NHS suggests 10 micrograms a day for everyone over 4. It's one of the cheapest things on the shelf.\n\nSave this for your next supermarket trip, and share it with someone who's never heard of it.\n\n#VitaminD #NHSAdvice #UKWinter #WinterWellness #UKWellness",
+  "audio_id": "2150015712260414",
+  "audio_title": "Vintage November (Peaceful Reveries)",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "HALF OF BRITS DON'T KNOW THIS NHS WINTER ADVICE",
+      "file": "2026-11-15_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "THE UK WINTER MISTAKE THAT'S EASY TO FIX",
+      "file": "2026-11-15_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "C",
+      "lever": "Curiosity gap (statement)",
+      "hook": "THE UK WINTER SUN CAN'T DO ONE JOB",
+      "file": "2026-11-15_C.mp4",
+      "length_s": 10.4
+    },
+    {
+      "id": "D",
+      "lever": "Identity call-out + number",
+      "hook": "UK ADULTS: THE NHS ADVICE FOR OCTOBER TO MARCH",
+      "file": "2026-11-15_D.mp4",
+      "length_s": 10.27
+    },
+    {
+      "id": "E",
+      "lever": "Contrarian / price anchor",
+      "hook": "SKIP THE £30 WINTER WELLNESS KIT. START WITH THIS",
+      "file": "2026-11-15_E.mp4",
+      "length_s": 10.17
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "THE LAZIEST WINTER HEALTH HABIT THERE IS",
+      "file": "2026-11-15_F.mp4",
+      "length_s": 9.9
+    },
+    {
+      "id": "G",
+      "lever": "Authority",
+      "hook": "A NUTRITIONIST'S ONE WINTER TIP FOR EVERY BRIT",
+      "file": "2026-11-15_G.mp4",
+      "length_s": 10.0
+    },
+    {
+      "id": "H",
+      "lever": "Timely + local",
+      "hook": "THE CLOCKS WENT BACK. HERE'S THE NHS ADVICE FOR NOW",
+      "file": "2026-11-15_H.mp4",
+      "length_s": 9.9
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "contract_version": 1,
+  "reel": "night-habits-men",
+  "post_date": "2026-11-13",
+  "caption": "Seven small swaps for your evenings this week.\n\nMost of it is boring on purpose. Number 2 is the big one. Alcohol might knock you out, but it breaks up your sleep in the second half of the night, and it shows up as puffy eyes and dull skin within days. Our advice is simple: leave it out.\n\nNumber 7 is the one nobody wants to hear. Going to bed at the same time every night does more for how you look and feel than any face wash.\n\nSave this for the next 14 days, and send it to a mate who needs it.\n\n#MensWellness #MensHealthUK #Movember #NightRoutine #UKWellness",
+  "audio_id": "263896829897972",
+  "audio_title": "November (Past Day)",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "7 NIGHT HABITS THAT CAN CHANGE HOW A MAN LOOKS IN 14 DAYS",
+      "file": "2026-11-13_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "7 NIGHT MISTAKES THAT SHOW UP ON A MAN'S FACE",
+      "file": "2026-11-13_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "C",
+      "lever": "Curiosity gap (statement)",
+      "hook": "A MAN'S MORNING FACE STARTS THE NIGHT BEFORE",
+      "file": "2026-11-13_C.mp4",
+      "length_s": 10.4
+    },
+    {
+      "id": "D",
+      "lever": "Identity call-out + number",
+      "hook": "MEN OVER 30: 7 NIGHT HABITS FOR LOOKING SHARPER",
+      "file": "2026-11-13_D.mp4",
+      "length_s": 10.27
+    },
+    {
+      "id": "E",
+      "lever": "Contrarian / price anchor",
+      "hook": "SKIP THE £40 FACE WASH. DO THESE 7 INSTEAD",
+      "file": "2026-11-13_E.mp4",
+      "length_s": 10.2
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "7 LAZY NIGHT HABITS FOR LOOKING SHARPER IN 14 DAYS",
+      "file": "2026-11-13_F.mp4",
+      "length_s": 10.07
+    },
+    {
+      "id": "G",
+      "lever": "Authority",
+      "hook": "A NUTRITIONIST'S 7 NIGHT HABITS FOR MEN",
+      "file": "2026-11-13_G.mp4",
+      "length_s": 10.0
+    },
+    {
+      "id": "H",
+      "lever": "Timely + local",
+      "hook": "IT'S MOVEMBER, LADS. 7 NIGHT HABITS WORTH STARTING",
+      "file": "2026-11-13_H.mp4",
+      "length_s": 9.9
+    }
+  ]
+}

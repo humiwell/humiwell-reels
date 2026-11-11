@@ -48,7 +48,7 @@ audio:
   # Never use these track ids.
   block_ids: []
   # Never use tracks whose title or artist contains any of these words.
-  block_words: []
+  block_words: ["Remembrance", "Last Post", "Diwali", "Christmas", "Xmas", "Ramayana", "Satgur", "Ram Aaye", "Bandi Chhor"]
   # Loudness of the trending track, 1 to 100.
   audio_volume: 100
   # Loudness of the video's own sound. Keep 0: our videos are silent, and

@@ -1,0 +1,64 @@
+{
+  "contract_version": 1,
+  "reel": "what-makes-a-woman-look-tired",
+  "post_date": "2026-11-17",
+  "caption": "A few everyday things worth checking this week.\n\nNumber 1 is easy to miss. Most of us drink far more tea and coffee than water in winter, and the skin under your eyes is thin enough to show it first.\n\nNumber 2 is the one that gets me. A salty Friday takeaway makes your body hold on to extra water, and my face is puffy till Sunday.\n\nSave this for your next tired-face morning, and send it to the friend who always says she looks shattered.\n\n#WomensWellnessUK #TiredFace #BeautySleep #SkincareUK #UKWellness",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "7 THINGS THAT MAKE A WOMAN LOOK TIRED (THAT AREN'T LACK OF SLEEP)",
+      "file": "2026-11-17_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "7 DAILY MISTAKES THAT MAKE YOU LOOK TIRED",
+      "file": "2026-11-17_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "C",
+      "lever": "Curiosity gap (statement)",
+      "hook": "YOUR TIRED FACE ISN'T ALWAYS ABOUT SLEEP",
+      "file": "2026-11-17_C.mp4",
+      "length_s": 10.4
+    },
+    {
+      "id": "D",
+      "lever": "Identity call-out + number",
+      "hook": "WOMEN OVER 30: 7 REASONS YOU LOOK TIRED",
+      "file": "2026-11-17_D.mp4",
+      "length_s": 10.27
+    },
+    {
+      "id": "E",
+      "lever": "Contrarian / price anchor",
+      "hook": "SKIP THE £30 EYE CREAM. CHECK THESE 7 FIRST",
+      "file": "2026-11-17_E.mp4",
+      "length_s": 10.2
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "7 EASY FIXES FOR A LESS TIRED FACE THIS WEEK",
+      "file": "2026-11-17_F.mp4",
+      "length_s": 9.93
+    },
+    {
+      "id": "G",
+      "lever": "Authority",
+      "hook": "A NUTRITIONIST'S 7 REASONS YOU LOOK TIRED",
+      "file": "2026-11-17_G.mp4",
+      "length_s": 10.0
+    },
+    {
+      "id": "H",
+      "lever": "Timely + local",
+      "hook": "UK HEATING SEASON IS SHOWING ON YOUR FACE",
+      "file": "2026-11-17_H.mp4",
+      "length_s": 9.9
+    }
+  ]
+}

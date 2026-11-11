@@ -1,0 +1,64 @@
+{
+  "contract_version": 1,
+  "reel": "bloated-by-3pm",
+  "post_date": "2026-11-18",
+  "caption": "Seven small changes to try around lunchtime.\n\nStart with number 1. Eating at your desk in five minutes means you swallow more air and chew less, and your gut has to deal with the rest.\n\nNumber 2 has good evidence behind it. A 2022 review in Sports Medicine found that even a 2 to 5 minute walk after a meal helped lower blood sugar spikes, and a gentle walk helps your digestion get going too.\n\nIf the bloating is constant, painful or new, please see your GP.\n\nSave this for your next bloated afternoon, and send it to the friend who's always bloated after lunch.\n\n#BloatingTips #GutHealthUK #HealthyEatingUK #HealthyHabitsUK #UKWellness",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "BLOATED BY 3PM EVERY DAY? 7 HABITS TO TRY THIS WEEK",
+      "file": "2026-11-18_A.mp4",
+      "length_s": 10.0
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "7 LUNCH MISTAKES THAT LEAVE YOU BLOATED BY 3PM",
+      "file": "2026-11-18_B.mp4",
+      "length_s": 9.73
+    },
+    {
+      "id": "C",
+      "lever": "Curiosity gap (statement)",
+      "hook": "YOUR 3PM BLOAT STARTS AT LUNCHTIME",
+      "file": "2026-11-18_C.mp4",
+      "length_s": 9.5
+    },
+    {
+      "id": "D",
+      "lever": "Identity call-out + number",
+      "hook": "DESK WORKERS: 7 HABITS FOR LESS AFTERNOON BLOAT",
+      "file": "2026-11-18_D.mp4",
+      "length_s": 9.23
+    },
+    {
+      "id": "E",
+      "lever": "Contrarian / price anchor",
+      "hook": "SKIP THE £25 GUT POWDER. TRY THESE 7 FIRST",
+      "file": "2026-11-18_E.mp4",
+      "length_s": 9.0
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "7 LAZY HABITS FOR LESS BLOAT BY FRIDAY",
+      "file": "2026-11-18_F.mp4",
+      "length_s": 8.73
+    },
+    {
+      "id": "G",
+      "lever": "Authority",
+      "hook": "A NUTRITIONIST'S 7 HABITS FOR LESS BLOATING",
+      "file": "2026-11-18_G.mp4",
+      "length_s": 9.6
+    },
+    {
+      "id": "H",
+      "lever": "Timely + local",
+      "hook": "PARTY SEASON IS ALMOST HERE. 7 HABITS FOR LESS BLOAT",
+      "file": "2026-11-18_H.mp4",
+      "length_s": 9.1
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "contract_version": 1,
+  "reel": "focus-at-work",
+  "post_date": "2026-11-14",
+  "caption": "Seven habits worth dropping this week.\n\nThe hardest one to stop was number 1. Checking emails in bed meant my head was at work before I'd even got up, and the whole day felt reactive.\n\nNumber 4 has research behind it. A 2017 University of Texas study found that simply having your phone on the desk reduced people's working memory, even when it was face-down and silent. Phones left in another room did best.\n\nSave this for Monday morning, and send it to the colleague with 40 tabs open.\n\n#FocusTips #ProductivityUK #WorkWellness #WFHUK #UKWellness",
+  "audio_id": "1668904424802271",
+  "audio_title": "lady killers ii (no/vox, karaokey)",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "7 THINGS I STOPPED DOING THAT FIXED MY FOCUS AT WORK",
+      "file": "2026-11-14_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "7 DAILY MISTAKES THAT WRECK YOUR FOCUS AT WORK",
+      "file": "2026-11-14_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "C",
+      "lever": "Curiosity gap (statement)",
+      "hook": "YOUR FOGGY AFTERNOON STARTS BEFORE 9AM",
+      "file": "2026-11-14_C.mp4",
+      "length_s": 10.4
+    },
+    {
+      "id": "D",
+      "lever": "Identity call-out + number",
+      "hook": "DESK WORKERS: 7 HABITS I DROPPED FOR BETTER FOCUS",
+      "file": "2026-11-14_D.mp4",
+      "length_s": 10.27
+    },
+    {
+      "id": "E",
+      "lever": "Contrarian / price anchor",
+      "hook": "SKIP THE £4 FLAT WHITE. QUIT THESE 7 INSTEAD",
+      "file": "2026-11-14_E.mp4",
+      "length_s": 10.2
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "7 LAZY WAYS TO FIX YOUR FOCUS BY FRIDAY",
+      "file": "2026-11-14_F.mp4",
+      "length_s": 10.07
+    },
+    {
+      "id": "G",
+      "lever": "Authority",
+      "hook": "A NUTRITIONIST'S 7 HABITS TO DROP FOR BETTER FOCUS",
+      "file": "2026-11-14_G.mp4",
+      "length_s": 10.0
+    },
+    {
+      "id": "H",
+      "lever": "Timely + local",
+      "hook": "NOVEMBER WORKDAYS FEEL LONGER. 7 THINGS TO STOP",
+      "file": "2026-11-14_H.mp4",
+      "length_s": 9.9
+    }
+  ]
+}
