@@ -1,9 +1,9 @@
-"""72 hours after a reel's last version, pulls the numbers and names a winner."""
+"""At 17:00 UK on the third day after a trial date, pulls the numbers and names a winner."""
 import csv
 import json
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 
-from .common import ROOT, open_issue, save_state
+from .common import ROOT, local_tz, open_issue, save_state
 from .graph import GraphError
 
 METRICS = ["reach", "views", "ig_reels_avg_watch_time", "shares", "saved", "likes",
@@ -62,22 +62,25 @@ def verdict(ranked, min_reach, min_gap):
     return True, f"Trusted: {gap:.1f} point watch % lead, both with {min_reach}+ reach."
 
 
-def run(cfg, state, graph, manifests, now, log=print):
+def issue_due(cfg, post_date):
+    """When the winner issue is due: issue_time (UK) on the day issue_days_after days after the trial date."""
     r_cfg = cfg["results"]
-    wait = timedelta(hours=float(r_cfg.get("wait_hours", 72)))
+    day = date.fromisoformat(post_date) + timedelta(days=int(r_cfg.get("issue_days_after", 3)))
+    h, m = (int(x) for x in str(r_cfg.get("issue_time", "17:00")).split(":"))
+    return datetime(day.year, day.month, day.day, h, m, tzinfo=local_tz(cfg))
+
+
+def run(cfg, state, graph, manifests, now, log=print):
     dry = cfg.get("dry_run", True)
     for d, day in sorted(state["days"].items()):
         if day.get("results_done"):
             continue
-        statuses = [v["status"] for v in day["variants"].values()]
-        if any(s in ("pending", "container") for s in statuses):
+        if now < issue_due(cfg, d):
             continue
+        # Uses whatever has been posted by now; versions still waiting are listed as not posted.
         posted = [v for v in day["variants"].values() if v["status"] == "posted"]
         if not posted:
             day["results_done"] = True
-            continue
-        last = max(datetime.fromisoformat(v["posted_at"]) for v in posted)
-        if now < last + wait:
             continue
         log(f"Results for {d}:")
         try:
@@ -102,6 +105,11 @@ def build_report(cfg, d, day, manifest, graph):
             continue
         v = variants.get(vid, {"id": vid, "lever": "", "hook": "", "length_s": 10})
         numbers = graph.insights(rec["media_id"], METRICS)
+        if not rec.get("permalink"):
+            try:
+                rec["permalink"] = graph.media_info(rec["media_id"]).get("permalink")
+            except GraphError:
+                pass
         row = {"variant": vid, "lever": v.get("lever", ""), "hook": v.get("hook", ""),
                "length_s": v["length_s"], "slot": rec.get("slot"), "posted_at": rec["posted_at"],
                "media_id": rec["media_id"], "permalink": rec.get("permalink"), "raw": numbers}
@@ -143,7 +151,11 @@ def issue_text(report):
     w = report["winner"]
     status = "winner" if report["trusted"] else "early leader (not trusted yet)"
     title = f"Results {report['post_date']} ({report['reel']}): variant {w} is the {status}"
-    lines = [f"**{report['why']}**", "",
+    top = report["variants"][0] if report["variants"] else {}
+    # The winner's link comes first so it can be tapped straight from a phone.
+    link = top.get("permalink") or "(link not available, find variant " + str(w) + " in the app)"
+    lines = [f"## Winner: {link}", "",
+             f"**{report['why']}**", "",
              f"Audio: {report['audio'].get('title') or 'none'} by {report['audio'].get('artist') or '-'}", "",
              "| Rank | Variant | Lever | Hook | Reach | Watch % | Sends/1k | Saves/1k | Follows/1k |",
              "|---|---|---|---|---|---|---|---|---|"]
@@ -153,7 +165,6 @@ def issue_text(report):
                      f"{_fmt(r['follows_per_1k'])} |")
     if report["not_posted"]:
         lines += ["", f"Not posted: {', '.join(report['not_posted'])}"]
-    top = report["variants"][0] if report["variants"] else {}
     lines += ["", "**What to do:** open Instagram, find this trial reel"
               + (f" ({top['permalink']})" if top.get("permalink") else "")
               + " and tap *Share to followers* if you are happy with it. Then close this issue."]

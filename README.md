@@ -1,7 +1,7 @@
 # Humiwell trial reel robot
 
 This repo posts 8 Instagram Trial Reels a day to @humiwell, each with a trending sound,
-and tells you which hook won 72 hours later. It runs for free on GitHub Actions.
+and tells you which hook won, at 17:00 UK on the third day after posting. It runs for free on GitHub Actions.
 
 ## How it works
 
@@ -10,7 +10,7 @@ and tells you which hook won 72 hours later. It runs for free on GitHub Actions.
 2. **Every 15 minutes** the robot wakes up (Actions tab, "Reels robot") and:
    - checks the Instagram token once a day,
    - posts any version whose time slot has arrived and that is not posted yet,
-   - judges any reel whose last version went out 72 hours ago.
+   - at 17:00 UK on the third day after a trial date (12 Nov trial, 15 Nov 17:00), judges that reel using whatever numbers exist by then.
 3. **Fair test:** all 8 versions of one reel use the same sound, picked once (the top trending
    track unless you pin one). Which version gets which time slot shifts by one every day.
 4. **Memory:** what was posted is saved in `state/state.json`, so running twice never posts twice.

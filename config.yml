@@ -56,8 +56,10 @@ audio:
   video_volume: 0
 
 results:
-  # Hours to wait after a reel's last version before judging it.
-  wait_hours: 72
+  # The winner issue opens at this UK time, this many days after the trial date
+  # (trial on 12 Nov -> issue on 15 Nov at 17:00), using whatever data exists by then.
+  issue_days_after: 3
+  issue_time: "17:00"
   # A lead is trusted only if both top versions reach this many people...
   min_reach: 150
   # ...and the watch % gap is at least this many points.

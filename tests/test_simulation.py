@@ -107,21 +107,44 @@ def test_unfinished_upload_resumes(env):
     assert len(graph.posts) == 1 and len(graph.containers) == 1
 
 
-def test_results_after_72h(env):
+def test_results_issue_at_1700_on_third_day(env, capsys):
     cfg, tmp = env
-    manifests = {"2026-11-16": manifest("2026-11-16")}
+    manifests = {"2026-11-12": manifest("2026-11-12")}
     state, graph, logs = common.load_state(), FakeGraph(), []
-    start = datetime(2026, 11, 16, 0, 0, tzinfo=timezone.utc)
-    tick_through(cfg, state, graph, manifests, start, start + timedelta(days=3, hours=20), logs.append)
-    assert not state["days"]["2026-11-16"]["results_done"]
-    tick_through(cfg, state, graph, manifests, start + timedelta(days=3, hours=20),
-                 start + timedelta(days=4), logs.append)
-    assert state["days"]["2026-11-16"]["results_done"]
-    report = json.loads((tmp / "results" / "2026-11-16.json").read_text())
+    start = datetime(2026, 11, 12, 0, 0, tzinfo=timezone.utc)
+    # 15 Nov 16:45 UK (winter, so UK = UTC): not yet
+    tick_through(cfg, state, graph, manifests, start, datetime(2026, 11, 15, 16, 45, tzinfo=timezone.utc),
+                 logs.append)
+    assert not state["days"]["2026-11-12"]["results_done"]
+    capsys.readouterr()
+    results.run(cfg, state, graph, manifests, datetime(2026, 11, 15, 17, 0, tzinfo=timezone.utc), logs.append)
+    assert state["days"]["2026-11-12"]["results_done"]
+    report = json.loads((tmp / "results" / "2026-11-12.json").read_text())
     # fake numbers: later posts have higher watch time, so the last-posted version wins
     assert report["variants"][0]["media_id"] == "m8"
     assert report["variants"][0]["watch_pct"] == pytest.approx(86.0)
-    assert (tmp / "results.csv").read_text().count("\n") == 9
+    assert len((tmp / "results.csv").read_text().splitlines()) == 9
+    body = capsys.readouterr().out.splitlines()[1]
+    assert body == "## Winner: https://instagram.com/reel/m8"
+
+
+def test_results_use_whatever_exists_by_then(env, capsys):
+    cfg, tmp = env
+    manifests = {"2026-11-12": manifest("2026-11-12")}
+    state, graph = common.load_state(), FakeGraph(limit_after=5)
+    start = datetime(2026, 11, 12, 0, 0, tzinfo=timezone.utc)
+    tick_through(cfg, state, graph, manifests, start, start + timedelta(hours=23), lambda *_: None)
+    # Three versions are still waiting when the issue is due: use what exists.
+    results.run(cfg, state, graph, manifests, datetime(2026, 11, 15, 17, 5, tzinfo=timezone.utc),
+                lambda *_: None)
+    report = json.loads((tmp / "results" / "2026-11-12.json").read_text())
+    assert len(report["variants"]) == 5 and len(report["not_posted"]) == 3
+
+
+def test_issue_time_follows_uk_summer_time():
+    cfg = load_config()
+    due = results.issue_due(cfg, "2026-07-01")
+    assert due.astimezone(timezone.utc) == datetime(2026, 7, 4, 16, 0, tzinfo=timezone.utc)
 
 
 def test_audio_required_posts_nothing_and_tries_next_track(env, capsys):
