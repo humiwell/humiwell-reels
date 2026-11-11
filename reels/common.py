@@ -89,6 +89,15 @@ def check_manifest(m, folder_name):
         raise ValueError("needs 1 to 8 variants")
     if len(m["caption"]) > 2200:
         raise ValueError("caption is over 2,200 characters")
+    # Optional: one chosen track for the whole day.
+    audio_id = m.get("audio_id")
+    if audio_id is not None and not (isinstance(audio_id, str) and audio_id.isdigit()):
+        raise ValueError("audio_id must be a text string of digits, for example \"1543916142623294\"")
+    if m.get("audio_title") is not None:
+        if not isinstance(m["audio_title"], str):
+            raise ValueError("audio_title must be text")
+        if audio_id is None:
+            raise ValueError("audio_title is set but audio_id is missing")
     ids = set()
     for v in m["variants"]:
         for key in REQUIRED_VARIANT_KEYS:

@@ -157,6 +157,39 @@ def test_audio_refused_whole_reel_goes_without(env, capsys):
     assert capsys.readouterr().out.count("Trending audio is not attaching") == 1
 
 
+def test_manifest_audio_used_for_all_versions(env):
+    cfg, tmp = env
+    m = dict(manifest("2026-11-16"), audio_id="555", audio_title="Chosen Song")
+    state, graph = common.load_state(), FakeGraph()
+    start = datetime(2026, 11, 16, 0, 0, tzinfo=timezone.utc)
+    tick_through(cfg, state, graph, {"2026-11-16": m}, start, start + timedelta(days=1), lambda *_: None)
+    assert len(graph.posts) == 8
+    assert {p["audio"]["audio_id"] for p in graph.posts} == {"555"}
+    assert state["days"]["2026-11-16"]["audio"]["note"] == "set in manifest"
+
+
+def test_manifest_audio_refused_falls_back_to_trending(env, capsys):
+    cfg, tmp = env
+    m = dict(manifest("2026-11-16"), audio_id="555", audio_title="Chosen Song")
+    state, graph = common.load_state(), FakeGraph(refuse_ids={"555"})
+    start = datetime(2026, 11, 16, 0, 0, tzinfo=timezone.utc)
+    tick_through(cfg, state, graph, {"2026-11-16": m}, start, start + timedelta(days=1), lambda *_: None)
+    assert len(graph.posts) == 8
+    assert {p["audio"]["audio_id"] for p in graph.posts} == {"222"}  # top trending (111 is blocked)
+    out = capsys.readouterr().out
+    assert out.count("Chosen audio failed for 2026-11-16") == 1
+    assert "Chosen Song" in out and "id 555" in out and "Top music" in out
+
+
+def test_manifest_audio_checks():
+    good = manifest("2026-11-16")
+    common.check_manifest(dict(good, audio_id="555", audio_title="Song"), "2026-11-16")
+    with pytest.raises(ValueError):
+        common.check_manifest(dict(good, audio_id=555), "2026-11-16")
+    with pytest.raises(ValueError):
+        common.check_manifest(dict(good, audio_title="Song"), "2026-11-16")
+
+
 def test_verdict_rules():
     a = {"reach": 200, "watch_pct": 60, "sends_per_1k": 5}
     b = {"reach": 200, "watch_pct": 49, "sends_per_1k": 9}

@@ -56,6 +56,7 @@ The sound used for each reel (title, artist, id) is in the run log and in the re
 | Daily limit reached on ... | Instagram stopped posts for today | Nothing. The rest posts tomorrow. If it repeats, remove a slot |
 | Skipped N version(s) of ... | Versions waited more than 2 days | Nothing. That day's results compare only what went out |
 | Could not post ... variant X | Failed 3 times | Read the error. Often a video link problem |
+| Chosen audio failed for ... | The track set in the manifest or config was refused | Nothing. That day uses the top trending track instead |
 | Trending audio is not attaching | Instagram refused the sound. Nothing is posted | See "Audio problems" below. The robot retries every hour |
 | No batch for ... | A slot came but there is no manifest for today | Ask the render session to push the week |
 | Broken batch file | A manifest has a mistake | Fix it using docs/BATCH_CONTRACT.md |

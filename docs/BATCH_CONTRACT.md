@@ -30,6 +30,8 @@ Path: `batches/YYYY-MM-DD/manifest.json` (folder name = posting date). Nothing e
   "reel": "weekend-habits",
   "post_date": "2026-11-16",
   "caption": "One shared caption for all 8 versions. Max 2,200 characters, max 30 hashtags.",
+  "audio_id": "1543916142623294",
+  "audio_title": "Feelinga",
   "variants": [
     {"id": "A", "lever": "curiosity",    "hook": "The 3 minute habit nobody talks about", "file": "2026-11-16_A.mp4", "length_s": 10.0},
     {"id": "B", "lever": "social proof", "hook": "...", "file": "2026-11-16_B.mp4", "length_s": 10.0},
@@ -51,12 +53,25 @@ Field rules:
 | `reel` | Short name of the B-roll reel, lowercase with dashes |
 | `post_date` | `YYYY-MM-DD`, same as the folder name and release tag |
 | `caption` | The same caption is used for all versions, so only the hook differs |
+| `audio_id` | **Optional.** Instagram track id as text of digits (in quotes). Used for all versions of the day. Leave it out to use the top trending track. Get ids from `python -m reels audio-shortlist` |
+| `audio_title` | **Optional.** Track name, for people reading the issues and results. Only allowed together with `audio_id` |
 | `variants` | 1 to 8 entries, normally exactly 8 (A to H) |
 | `id` | Unique letter per day |
 | `lever` | The psychology lever this hook uses (free text) |
 | `hook` | The exact on-screen hook text |
 | `file` | File name inside the `day-YYYY-MM-DD` release |
 | `length_s` | Real video length in seconds (decimals fine). Used for watch % |
+
+How the track is picked for a day (first one that applies):
+
+1. `audio: pin_by_date` for that date in `config.yml`
+2. `audio_id` in the manifest
+3. `audio: pin_audio_id` in `config.yml`
+4. The top trending track (respecting `block_ids` and `block_words`)
+
+If Instagram refuses a chosen track before any version of the day is posted, the robot switches to
+the top trending track for all 8 versions and opens an issue "Chosen audio failed for YYYY-MM-DD"
+naming both tracks and the error. Videos must stay silent: the robot sets the video's own volume to 0.
 
 ## 3. Timing
 

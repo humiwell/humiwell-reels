@@ -2,6 +2,7 @@
 #   check    = read-only checks + uploads that are never published (safe)
 #   post     = publishes ONE test trial reel (only if confirm is POST)
 #   insights = reads the numbers of that test reel
+#   audio-shortlist = lists trending music with every field (read-only)
 name: Test reel
 
 on:
@@ -9,7 +10,7 @@ on:
     inputs:
       step:
         type: choice
-        options: [check, post, insights]
+        options: [check, post, insights, audio-shortlist]
         default: check
       host:
         description: "Video host for the post step"
@@ -56,7 +57,9 @@ jobs:
           FB_APP_SECRET: ${{ secrets.FB_APP_SECRET }}
           TEST_HOST: ${{ inputs.host }}
           CONFIRM: ${{ inputs.confirm }}
-        run: python -m reels test-${{ inputs.step }}
+        run: |
+          if [ "${{ inputs.step }}" = "audio-shortlist" ]; then python -m reels audio-shortlist
+          else python -m reels test-${{ inputs.step }}; fi
       - name: Save test notes
         if: always()
         run: |

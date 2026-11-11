@@ -27,21 +27,32 @@ def register_day(state, manifest):
     }
 
 
-def choose_audio(cfg, graph, post_date, log=print, refused=()):
-    """Picks ONE track for all versions of a reel, so the test stays fair."""
+def choose_audio(cfg, graph, post_date, log=print, refused=(), manifest=None):
+    """Picks ONE track for all versions of a reel, so the test stays fair.
+
+    Order: config pin for this date, the manifest's audio_id, config pin for every reel, then trending.
+    Tracks Instagram already refused for this reel are skipped.
+    """
     a = cfg["audio"]
     if not a.get("enabled", True):
         return {"id": None, "note": "audio turned off in config"}
-    pins = {str(k): str(v) for k, v in (a.get("pin_by_date") or {}).items()}
-    pin = pins.get(post_date) or str(a.get("pin_audio_id") or "")
-    if pin:
+    manifest = manifest or {}
+    by_date = {str(k): str(v) for k, v in (a.get("pin_by_date") or {}).items()}
+    pins = [(by_date.get(post_date), "pinned for this day in config", ""),
+            (str(manifest.get("audio_id") or ""), "set in manifest", manifest.get("audio_title") or ""),
+            (str(a.get("pin_audio_id") or ""), "pinned in config", "")]
+    for pin, note, title in pins:
+        if not pin or pin in refused:
+            continue
         try:
             info = graph.audio_info(pin)
         except GraphError as e:
-            log(f"  could not look up pinned track {pin}: {e}")
-            info = {"id": pin, "title": "(unknown)", "artist": "", "type": ""}
-        info["id"] = pin
-        info["note"] = "pinned in config"
+            log(f"  could not look up chosen track {pin}: {e}")
+            info = {"title": "", "artist": "", "type": ""}
+        info.update(id=pin, note=note, pinned=True)
+        info["title"] = info.get("title") or title or "(unknown)"
+        if title:
+            info["manifest_title"] = title
         return info
     blocked_ids = {str(x) for x in a.get("block_ids") or []} | set(refused)
     blocked_words = [w.lower() for w in a.get("block_words") or []]
@@ -171,8 +182,9 @@ def post_one(cfg, state, graph, manifests, d, vid, now, log=print):
 
     required = cfg["audio"].get("required", True) and cfg["audio"].get("enabled", True)
     if day["audio"] is None:
-        audio = (choose_audio(cfg, graph, d, log, day.get("audio_refused", [])) if graph
-                 else {"id": None, "note": "no API in dry run"})
+        audio = (choose_audio(cfg, graph, d, log, day.get("audio_refused", []), manifest) if graph
+                 else {"id": manifest.get("audio_id"), "title": manifest.get("audio_title"),
+                       "note": "set in manifest" if manifest.get("audio_id") else "no API in dry run"})
         log(f"Audio for {d}: {audio.get('title') or '-'} by {audio.get('artist') or '-'} "
             f"(id {audio.get('id')}, {audio['note']})")
         if required and not audio.get("id") and not dry:
@@ -192,35 +204,61 @@ def post_one(cfg, state, graph, manifests, d, vid, now, log=print):
                 log(f"  old upload {code.lower()}, starting again")
                 rec["status"] = "pending"
         if rec["status"] == "pending":
-            try:
-                status = _upload(cfg, state, graph, rec, url, manifest["caption"], day["audio"])
-            except GraphError as e:
-                nobody_posted = all(x["status"] != "posted" for x in day["variants"].values())
-                if e.is_limit or not (day["audio"] or {}).get("id"):
-                    raise
-                if required:
-                    # Never post without audio. If nothing went out yet, try the next trending track
-                    # later; otherwise keep the same track so every version still matches.
-                    track = day["audio"]
-                    rec.update(status="pending", error=str(e))
-                    rec.pop("container_id", None)
-                    if nobody_posted:
+            status = None
+            while status is None:
+                try:
+                    status = _upload(cfg, state, graph, rec, url, manifest["caption"], day["audio"])
+                except GraphError as e:
+                    nobody_posted = all(x["status"] != "posted" for x in day["variants"].values())
+                    track = day["audio"] or {}
+                    if e.is_limit or not track.get("id"):
+                        raise
+                    if track.get("pinned") and nobody_posted:
+                        # The chosen track (manifest or config) was refused: switch to trending now.
                         day.setdefault("audio_refused", []).append(track["id"])
+                        new = choose_audio(cfg, graph, d, log, day["audio_refused"], manifest)
+                        log(f"  chosen track {track['id']} was refused ({e}). "
+                            f"Falling back to {new.get('title') or 'nothing'} ({new['note']}).")
+                        open_issue(f"Chosen audio failed for {d}",
+                                   f"Instagram refused the chosen track {track.get('title')!r} "
+                                   + (f"(manifest calls it {track['manifest_title']!r}) "
+                                      if track.get("manifest_title") else "")
+                                   + f"(id {track['id']}, {track['note']}):\n\n```\n{e.message}\n```\n\n"
+                                   f"Fell back to {new.get('title') or 'no track'} by {new.get('artist') or '-'} "
+                                   f"(id {new.get('id')}, {new['note']}) for all versions of this reel.", dry)
+                        if new.get("id"):
+                            day["audio"] = new
+                            save_state(state)
+                            continue
+                        if not required:
+                            day["audio"] = new
+                            continue
+                        rec.update(status="pending", error=str(e))
+                        rec.pop("container_id", None)
                         day["audio"] = None
-                    return _audio_blocked(state, now, d, f"Instagram refused the upload with track "
-                                          f"{track.get('title')!r} (id {track['id']}):\n\n```\n{e.message}\n```", dry)
-                if not nobody_posted:
-                    raise
-                # Keep the test fair: the whole reel switches to no audio, not just this version.
-                # Every new reel tries audio again, so it comes back by itself once Instagram allows it.
-                log(f"  Instagram refused the upload with audio ({e}). This reel goes out without audio.")
-                open_issue("Trending audio is not attaching",
-                           f"On {d} Instagram refused the upload with track {day['audio'].get('title')!r} "
-                           f"(id {day['audio']['id']}):\n\n```\n{e.message}\n```\n\nAll versions of that reel "
-                           "post without audio so the test stays fair. Each new reel tries audio again. "
-                           "Close this issue once you have looked; it reopens if it happens again.", dry)
-                day["audio"] = {"id": None, "note": f"audio refused: {e.message}", "tried": day["audio"]}
-                status = _upload(cfg, state, graph, rec, url, manifest["caption"], None)
+                        return _audio_blocked(state, now, d, f"No usable trending audio was found ({new['note']}).",
+                                              dry)
+                    if required:
+                        # Never post without audio. If nothing went out yet, try the next trending track
+                        # later; otherwise keep the same track so every version still matches.
+                        rec.update(status="pending", error=str(e))
+                        rec.pop("container_id", None)
+                        if nobody_posted:
+                            day.setdefault("audio_refused", []).append(track["id"])
+                            day["audio"] = None
+                        return _audio_blocked(state, now, d, f"Instagram refused the upload with track "
+                                              f"{track.get('title')!r} (id {track['id']}):\n\n```\n{e.message}\n```",
+                                              dry)
+                    if not nobody_posted:
+                        raise
+                    # Keep the test fair: the whole reel switches to no audio, not just this version.
+                    log(f"  Instagram refused the upload with audio ({e}). This reel goes out without audio.")
+                    open_issue("Trending audio is not attaching",
+                               f"On {d} Instagram refused the upload with track {track.get('title')!r} "
+                               f"(id {track['id']}):\n\n```\n{e.message}\n```\n\nAll versions of that reel "
+                               "post without audio so the test stays fair. Each new reel tries audio again. "
+                               "Close this issue once you have looked; it reopens if it happens again.", dry)
+                    day["audio"] = {"id": None, "note": f"audio refused: {e.message}", "tried": track}
         else:
             status = graph.wait_for_container(rec["container_id"])
         if status == "IN_PROGRESS":

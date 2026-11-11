@@ -1,11 +1,12 @@
 """Entry point.  python -m reels <command>
 
-Commands: run (token check + publish + results), validate, test-check, test-post, test-insights
+Commands: run (token check + publish + results), validate, audio-shortlist,
+          test-check, test-post, test-insights
 """
 import os
 import sys
 
-from . import publish, results, testreel, tokencheck
+from . import publish, results, shortlist, testreel, tokencheck
 from .common import load_config, load_manifests, load_state, now_utc, open_issue, save_state, video_url
 from .graph import Graph
 
@@ -42,6 +43,12 @@ def main(argv):
         return 1 if problems else 0
 
     graph = make_graph(cfg)
+    if cmd == "audio-shortlist":
+        if graph is None:
+            print("IG_ACCESS_TOKEN is missing. Run it from GitHub: Actions, Test reel, step audio-shortlist.")
+            return 1
+        shortlist.run(graph)
+        return 0
     if cmd.startswith("test-"):
         if graph is None:
             print("IG_ACCESS_TOKEN is missing.")

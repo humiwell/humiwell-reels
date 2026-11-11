@@ -158,11 +158,15 @@ class Graph:
                           {"fields": "permalink,media_product_type,timestamp,media_audio_type"})
 
     # ---- audio -----------------------------------------------------------
-    def trending_audio(self, audio_type, id_param="user_id", search=None):
+    def audio_search_raw(self, audio_type, id_param="user_id", search=None):
+        """The Audio API's answer exactly as Instagram sends it."""
         params = {"audio_type": audio_type, id_param: self.ig_user_id}
         if search:
             params["search_query"] = search
-        body = self._call("GET", "ig_audio", params)
+        return self._call("GET", "ig_audio", params)
+
+    def trending_audio(self, audio_type, id_param="user_id", search=None):
+        body = self.audio_search_raw(audio_type, id_param, search)
         items = body.get("audio") or body.get("data") or []
         return [normalise_audio(a, audio_type) for a in items]
 
