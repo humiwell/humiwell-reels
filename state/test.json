@@ -1,13 +1,14 @@
 {
   "token_days_left_before": 59.9,
   "audio": {
-    "id": "5222682084423870",
-    "title": "Last Post for Remembrance Day",
-    "artist": "The Last Post",
+    "id": "526825256283644",
+    "title": "Beautiful, You Are (Instrumental)",
+    "artist": "Ruby Amanfu",
     "type": "music",
-    "duration_ms": 74386,
-    "ads_eligible": false,
-    "note": "trending music, rank 1"
+    "duration_ms": 160684,
+    "ads_eligible": null,
+    "note": "set in manifest",
+    "pinned": true
   },
   "containers": {
     "music, video_volume 100, by link": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
@@ -16,15 +17,15 @@
     "music, video_volume 0, no trial, by link": "FINISHED"
   },
   "token_days_left_after_renew": 59.9,
-  "media_id": "18002256411035171",
-  "posted_at": "2026-11-10T23:17:52.466098+00:00",
+  "media_id": "18111489151901865",
+  "posted_at": "2026-11-11T17:05:17.187326+00:00",
   "host": "release",
   "media_info": {
-    "id": "18002256411035171",
+    "id": "18111489151901865",
     "media_product_type": "REELS",
     "media_audio_type": "MUSIC",
-    "permalink": "https://www.instagram.com/reel/DflDl64D0Z8/",
-    "timestamp": "2026-11-10T23:11:44+0000"
+    "permalink": "https://www.instagram.com/reel/Dfm9v_nABq8/",
+    "timestamp": "2026-11-11T16:59:08+0000"
   },
   "insights": [
     {
@@ -70,22 +71,23 @@
     }
   },
   "audio_test": {
-    "media_id": "18002256411035171",
+    "media_id": "18111489151901865",
     "audio": {
-      "id": "5222682084423870",
-      "title": "Last Post for Remembrance Day",
-      "artist": "The Last Post",
+      "id": "526825256283644",
+      "title": "Beautiful, You Are (Instrumental)",
+      "artist": "Ruby Amanfu",
       "type": "music",
-      "duration_ms": 74386,
-      "ads_eligible": false,
-      "note": "trending music, rank 1"
+      "duration_ms": 160684,
+      "ads_eligible": null,
+      "note": "set in manifest",
+      "pinned": true
     },
     "media_info": {
-      "id": "18002256411035171",
+      "id": "18111489151901865",
       "media_product_type": "REELS",
       "media_audio_type": "MUSIC",
-      "permalink": "https://www.instagram.com/reel/DflDl64D0Z8/",
-      "timestamp": "2026-11-10T23:11:44+0000"
+      "permalink": "https://www.instagram.com/reel/Dfm9v_nABq8/",
+      "timestamp": "2026-11-11T16:59:08+0000"
     }
   }
 }
