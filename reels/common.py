@@ -144,8 +144,10 @@ def open_issue(title, body, dry_run=False, labels=("robot",)):
     if any(i["title"] == title for i in r.json()):
         print(f"[issue already open] {title}")
         return
-    r = requests.post(api, headers=headers, json={"title": title, "body": body, "labels": list(labels)},
-                      timeout=30)
+    # Assigned to the repo owner so the GitHub phone app's "Assigned" push notification fires.
+    owner = os.environ.get("GITHUB_REPOSITORY_OWNER") or REPO.split("/")[0]
+    r = requests.post(api, headers=headers, timeout=30,
+                      json={"title": title, "body": body, "labels": list(labels), "assignees": [owner]})
     r.raise_for_status()
     print(f"[issue opened] {title}: {r.json().get('html_url')}")
 
