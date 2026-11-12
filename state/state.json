@@ -1,5 +1,47 @@
 {
-  "days": {},
+  "days": {
+    "2026-11-12": {
+      "audio": null,
+      "order": [
+        "E",
+        "F",
+        "G",
+        "H",
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "reel": "morning-habits-part-4",
+      "results_done": false,
+      "variants": {
+        "A": {
+          "status": "pending"
+        },
+        "B": {
+          "status": "pending"
+        },
+        "C": {
+          "status": "pending"
+        },
+        "D": {
+          "status": "pending"
+        },
+        "E": {
+          "status": "pending"
+        },
+        "F": {
+          "status": "pending"
+        },
+        "G": {
+          "status": "pending"
+        },
+        "H": {
+          "status": "pending"
+        }
+      }
+    }
+  },
   "issues": {},
   "paused_until": null,
   "started_on": "2026-11-10",
