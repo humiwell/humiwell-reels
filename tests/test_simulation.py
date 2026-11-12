@@ -243,6 +243,8 @@ def test_run_stays_awake_and_posts_on_time(env, monkeypatch):
     monkeypatch.setenv("NOW", clock["now"].isoformat())
     monkeypatch.setattr(main_mod.time, "sleep", fake_sleep)
     monkeypatch.setattr(main_mod, "load_config", lambda: cfg)
+    # never touch the real git repo from a test (failed pushes also retry with sleeps, making posts late)
+    monkeypatch.setattr(main_mod, "commit_progress", lambda: None)
     m = manifest("2026-11-12")
     monkeypatch.setattr(main_mod, "load_manifests", lambda: ({"2026-11-12": m}, []))
     assert main_mod.main(["reels", "run"]) == 0

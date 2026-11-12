@@ -3,6 +3,7 @@ name: Check
 
 on:
   push:
+    branches: ["**"]  # branches only, so release tags (day-YYYY-MM-DD) don't start a run
   pull_request:
 
 jobs:
