@@ -1,7 +1,17 @@
 {
   "days": {
     "2026-11-12": {
-      "audio": null,
+      "audio": {
+        "ads_eligible": null,
+        "artist": "Sam Fender",
+        "duration_ms": 209457,
+        "id": "1478915717468599",
+        "manifest_title": "You Can't Always Get What You Want (Sam Fender)",
+        "note": "set in manifest",
+        "pinned": true,
+        "title": "You Can't Always Get What You Want",
+        "type": "music"
+      },
       "order": [
         "E",
         "F",
@@ -28,7 +38,12 @@
           "status": "pending"
         },
         "E": {
-          "status": "pending"
+          "container_id": "17896048272683021",
+          "media_id": "18128032714909275",
+          "permalink": "https://www.instagram.com/reel/Dfok0NtE2ka/",
+          "posted_at": "2026-11-12T07:59:08.037217+00:00",
+          "slot": 1,
+          "status": "posted"
         },
         "F": {
           "status": "pending"
