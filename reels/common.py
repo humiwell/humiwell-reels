@@ -2,6 +2,7 @@
 import json
 import os
 import subprocess
+import time
 from datetime import date, datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -150,6 +151,29 @@ def open_issue(title, body, dry_run=False, labels=("robot",)):
                       json={"title": title, "body": body, "labels": list(labels), "assignees": [owner]})
     r.raise_for_status()
     print(f"[issue opened] {title}: {r.json().get('html_url')}")
+
+
+def commit_progress():
+    """On GitHub only: saves state and results to the repo, and pulls in new batches or settings."""
+    if os.environ.get("GITHUB_ACTIONS") != "true":
+        return
+
+    def git(*args):
+        return subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True)
+
+    git("config", "user.name", "reels-robot")
+    git("config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com")
+    for p in ("state", "results", "results.csv"):
+        if (ROOT / p).exists():
+            git("add", p)
+    if git("diff", "--cached", "--quiet").returncode != 0:
+        git("commit", "-m", "Robot: update state and results")
+    for _ in range(3):
+        if git("pull", "--rebase", "--quiet").returncode == 0 and git("push", "--quiet").returncode == 0:
+            return
+        git("rebase", "--abort")
+        time.sleep(10)
+    print("Could not save progress to GitHub this time. It will be saved at the end of the run.")
 
 
 def set_repo_secret(name, value):

@@ -18,7 +18,7 @@ and tells you which hook won, at 17:00 UK on the third day after posting. It run
    You then open the trial reel in the Instagram app and tap *Share to followers* by hand.
 
 Posting slots (UK time, summer time handled): 07:00, 08:30, 10:00, 12:00, 14:00, 17:00, 19:00, 21:00.
-GitHub sometimes starts runs a few minutes late, so a post can land up to about 20 minutes after its slot.
+GitHub starts the robot only about once an hour, so each run stays awake until the next slot (if it is within 100 minutes) and posts within a minute of it. If GitHub skips a long stretch, the robot catches up late rather than missing a post.
 
 ## Everyday controls (all in `config.yml`)
 

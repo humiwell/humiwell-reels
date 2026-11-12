@@ -293,6 +293,20 @@ def post_one(cfg, state, graph, manifests, d, vid, now, log=print):
     return "ok"
 
 
+def next_slot_with_work(cfg, state, manifests, now):
+    """The next slot time, if something will be waiting to post then. Otherwise None."""
+    tz = local_tz(cfg)
+    today = now.astimezone(tz).date()
+    upcoming = [t for d in (today, today + timedelta(days=1)) for t in slot_times(cfg, d) if t > now]
+    if not upcoming:
+        return None
+    nxt = upcoming[0]
+    slot_day = nxt.astimezone(tz).date().isoformat()
+    queued = any(v["status"] in OPEN for day in state["days"].values() for v in day["variants"].values())
+    new_batch = slot_day in manifests and slot_day >= (state.get("started_on") or slot_day)
+    return nxt if queued or new_batch else None
+
+
 def _audio_blocked(state, now, d, why, dry):
     """Audio is required but did not work: post nothing, try again in an hour."""
     state["audio_retry_after"] = (now + timedelta(hours=1)).isoformat()

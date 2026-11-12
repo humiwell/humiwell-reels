@@ -5,9 +5,12 @@ Commands: run (token check + publish + results), validate, audio-shortlist,
 """
 import os
 import sys
+import time
+from datetime import timedelta
 
 from . import publish, results, shortlist, testreel, tokencheck
-from .common import load_config, load_manifests, load_state, now_utc, open_issue, save_state, video_url
+from .common import (commit_progress, load_config, load_manifests, load_state, now_utc, open_issue, save_state,
+                     video_url)
 from .graph import Graph
 
 
@@ -76,12 +79,27 @@ def main(argv):
         return 1
     if graph is not None:
         tokencheck.run(cfg, state, graph, now)
-    publish.run(cfg, state, graph, manifests, now)
-    if graph is not None:
-        results.run(cfg, state, graph, manifests, now)
-    if not cfg.get("dry_run", True):
-        save_state(state)
-    return 0
+    # GitHub starts this job only about once an hour. So after doing what is due, the job stays
+    # awake until the next slot (if it is close) and posts right on time, then saves progress.
+    stop_by = now + timedelta(minutes=int(cfg.get("max_run_minutes", 300)))
+    window = timedelta(minutes=int(cfg.get("wait_for_slot_minutes", 100)))
+    while True:
+        publish.run(cfg, state, graph, manifests, now)
+        if graph is not None:
+            results.run(cfg, state, graph, manifests, now)
+        if not cfg.get("dry_run", True):
+            save_state(state)
+            commit_progress()
+        nxt = publish.next_slot_with_work(cfg, state, manifests, now)
+        if (cfg.get("dry_run", True) or cfg.get("paused") or state.get("paused_until")
+                or nxt is None or nxt - now > window or nxt > stop_by):
+            return 0
+        print(f"Next slot at {nxt.isoformat()} ({(nxt - now).seconds // 60} min). Staying awake to post on time.")
+        time.sleep((nxt - now).total_seconds() + 15)
+        commit_progress()  # also pulls in new batches and config edits made while waiting
+        now = now_utc()
+        cfg = load_config()  # pick up a pause or other edits made while waiting
+        manifests, _ = load_manifests()
 
 
 if __name__ == "__main__":

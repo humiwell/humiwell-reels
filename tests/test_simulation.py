@@ -213,6 +213,49 @@ def test_manifest_audio_checks():
         common.check_manifest(dict(good, audio_title="Song"), "2026-11-16")
 
 
+def test_next_slot_with_work(env):
+    cfg, tmp = env
+    manifests = {"2026-11-16": manifest("2026-11-16")}
+    state, graph = common.load_state(), FakeGraph()
+    early = datetime(2026, 11, 16, 6, 10, tzinfo=timezone.utc)
+    assert publish.next_slot_with_work(cfg, state, manifests, early) == datetime(2026, 11, 16, 7, 0, tzinfo=timezone.utc)
+    # after the whole day is posted there is nothing to wait for
+    tick_through(cfg, state, graph, manifests, early, datetime(2026, 11, 16, 21, 15, tzinfo=timezone.utc),
+                 lambda *_: None)
+    assert publish.next_slot_with_work(cfg, state, manifests, datetime(2026, 11, 16, 21, 20, tzinfo=timezone.utc)) is None
+    # a batch for tomorrow makes tomorrow's 07:00 the next slot
+    manifests["2026-11-17"] = manifest("2026-11-17")
+    assert publish.next_slot_with_work(cfg, state, manifests, datetime(2026, 11, 17, 5, 30, tzinfo=timezone.utc)) \
+        == datetime(2026, 11, 17, 7, 0, tzinfo=timezone.utc)
+
+
+def test_run_stays_awake_and_posts_on_time(env, monkeypatch):
+    import os
+    from reels import __main__ as main_mod
+    cfg, tmp = env
+    clock = {"now": datetime(2026, 11, 12, 6, 10, tzinfo=timezone.utc)}
+
+    def fake_sleep(seconds):
+        clock["now"] += timedelta(seconds=seconds)
+        os.environ["NOW"] = clock["now"].isoformat()
+
+    monkeypatch.setenv("FAKE_API", "1")
+    monkeypatch.setenv("NOW", clock["now"].isoformat())
+    monkeypatch.setattr(main_mod.time, "sleep", fake_sleep)
+    monkeypatch.setattr(main_mod, "load_config", lambda: cfg)
+    m = manifest("2026-11-12")
+    monkeypatch.setattr(main_mod, "load_manifests", lambda: ({"2026-11-12": m}, []))
+    assert main_mod.main(["reels", "run"]) == 0
+    state = common.load_state()
+    posted = sorted(datetime.fromisoformat(v["posted_at"]) for v in state["days"]["2026-11-12"]["variants"].values()
+                    if v["status"] == "posted")
+    # started 06:10, may stay awake 300 min (until 11:10): the 07:00, 08:30 and 10:00 slots
+    expected = [datetime(2026, 11, 12, h, mi, tzinfo=timezone.utc) for h, mi in ((7, 0), (8, 30), (10, 0))]
+    assert len(posted) == 3
+    for p, e in zip(posted, expected):
+        assert timedelta(0) <= p - e < timedelta(minutes=1)
+
+
 def test_verdict_rules():
     a = {"reach": 200, "watch_pct": 60, "sends_per_1k": 5}
     b = {"reach": 200, "watch_pct": 49, "sends_per_1k": 9}

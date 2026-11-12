@@ -16,6 +16,12 @@ slots: ["07:00", "08:30", "10:00", "12:00", "14:00", "17:00", "19:00", "21:00"]
 # If runs were missed, the robot catches up, but posts at most this many per run.
 max_posts_per_run: 2
 
+# GitHub starts the robot only about once an hour. To post on time, a run stays awake
+# until the next slot if it is at most this many minutes away...
+wait_for_slot_minutes: 100
+# ...and one run never stays awake longer than this (GitHub's limit is 360).
+max_run_minutes: 300
+
 # Videos left unposted (for example after a daily limit) wait in the queue.
 # Videos older than this many days are dropped instead (an issue tells you).
 max_carry_days: 2
