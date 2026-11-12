@@ -26,7 +26,12 @@
       "results_done": false,
       "variants": {
         "A": {
-          "status": "pending"
+          "container_id": "17896095996683021",
+          "media_id": "18115600715145955",
+          "permalink": "https://www.instagram.com/reel/DfpPE49jBSr/",
+          "posted_at": "2026-11-12T14:08:27.004097+00:00",
+          "slot": 5,
+          "status": "posted"
         },
         "B": {
           "status": "pending"
