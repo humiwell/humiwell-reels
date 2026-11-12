@@ -1,0 +1,66 @@
+{
+  "contract_version": 1,
+  "reel": "sharper-brain-30s",
+  "post_date": "2026-11-21",
+  "caption": "A few small habits worth trying this week.\n\nNumber 1 comes first for a reason. While you sleep, your brain clears out waste that builds up during the day, which is why a short night shows up as slow, foggy thinking the next morning.\n\nNumber 3 has been the hardest swap for me: 10 pages of a book on the train instead of 10 minutes on my phone.\n\nSave this for your next foggy morning, and share it with the group chat.\n\n#BrainHealth #FocusTips #ProductivityUK #HealthyHabitsUK #UKWellness",
+  "audio_id": "2276077889353728",
+  "audio_title": "Shallow (Tommee Profitt, Fleurie)",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "7 HABITS FOR A SHARPER BRAIN IN YOUR 30S",
+      "file": "2026-11-21_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "7 DAILY MISTAKES THAT DULL YOUR BRAIN IN YOUR 30S",
+      "file": "2026-11-21_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "C",
+      "lever": "Curiosity gap (statement)",
+      "hook": "BRAIN FOG IN YOUR 30S ISN'T JUST AGE",
+      "file": "2026-11-21_C.mp4",
+      "length_s": 10.4
+    },
+    {
+      "id": "D",
+      "lever": "Identity call-out + number",
+      "hook": "30-SOMETHINGS: 7 HABITS FOR A SHARPER BRAIN",
+      "file": "2026-11-21_D.mp4",
+      "length_s": 10.27
+    },
+    {
+      "id": "E",
+      "lever": "Contrarian / price anchor",
+      "hook": "SKIP THE BRAIN TRAINING APPS. DO THESE 7 INSTEAD",
+      "file": "2026-11-21_E.mp4",
+      "length_s": 10.2
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "7 LAZY HABITS FOR A SHARPER BRAIN BY FRIDAY",
+      "file": "2026-11-21_F.mp4",
+      "length_s": 10.07
+    },
+    {
+      "id": "G",
+      "lever": "Authority",
+      "hook": "A NUTRITIONIST'S 7 HABITS FOR A SHARPER BRAIN",
+      "file": "2026-11-21_G.mp4",
+      "length_s": 10.0
+    },
+    {
+      "id": "H",
+      "lever": "Timely + local",
+      "hook": "SHORT UK DAYS, FOGGY HEAD. 7 HABITS THAT HELP",
+      "file": "2026-11-21_H.mp4",
+      "length_s": 9.9
+    }
+  ]
+}

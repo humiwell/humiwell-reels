@@ -1,0 +1,66 @@
+{
+  "contract_version": 1,
+  "reel": "black-friday-wellness-buys",
+  "post_date": "2026-11-24",
+  "caption": "A short list for before you open the deals.\n\nNumber 1 is my favourite. The day the phone started charging in the kitchen, my sleep got better. In Aviva's sleep survey, 94% of Brits use a screen in the hour before bed, so a £5 alarm clock is a cheap way to be in the other 6%.\n\nNumber 2 pairs well with the 16 to 18°C bedroom sleep experts recommend. Heating down, hot water bottle in.\n\nSave this before you start scrolling the deals, and send it to the friend with a basket full of gadgets.\n\n#BlackFridayUK #BudgetWellness #SleepTipsUK #CosyNights #UKWellness",
+  "audio_id": "393903371411311",
+  "audio_title": "The Nerve (Elad Marish)",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "SKIP THE BLACK FRIDAY SPLURGE. 7 WELLNESS BUYS UNDER £10 YOU'LL ACTUALLY USE",
+      "file": "2026-11-24_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "DON'T WASTE BLACK FRIDAY ON GADGETS. 7 BUYS UNDER £10",
+      "file": "2026-11-24_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "C",
+      "lever": "Curiosity gap (statement)",
+      "hook": "THE BEST SLEEP GADGET COSTS UNDER £10",
+      "file": "2026-11-24_C.mp4",
+      "length_s": 10.4
+    },
+    {
+      "id": "D",
+      "lever": "Identity call-out + number",
+      "hook": "BAD SLEEPERS: 7 BUYS UNDER £10 YOU'LL USE",
+      "file": "2026-11-24_D.mp4",
+      "length_s": 10.27
+    },
+    {
+      "id": "E",
+      "lever": "Contrarian / price anchor",
+      "hook": "SKIP THE £300 SLEEP GADGET. BUY THESE 7 INSTEAD",
+      "file": "2026-11-24_E.mp4",
+      "length_s": 10.2
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "7 LAZY WELLNESS BUYS UNDER £10 FOR WINTER",
+      "file": "2026-11-24_F.mp4",
+      "length_s": 10.07
+    },
+    {
+      "id": "G",
+      "lever": "Authority",
+      "hook": "A NUTRITIONIST'S 7 WELLNESS BUYS UNDER £10",
+      "file": "2026-11-24_G.mp4",
+      "length_s": 10.0
+    },
+    {
+      "id": "H",
+      "lever": "Timely + local",
+      "hook": "BLACK FRIDAY UK: 7 WELLNESS BUYS UNDER £10",
+      "file": "2026-11-24_H.mp4",
+      "length_s": 9.9
+    }
+  ]
+}

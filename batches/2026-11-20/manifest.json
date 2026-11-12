@@ -1,0 +1,66 @@
+{
+  "contract_version": 1,
+  "reel": "what-i-eat-in-a-workday",
+  "post_date": "2026-11-20",
+  "caption": "A realistic day of food, start to finish.\n\nThe 3pm crash used to get me every day. What changed it was protein at breakfast and an actual lunch instead of a sandwich at my desk.\n\nThe 3:30 swap is the one I'd start with. A pot of Greek yoghurt has far more protein than a couple of biscuits, so it keeps you going until tea instead of setting you up for another sugar dip.\n\nSave this for your next workday, and send it to the colleague who lives on meal deals.\n\n#WhatIEatInADay #HealthyEatingUK #EnergyTips #UKFood #UKWellness",
+  "audio_id": "1620971306430249",
+  "audio_title": "Flower In A Hurricane (Justice, Tame Impala, SZA, King Gizzard & the Lizard Wizard)",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "WHAT I EAT IN A WORKDAY TO AVOID THE 3PM CRASH",
+      "file": "2026-11-20_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "THE EATING MISTAKES BEHIND YOUR 3PM CRASH",
+      "file": "2026-11-20_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "C",
+      "lever": "Curiosity gap (statement)",
+      "hook": "YOUR 3PM CRASH STARTS AT BREAKFAST",
+      "file": "2026-11-20_C.mp4",
+      "length_s": 10.4
+    },
+    {
+      "id": "D",
+      "lever": "Identity call-out + number",
+      "hook": "DESK WORKERS: WHAT I EAT TO SKIP THE 3PM CRASH",
+      "file": "2026-11-20_D.mp4",
+      "length_s": 10.27
+    },
+    {
+      "id": "E",
+      "lever": "Contrarian / price anchor",
+      "hook": "SKIP THE £2 ENERGY DRINK. EAT THIS INSTEAD",
+      "file": "2026-11-20_E.mp4",
+      "length_s": 10.2
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "A LAZY WORKDAY MENU THAT BEATS THE 3PM CRASH",
+      "file": "2026-11-20_F.mp4",
+      "length_s": 10.07
+    },
+    {
+      "id": "G",
+      "lever": "Authority",
+      "hook": "A NUTRITIONIST'S WORKDAY MENU FOR NO 3PM CRASH",
+      "file": "2026-11-20_G.mp4",
+      "length_s": 10.0
+    },
+    {
+      "id": "H",
+      "lever": "Timely + local",
+      "hook": "UK WINTER MAKES 3PM HARDER. HERE'S MY WORKDAY MENU",
+      "file": "2026-11-20_H.mp4",
+      "length_s": 9.9
+    }
+  ]
+}

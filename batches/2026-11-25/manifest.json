@@ -1,0 +1,66 @@
+{
+  "contract_version": 1,
+  "reel": "christmas-party-season",
+  "post_date": "2026-11-25",
+  "caption": "A few habits worth planning before your diary fills up.\n\nNumber 3 is the one to plan now. Pick your big nights, say no to the rest, and you'll still have energy left for Christmas Day.\n\nNumber 2 is simple and it works. The UK Chief Medical Officers advise no more than 14 units of alcohol a week, spread over three or more days. A glass of water between drinks slows you down without anyone noticing.\n\nSave this for party season, and send it to your work Christmas party crew.\n\n#ChristmasPartySeason #FestiveWellness #ChristmasUK #BusyAdultsUK #UKWellness",
+  "audio_id": "1418611098781784",
+  "audio_title": "Too Cool (Giulio Cercato)",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "CHRISTMAS PARTY SEASON STARTS NOW. 7 HABITS SO YOU DON'T FEEL WRECKED BY DECEMBER",
+      "file": "2026-11-25_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "7 PARTY SEASON MISTAKES THAT WRECK YOUR DECEMBER",
+      "file": "2026-11-25_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "C",
+      "lever": "Curiosity gap (statement)",
+      "hook": "YOUR DECEMBER ENERGY STARTS IN NOVEMBER",
+      "file": "2026-11-25_C.mp4",
+      "length_s": 10.4
+    },
+    {
+      "id": "D",
+      "lever": "Identity call-out + number",
+      "hook": "WORK PARTY CREW: 7 HABITS FOR PARTY SEASON",
+      "file": "2026-11-25_D.mp4",
+      "length_s": 10.13
+    },
+    {
+      "id": "E",
+      "lever": "Contrarian / price anchor",
+      "hook": "SKIP THE £20 DETOX TEA. DO THESE 7 INSTEAD",
+      "file": "2026-11-25_E.mp4",
+      "length_s": 9.9
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "7 LAZY HABITS FOR GETTING THROUGH PARTY SEASON",
+      "file": "2026-11-25_F.mp4",
+      "length_s": 9.63
+    },
+    {
+      "id": "G",
+      "lever": "Authority",
+      "hook": "A NUTRITIONIST'S 7 HABITS FOR PARTY SEASON",
+      "file": "2026-11-25_G.mp4",
+      "length_s": 10.0
+    },
+    {
+      "id": "H",
+      "lever": "Timely + local",
+      "hook": "BLACK FRIDAY TO NEW YEAR'S EVE: 7 HABITS TO GET THROUGH",
+      "file": "2026-11-25_H.mp4",
+      "length_s": 9.9
+    }
+  ]
+}

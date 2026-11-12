@@ -1,0 +1,66 @@
+{
+  "contract_version": 1,
+  "reel": "couples-healthy-habits",
+  "post_date": "2026-11-22",
+  "caption": "Seven small things to try together this week.\n\nThere's research behind that. A UCL study of more than 3,700 couples found that people were more likely to quit smoking, get active or lose weight when their partner made the same change at the same time.\n\nNumber 1 is our favourite. A 20-minute walk after dinner, phones away, is when we actually talk about our day.\n\nSave this for the weekend, and send it to your other half. Pick one to start together.\n\n#HealthyCouple #CouplesGoals #WalkTogether #HealthyHabitsUK #UKWellness",
+  "audio_id": "510358037368479",
+  "audio_title": "Séquoia (Yann Falquet)",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "7 HEALTHY HABITS COUPLES CAN DO TOGETHER (THAT DON'T FEEL LIKE A CHORE)",
+      "file": "2026-11-22_A.mp4",
+      "length_s": 10.5
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "THE MISTAKE: GETTING HEALTHY ON YOUR OWN",
+      "file": "2026-11-22_B.mp4",
+      "length_s": 10.23
+    },
+    {
+      "id": "C",
+      "lever": "Curiosity gap (statement)",
+      "hook": "THE BEST HABIT IN YOUR HOUSE IS A SHARED ONE",
+      "file": "2026-11-22_C.mp4",
+      "length_s": 10.0
+    },
+    {
+      "id": "D",
+      "lever": "Identity call-out + number",
+      "hook": "COUPLES WHO LIVE TOGETHER: 7 EASY HABITS TO SHARE",
+      "file": "2026-11-22_D.mp4",
+      "length_s": 9.73
+    },
+    {
+      "id": "E",
+      "lever": "Contrarian / price anchor",
+      "hook": "SKIP THE £50 DATE NIGHT. DO THESE 7 INSTEAD",
+      "file": "2026-11-22_E.mp4",
+      "length_s": 9.5
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "7 LAZY HABITS FOR COUPLES TO START TONIGHT",
+      "file": "2026-11-22_F.mp4",
+      "length_s": 9.23
+    },
+    {
+      "id": "G",
+      "lever": "Authority",
+      "hook": "A NUTRITIONIST'S 7 HABITS FOR COUPLES",
+      "file": "2026-11-22_G.mp4",
+      "length_s": 10.0
+    },
+    {
+      "id": "H",
+      "lever": "Timely + local",
+      "hook": "COSY UK NIGHTS IN. 7 HEALTHY HABITS FOR TWO",
+      "file": "2026-11-22_H.mp4",
+      "length_s": 9.6
+    }
+  ]
+}

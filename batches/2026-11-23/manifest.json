@@ -1,0 +1,66 @@
+{
+  "contract_version": 1,
+  "reel": "your-nan-wellness-habits",
+  "post_date": "2026-11-23",
+  "caption": "Some habits never needed a trend.\n\nMost of these line up with what the NHS still recommends today, like moving every day and keeping a regular bedtime.\n\nNumber 7 might be the most underrated. Loneliness affects health so much that the UK appointed its first Minister for Loneliness in 2018. A five-minute chat over the fence counts.\n\nSave this, and send it to someone whose nan was exactly like this.\n\n#OldSchoolWellness #NanKnowsBest #SimpleLiving #BritishLife #UKWellness",
+  "audio_id": "1105711964193043",
+  "audio_title": "Cotton Club (Sugartapes)",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "YOUR NAN WAS DOING THESE 7 WELLNESS HABITS BEFORE INSTAGRAM MADE THEM COOL",
+      "file": "2026-11-23_A.mp4",
+      "length_s": 10.57
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "7 OLD HABITS WE WERE WRONG TO DROP",
+      "file": "2026-11-23_B.mp4",
+      "length_s": 10.3
+    },
+    {
+      "id": "C",
+      "lever": "Curiosity gap (statement)",
+      "hook": "THE BEST WELLNESS ROUTINE IS YOUR NAN'S",
+      "file": "2026-11-23_C.mp4",
+      "length_s": 10.07
+    },
+    {
+      "id": "D",
+      "lever": "Identity call-out + number",
+      "hook": "OVER 50S: 7 OLD-SCHOOL HABITS WORTH KEEPING",
+      "file": "2026-11-23_D.mp4",
+      "length_s": 9.8
+    },
+    {
+      "id": "E",
+      "lever": "Contrarian / price anchor",
+      "hook": "SKIP THE £40 WELLNESS APP. DO WHAT NAN DID",
+      "file": "2026-11-23_E.mp4",
+      "length_s": 9.57
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "7 LAZY HABITS YOUR NAN SWORE BY",
+      "file": "2026-11-23_F.mp4",
+      "length_s": 9.3
+    },
+    {
+      "id": "G",
+      "lever": "Authority",
+      "hook": "A NUTRITIONIST ON 7 HABITS NAN GOT RIGHT",
+      "file": "2026-11-23_G.mp4",
+      "length_s": 10.0
+    },
+    {
+      "id": "H",
+      "lever": "Timely + local",
+      "hook": "A BRITISH WINTER, THE NAN WAY: 7 HABITS",
+      "file": "2026-11-23_H.mp4",
+      "length_s": 9.67
+    }
+  ]
+}
