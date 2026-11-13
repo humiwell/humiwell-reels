@@ -31,7 +31,9 @@ permissions:
   contents: write
 
 concurrency:
-  group: reels-robot
+  # The song finder only reads, so it gets its own queue and never waits for (or bumps) the robot.
+  # Every other step can post or save state, so it shares the robot's queue.
+  group: ${{ inputs.step == 'audio-shortlist' && 'reels-songs' || 'reels-robot' }}
   cancel-in-progress: false
 
 jobs:
