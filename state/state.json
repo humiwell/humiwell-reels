@@ -117,7 +117,12 @@
       "results_done": false,
       "variants": {
         "A": {
-          "status": "pending"
+          "container_id": "17896237749683021",
+          "media_id": "18200682757385299",
+          "permalink": "https://www.instagram.com/reel/DfrlSMEgFwg/",
+          "posted_at": "2026-11-13T12:00:57.889176+00:00",
+          "slot": 4,
+          "status": "posted"
         },
         "B": {
           "status": "pending"
