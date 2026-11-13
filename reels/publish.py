@@ -84,7 +84,7 @@ def audio_config(cfg, audio):
             "video_volume": int(a.get("video_volume", 0))}
 
 
-def run(cfg, state, graph, manifests, now, log=print):
+def run(cfg, state, graph, manifests, now, log=print, checkpoint=None):
     dry = cfg.get("dry_run", True)
     tz = local_tz(cfg)
     today = now.astimezone(tz).date()
@@ -159,16 +159,19 @@ def run(cfg, state, graph, manifests, now, log=print):
             log(f"  could not read the publishing allowance: {e}")
 
     for d, vid in queue[:todo]:
-        result = post_one(cfg, state, graph, manifests, d, vid, now, log)
+        result = post_one(cfg, state, graph, manifests, d, vid, now, log, checkpoint)
         if result == "limit":
             return _limit_reached(state, today, state["days"][d]["variants"][vid].get("error", ""), dry)
         if result in ("busy", "error", "audio"):
             return
         if not dry:
             save_state(state)
+            if checkpoint and not checkpoint():
+                log("  could not save this post to GitHub. Posting nothing more this run.")
+                return
 
 
-def post_one(cfg, state, graph, manifests, d, vid, now, log=print):
+def post_one(cfg, state, graph, manifests, d, vid, now, log=print, checkpoint=None):
     dry = cfg.get("dry_run", True)
     day = state["days"][d]
     rec = day["variants"][vid]
@@ -267,6 +270,11 @@ def post_one(cfg, state, graph, manifests, d, vid, now, log=print):
         if status == "PUBLISHED":
             media_id = None  # posted by an earlier run that stopped before saving
         else:
+            # Claim first: record the upload on GitHub before publishing, so any later run sees it and
+            # finishes this same upload instead of making a second post.
+            if checkpoint and not checkpoint():
+                log("  could not save the upload to GitHub, so not publishing it now (avoids a duplicate).")
+                return "busy"
             media_id = graph.publish(rec["container_id"])
     except GraphError as e:
         rec["error"] = str(e)

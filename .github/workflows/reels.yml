@@ -25,6 +25,10 @@ jobs:
     timeout-minutes: 330
     steps:
       - uses: actions/checkout@v4
+        with:
+          # A run can wait in the queue for hours. Start from the latest files, not the ones from
+          # when it was queued (the cause of the 12 and 13 Nov duplicates).
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"

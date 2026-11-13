@@ -83,23 +83,43 @@ def main(argv):
     # awake until the next slot (if it is close) and posts right on time, then saves progress.
     stop_by = now + timedelta(minutes=int(cfg.get("max_run_minutes", 300)))
     window = timedelta(minutes=int(cfg.get("wait_for_slot_minutes", 100)))
+    live = not cfg.get("dry_run", True)
+
+    def checkpoint():
+        """Saves to GitHub. Posting only goes ahead after a successful save (see commit_progress)."""
+        save_state(state)
+        return commit_progress()
+
     while True:
-        publish.run(cfg, state, graph, manifests, now)
+        if live:
+            # Sync first: another run may have posted since this copy was made. Act only on the latest.
+            if not checkpoint():
+                return _sync_failed("before posting", cfg)
+            cfg = load_config()
+            state = load_state()
+            manifests, _ = load_manifests()
+        publish.run(cfg, state, graph, manifests, now, checkpoint=checkpoint if live else None)
         if graph is not None:
             results.run(cfg, state, graph, manifests, now)
-        if not cfg.get("dry_run", True):
-            save_state(state)
-            commit_progress()
+        if live and not checkpoint():
+            return _sync_failed("after posting", cfg)
         nxt = publish.next_slot_with_work(cfg, state, manifests, now)
         if (cfg.get("dry_run", True) or cfg.get("paused") or state.get("paused_until")
                 or nxt is None or nxt - now > window or nxt > stop_by):
             return 0
         print(f"Next slot at {nxt.isoformat()} ({(nxt - now).seconds // 60} min). Staying awake to post on time.")
         time.sleep((nxt - now).total_seconds() + 15)
-        commit_progress()  # also pulls in new batches and config edits made while waiting
-        now = now_utc()
-        cfg = load_config()  # pick up a pause or other edits made while waiting
-        manifests, _ = load_manifests()
+        now = now_utc()  # the next loop syncs, which also picks up new batches and config edits
+
+
+def _sync_failed(when, cfg):
+    """Stop this run rather than risk posting from an out-of-date copy. The next run starts fresh."""
+    print(f"Could not sync with GitHub {when}. Stopping this run so nothing is posted twice.")
+    open_issue("Robot could not save its progress",
+               f"A run could not sync with GitHub {when}, so it stopped posting. The next run starts from "
+               "a fresh copy and carries on. If this keeps happening, check the Actions tab.",
+               cfg.get("dry_run", True))
+    return 1
 
 
 if __name__ == "__main__":

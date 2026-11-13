@@ -244,7 +244,7 @@ def test_run_stays_awake_and_posts_on_time(env, monkeypatch):
     monkeypatch.setattr(main_mod.time, "sleep", fake_sleep)
     monkeypatch.setattr(main_mod, "load_config", lambda: cfg)
     # never touch the real git repo from a test (failed pushes also retry with sleeps, making posts late)
-    monkeypatch.setattr(main_mod, "commit_progress", lambda: None)
+    monkeypatch.setattr(main_mod, "commit_progress", lambda: True)
     m = manifest("2026-11-12")
     monkeypatch.setattr(main_mod, "load_manifests", lambda: ({"2026-11-12": m}, []))
     assert main_mod.main(["reels", "run"]) == 0
@@ -274,3 +274,80 @@ def test_dry_run_posts_nothing(env):
     publish.run(cfg, state, graph, manifests, datetime(2026, 11, 16, 12, 5, tzinfo=timezone.utc),
                 lambda *_: None)
     assert graph.posts == [] and graph.containers == {}
+
+
+# ---- duplicates: a run must never post from an out-of-date copy (12 and 13 Nov 2026) ----------------
+
+def _robot(env, monkeypatch, now, sync, graph=None):
+    """Runs `python -m reels run` once at `now`, with `sync` standing in for the GitHub save/pull."""
+    import os
+    from reels import __main__ as main_mod
+    cfg, tmp = env
+    cfg["max_run_minutes"] = 1  # one pass, no staying awake
+    graph = graph or FakeGraph()
+    monkeypatch.setenv("NOW", now.isoformat())
+    monkeypatch.setattr(main_mod, "make_graph", lambda c: graph)
+    monkeypatch.setattr(main_mod, "load_config", lambda: cfg)
+    monkeypatch.setattr(main_mod, "load_manifests", lambda: ({"2026-11-13": manifest("2026-11-13")}, []))
+    monkeypatch.setattr(main_mod, "commit_progress", sync)
+    monkeypatch.setattr(main_mod.time, "sleep", lambda s: None)
+    monkeypatch.setattr(main_mod.tokencheck, "run", lambda *a: None)
+    code = main_mod.main(["reels", "run"])
+    return code, graph
+
+
+def _states_after(env, *times):
+    """Real robot states after posting at each of the given times (fresh fake Instagram)."""
+    cfg, tmp = env
+    state, graph, out = common.load_state(), FakeGraph(), []
+    m = {"2026-11-13": manifest("2026-11-13")}
+    for t in times:
+        publish.run(cfg, state, graph, m, t, lambda *_: None)
+        out.append(json.loads(json.dumps(state)))
+    return out
+
+
+def test_stale_copy_does_not_post_again(env, monkeypatch):
+    # This copy was made at 07:56 (one version posted). Another run then posted the 08:30 version.
+    t0700, t0830 = (datetime(2026, 11, 13, 7, 0, 30, tzinfo=timezone.utc),
+                    datetime(2026, 11, 13, 8, 30, 30, tzinfo=timezone.utc))
+    stale, latest = _states_after(env, t0700, t0830)
+    common.save_state(stale)
+
+    def sync():  # pulling from GitHub brings in the other run's post
+        common.save_state(latest)
+        return True
+
+    code, graph = _robot(env, monkeypatch, datetime(2026, 11, 13, 8, 31, 52, tzinfo=timezone.utc), sync)
+    assert code == 0
+    assert graph.posts == []  # nothing is due any more, so no duplicate
+    posted = [v for v in common.load_state()["days"]["2026-11-13"]["variants"].values() if v["status"] == "posted"]
+    assert len(posted) == 2
+
+
+def test_no_post_when_github_cannot_be_reached(env, monkeypatch):
+    code, graph = _robot(env, monkeypatch, datetime(2026, 11, 13, 7, 0, 30, tzinfo=timezone.utc), lambda: False)
+    assert code == 1
+    assert graph.posts == []
+
+
+def test_upload_is_claimed_before_publishing(env, monkeypatch):
+    calls = []
+
+    def sync_then_fail():  # first sync works, saving the claim fails
+        calls.append(1)
+        return len(calls) == 1
+
+    t = datetime(2026, 11, 13, 7, 0, 30, tzinfo=timezone.utc)
+    code, graph = _robot(env, monkeypatch, t, sync_then_fail)
+    assert code == 1 and graph.posts == []
+    recs = common.load_state()["days"]["2026-11-13"]["variants"].values()
+    waiting = [v for v in recs if v["status"] == "container"]
+    assert len(waiting) == 1  # the upload is remembered, not lost
+
+    # The next run finishes that same upload instead of making a new one.
+    code, graph = _robot(env, monkeypatch, t + timedelta(minutes=15), lambda: True, graph)
+    assert code == 0
+    assert len(graph.posts) == 1
+    recs = common.load_state()["days"]["2026-11-13"]["variants"].values()
+    assert [v["container_id"] for v in recs if v["status"] == "posted"] == [waiting[0]["container_id"]]

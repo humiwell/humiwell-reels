@@ -20,6 +20,8 @@ and tells you which hook won, at 17:00 UK on the third day after posting. It run
 Posting slots (UK time, summer time handled): 07:00, 08:30, 10:00, 12:00, 14:00, 17:00, 19:00, 21:00.
 GitHub starts the robot only about once an hour, so each run stays awake until the next slot (if it is within 180 minutes) and posts within a minute of it. If GitHub skips a long stretch, the robot catches up late rather than missing a post.
 
+No duplicates: before every post the robot syncs with GitHub and records the upload there first, then publishes, then records the post. If any save fails it stops posting for that run (a late post beats a duplicate) and opens an issue.
+
 ## Everyday controls (all in `config.yml`)
 
 Open `config.yml` on GitHub, click the pencil, change a line, click *Commit changes*.

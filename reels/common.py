@@ -154,9 +154,13 @@ def open_issue(title, body, dry_run=False, labels=("robot",)):
 
 
 def commit_progress():
-    """On GitHub only: saves state and results to the repo, and pulls in new batches or settings."""
+    """On GitHub only: saves state and results to the repo, and pulls in new batches or settings.
+
+    Returns True when this copy and GitHub agree afterwards (always True off GitHub). The robot only
+    posts right after a True, so it never acts on an out-of-date copy (that is how duplicates happened).
+    """
     if os.environ.get("GITHUB_ACTIONS") != "true":
-        return
+        return True
 
     def git(*args):
         return subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True)
@@ -170,10 +174,11 @@ def commit_progress():
         git("commit", "-m", "Robot: update state and results")
     for _ in range(3):
         if git("pull", "--rebase", "--quiet").returncode == 0 and git("push", "--quiet").returncode == 0:
-            return
+            return True
         git("rebase", "--abort")
         time.sleep(10)
-    print("Could not save progress to GitHub this time. It will be saved at the end of the run.")
+    print("Could not sync progress with GitHub.")
+    return False
 
 
 def set_repo_secret(name, value):
