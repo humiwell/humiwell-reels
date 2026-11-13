@@ -92,7 +92,17 @@
       }
     },
     "2026-11-13": {
-      "audio": null,
+      "audio": {
+        "ads_eligible": null,
+        "artist": "Past Day",
+        "duration_ms": 161428,
+        "id": "263896829897972",
+        "manifest_title": "November (Past Day)",
+        "note": "set in manifest",
+        "pinned": true,
+        "title": "November",
+        "type": "music"
+      },
       "order": [
         "F",
         "G",
@@ -122,7 +132,12 @@
           "status": "pending"
         },
         "F": {
-          "status": "pending"
+          "container_id": "17896204530683021",
+          "media_id": "18157995895522183",
+          "permalink": "https://www.instagram.com/reel/DfrC3_hAmfP/",
+          "posted_at": "2026-11-13T07:00:16.427266+00:00",
+          "slot": 1,
+          "status": "posted"
         },
         "G": {
           "status": "pending"
