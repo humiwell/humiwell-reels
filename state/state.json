@@ -217,7 +217,11 @@
         },
         "B": {
           "container_id": "17896415940683021",
-          "status": "container"
+          "media_id": "18148330552597694",
+          "permalink": "https://www.instagram.com/reel/DfuKFuwEkQU/",
+          "posted_at": "2026-11-14T12:01:01.843603+00:00",
+          "slot": 4,
+          "status": "posted"
         },
         "C": {
           "status": "pending"
