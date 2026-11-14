@@ -216,7 +216,8 @@
           "status": "posted"
         },
         "B": {
-          "status": "pending"
+          "container_id": "17896415940683021",
+          "status": "container"
         },
         "C": {
           "status": "pending"
