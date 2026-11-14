@@ -183,7 +183,17 @@
       }
     },
     "2026-11-14": {
-      "audio": null,
+      "audio": {
+        "ads_eligible": null,
+        "artist": "no/vox, karaokey",
+        "duration_ms": 243529,
+        "id": "1668904424802271",
+        "manifest_title": "lady killers ii (no/vox, karaokey)",
+        "note": "set in manifest",
+        "pinned": true,
+        "title": "lady killers ii",
+        "type": "music"
+      },
       "order": [
         "G",
         "H",
@@ -216,7 +226,8 @@
           "status": "pending"
         },
         "G": {
-          "status": "pending"
+          "container_id": "17896379364683021",
+          "status": "container"
         },
         "H": {
           "status": "pending"
