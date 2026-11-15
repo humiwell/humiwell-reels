@@ -3,13 +3,14 @@ from reels.graph import GraphError
 
 
 class FakeGraph:
-    def __init__(self, limit_after=None, busy_first=False, audio_fails=False, refuse_ids=()):
+    def __init__(self, limit_after=None, busy_first=False, audio_fails=False, refuse_ids=(), refuse_with_voice=False):
         self.posts = []
         self.containers = {}
         self.limit_after = limit_after
         self.busy_first = busy_first
         self.audio_fails = audio_fails
         self.refuse_ids = set(refuse_ids)
+        self.refuse_with_voice = refuse_with_voice  # pretend Instagram refuses a track when the voice is on
         self.token = "fake"
 
     def publishing_limit(self):
@@ -27,7 +28,8 @@ class FakeGraph:
             raise GraphError(400, 9, 2207042, "You reached maximum number of posts")
         cid = f"c{len(self.containers) + 1}"
         status = "IN_PROGRESS" if self.busy_first else "FINISHED"
-        if audio and (self.audio_fails or audio["audio_id"] in self.refuse_ids):
+        voice_refused = self.refuse_with_voice and audio and audio.get("video_volume", 0) > 0
+        if audio and (self.audio_fails or audio["audio_id"] in self.refuse_ids or voice_refused):
             status = "ERROR"
         self.containers[cid] = {"url": url, "audio": audio, "strategy": strategy, "status": status}
         self.busy_first = False

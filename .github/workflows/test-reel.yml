@@ -3,6 +3,7 @@
 #   post     = publishes ONE test trial reel (only if confirm is POST)
 #   insights = reads the numbers of that test reel
 #   audio-shortlist = lists trending music with every field, or search results (read-only)
+#   th-check = talking head: upload-only containers (never published) for a voice video + quiet track
 name: Test reel
 
 on:
@@ -10,7 +11,7 @@ on:
     inputs:
       step:
         type: choice
-        options: [check, post, insights, audio-shortlist]
+        options: [check, post, insights, audio-shortlist, th-check]
         default: check
       host:
         description: "Video host for the post step"
@@ -24,7 +25,10 @@ on:
         description: "audio-shortlist only: search words, comma separated (empty = trending list)"
         default: ""
       audio_id:
-        description: "post only: track id to use (empty = normal choice)"
+        description: "post / th-check: track id to use (empty = normal choice)"
+        default: ""
+      video_url:
+        description: "th-check only: link to a talking-head video in a GitHub Release"
         default: ""
 
 permissions:
@@ -67,6 +71,7 @@ jobs:
           CONFIRM: ${{ inputs.confirm }}
           AUDIO_SEARCH: ${{ inputs.search }}
           TEST_AUDIO_ID: ${{ inputs.audio_id }}
+          TEST_VIDEO_URL: ${{ inputs.video_url }}
         run: |
           if [ "${{ inputs.step }}" = "audio-shortlist" ]; then python -m reels audio-shortlist
           else python -m reels test-${{ inputs.step }}; fi

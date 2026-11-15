@@ -73,6 +73,28 @@ If Instagram refuses a chosen track before any version of the day is posted, the
 the top trending track for all 8 versions and opens an issue "Chosen audio failed for YYYY-MM-DD"
 naming both tracks and the error. Videos must stay silent: the robot sets the video's own volume to 0.
 
+## 2b. Talking-head batches (4 hooks, with voice)
+
+Talking-head reels use the same contract with these differences:
+
+| Thing | Rule |
+|---|---|
+| Folder | `batches/th-YYYY-MM-DD/manifest.json` (the `th-` prefix keeps them apart from B-roll on the same date) |
+| Manifest | add `"kind": "talking-head"`; `post_date` is the plain date `YYYY-MM-DD` |
+| Release tag | `day-th-YYYY-MM-DD` |
+| File names | `YYYY-MM-DD_A.mp4` ... `YYYY-MM-DD_D.mp4` (versions A to D = hook 1 to 4) |
+| Format | MP4, H.264, 1080x1920, 30 fps, under 60 s, under 100 MB, **with the voice track** |
+| Audio | one track for all 4 (`audio_id` strongly recommended), played at `talking_head.audio_volume` (3) under the voice (`video_volume` 100) |
+| Slots | `talking_head.slots` in config.yml, separate from the B-roll slots |
+| Winner issue | `talking_head.issue_days_after` (2) days after the trial date, titled "Talking head results ..." |
+
+If Instagram refuses the track with the voice on, nothing from that talking-head day is posted, the robot opens
+"Talking-head audio is not attaching" and retries hourly. B-roll posting is never held up by it.
+
+```bash
+gh release create day-th-2026-11-16 "Output/Final/2026-11-16 iron twice/2026-11-16_"*.mp4 --repo humiwell/humiwell-reels --title "th-2026-11-16" --notes "Talking head for 2026-11-16"
+```
+
 ## 3. Timing
 
 - Push the whole week (7 releases + 7 manifests) by Sunday 20:00 UK for the week starting Monday.

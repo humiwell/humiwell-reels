@@ -1,7 +1,8 @@
 """Posts every trial reel that is due and not yet posted. Safe to run again and again."""
 from datetime import date, datetime, timedelta
 
-from .common import local_tz, open_issue, save_state, slot_times, video_url
+from .common import (KINDS, batch_kind, key_date, key_kind, lane, lane_slot_times, local_tz, open_issue,
+                     save_state, video_url)
 from .graph import GraphError
 
 OPEN = ("pending", "container")
@@ -13,14 +14,16 @@ def rotation(variant_ids, day):
     return variant_ids[k:] + variant_ids[:k]
 
 
-def register_day(state, manifest):
-    d = manifest["post_date"]
+def register_day(state, manifest, key=None):
+    """key is the batch key (folder name). Defaults to post_date, the B-roll key."""
+    d = key or manifest["post_date"]
     if d in state["days"]:
         return
     ids = [v["id"] for v in manifest["variants"]]
     state["days"][d] = {
         "reel": manifest["reel"],
-        "order": rotation(ids, date.fromisoformat(d)),
+        "kind": batch_kind(manifest),
+        "order": rotation(ids, date.fromisoformat(key_date(d))),
         "audio": None,
         "variants": {i: {"status": "pending"} for i in ids},
         "results_done": False,
@@ -75,13 +78,18 @@ def choose_audio(cfg, graph, post_date, log=print, refused=(), manifest=None):
     return {"id": None, "note": "no usable trending audio found"}
 
 
-def audio_config(cfg, audio):
+def audio_config(cfg, audio, kind="broll"):
+    """Talking head keeps the voice (video_volume 100) under a quiet track (audio_volume 3)."""
     if not audio or not audio.get("id"):
         return None
-    a = cfg["audio"]
+    L = lane(cfg, kind)
     return {"audio_id": audio["id"],
-            "audio_volume": int(a.get("audio_volume", 100)),
-            "video_volume": int(a.get("video_volume", 0))}
+            "audio_volume": L["audio_volume"],
+            "video_volume": L["video_volume"]}
+
+
+def _retry_key(kind):
+    return "audio_retry_after" if kind == "broll" else "th_audio_retry_after"
 
 
 def run(cfg, state, graph, manifests, now, log=print, checkpoint=None):
@@ -100,14 +108,16 @@ def run(cfg, state, graph, manifests, now, log=print, checkpoint=None):
     start = state.get("started_on") or today.isoformat()
     oldest = (today - timedelta(days=cfg.get("max_carry_days", 2))).isoformat()
 
-    # 1. Add today's batch (and any recent ones) to the queue.
-    for d, m in sorted(manifests.items()):
-        if max(start, oldest) <= d <= today.isoformat():
-            register_day(state, m)
+    # 1. Add today's batches (and any recent ones) to the queue.
+    for key, m in sorted(manifests.items()):
+        if not lane(cfg, batch_kind(m)).get("enabled", True):
+            continue
+        if max(start, oldest) <= key_date(key) <= today.isoformat():
+            register_day(state, m, key)
 
     # 2. Drop versions that waited too long.
     for d, day in state["days"].items():
-        if d < oldest:
+        if key_date(d) < oldest:
             late = [i for i, v in day["variants"].items() if v["status"] in OPEN]
             for i in late:
                 day["variants"][i]["status"] = "skipped"
@@ -117,36 +127,55 @@ def run(cfg, state, graph, manifests, now, log=print, checkpoint=None):
                            f"{cfg.get('max_carry_days', 2)} days and were dropped. Results for this "
                            "day will compare only the versions that went out.", dry)
 
-    # 3. How many posts are due right now?
-    slots = slot_times(cfg, today)
+    # 3. Each kind of batch posts in its own slots. A problem in one lane never stops the other.
+    for kind in KINDS:
+        if _run_lane(cfg, state, graph, manifests, now, today, kind, log, checkpoint) == "stop":
+            return
+
+
+def _run_lane(cfg, state, graph, manifests, now, today, kind, log, checkpoint):
+    dry = cfg.get("dry_run", True)
+    tz = local_tz(cfg)
+    L = lane(cfg, kind)
+    if not L.get("enabled", True) or not L["slots"]:
+        return None
+    tag = "" if kind == "broll" else "[talking head] "
+    days = [d for d in sorted(state["days"]) if state["days"][d].get("kind", "broll") == kind]
+
+    # How many posts are due right now in this lane?
+    slots = lane_slot_times(cfg, kind, today)
     due = sum(1 for t in slots if t <= now)
     posted_today = sum(
-        1 for day in state["days"].values() for v in day["variants"].values()
+        1 for d in days for v in state["days"][d]["variants"].values()
         if v.get("posted_at") and _local_date(v["posted_at"], tz) == today)
     todo = min(due - posted_today, int(cfg.get("max_posts_per_run", 2)))
     if todo <= 0:
         upcoming = [t for t in slots if t > now]
         when = upcoming[0].astimezone(tz).strftime("%H:%M") if upcoming else "tomorrow"
-        log(f"Nothing due. {posted_today} posted today. Next slot: {when}.")
-        return
+        log(f"{tag}Nothing due. {posted_today} posted today. Next slot: {when}.")
+        return None
 
-    queue = [(d, i) for d in sorted(state["days"]) for i in state["days"][d]["order"]
+    queue = [(d, i) for d in days for i in state["days"][d]["order"]
              if state["days"][d]["variants"][i]["status"] in OPEN]
     # A half-finished upload from an earlier run goes first.
     queue.sort(key=lambda q: state["days"][q[0]]["variants"][q[1]]["status"] != "container")
     if not queue:
+        if kind != "broll":
+            # Talking-head days depend on filming, so an empty day is normal: no issue.
+            log(f"{tag}Slot is due but there is no talking-head batch waiting.")
+            return None
         log("Slot is due but the queue is empty. Has this week's batch been pushed?")
-        if due and not any(d == today.isoformat() for d in state["days"]):
+        if due and not any(key_date(d) == today.isoformat() for d in days):
             open_issue(f"No batch for {today}",
                        f"A slot was due on {today} but batches/{today}/manifest.json is missing. "
                        "See docs/BATCH_CONTRACT.md.", dry)
-        return
+        return None
 
     # Audio is required and was refused recently: wait before trying again.
-    retry = state.get("audio_retry_after")
+    retry = state.get(_retry_key(kind))
     if retry and now < datetime.fromisoformat(retry):
-        log(f"Waiting for audio to work again. Next try after {retry}. Nothing posted.")
-        return
+        log(f"{tag}Waiting for audio to work again. Next try after {retry}. Nothing posted.")
+        return None
 
     # 4. Check the official daily allowance before posting.
     if not dry:
@@ -154,21 +183,24 @@ def run(cfg, state, graph, manifests, now, log=print, checkpoint=None):
             used, total = graph.publishing_limit()
             log(f"Publishing allowance: {used} of {total} used in the last 24 h.")
             if used is not None and total and used >= total:
-                return _limit_reached(state, today, "content_publishing_limit says the quota is used up", dry)
+                _limit_reached(state, today, "content_publishing_limit says the quota is used up", dry)
+                return "stop"
         except GraphError as e:
             log(f"  could not read the publishing allowance: {e}")
 
     for d, vid in queue[:todo]:
         result = post_one(cfg, state, graph, manifests, d, vid, now, log, checkpoint)
         if result == "limit":
-            return _limit_reached(state, today, state["days"][d]["variants"][vid].get("error", ""), dry)
+            _limit_reached(state, today, state["days"][d]["variants"][vid].get("error", ""), dry)
+            return "stop"
         if result in ("busy", "error", "audio"):
-            return
+            return None
         if not dry:
             save_state(state)
             if checkpoint and not checkpoint():
                 log("  could not save this post to GitHub. Posting nothing more this run.")
-                return
+                return "stop"
+    return None
 
 
 def post_one(cfg, state, graph, manifests, d, vid, now, log=print, checkpoint=None):
@@ -210,7 +242,8 @@ def post_one(cfg, state, graph, manifests, d, vid, now, log=print, checkpoint=No
             status = None
             while status is None:
                 try:
-                    status = _upload(cfg, state, graph, rec, url, manifest["caption"], day["audio"])
+                    status = _upload(cfg, state, graph, rec, url, manifest["caption"], day["audio"],
+                                     day.get("kind", "broll"))
                 except GraphError as e:
                     nobody_posted = all(x["status"] != "posted" for x in day["variants"].values())
                     track = day["audio"] or {}
@@ -302,35 +335,47 @@ def post_one(cfg, state, graph, manifests, d, vid, now, log=print, checkpoint=No
 
 
 def next_slot_with_work(cfg, state, manifests, now):
-    """The next slot time, if something will be waiting to post then. Otherwise None."""
+    """The next slot time (any lane), if something will be waiting to post then. Otherwise None."""
     tz = local_tz(cfg)
     today = now.astimezone(tz).date()
-    upcoming = [t for d in (today, today + timedelta(days=1)) for t in slot_times(cfg, d) if t > now]
+    upcoming = sorted(t for d in (today, today + timedelta(days=1)) for kind in KINDS
+                      if lane(cfg, kind).get("enabled", True)
+                      for t in lane_slot_times(cfg, kind, d) if t > now)
     if not upcoming:
         return None
     nxt = upcoming[0]
     slot_day = nxt.astimezone(tz).date().isoformat()
     queued = any(v["status"] in OPEN for day in state["days"].values() for v in day["variants"].values())
-    new_batch = slot_day in manifests and slot_day >= (state.get("started_on") or slot_day)
+    new_batch = (any(key_date(k) == slot_day for k in manifests)
+                 and slot_day >= (state.get("started_on") or slot_day))
     return nxt if queued or new_batch else None
 
 
 def _audio_blocked(state, now, d, why, dry):
-    """Audio is required but did not work: post nothing, try again in an hour."""
-    state["audio_retry_after"] = (now + timedelta(hours=1)).isoformat()
-    open_issue("Trending audio is not attaching",
-               f"{why}\n\nOn {d} nothing was posted, because posting without audio is turned off "
-               "(`audio: required: true`). The robot tries again every hour, and the queue waits. "
-               "See 'Audio problems' in the README.", dry)
+    """Audio is required but did not work: post nothing in this lane, try again in an hour."""
+    kind = key_kind(d)
+    state[_retry_key(kind)] = (now + timedelta(hours=1)).isoformat()
+    if kind == "broll":
+        open_issue("Trending audio is not attaching",
+                   f"{why}\n\nOn {d} nothing was posted, because posting without audio is turned off "
+                   "(`audio: required: true`). The robot tries again every hour, and the queue waits. "
+                   "See 'Audio problems' in the README.", dry)
+    else:
+        open_issue("Talking-head audio is not attaching",
+                   f"{why}\n\nNothing from talking-head batch {d} was posted. Talking-head reels keep the "
+                   "voice on (video_volume 100) under a quiet trending track (audio_volume 3), and Instagram "
+                   "refused that. The robot tries again every hour and B-roll posting carries on as normal. "
+                   "To post this day by hand instead, download its videos from the GitHub Release, post them "
+                   "as trial reels in the app with one track at a low volume, and delete the batch folder.", dry)
     save_state(state)
     return "audio"
 
 
-def _upload(cfg, state, graph, rec, url, caption, audio):
+def _upload(cfg, state, graph, rec, url, caption, audio, kind="broll"):
     """Hands the video to Instagram and waits for it to be processed."""
     # Only "url" keeps the trial setting. Resumable uploads drop trial and audio (tested 2026-11-10).
     cid = graph.create_reel_container(url, caption, cfg.get("graduation_strategy", "MANUAL"),
-                                      audio_config(cfg, audio), upload="url")
+                                      audio_config(cfg, audio, kind), upload="url")
     rec.update(status="container", container_id=cid)
     save_state(state)
     return graph.wait_for_container(cid)
