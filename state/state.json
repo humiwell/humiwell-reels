@@ -274,7 +274,17 @@
       }
     },
     "2026-11-15": {
-      "audio": null,
+      "audio": {
+        "ads_eligible": null,
+        "artist": "Peaceful Reveries",
+        "duration_ms": 176580,
+        "id": "2150015712260414",
+        "manifest_title": "Vintage November (Peaceful Reveries)",
+        "note": "set in manifest",
+        "pinned": true,
+        "title": "Vintage November",
+        "type": "music"
+      },
       "order": [
         "H",
         "A",
@@ -310,7 +320,8 @@
           "status": "pending"
         },
         "H": {
-          "status": "pending"
+          "container_id": "17896564623683021",
+          "status": "container"
         }
       }
     }
