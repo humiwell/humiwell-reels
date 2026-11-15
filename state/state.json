@@ -347,7 +347,8 @@
           "status": "posted"
         },
         "G": {
-          "status": "pending"
+          "container_id": "17896694064683021",
+          "status": "container"
         },
         "H": {
           "container_id": "17896564623683021",
