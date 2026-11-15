@@ -300,7 +300,11 @@
       "variants": {
         "A": {
           "container_id": "17896573128683021",
-          "status": "container"
+          "media_id": "18141653695643087",
+          "permalink": "https://www.instagram.com/reel/DfwW2lvCbQ5/",
+          "posted_at": "2026-11-15T08:31:04.216748+00:00",
+          "slot": 2,
+          "status": "posted"
         },
         "B": {
           "status": "pending"
