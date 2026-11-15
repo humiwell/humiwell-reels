@@ -82,7 +82,7 @@ Talking-head reels use the same contract with these differences:
 | Folder | `batches/th-YYYY-MM-DD/manifest.json` (the `th-` prefix keeps them apart from B-roll on the same date) |
 | Manifest | add `"kind": "talking-head"`; `post_date` is the plain date `YYYY-MM-DD` |
 | Release tag | `day-th-YYYY-MM-DD` |
-| File names | `YYYY-MM-DD_A.mp4` ... `YYYY-MM-DD_D.mp4` (versions A to D = hook 1 to 4) |
+| File names | `YYYY-MM-DD_<topic>_A-surprising-fact.mp4`, `_B-relatable-problem`, `_C-myth-buster`, `_D-everyday-habit` (lowercase, hyphens, no spaces; versions A to D = hook 1 to 4) |
 | Format | MP4, H.264, 1080x1920, 30 fps, under 60 s, under 100 MB, **with the voice track** |
 | Audio | one track for all 4 (`audio_id` strongly recommended), played at `talking_head.audio_volume` (3) under the voice (`video_volume` 100) |
 | Slots | `talking_head.slots` in config.yml, separate from the B-roll slots |
@@ -92,7 +92,7 @@ If Instagram refuses the track with the voice on, nothing from that talking-head
 "Talking-head audio is not attaching" and retries hourly. B-roll posting is never held up by it.
 
 ```bash
-gh release create day-th-2026-11-16 "Output/Final/2026-11-16 iron twice/2026-11-16_"*.mp4 --repo humiwell/humiwell-reels --title "th-2026-11-16" --notes "Talking head for 2026-11-16"
+gh release create day-th-2026-11-16 "Output/Final/2026-11-16 iron twice/2026-11-16_iron-twice_"*.mp4 --repo humiwell/humiwell-reels --title "th-2026-11-16" --notes "Talking head for 2026-11-16"
 ```
 
 ## 3. Timing
