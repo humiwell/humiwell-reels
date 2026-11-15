@@ -1,9 +1,9 @@
-"""At 17:00 UK on the third day after a trial date, pulls the numbers and names a winner."""
+"""At 17:00 UK a few days after a trial date (3 for B-roll, 2 for talking head), pulls the numbers and names a winner."""
 import csv
 import json
 from datetime import date, datetime, timedelta
 
-from .common import ROOT, local_tz, open_issue, save_state
+from .common import ROOT, key_date, key_kind, lane, local_tz, open_issue, save_state
 from .graph import GraphError
 
 METRICS = ["reach", "views", "ig_reels_avg_watch_time", "shares", "saved", "likes",
@@ -62,10 +62,12 @@ def verdict(ranked, min_reach, min_gap):
     return True, f"Trusted: {gap:.1f} point watch % lead, both with {min_reach}+ reach."
 
 
-def issue_due(cfg, post_date):
-    """When the winner issue is due: issue_time (UK) on the day issue_days_after days after the trial date."""
+def issue_due(cfg, key):
+    """When the winner issue is due: issue_time (UK), issue_days_after days after the trial date.
+
+    key is the batch key, for example 2026-11-16 (B-roll) or th-2026-11-16 (talking head)."""
     r_cfg = cfg["results"]
-    day = date.fromisoformat(post_date) + timedelta(days=int(r_cfg.get("issue_days_after", 3)))
+    day = date.fromisoformat(key_date(key)) + timedelta(days=lane(cfg, key_kind(key))["issue_days_after"])
     h, m = (int(x) for x in str(r_cfg.get("issue_time", "17:00")).split(":"))
     return datetime(day.year, day.month, day.day, h, m, tzinfo=local_tz(cfg))
 
@@ -120,7 +122,7 @@ def build_report(cfg, d, day, manifest, graph):
         row["rank"] = i
     trusted, why = verdict(ranked, int(r_cfg.get("min_reach", 150)), float(r_cfg.get("min_gap_points", 10)))
     audio = day.get("audio") or {}
-    return {"post_date": d, "reel": day["reel"], "audio": audio, "winner": ranked[0]["variant"] if ranked else None,
+    return {"post_date": key_date(d), "key": d, "kind": key_kind(d), "reel": day["reel"], "audio": audio, "winner": ranked[0]["variant"] if ranked else None,
             "trusted": trusted, "why": why, "variants": ranked,
             "not_posted": [k for k, v in day["variants"].items() if v["status"] != "posted"]}
 
@@ -136,7 +138,7 @@ def write_report(d, report):
         if new:
             w.writeheader()
         for row in report["variants"]:
-            w.writerow({**row, "post_date": d, "reel": report["reel"],
+            w.writerow({**row, "post_date": d, "reel": report["reel"],  # d is the batch key (th- for talking head)
                         "audio_title": report["audio"].get("title"),
                         "audio_artist": report["audio"].get("artist"),
                         "audio_id": report["audio"].get("id"),
@@ -150,7 +152,8 @@ def _fmt(x, suffix=""):
 def issue_text(report):
     w = report["winner"]
     status = "winner" if report["trusted"] else "early leader (not trusted yet)"
-    title = f"Results {report['post_date']} ({report['reel']}): variant {w} is the {status}"
+    what = "Talking head results" if report.get("kind") == "talking-head" else "Results"
+    title = f"{what} {report['post_date']} ({report['reel']}): variant {w} is the {status}"
     top = report["variants"][0] if report["variants"] else {}
     # The winner's link comes first so it can be tapped straight from a phone.
     link = top.get("permalink") or "(link not available, find variant " + str(w) + " in the app)"

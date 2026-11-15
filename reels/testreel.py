@@ -122,6 +122,35 @@ def check(cfg, graph):
     _save(out)
 
 
+def th_check(cfg, graph, video_url, audio_id=""):
+    """Talking head: can a reel WITH voice take a trending track at a low volume? Upload only, never published."""
+    out = _load()
+    if not video_url:
+        print("Give the talking-head video link in the video_url box (a GitHub Release file).")
+        return
+    manifest = {"audio_id": audio_id} if audio_id else None
+    track = choose_audio(cfg, graph, "th-test", manifest=manifest)
+    print(f"Track: {track.get('title')} by {track.get('artist')} (id {track.get('id')}, {track.get('note')})")
+    th = audio_config(cfg, track, "talking-head") or {}
+    cases = [
+        (f"music, audio_volume {th.get('audio_volume')}, video_volume {th.get('video_volume')} (talking-head setting)", th),
+        ("music, audio_volume 3, video_volume 0 (voice muted, for comparison)", dict(th, video_volume=0)),
+        ("no track, voice only", None),
+    ]
+    res = {}
+    for label, aud in cases:
+        try:
+            cid = graph.create_reel_container(video_url, "test", cfg.get("graduation_strategy", "MANUAL"), aud,
+                                              upload="url")
+            status = graph.wait_for_container(cid, tries=20)
+        except GraphError as e:
+            status = f"FAILED {e}"
+        print(f"  {label}: {status}")
+        res[label] = status
+    out["th_check"] = {"at": now_utc().isoformat(), "video": video_url, "track": track, "containers": res}
+    _save(out)
+
+
 def post(cfg, graph, host, confirm, with_audio=True, audio_id=""):
     if confirm != "POST":
         print("Not posted. Type POST in the confirm box to publish the one test reel.")

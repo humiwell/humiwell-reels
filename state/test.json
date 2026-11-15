@@ -89,5 +89,23 @@
       "permalink": "https://www.instagram.com/reel/Dfm9v_nABq8/",
       "timestamp": "2026-11-11T16:59:08+0000"
     }
+  },
+  "th_check": {
+    "at": "2026-11-15T21:20:21.468557+00:00",
+    "video": "https://github.com/humiwell/humiwell-reels/releases/download/test/th-test.mp4",
+    "track": {
+      "id": "2553186895192637",
+      "title": "What's Up - Deep house",
+      "artist": "HARDMAX",
+      "type": "music",
+      "duration_ms": 515482,
+      "ads_eligible": false,
+      "note": "trending music, rank 1"
+    },
+    "containers": {
+      "music, audio_volume 3, video_volume 100 (talking-head setting)": "FINISHED",
+      "music, audio_volume 3, video_volume 0 (voice muted, for comparison)": "FINISHED",
+      "no track, voice only": "FINISHED"
+    }
   }
 }

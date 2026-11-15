@@ -1,7 +1,7 @@
 """Entry point.  python -m reels <command>
 
 Commands: run (token check + publish + results), validate, audio-shortlist,
-          test-check, test-post, test-insights
+          test-check, test-post, test-insights, test-th-check
 """
 import os
 import sys
@@ -9,8 +9,8 @@ import time
 from datetime import timedelta
 
 from . import publish, results, shortlist, testreel, tokencheck
-from .common import (commit_progress, load_config, load_manifests, load_state, now_utc, open_issue, save_state,
-                     video_url)
+from .common import (commit_progress, key_date, load_config, load_manifests, load_state, now_utc, open_issue,
+                     save_state, video_url)
 from .graph import Graph
 
 
@@ -35,7 +35,7 @@ def main(argv):
             import requests
             today = now_utc().date().isoformat()
             for d, m in sorted(manifests.items()):
-                for v in m["variants"] if d >= today else []:
+                for v in m["variants"] if key_date(d) >= today else []:
                     url = video_url(cfg, d, v["file"])
                     r = requests.head(url, allow_redirects=True, timeout=30)
                     if r.status_code != 200:
@@ -67,6 +67,9 @@ def main(argv):
                           audio_id=os.environ.get("TEST_AUDIO_ID", "").strip())
         elif cmd == "test-insights":
             testreel.insights(cfg, graph)
+        elif cmd == "test-th-check":
+            testreel.th_check(cfg, graph, os.environ.get("TEST_VIDEO_URL", "").strip(),
+                              os.environ.get("TEST_AUDIO_ID", "").strip())
         return 0
 
     state = load_state()

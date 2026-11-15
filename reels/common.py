@@ -65,15 +65,62 @@ def save_state(state):
 # ---- daily batches --------------------------------------------------------
 REQUIRED_VARIANT_KEYS = ("id", "lever", "hook", "file", "length_s")
 
+# Two kinds of batch, each with its own posting "lane" (slots, audio volumes, results timing):
+#   broll         batches/YYYY-MM-DD/      silent B-roll list reels, 8 hooks (the original robot)
+#   talking-head  batches/th-YYYY-MM-DD/   talking-head reels with voice, 4 hooks
+KINDS = ("broll", "talking-head")
+TH_PREFIX = "th-"
+
+
+def batch_kind(m):
+    return (m or {}).get("kind", "broll")
+
+
+def batch_key(m):
+    """The folder name, release tag suffix and state key of a batch."""
+    return (TH_PREFIX if batch_kind(m) == "talking-head" else "") + m["post_date"]
+
+
+def key_kind(key):
+    return "talking-head" if key.startswith(TH_PREFIX) else "broll"
+
+
+def key_date(key):
+    """The trial date of a batch key: 'th-2026-11-16' and '2026-11-16' both give '2026-11-16'."""
+    return key[len(TH_PREFIX):] if key.startswith(TH_PREFIX) else key
+
+
+def lane(cfg, kind):
+    """Settings for one kind of batch. B-roll uses the top-level settings; talking head has its own block."""
+    a, r = cfg.get("audio", {}), cfg.get("results", {})
+    base = {"slots": cfg.get("slots", []),
+            "audio_volume": int(a.get("audio_volume", 100)),
+            "video_volume": int(a.get("video_volume", 0)),
+            "issue_days_after": int(r.get("issue_days_after", 3))}
+    if kind == "broll":
+        return base
+    th = cfg.get("talking_head") or {}
+    return {"enabled": th.get("enabled", True),
+            "slots": th.get("slots", []),
+            "audio_volume": int(th.get("audio_volume", 3)),
+            "video_volume": int(th.get("video_volume", 100)),
+            "issue_days_after": int(th.get("issue_days_after", 2))}
+
+
+def lane_slot_times(cfg, kind, day):
+    return slot_times(dict(cfg, slots=lane(cfg, kind)["slots"]), day)
+
 
 def load_manifests():
-    """All day manifests as {date string: manifest}. Broken ones are reported, not used."""
+    """All batch manifests as {batch key: manifest}. Broken ones are reported, not used.
+
+    The key is the folder name: '2026-11-16' for B-roll, 'th-2026-11-16' for talking head."""
     found, problems = {}, []
     for path in sorted(BATCH_DIR.glob("*/manifest.json")):
         try:
             m = json.loads(path.read_text(encoding="utf-8"))
             check_manifest(m, path.parent.name)
-            found[m["post_date"]] = m
+            found[path.parent.name] = m
         except Exception as e:  # noqa: BLE001 - any broken file is reported the same way
             problems.append(f"{path.relative_to(ROOT)}: {e}")
     return found, problems
@@ -84,8 +131,10 @@ def check_manifest(m, folder_name):
         if key not in m:
             raise ValueError(f"missing '{key}'")
     date.fromisoformat(m["post_date"])
-    if m["post_date"] != folder_name:
-        raise ValueError(f"post_date {m['post_date']} does not match folder {folder_name}")
+    if batch_kind(m) not in KINDS:
+        raise ValueError(f"kind must be one of {', '.join(KINDS)}")
+    if batch_key(m) != folder_name:
+        raise ValueError(f"folder should be {batch_key(m)} for this post_date and kind, not {folder_name}")
     if not 1 <= len(m["variants"]) <= 8:
         raise ValueError("needs 1 to 8 variants")
     if len(m["caption"]) > 2200:
@@ -111,11 +160,13 @@ def check_manifest(m, folder_name):
             raise ValueError(f"variant {v['id']} length_s should be 3 to 90 seconds")
 
 
-def release_tag(post_date):
-    return f"day-{post_date}"
+def release_tag(key):
+    return f"day-{key}"
 
 
-def video_url(cfg, post_date, filename):
+def video_url(cfg, key, filename):
+    """key is the batch key (folder name), for example 2026-11-16 or th-2026-11-16."""
+    post_date = key
     owner, name = REPO.split("/")
     hosting = cfg.get("hosting", "release")
     if hosting == "pages":

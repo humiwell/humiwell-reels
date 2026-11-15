@@ -61,6 +61,18 @@ audio:
   # Instagram refuses the audio (error 2207082) if this is above 0 (tested 2026-11-10).
   video_volume: 0
 
+# Talking-head reels (batches/th-YYYY-MM-DD/): 4 hook versions with the speaker's voice.
+# They post in their own slots, so B-roll timing does not change.
+talking_head:
+  enabled: true
+  slots: ["09:15", "13:00", "18:00", "20:00"]
+  # One trending track for all 4 versions, very quiet under the voice (1 to 100).
+  audio_volume: 3
+  # The video's own sound (the voice). Must stay on for talking head.
+  video_volume: 100
+  # Winner issue this many days after the trial date (at results: issue_time).
+  issue_days_after: 2
+
 results:
   # The winner issue opens at this UK time, this many days after the trial date
   # (trial on 12 Nov -> issue on 15 Nov at 17:00), using whatever data exists by then.
