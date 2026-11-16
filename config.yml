@@ -68,7 +68,7 @@ audio:
 # They post in their own slots, so B-roll timing does not change.
 talking_head:
   enabled: true
-  slots: ["07:50", "13:00", "18:00", "20:00"]  # 07:50 = one-off live test on 16 Nov, back to 09:15 after
+  slots: ["09:15", "13:00", "18:00", "20:00"]
   # One trending track for all 4 versions, very quiet under the voice (1 to 100).
   audio_volume: 3
   # The video's own sound (the voice). Must stay on for talking head.
