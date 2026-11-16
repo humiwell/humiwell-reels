@@ -1,0 +1,39 @@
+{
+  "contract_version": 1,
+  "kind": "talking-head",
+  "reel": "movember-nutrients",
+  "post_date": "2026-11-21",
+  "caption": "Pumpkin seeds, a tin of sardines and a jacket potato with the skin on.\n\nAn analysis of the UK's national diet survey found more than 1 in 5 men in their 20s don't get the minimum amount of magnesium they need. Zinc contributes to the maintenance of normal testosterone levels, vitamin D contributes to normal muscle function, and EPA and DHA from oily fish contribute to the normal function of the heart.\n\nFood comes first, and most of this list is already in the supermarket you go to every week.\n\nSave this, and send it to a man who needs a nudge this Movember.\n\n#Movember #MensHealthUK #MensWellness #NutritionTips #UKWellness",
+  "audio_id": "948109820857432",
+  "audio_title": "Piano Reflections (Sam Marshall)",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "The Surprising Fact",
+      "hook": "Did you know more than 1 in 5 UK men in their 20s don't get minimum amount of magnesium they need?",
+      "file": "2026-11-21_movember-nutrients_A-surprising-fact.mp4",
+      "length_s": 50.13
+    },
+    {
+      "id": "B",
+      "lever": "The Relatable Problem",
+      "hook": "Are you eating plenty of protein but still feeling flat? There are few nutrients most men never think about.",
+      "file": "2026-11-21_movember-nutrients_B-relatable-problem.mp4",
+      "length_s": 49.97
+    },
+    {
+      "id": "C",
+      "lever": "The Myth-Buster",
+      "hook": "Do you think men's nutrition is all about protein? Actually, there's a lot more to it.",
+      "file": "2026-11-21_movember-nutrients_C-myth-buster.mp4",
+      "length_s": 49.3
+    },
+    {
+      "id": "D",
+      "lever": "The Everyday Habit",
+      "hook": "That jacket potato you have for lunch? Keep the skin on. It's doing more than you think.",
+      "file": "2026-11-21_movember-nutrients_D-everyday-habit.mp4",
+      "length_s": 49.23
+    }
+  ]
+}
