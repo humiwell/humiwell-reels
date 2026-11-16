@@ -1,0 +1,32 @@
+{
+  "contract_version": 1,
+  "kind": "talking-head",
+  "reel": "iron-twice",
+  "post_date": "2026-11-16",
+  "caption": "A bowl of dal, a squeeze of lemon and a little patience with the kettle.\n\nWomen aged 19 to 49 need 14.8mg of iron a day, while men need 8.7mg (NHS). An analysis of the UK's national diet survey found that 1 in 4 women aged 20 to 59 get less than the minimum. The tiredness creeps up slowly, so it's easy to miss.\n\nVitamin C eaten with iron-rich food helps your body absorb it, and tea with the meal can get in the way. Leave the cuppa for an hour after eating. If you're tired all the time, see your GP first. A simple blood test tells you where you stand.\n\nSave this for your next dal night, and send it to a woman who's always tired.\n\n#IronRichFoods #WomensHealthUK #WomensWellnessUK #NutritionTips #UKWellness",
+  "audio_id": "2276077889353728",
+  "audio_title": "Shallow (Tommee Profitt, Fleurie)",
+  "variants": [
+    {
+      "id": "B",
+      "lever": "The Relatable Problem",
+      "hook": "Feeling exhausted even after a full night's sleep? Here's one nutrient that might be worth paying attention to.",
+      "file": "2026-11-16_iron-twice_B-relatable-problem.mp4",
+      "length_s": 50.23
+    },
+    {
+      "id": "C",
+      "lever": "The Myth-Buster",
+      "hook": "Do you think that you need to eat red meat every day to get enough iron? Actually, you've got plenty of other options.",
+      "file": "2026-11-16_iron-twice_C-myth-buster.mp4",
+      "length_s": 51.23
+    },
+    {
+      "id": "D",
+      "lever": "The Everyday Habit",
+      "hook": "That cup of tea you have with breakfast? It could actually be stopping your body from absorbing some of the iron in your food.",
+      "file": "2026-11-16_iron-twice_D-everyday-habit.mp4",
+      "length_s": 51.9
+    }
+  ]
+}
