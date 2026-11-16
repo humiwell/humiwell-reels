@@ -451,8 +451,9 @@
           "status": "pending"
         },
         "C": {
+          "container_id": "17896780329683021",
           "note": "deleted on Instagram by Sajjad (volume 3 too quiet), reposting at volume 6; old media 18202216675385144",
-          "status": "pending"
+          "status": "container"
         },
         "D": {
           "status": "pending"
