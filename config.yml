@@ -69,7 +69,7 @@ audio:
 talking_head:
   enabled: true
   slots: ["09:15", "13:00", "18:00", "20:00"]
-  # One trending track for all 4 versions, very quiet under the voice (1 to 100).
+  # One trending instrumental track for all 4 versions, quiet under the voice (1 to 100). 12 approved 16 Nov 2026.
   audio_volume: 12
   # The video's own sound (the voice). Must stay on for talking head.
   video_volume: 100

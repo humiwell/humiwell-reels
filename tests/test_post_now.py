@@ -36,7 +36,7 @@ def test_post_now_goes_out_at_once_and_only_once(env):
     # 08:20 UK: no talking-head slot is due yet (first is 09:15), but the request posts one now
     publish.run(cfg, state, g, manifests, at(8, 20), lambda *_: None, post_now=req)
     th = [p for p in g.posts if "th-" in p["url"]]
-    assert len(th) == 1 and th[0]["audio"]["audio_volume"] == 3
+    assert len(th) == 1 and th[0]["audio"]["audio_volume"] == common.lane(cfg, "talking-head")["audio_volume"]
     # the same request on later runs does nothing more
     for minute in (25, 30, 35):
         publish.run(cfg, state, g, manifests, at(8, minute), lambda *_: None, post_now=req)

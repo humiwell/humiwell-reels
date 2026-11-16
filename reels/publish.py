@@ -79,7 +79,7 @@ def choose_audio(cfg, graph, post_date, log=print, refused=(), manifest=None):
 
 
 def audio_config(cfg, audio, kind="broll"):
-    """Talking head keeps the voice (video_volume 100) under a quiet track (audio_volume 3)."""
+    """Talking head keeps the voice (video_volume 100) under a quiet track (audio_volume 12)."""
     if not audio or not audio.get("id"):
         return None
     L = lane(cfg, kind)
@@ -425,7 +425,7 @@ def _audio_blocked(state, now, d, why, dry):
     else:
         open_issue("Talking-head audio is not attaching",
                    f"{why}\n\nNothing from talking-head batch {d} was posted. Talking-head reels keep the "
-                   "voice on (video_volume 100) under a quiet trending track (audio_volume 3), and Instagram "
+                   "voice on (video_volume 100) under a quiet trending track (audio_volume 12), and Instagram "
                    "refused that. The robot tries again every hour and B-roll posting carries on as normal. "
                    "To post this day by hand instead, download its videos from the GitHub Release, post them "
                    "as trial reels in the app with one track at a low volume, and delete the batch folder.", dry)

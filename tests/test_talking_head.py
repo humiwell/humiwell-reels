@@ -43,7 +43,7 @@ def test_both_lanes_post_on_their_own_slots(env):
     br = [p for p in graph.posts if "th-" not in p["url"]]
     assert len(th) == 4 and len(br) == 8
     # talking head: one pinned track for all 4, quiet under the voice
-    assert {(p["audio"]["audio_id"], p["audio"]["audio_volume"], p["audio"]["video_volume"]) for p in th} == {("999", 3, 100)}
+    assert {(p["audio"]["audio_id"], p["audio"]["audio_volume"], p["audio"]["video_volume"]) for p in th} == {("999", common.lane(cfg, "talking-head")["audio_volume"], 100)}
     # B-roll keeps its own settings (silent video, full-volume track)
     assert {(p["audio"]["audio_volume"], p["audio"]["video_volume"]) for p in br} == {(100, 0)}
     assert all(p["url"].endswith(".mp4") and "/day-th-2026-11-16/" in p["url"] for p in th)

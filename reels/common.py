@@ -102,7 +102,7 @@ def lane(cfg, kind):
     th = cfg.get("talking_head") or {}
     return {"enabled": th.get("enabled", True),
             "slots": th.get("slots", []),
-            "audio_volume": int(th.get("audio_volume", 3)),
+            "audio_volume": int(th.get("audio_volume", 12)),
             "video_volume": int(th.get("video_volume", 100)),
             "issue_days_after": int(th.get("issue_days_after", 2))}
 

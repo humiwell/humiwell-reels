@@ -84,7 +84,7 @@ Talking-head reels use the same contract with these differences:
 | Release tag | `day-th-YYYY-MM-DD` |
 | File names | `YYYY-MM-DD_<topic>_A-surprising-fact.mp4`, `_B-relatable-problem`, `_C-myth-buster`, `_D-everyday-habit` (lowercase, hyphens, no spaces; versions A to D = hook 1 to 4) |
 | Format | MP4, H.264, 1080x1920, 30 fps, under 60 s, under 100 MB, **with the voice track** |
-| Audio | one track for all 4 (`audio_id` strongly recommended), played at `talking_head.audio_volume` (3) under the voice (`video_volume` 100) |
+| Audio | one **instrumental** track (no vocals) for all 4 (`audio_id` strongly recommended), played at `talking_head.audio_volume` (12) under the voice (`video_volume` 100) |
 | Slots | `talking_head.slots` in config.yml, separate from the B-roll slots |
 | Winner issue | `talking_head.issue_days_after` (2) days after the trial date, titled "Talking head results ..." |
 
