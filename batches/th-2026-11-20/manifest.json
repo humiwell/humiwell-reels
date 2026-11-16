@@ -1,0 +1,39 @@
+{
+  "contract_version": 1,
+  "kind": "talking-head",
+  "reel": "five-a-day",
+  "post_date": "2026-11-20",
+  "caption": "Frozen peas in the pasta, chickpeas in the curry. That's two already.\n\nOnly 17% of adults in the UK manage 5 portions of fruit and veg a day, according to the latest National Diet and Nutrition Survey. Frozen and tinned count. A glass of juice counts once, however much you drink. Potatoes don't count at all.\n\nA portion is 80g of fruit or veg, about a handful (NHS).\n\nSave this, and send it to the friend who thinks chips count.\n\n#5ADay #FruitAndVeg #HealthyEatingUK #NutritionTips #UKWellness",
+  "audio_id": "2477944699150252",
+  "audio_title": "Peaceful Piano (Dr. Pheel)",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "The Surprising Fact",
+      "hook": "Did you know only 17% of UK adults actually manage their 5 in a day?",
+      "file": "2026-11-20_five-a-day_A-surprising-fact.mp4",
+      "length_s": 52.07
+    },
+    {
+      "id": "B",
+      "lever": "The Relatable Problem",
+      "hook": "Are you trying to get a 5 a day but never sure what counts? Some of these might surprise you.",
+      "file": "2026-11-20_five-a-day_B-relatable-problem.mp4",
+      "length_s": 52.47
+    },
+    {
+      "id": "C",
+      "lever": "The Myth-Buster",
+      "hook": "Think frozen veggies doesn't count towards your 5 a day? Actually it does and it's often cheaper.",
+      "file": "2026-11-20_five-a-day_C-myth-buster.mp4",
+      "length_s": 52.57
+    },
+    {
+      "id": "D",
+      "lever": "The Everyday Habit",
+      "hook": "That glass of orange juice you have with breakfast, it only counts once, however much you drink.",
+      "file": "2026-11-20_five-a-day_D-everyday-habit.mp4",
+      "length_s": 52.63
+    }
+  ]
+}
