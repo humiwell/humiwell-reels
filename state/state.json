@@ -452,8 +452,12 @@
         },
         "C": {
           "container_id": "17896782516683021",
+          "media_id": "18494092759129231",
           "note": "volume test: reposting at volume 12; volume-6 post 18212093938369373 (https://www.instagram.com/reel/Dfy-OU9AjNQ/) to be deleted by Sajjad",
-          "status": "container"
+          "permalink": "https://www.instagram.com/reel/DfzAFojHBOa/",
+          "posted_at": "2026-11-16T09:09:47.934155+00:00",
+          "slot": 1,
+          "status": "posted"
         },
         "D": {
           "status": "pending"
@@ -464,7 +468,8 @@
   "issues": {},
   "paused_until": null,
   "post_now_done": [
-    "2026-11-16T08:50"
+    "2026-11-16T08:50",
+    "2026-11-16T-vol12"
   ],
   "started_on": "2026-11-10",
   "token": {
