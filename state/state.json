@@ -363,6 +363,48 @@
           "status": "posted"
         }
       }
+    },
+    "2026-11-16": {
+      "audio": null,
+      "kind": "broll",
+      "order": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "reel": "japanese-walking",
+      "results_done": false,
+      "variants": {
+        "A": {
+          "status": "pending"
+        },
+        "B": {
+          "status": "pending"
+        },
+        "C": {
+          "status": "pending"
+        },
+        "D": {
+          "status": "pending"
+        },
+        "E": {
+          "status": "pending"
+        },
+        "F": {
+          "status": "pending"
+        },
+        "G": {
+          "status": "pending"
+        },
+        "H": {
+          "status": "pending"
+        }
+      }
     }
   },
   "issues": {},
