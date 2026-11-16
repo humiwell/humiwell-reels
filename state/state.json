@@ -452,8 +452,12 @@
         },
         "C": {
           "container_id": "17896780329683021",
+          "media_id": "18212093938369373",
           "note": "deleted on Instagram by Sajjad (volume 3 too quiet), reposting at volume 6; old media 18202216675385144",
-          "status": "container"
+          "permalink": "https://www.instagram.com/reel/Dfy-OU9AjNQ/",
+          "posted_at": "2026-11-16T08:53:25.999920+00:00",
+          "slot": 1,
+          "status": "posted"
         },
         "D": {
           "status": "pending"
@@ -463,7 +467,9 @@
   },
   "issues": {},
   "paused_until": null,
-  "post_now_done": [],
+  "post_now_done": [
+    "2026-11-16T08:50"
+  ],
   "started_on": "2026-11-10",
   "token": {
     "checked_at": "2026-11-16T02:07:24.081031+00:00",
