@@ -92,7 +92,15 @@ def _retry_key(kind):
     return "audio_retry_after" if kind == "broll" else "th_audio_retry_after"
 
 
-def run(cfg, state, graph, manifests, now, log=print, checkpoint=None):
+def wake_time(nxt, now, nap_minutes):
+    """When an awake run should look again: the next slot, or sooner (nap), whichever comes first.
+
+    Short naps mean a batch, a config edit or a post-now request pushed while the robot waits
+    is picked up within a few minutes instead of at the next slot."""
+    return min(nxt, now + timedelta(minutes=nap_minutes))
+
+
+def run(cfg, state, graph, manifests, now, log=print, checkpoint=None, post_now=()):
     dry = cfg.get("dry_run", True)
     tz = local_tz(cfg)
     today = now.astimezone(tz).date()
@@ -127,10 +135,64 @@ def run(cfg, state, graph, manifests, now, log=print, checkpoint=None):
                            f"{cfg.get('max_carry_days', 2)} days and were dropped. Results for this "
                            "day will compare only the versions that went out.", dry)
 
-    # 3. Each kind of batch posts in its own slots. A problem in one lane never stops the other.
+    # 3. Post-now requests: one version of the named batch goes out straight away, outside its slots.
+    #    It counts towards that day, so the remaining versions keep their usual slots (nothing doubles).
+    if _post_now(cfg, state, graph, manifests, now, today, log, checkpoint, post_now) == "stop":
+        return
+
+    # 4. Each kind of batch posts in its own slots. A problem in one lane never stops the other.
     for kind in KINDS:
         if _run_lane(cfg, state, graph, manifests, now, today, kind, log, checkpoint) == "stop":
             return
+
+
+def _post_now(cfg, state, graph, manifests, now, today, log, checkpoint, requests):
+    dry = cfg.get("dry_run", True)
+    done = state.setdefault("post_now_done", [])
+    for req in requests:
+        rid, key = req["id"], req["batch"]
+        if rid in done:
+            continue
+        day = state["days"].get(key)
+        if day is None:
+            if key in manifests and key_date(key) > today.isoformat():
+                log(f"Post-now {rid}: {key} is a future day, waiting until its date.")
+            else:
+                log(f"Post-now {rid}: no batch {key} in the queue (missing manifest or too old). Ignored.")
+                if not dry:
+                    done.append(rid)
+            continue
+        open_ids = [i for i in day["order"] if day["variants"][i]["status"] in OPEN]
+        # a half-finished upload goes first
+        open_ids.sort(key=lambda i: day["variants"][i]["status"] != "container")
+        if not open_ids:
+            log(f"Post-now {rid}: every version of {key} is already posted or closed.")
+            if not dry:
+                done.append(rid)
+            continue
+        retry = state.get(_retry_key(day.get("kind", "broll")))
+        if retry and now < datetime.fromisoformat(retry):
+            log(f"Post-now {rid}: waiting for audio to work again (after {retry}).")
+            continue
+        if not dry:
+            try:
+                used, total = graph.publishing_limit()
+                if used is not None and total and used >= total:
+                    _limit_reached(state, today, "content_publishing_limit says the quota is used up", dry)
+                    return "stop"
+            except GraphError as e:
+                log(f"  could not read the publishing allowance: {e}")
+        log(f"Post-now {rid}: posting {key} variant {open_ids[0]} straight away.")
+        result = post_one(cfg, state, graph, manifests, key, open_ids[0], now, log, checkpoint)
+        if result == "limit":
+            _limit_reached(state, today, day["variants"][open_ids[0]].get("error", ""), dry)
+            return "stop"
+        if result == "ok" and not dry:
+            done.append(rid)
+            save_state(state)
+            if checkpoint and not checkpoint():
+                return "stop"
+    return None
 
 
 def _run_lane(cfg, state, graph, manifests, now, today, kind, log, checkpoint):

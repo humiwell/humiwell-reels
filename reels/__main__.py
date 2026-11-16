@@ -9,8 +9,8 @@ import time
 from datetime import timedelta
 
 from . import publish, results, shortlist, testreel, tokencheck
-from .common import (commit_progress, key_date, load_config, load_manifests, load_state, now_utc, open_issue,
-                     save_state, video_url)
+from .common import (commit_progress, key_date, load_config, load_manifests, load_post_now, load_state, now_utc,
+                     open_issue, save_state, video_url)
 from .graph import Graph
 
 
@@ -29,6 +29,8 @@ def main(argv):
     cmd = argv[1] if len(argv) > 1 else "run"
     cfg = load_config()
     manifests, problems = load_manifests()
+    post_now, req_problems = load_post_now()
+    problems += req_problems
     if cmd == "validate":
         if "--online" in argv:
             # Also check every video link of today and later days actually downloads.
@@ -101,7 +103,8 @@ def main(argv):
             cfg = load_config()
             state = load_state()
             manifests, _ = load_manifests()
-        publish.run(cfg, state, graph, manifests, now, checkpoint=checkpoint if live else None)
+            post_now, _ = load_post_now()
+        publish.run(cfg, state, graph, manifests, now, checkpoint=checkpoint if live else None, post_now=post_now)
         if graph is not None:
             results.run(cfg, state, graph, manifests, now)
         if live and not checkpoint():
@@ -110,8 +113,13 @@ def main(argv):
         if (cfg.get("dry_run", True) or cfg.get("paused") or state.get("paused_until")
                 or nxt is None or nxt - now > window or nxt > stop_by):
             return 0
-        print(f"Next slot at {nxt.isoformat()} ({(nxt - now).seconds // 60} min). Staying awake to post on time.")
-        time.sleep((nxt - now).total_seconds() + 15)
+        # Nap in short steps rather than sleeping right through to the slot. Every wake-up syncs with
+        # GitHub (top of the loop), so new batches, config edits and post-now requests are seen within
+        # nap_minutes, and other runs never wait hours behind a sleeping one.
+        wake = publish.wake_time(nxt, now, int(cfg.get("nap_minutes", 5)))
+        print(f"Next slot at {nxt.isoformat()} ({(nxt - now).seconds // 60} min). Staying awake, "
+              f"checking GitHub again at {wake.isoformat()}.")
+        time.sleep(max(0.0, (wake - now).total_seconds()) + (15 if wake == nxt else 0))
         now = now_utc()  # the next loop syncs, which also picks up new batches and config edits
 
 

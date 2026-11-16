@@ -126,6 +126,33 @@ def load_manifests():
     return found, problems
 
 
+POST_NOW_FILE = ROOT / "requests" / "post_now.json"
+
+
+def load_post_now():
+    """Requests to post one version of a batch straight away, outside its slots.
+
+    requests/post_now.json is a list like [{"id": "2026-11-16T08:20", "batch": "th-2026-11-16"}].
+    Each id is handled once (remembered in state), so the file never needs cleaning up.
+    """
+    if not POST_NOW_FILE.exists():
+        return [], []
+    try:
+        items = json.loads(POST_NOW_FILE.read_text(encoding="utf-8"))
+        if not isinstance(items, list):
+            raise ValueError("must be a list")
+        good, ids = [], set()
+        for r in items:
+            if not isinstance(r, dict) or not r.get("id") or not r.get("batch"):
+                raise ValueError("every entry needs an id and a batch")
+            if r["id"] in ids:
+                raise ValueError(f"id {r['id']} used twice")
+            ids.add(r["id"]); good.append(r)
+        return good, []
+    except Exception as e:  # noqa: BLE001
+        return [], [f"requests/post_now.json: {e}"]
+
+
 def check_manifest(m, folder_name):
     for key in ("reel", "post_date", "caption", "variants"):
         if key not in m:

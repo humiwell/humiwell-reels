@@ -95,6 +95,19 @@ If Instagram refuses the track with the voice on, nothing from that talking-head
 gh release create day-th-2026-11-16 "Output/Final/2026-11-16 iron twice/2026-11-16_iron-twice_"*.mp4 --repo humiwell/humiwell-reels --title "th-2026-11-16" --notes "Talking head for 2026-11-16"
 ```
 
+## 2c. Post one version now (outside the slots)
+
+To post a version straight away (a live test, or a day pushed late), add an entry to `requests/post_now.json` on main:
+
+```json
+[{"id": "2026-11-16T08:20", "batch": "th-2026-11-16"}]
+```
+
+- `id`: any unique text (use the time you asked). Each id is handled once; old entries can stay in the file.
+- `batch`: the batch folder name (`2026-11-16` for B-roll, `th-2026-11-16` for talking head). It must be today's (or a still-queued) batch.
+- An awake robot run checks GitHub every `nap_minutes` (5), so it posts within about 5 minutes. If no run is awake, start one: `gh workflow run "Reels robot"`.
+- The post counts towards that day, so the remaining versions keep their usual slots and nothing is posted twice.
+
 ## 3. Timing
 
 - Push the whole week (7 releases + 7 manifests) by Sunday 20:00 UK for the week starting Monday.
