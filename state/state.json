@@ -392,7 +392,11 @@
       "variants": {
         "A": {
           "container_id": "17896766364683021",
-          "status": "container"
+          "media_id": "18075583895595381",
+          "permalink": "https://www.instagram.com/reel/DfyxQiHHL5T/",
+          "posted_at": "2026-11-16T07:00:16.381849+00:00",
+          "slot": 1,
+          "status": "posted"
         },
         "B": {
           "status": "pending"
