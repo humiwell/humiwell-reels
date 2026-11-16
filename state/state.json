@@ -399,7 +399,8 @@
           "status": "posted"
         },
         "B": {
-          "status": "pending"
+          "container_id": "17896777644683021",
+          "status": "container"
         },
         "C": {
           "status": "pending"
@@ -417,6 +418,28 @@
           "status": "pending"
         },
         "H": {
+          "status": "pending"
+        }
+      }
+    },
+    "th-2026-11-16": {
+      "audio": null,
+      "kind": "talking-head",
+      "order": [
+        "C",
+        "D",
+        "B"
+      ],
+      "reel": "iron-twice",
+      "results_done": false,
+      "variants": {
+        "B": {
+          "status": "pending"
+        },
+        "C": {
+          "status": "pending"
+        },
+        "D": {
           "status": "pending"
         }
       }
