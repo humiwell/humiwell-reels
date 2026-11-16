@@ -1,0 +1,39 @@
+{
+  "contract_version": 1,
+  "kind": "talking-head",
+  "reel": "meal-deal",
+  "post_date": "2026-11-17",
+  "caption": "Keep the sandwich. Keep the protein pot. Change the drink.\n\nAccording to Tesco's Clubcard data, last year's favourite meal deal was a Chicken Club sandwich, an Egg Protein Pot and a Coca-Cola. A 500ml full-sugar cola has about 53g of sugar, and the NHS limit for adults is 30g a day.\n\nWater, sparkling water or a sugar-free drink costs the same in the deal. Add something green and you've got a decent lunch.\n\nSave this for your next meal deal, and send it to the colleague who goes to Tesco every lunchtime.\n\n#MealDeal #HealthyLunchUK #FoodSwaps #HealthyEatingUK #UKWellness",
+  "audio_id": "993914624619502",
+  "audio_title": "Dancing On My Own (Instrumental) (Pink Gloves)",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "The Surprising Fact",
+      "hook": "Did you know Britain's favourite meal deal comes with a drink that has more sugar than you should have in the whole day?",
+      "file": "2026-11-17_meal-deal_A-surprising-fact.mp4",
+      "length_s": 51.4
+    },
+    {
+      "id": "B",
+      "lever": "The Relatable Problem",
+      "hook": "Are you stuck with a meal deal again? Here's how to pick one that actually keeps you going.",
+      "file": "2026-11-17_meal-deal_B-relatable-problem.mp4",
+      "length_s": 50.33
+    },
+    {
+      "id": "C",
+      "lever": "The Myth-Buster",
+      "hook": "Do you think a meal deal can never be a healthy lunch? Actually it can, if you change one thing.",
+      "file": "2026-11-17_meal-deal_C-myth-buster.mp4",
+      "length_s": 50.67
+    },
+    {
+      "id": "D",
+      "lever": "The Everyday Habit",
+      "hook": "That fizzy drink you grab with your meal deal, it could have more sugar than NHS says you should have all day.",
+      "file": "2026-11-17_meal-deal_D-everyday-habit.mp4",
+      "length_s": 51.37
+    }
+  ]
+}

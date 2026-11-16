@@ -1,0 +1,39 @@
+{
+  "contract_version": 1,
+  "kind": "talking-head",
+  "reel": "magnesium",
+  "post_date": "2026-11-18",
+  "caption": "A spoon of pumpkin seeds on your porridge is a good place to start.\n\nAn analysis of the UK's National Diet and Nutrition Survey found that about 1 in 8 adults aged 20 to 59 don't get even the minimum amount of magnesium, and it's nearly 1 in 5 for people in their 20s. Diets heavy on white bread and beige snacks are usually why.\n\nMagnesium contributes to the reduction of tiredness and fatigue and to normal muscle function. Almonds, cashews, spinach, beans and wholemeal bread all count. We're launching our own magnesium glycinate soon, so follow along if you want to hear first.\n\nSave this for your next food shop, and send it to a friend who's always running on empty.\n\n#Magnesium #NutritionTips #HealthyEatingUK #WomensWellnessUK #UKWellness",
+  "audio_id": "2330655201002925",
+  "audio_title": "November Magic (Peaceful Reveries)",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "The Surprising Fact",
+      "hook": "Did you know that about 1 in 8 UK adults don't even get the minimum amount of magnesium they need. In your 20s, it's nearly 1 in 5.",
+      "file": "2026-11-18_magnesium_A-surprising-fact.mp4",
+      "length_s": 58.37
+    },
+    {
+      "id": "B",
+      "lever": "The Relatable Problem",
+      "hook": "Running on empty on most days, even when you're eating too well, there's one mineral almost nobody talks about.",
+      "file": "2026-11-18_magnesium_B-relatable-problem.mp4",
+      "length_s": 56.33
+    },
+    {
+      "id": "C",
+      "lever": "The Myth-Buster",
+      "hook": "Do you think you need a supplement to get enough magnesium? Your kitchen cupboard probably has plenty.",
+      "file": "2026-11-18_magnesium_C-myth-buster.mp4",
+      "length_s": 55.17
+    },
+    {
+      "id": "D",
+      "lever": "The Everyday Habit",
+      "hook": "That bag of crisps you grab at 3pm, it's one of the easiest places to get more magnesium into your day.",
+      "file": "2026-11-18_magnesium_D-everyday-habit.mp4",
+      "length_s": 56.3
+    }
+  ]
+}
