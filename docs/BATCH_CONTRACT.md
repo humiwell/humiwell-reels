@@ -88,6 +88,8 @@ Talking-head reels use the same contract with these differences:
 | Slots | `talking_head.slots` in config.yml, separate from the B-roll slots |
 | Winner issue | `talking_head.issue_days_after` (2) days after the trial date, titled "Talking head results ..." |
 
+Each version must differ beyond its hook (the render session gives each its own zoom, speed, brightness and grain), and a version that has been posted is **never posted again**, even after deleting it on Instagram: Instagram matches the video and limits re-uploads ("looks like something you've shared before", 16 Nov 2026). Don't reset a posted variant to pending to repost it.
+
 If Instagram refuses the track with the voice on, nothing from that talking-head day is posted, the robot opens
 "Talking-head audio is not attaching" and retries hourly. B-roll posting is never held up by it.
 
