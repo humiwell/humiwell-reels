@@ -452,8 +452,12 @@
         },
         "C": {
           "container_id": "17896784949683021",
+          "media_id": "17866559631692988",
           "note": "music test: reposting with an instrumental (Maestro, Hans Zimmer) at volume 12; Shallow volume-12 post 18494092759129231 (https://www.instagram.com/reel/DfzAFojHBOa/) to be deleted by Sajjad",
-          "status": "container"
+          "permalink": "https://www.instagram.com/reel/DfzBcdsCvSZ/",
+          "posted_at": "2026-11-16T09:21:06.685386+00:00",
+          "slot": 1,
+          "status": "posted"
         },
         "D": {
           "status": "pending"
@@ -465,7 +469,8 @@
   "paused_until": null,
   "post_now_done": [
     "2026-11-16T08:50",
-    "2026-11-16T-vol12"
+    "2026-11-16T-vol12",
+    "2026-11-16T-instrumental"
   ],
   "started_on": "2026-11-10",
   "token": {
