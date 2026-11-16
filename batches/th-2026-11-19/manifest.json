@@ -1,0 +1,39 @@
+{
+  "contract_version": 1,
+  "kind": "talking-head",
+  "reel": "takeaway-swaps",
+  "post_date": "2026-11-19",
+  "caption": "Same takeaway night, slightly smarter order.\n\nThe latest National Diet and Nutrition Survey found that around 23% of our energy now comes from food eaten outside the home, mostly takeaways and fast food. Small choices on the menu add up when it's a weekly habit.\n\nGrilled, tandoori and stir-fried usually beat battered, creamy and deep-fried. One veg side on every order helps too.\n\nSave this for your next takeaway night, and send it to whoever does the ordering in your house.\n\n#Fakeaway #TakeawayNight #FoodSwaps #HealthyEatingUK #UKWellness",
+  "audio_id": "2150015712260414",
+  "audio_title": "Vintage November (Peaceful Reveries)",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "The Surprising Fact",
+      "hook": "Did you know almost a quarter of our calories now come from food eaten from outside the home?",
+      "file": "2026-11-19_takeaway-swaps_A-surprising-fact.mp4",
+      "length_s": 51.87
+    },
+    {
+      "id": "B",
+      "lever": "The Relatable Problem",
+      "hook": "Takeaway night again and feeling guilty about it? You don't have to give it up.",
+      "file": "2026-11-19_takeaway-swaps_B-relatable-problem.mp4",
+      "length_s": 50.53
+    },
+    {
+      "id": "C",
+      "lever": "The Myth-Buster",
+      "hook": "Do you think you have to skip the takeaway to eat well? Actually it's more about what you order.",
+      "file": "2026-11-19_takeaway-swaps_C-myth-buster.mp4",
+      "length_s": 51.9
+    },
+    {
+      "id": "D",
+      "lever": "The Everyday Habit",
+      "hook": "That korma you order every Friday, one swap on the menu makes a real difference.",
+      "file": "2026-11-19_takeaway-swaps_D-everyday-habit.mp4",
+      "length_s": 51.73
+    }
+  ]
+}
