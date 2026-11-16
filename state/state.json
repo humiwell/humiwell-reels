@@ -365,7 +365,17 @@
       }
     },
     "2026-11-16": {
-      "audio": null,
+      "audio": {
+        "ads_eligible": null,
+        "artist": "Sam Fender",
+        "duration_ms": 209457,
+        "id": "1478915717468599",
+        "manifest_title": "You Can't Always Get What You Want (Sam Fender)",
+        "note": "set in manifest",
+        "pinned": true,
+        "title": "You Can't Always Get What You Want",
+        "type": "music"
+      },
       "kind": "broll",
       "order": [
         "A",
@@ -381,7 +391,8 @@
       "results_done": false,
       "variants": {
         "A": {
-          "status": "pending"
+          "container_id": "17896766364683021",
+          "status": "container"
         },
         "B": {
           "status": "pending"
