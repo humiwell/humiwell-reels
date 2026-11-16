@@ -466,6 +466,7 @@
   },
   "issues": {},
   "paused_until": null,
+  "post_now_done": [],
   "started_on": "2026-11-10",
   "token": {
     "checked_at": "2026-11-16T02:07:24.081031+00:00",
