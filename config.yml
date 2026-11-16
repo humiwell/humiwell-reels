@@ -21,6 +21,9 @@ max_posts_per_run: 2
 wait_for_slot_minutes: 180
 # ...and one run never stays awake longer than this (GitHub's limit is 360).
 max_run_minutes: 300
+# While it waits, an awake run checks GitHub this often (minutes), so a new batch, a config edit or a
+# post-now request (requests/post_now.json) is acted on within this time, not at the next slot.
+nap_minutes: 5
 
 # Videos left unposted (for example after a daily limit) wait in the queue.
 # Videos older than this many days are dropped instead (an issue tells you).
