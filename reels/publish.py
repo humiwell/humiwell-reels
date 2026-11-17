@@ -89,7 +89,10 @@ def audio_config(cfg, audio, kind="broll"):
 
 
 def _retry_key(kind):
-    return "audio_retry_after" if kind == "broll" else "th_audio_retry_after"
+    return {"broll": "audio_retry_after", "talking-head": "th_audio_retry_after"}.get(kind, f"{kind}_audio_retry_after")
+
+
+LANE_TAGS = {"broll": "", "talking-head": "[talking head] ", "song": "[song] "}
 
 
 def wake_time(nxt, now, nap_minutes):
@@ -201,7 +204,7 @@ def _run_lane(cfg, state, graph, manifests, now, today, kind, log, checkpoint):
     L = lane(cfg, kind)
     if not L.get("enabled", True) or not L["slots"]:
         return None
-    tag = "" if kind == "broll" else "[talking head] "
+    tag = LANE_TAGS.get(kind, f"[{kind}] ")
     days = [d for d in sorted(state["days"]) if state["days"][d].get("kind", "broll") == kind]
 
     # How many posts are due right now in this lane?
@@ -223,8 +226,8 @@ def _run_lane(cfg, state, graph, manifests, now, today, kind, log, checkpoint):
     queue.sort(key=lambda q: state["days"][q[0]]["variants"][q[1]]["status"] != "container")
     if not queue:
         if kind != "broll":
-            # Talking-head days depend on filming, so an empty day is normal: no issue.
-            log(f"{tag}Slot is due but there is no talking-head batch waiting.")
+            # Talking-head and song days depend on filming, so an empty day is normal: no issue.
+            log(f"{tag}Slot is due but there is no {kind} batch waiting.")
             return None
         log("Slot is due but the queue is empty. Has this week's batch been pushed?")
         if due and not any(key_date(d) == today.isoformat() for d in days):
@@ -277,7 +280,14 @@ def post_one(cfg, state, graph, manifests, d, vid, now, log=print, checkpoint=No
     url = video_url(cfg, d, v["file"])
     slot_no = day["order"].index(vid) + 1
 
-    required = cfg["audio"].get("required", True) and cfg["audio"].get("enabled", True)
+    adds_audio = lane(cfg, day.get("kind", "broll")).get("audio", True)
+    required = adds_audio and cfg["audio"].get("required", True) and cfg["audio"].get("enabled", True)
+    if day["audio"] is None and not adds_audio:
+        # Song reels: the song in the video is the only sound, so no track is added.
+        day["audio"] = {"id": None, "note": "own sound (song reel), no track added"}
+        log(f"Audio for {d}: the video's own sound (song reel)")
+        if not dry:
+            save_state(state)
     if day["audio"] is None:
         audio = (choose_audio(cfg, graph, d, log, day.get("audio_refused", []), manifest) if graph
                  else {"id": manifest.get("audio_id"), "title": manifest.get("audio_title"),

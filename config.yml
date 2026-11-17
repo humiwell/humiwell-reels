@@ -76,6 +76,14 @@ talking_head:
   # Winner issue this many days after the trial date (at results: issue_time).
   issue_days_after: 2
 
+# Song reels (batches/song-YYYY-MM-DD/): ONE version a day, lip-synced to our own AI song.
+# The song in the video is the only sound: the robot never adds a track and keeps the video's volume.
+song:
+  enabled: true
+  slots: ["18:30"]
+  # Scorecard issue this many days after the trial date (at results: issue_time).
+  issue_days_after: 2
+
 results:
   # The winner issue opens at this UK time, this many days after the trial date
   # (trial on 12 Nov -> issue on 15 Nov at 17:00), using whatever data exists by then.

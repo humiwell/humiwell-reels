@@ -1,4 +1,5 @@
-"""At 17:00 UK a few days after a trial date (3 for B-roll, 2 for talking head), pulls the numbers and names a winner."""
+"""At 17:00 UK a few days after a trial date (3 for B-roll, 2 for talking head and song), pulls the numbers
+and names a winner (or, for a one-version song reel, posts its scorecard)."""
 import csv
 import json
 from datetime import date, datetime, timedelta
@@ -149,10 +150,28 @@ def _fmt(x, suffix=""):
     return "n/a" if x is None else f"{x}{suffix}"
 
 
+def song_issue_text(report):
+    """A song reel has one version, so the issue is a short scorecard instead of a winner."""
+    r = report["variants"][0]
+    title = (f"Song results {report['post_date']} ({report['reel']}): "
+             f"{r['reach']} reached, {_fmt(r['watch_pct'], '%')} watched")
+    link = r.get("permalink") or "(link not available, find it in the app)"
+    lines = [f"## Song reel: {link}", "",
+             "| Reach | Views | Watch % | Avg watch (s) | Sends/1k | Saves/1k | Likes |",
+             "|---|---|---|---|---|---|---|",
+             f"| {r['reach']} | {_fmt(r['views'])} | {_fmt(r['watch_pct'], '%')} | {_fmt(r['avg_watch_s'])} | "
+             f"{_fmt(r['sends_per_1k'])} | {_fmt(r['saves_per_1k'])} | {_fmt(r['likes'])} |", "",
+             "**What to do:** if the numbers look good, open this trial reel in Instagram and tap "
+             "*Share to followers*. Then close this issue."]
+    return title, "\n".join(lines)
+
+
 def issue_text(report):
+    if report.get("kind") == "song" and len(report["variants"]) == 1:
+        return song_issue_text(report)
     w = report["winner"]
     status = "winner" if report["trusted"] else "early leader (not trusted yet)"
-    what = "Talking head results" if report.get("kind") == "talking-head" else "Results"
+    what = {"talking-head": "Talking head results", "song": "Song results"}.get(report.get("kind"), "Results")
     title = f"{what} {report['post_date']} ({report['reel']}): variant {w} is the {status}"
     top = report["variants"][0] if report["variants"] else {}
     # The winner's link comes first so it can be tapped straight from a phone.

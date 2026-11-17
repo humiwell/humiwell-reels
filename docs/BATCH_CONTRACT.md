@@ -97,6 +97,28 @@ If Instagram refuses the track with the voice on, nothing from that talking-head
 gh release create day-th-2026-11-16 "Output/Final/2026-11-16 iron twice/2026-11-16_iron-twice_"*.mp4 --repo humiwell/humiwell-reels --title "th-2026-11-16" --notes "Talking head for 2026-11-16"
 ```
 
+## 2d. Song batches (1 version, the song is the sound)
+
+Song reels are made by the `humiwell-songs` render session: Humaira or Sajjad lip-syncing a short AI song.
+Same contract with these differences:
+
+| Thing | Rule |
+|---|---|
+| Folder | `batches/song-YYYY-MM-DD/manifest.json` |
+| Manifest | add `"kind": "song"`; exactly **one** variant (id `A`); no `audio_id` or `audio_title` |
+| Release tag | `day-song-YYYY-MM-DD` |
+| File name | `YYYY-MM-DD_<song-name>.mp4` (lowercase, hyphens, no spaces) |
+| Format | MP4, H.264, 1080x1920, 30 fps, under 90 s, under 100 MB, **with the song as its own audio** |
+| Audio | the robot adds **no** track and keeps the video's own sound (no `audio_configuration`) |
+| Slots | `song.slots` in config.yml (one a day, 18:30 UK) |
+| Results | a "Song results ..." scorecard issue `song.issue_days_after` (2) days after the trial date. There is no winner: share it to followers if the numbers look good |
+
+```bash
+gh release create day-song-2026-11-22 "2026-11-22_seven-cubes.mp4" --repo humiwell/humiwell-reels --title "song-2026-11-22" --notes "Song reel for 2026-11-22"
+```
+
+To post a song straight away, use `requests/post_now.json` with `"batch": "song-2026-11-22"`.
+
 ## 2c. Post one version now (outside the slots)
 
 To post a version straight away (a live test, or a day pushed late), add an entry to `requests/post_now.json` on main:

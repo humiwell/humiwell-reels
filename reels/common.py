@@ -65,11 +65,14 @@ def save_state(state):
 # ---- daily batches --------------------------------------------------------
 REQUIRED_VARIANT_KEYS = ("id", "lever", "hook", "file", "length_s")
 
-# Two kinds of batch, each with its own posting "lane" (slots, audio volumes, results timing):
-#   broll         batches/YYYY-MM-DD/      silent B-roll list reels, 8 hooks (the original robot)
-#   talking-head  batches/th-YYYY-MM-DD/   talking-head reels with voice, 4 hooks
-KINDS = ("broll", "talking-head")
+# Three kinds of batch, each with its own posting "lane" (slots, audio, results timing):
+#   broll         batches/YYYY-MM-DD/        silent B-roll list reels, 8 hooks (the original robot)
+#   talking-head  batches/th-YYYY-MM-DD/     talking-head reels with voice, 4 hooks
+#   song          batches/song-YYYY-MM-DD/   song reels: one version, the song is the only sound
+KINDS = ("broll", "talking-head", "song")
 TH_PREFIX = "th-"
+SONG_PREFIX = "song-"
+PREFIXES = {"broll": "", "talking-head": TH_PREFIX, "song": SONG_PREFIX}
 
 
 def batch_kind(m):
@@ -78,33 +81,50 @@ def batch_kind(m):
 
 def batch_key(m):
     """The folder name, release tag suffix and state key of a batch."""
-    return (TH_PREFIX if batch_kind(m) == "talking-head" else "") + m["post_date"]
+    return PREFIXES.get(batch_kind(m), "") + m["post_date"]
 
 
 def key_kind(key):
+    if key.startswith(SONG_PREFIX):
+        return "song"
     return "talking-head" if key.startswith(TH_PREFIX) else "broll"
 
 
 def key_date(key):
-    """The trial date of a batch key: 'th-2026-11-16' and '2026-11-16' both give '2026-11-16'."""
-    return key[len(TH_PREFIX):] if key.startswith(TH_PREFIX) else key
+    """The trial date of a batch key: 'song-2026-11-16', 'th-2026-11-16' and '2026-11-16' all give '2026-11-16'."""
+    for prefix in (SONG_PREFIX, TH_PREFIX):
+        if key.startswith(prefix):
+            return key[len(prefix):]
+    return key
 
 
 def lane(cfg, kind):
-    """Settings for one kind of batch. B-roll uses the top-level settings; talking head has its own block."""
+    """Settings for one kind of batch. B-roll uses the top-level settings; talking head and song have their own blocks.
+
+    "audio" says whether the robot adds a track at all. Song reels never get one: the song is the sound."""
     a, r = cfg.get("audio", {}), cfg.get("results", {})
     base = {"slots": cfg.get("slots", []),
             "audio_volume": int(a.get("audio_volume", 100)),
             "video_volume": int(a.get("video_volume", 0)),
-            "issue_days_after": int(r.get("issue_days_after", 3))}
+            "issue_days_after": int(r.get("issue_days_after", 3)),
+            "audio": True}
     if kind == "broll":
         return base
+    if kind == "song":
+        so = cfg.get("song") or {}
+        return {"enabled": so.get("enabled", True),
+                "slots": so.get("slots", []),
+                "audio_volume": 0,
+                "video_volume": 100,
+                "issue_days_after": int(so.get("issue_days_after", 2)),
+                "audio": False}
     th = cfg.get("talking_head") or {}
     return {"enabled": th.get("enabled", True),
             "slots": th.get("slots", []),
             "audio_volume": int(th.get("audio_volume", 12)),
             "video_volume": int(th.get("video_volume", 100)),
-            "issue_days_after": int(th.get("issue_days_after", 2))}
+            "issue_days_after": int(th.get("issue_days_after", 2)),
+            "audio": True}
 
 
 def lane_slot_times(cfg, kind, day):
@@ -114,7 +134,8 @@ def lane_slot_times(cfg, kind, day):
 def load_manifests():
     """All batch manifests as {batch key: manifest}. Broken ones are reported, not used.
 
-    The key is the folder name: '2026-11-16' for B-roll, 'th-2026-11-16' for talking head."""
+    The key is the folder name: '2026-11-16' for B-roll, 'th-2026-11-16' for talking head,
+    'song-2026-11-16' for a song reel."""
     found, problems = {}, []
     for path in sorted(BATCH_DIR.glob("*/manifest.json")):
         try:
@@ -164,6 +185,11 @@ def check_manifest(m, folder_name):
         raise ValueError(f"folder should be {batch_key(m)} for this post_date and kind, not {folder_name}")
     if not 1 <= len(m["variants"]) <= 8:
         raise ValueError("needs 1 to 8 variants")
+    if batch_kind(m) == "song":
+        if len(m["variants"]) != 1:
+            raise ValueError("a song batch has exactly one version")
+        if m.get("audio_id") is not None or m.get("audio_title") is not None:
+            raise ValueError("a song batch can't set audio_id: the song in the video is the only sound")
     if len(m["caption"]) > 2200:
         raise ValueError("caption is over 2,200 characters")
     # Optional: one chosen track for the whole day.

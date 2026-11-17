@@ -1,6 +1,7 @@
 # Humiwell trial reel robot
 
-This repo posts 8 Instagram Trial Reels a day to @humiwell, each with a trending sound,
+This repo posts Instagram Trial Reels to @humiwell: 8 B-roll versions a day with a trending sound, talking-head
+versions with a quiet track under the voice, and one song reel a day with its own sound (see docs/BATCH_CONTRACT.md),
 and tells you which hook won, at 17:00 UK on the third day after posting. It runs for free on GitHub Actions.
 
 ## How it works
@@ -54,6 +55,7 @@ The sound used for each reel (title, artist, id) is in the run log and in the re
 | Issue title | What happened | What you do |
 |---|---|---|
 | Results ... variant X is the winner | Clear winner | Share that reel to followers in the app, close the issue |
+| Song results ... | A song reel's numbers after 2 days | Share it to followers if it did well, close the issue |
 | Results ... early leader (not trusted yet) | Too close or too few views | Optional: share it anyway, or just close |
 | Daily limit reached on ... | Instagram stopped posts for today | Nothing. The rest posts tomorrow. If it repeats, remove a slot |
 | Skipped N version(s) of ... | Versions waited more than 2 days | Nothing. That day's results compare only what went out |
