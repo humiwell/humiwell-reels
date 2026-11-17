@@ -593,7 +593,11 @@
         },
         "B": {
           "container_id": "17896984095683021",
-          "status": "container"
+          "media_id": "18429483442152381",
+          "permalink": "https://www.instagram.com/reel/Df1linykam7/",
+          "posted_at": "2026-11-17T09:15:15.878522+00:00",
+          "slot": 1,
+          "status": "posted"
         },
         "C": {
           "status": "pending"
