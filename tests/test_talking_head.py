@@ -28,6 +28,8 @@ def env(tmp_path, monkeypatch):
     cfg = load_config()
     cfg["dry_run"] = False
     cfg["audio"]["block_ids"] = ["111"]
+    # The tests check the full 4-version talking-head day, whatever the live slot count is.
+    cfg["talking_head"]["slots"] = ["09:15", "13:00", "18:00", "20:00"]
     return cfg
 
 

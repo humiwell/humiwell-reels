@@ -68,7 +68,8 @@ audio:
 # They post in their own slots, so B-roll timing does not change.
 talking_head:
   enabled: true
-  slots: ["09:15", "13:00", "18:00", "20:00"]
+  # Cut to 2 a day on 17 Nov 2026 to stay under Instagram's trial reel cap (8 B-roll + 2 = 10 a day).
+  slots: ["13:00", "18:00"]
   # One trending instrumental track for all 4 versions, quiet under the voice (1 to 100). 12 approved 16 Nov 2026.
   audio_volume: 12
   # The video's own sound (the voice). Must stay on for talking head.
