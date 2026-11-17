@@ -1,6 +1,6 @@
 """Entry point.  python -m reels <command>
 
-Commands: run (token check + publish + results), validate, audio-shortlist,
+Commands: run (token check + publish + results), validate, audio-shortlist, snapshot,
           test-check, test-post, test-insights, test-th-check
 """
 import os
@@ -57,6 +57,13 @@ def main(argv):
             shortlist.run_search(graph, terms)
         else:
             shortlist.run(graph)
+        return 0
+    if cmd == "snapshot":
+        # Read-only: today's numbers for every posted version (prints one SNAP json line each).
+        if graph is None:
+            print("IG_ACCESS_TOKEN is missing. Run it from GitHub: Actions, Test reel, step snapshot.")
+            return 1
+        results.snapshot(load_state(), graph)
         return 0
     if cmd.startswith("test-"):
         if graph is None:

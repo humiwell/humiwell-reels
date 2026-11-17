@@ -3,6 +3,7 @@
 #   post     = publishes ONE test trial reel (only if confirm is POST)
 #   insights = reads the numbers of that test reel
 #   audio-shortlist = lists trending music with every field, or search results (read-only)
+#   snapshot = today's numbers for every posted version (read-only)
 #   th-check = talking head: upload-only containers (never published) for a voice video + quiet track
 name: Test reel
 
@@ -11,7 +12,7 @@ on:
     inputs:
       step:
         type: choice
-        options: [check, post, insights, audio-shortlist, th-check]
+        options: [check, post, insights, audio-shortlist, th-check, snapshot]
         default: check
       host:
         description: "Video host for the post step"
@@ -37,7 +38,7 @@ permissions:
 concurrency:
   # The song finder only reads, so it gets its own queue and never waits for (or bumps) the robot.
   # Every other step can post or save state, so it shares the robot's queue.
-  group: ${{ inputs.step == 'audio-shortlist' && 'reels-songs' || 'reels-robot' }}
+  group: ${{ (inputs.step == 'audio-shortlist' || inputs.step == 'snapshot') && 'reels-songs' || 'reels-robot' }}
   cancel-in-progress: false
 
 jobs:
@@ -74,6 +75,7 @@ jobs:
           TEST_VIDEO_URL: ${{ inputs.video_url }}
         run: |
           if [ "${{ inputs.step }}" = "audio-shortlist" ]; then python -m reels audio-shortlist
+          elif [ "${{ inputs.step }}" = "snapshot" ]; then python -m reels snapshot
           else python -m reels test-${{ inputs.step }}; fi
       - name: Save test notes
         if: always()

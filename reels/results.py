@@ -191,3 +191,18 @@ def issue_text(report):
               + (f" ({top['permalink']})" if top.get("permalink") else "")
               + " and tap *Share to followers* if you are happy with it. Then close this issue."]
     return title, "\n".join(lines)
+
+
+def snapshot(state, graph, log=print):
+    """Read-only: prints today's insights for every posted version as 'SNAP {json}' lines. Saves nothing."""
+    for d, day in sorted(state["days"].items()):
+        for vid, rec in sorted(day["variants"].items()):
+            if not rec.get("media_id") or rec.get("status") != "posted":
+                continue
+            row = {"day": d, "variant": vid, "media_id": rec["media_id"], "posted_at": rec.get("posted_at"),
+                   "permalink": rec.get("permalink")}
+            try:
+                row["numbers"] = graph.insights(rec["media_id"], METRICS)
+            except GraphError as e:
+                row["error"] = str(e)
+            log("SNAP " + json.dumps(row))
