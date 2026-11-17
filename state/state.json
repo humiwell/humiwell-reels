@@ -615,6 +615,7 @@
       "variants": {
         "A": {
           "container_id": "17897064513683021",
+          "error": "HTTP 400, code 9, subcode 2207078: You've reached maximum number of trial reels that is allowed to be published by Content Publishing API.",
           "status": "container"
         },
         "B": {
@@ -645,7 +646,7 @@
     }
   },
   "issues": {},
-  "paused_until": null,
+  "paused_until": "2026-11-18",
   "post_now_done": [
     "2026-11-16T08:50",
     "2026-11-16T-vol12",
