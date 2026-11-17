@@ -456,6 +456,48 @@
         }
       }
     },
+    "2026-11-17": {
+      "audio": null,
+      "kind": "broll",
+      "order": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "A"
+      ],
+      "reel": "what-makes-a-woman-look-tired",
+      "results_done": false,
+      "variants": {
+        "A": {
+          "status": "pending"
+        },
+        "B": {
+          "status": "pending"
+        },
+        "C": {
+          "status": "pending"
+        },
+        "D": {
+          "status": "pending"
+        },
+        "E": {
+          "status": "pending"
+        },
+        "F": {
+          "status": "pending"
+        },
+        "G": {
+          "status": "pending"
+        },
+        "H": {
+          "status": "pending"
+        }
+      }
+    },
     "th-2026-11-16": {
       "audio": {
         "ads_eligible": null,
@@ -501,6 +543,32 @@
           "posted_at": "2026-11-16T13:00:16.221618+00:00",
           "slot": 2,
           "status": "posted"
+        }
+      }
+    },
+    "th-2026-11-17": {
+      "audio": null,
+      "kind": "talking-head",
+      "order": [
+        "B",
+        "C",
+        "D",
+        "A"
+      ],
+      "reel": "meal-deal",
+      "results_done": false,
+      "variants": {
+        "A": {
+          "status": "pending"
+        },
+        "B": {
+          "status": "pending"
+        },
+        "C": {
+          "status": "pending"
+        },
+        "D": {
+          "status": "pending"
         }
       }
     }
