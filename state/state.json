@@ -483,7 +483,8 @@
       "results_done": false,
       "variants": {
         "A": {
-          "status": "pending"
+          "status": "skipped",
+          "note": "Dropped by hand 17 Nov after the trial-reel limit, so 18 Nov is not overloaded"
         },
         "B": {
           "container_id": "17896971810683021",
@@ -616,7 +617,8 @@
         "A": {
           "container_id": "17897064513683021",
           "error": "HTTP 400, code 9, subcode 2207078: You've reached maximum number of trial reels that is allowed to be published by Content Publishing API.",
-          "status": "container"
+          "status": "skipped",
+          "note": "Dropped by hand 17 Nov after the trial-reel limit, so 18 Nov is not overloaded"
         },
         "B": {
           "container_id": "17896984095683021",
