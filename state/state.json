@@ -457,7 +457,17 @@
       }
     },
     "2026-11-17": {
-      "audio": null,
+      "audio": {
+        "ads_eligible": null,
+        "artist": "Ruby Amanfu",
+        "duration_ms": 160684,
+        "id": "526825256283644",
+        "manifest_title": "Beautiful, You Are (Instrumental) (Ruby Amanfu)",
+        "note": "set in manifest",
+        "pinned": true,
+        "title": "Beautiful, You Are (Instrumental)",
+        "type": "music"
+      },
       "kind": "broll",
       "order": [
         "B",
@@ -476,7 +486,8 @@
           "status": "pending"
         },
         "B": {
-          "status": "pending"
+          "container_id": "17896971810683021",
+          "status": "container"
         },
         "C": {
           "status": "pending"
