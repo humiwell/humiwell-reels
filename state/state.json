@@ -567,7 +567,17 @@
       }
     },
     "th-2026-11-17": {
-      "audio": null,
+      "audio": {
+        "ads_eligible": null,
+        "artist": "Pink Gloves",
+        "duration_ms": 283787,
+        "id": "993914624619502",
+        "manifest_title": "Dancing On My Own (Instrumental) (Pink Gloves)",
+        "note": "set in manifest",
+        "pinned": true,
+        "title": "Dancing On My Own (Instrumental)",
+        "type": "music"
+      },
       "kind": "talking-head",
       "order": [
         "B",
@@ -582,7 +592,8 @@
           "status": "pending"
         },
         "B": {
-          "status": "pending"
+          "container_id": "17896984095683021",
+          "status": "container"
         },
         "C": {
           "status": "pending"
