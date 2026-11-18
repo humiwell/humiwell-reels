@@ -740,7 +740,11 @@
       "variants": {
         "A": {
           "container_id": "17897163609683021",
-          "status": "container"
+          "media_id": "17908037337355495",
+          "permalink": "https://www.instagram.com/reel/Df4pITxD-ho/",
+          "posted_at": "2026-11-18T13:44:38.202881+00:00",
+          "slot": 1,
+          "status": "posted"
         },
         "D": {
           "status": "pending"
