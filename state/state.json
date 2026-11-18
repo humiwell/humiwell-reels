@@ -545,7 +545,17 @@
       }
     },
     "2026-11-18": {
-      "audio": null,
+      "audio": {
+        "ads_eligible": null,
+        "artist": "Giulio Cercato",
+        "duration_ms": 126580,
+        "id": "423124700418880",
+        "manifest_title": "Good Vibes (Giulio Cercato)",
+        "note": "set in manifest",
+        "pinned": true,
+        "title": "Good Vibes",
+        "type": "music"
+      },
       "kind": "broll",
       "order": [
         "C",
@@ -567,7 +577,8 @@
           "status": "pending"
         },
         "C": {
-          "status": "pending"
+          "container_id": "17897128371683021",
+          "status": "container"
         },
         "D": {
           "status": "pending"
