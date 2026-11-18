@@ -719,7 +719,17 @@
       }
     },
     "th-2026-11-18": {
-      "audio": null,
+      "audio": {
+        "ads_eligible": null,
+        "artist": "Peaceful Reveries",
+        "duration_ms": 182000,
+        "id": "2330655201002925",
+        "manifest_title": "November Magic (Peaceful Reveries)",
+        "note": "set in manifest",
+        "pinned": true,
+        "title": "November Magic",
+        "type": "music"
+      },
       "kind": "talking-head",
       "order": [
         "A",
@@ -729,7 +739,8 @@
       "results_done": false,
       "variants": {
         "A": {
-          "status": "pending"
+          "container_id": "17897163609683021",
+          "status": "container"
         },
         "D": {
           "status": "pending"
