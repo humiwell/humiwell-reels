@@ -80,7 +80,7 @@ def test_rerun_is_safe(env):
     assert len(graph.posts) == 1
 
 
-def test_limit_stops_for_day_and_carries_over(env):
+def test_limit_stops_for_day_and_drops_the_rest(env):
     cfg, tmp = env
     manifests = {d: manifest(d) for d in ["2026-11-16", "2026-11-17"]}
     state, graph, logs = common.load_state(), FakeGraph(limit_after=5), []
@@ -88,10 +88,12 @@ def test_limit_stops_for_day_and_carries_over(env):
     tick_through(cfg, state, graph, manifests, start, start + timedelta(hours=23, minutes=45), logs.append)
     assert len(graph.posts) == 5
     assert state["paused_until"] == "2026-11-17"
+    skipped = [v for v in state["days"]["2026-11-16"]["variants"].values() if v["status"] == "skipped"]
+    assert len(skipped) == 3 and all(v["skip_reason"] == "daily limit" for v in skipped)
     graph.limit_after = None
     tick_through(cfg, state, graph, manifests, start + timedelta(days=1), start + timedelta(days=1, hours=23), logs.append)
-    left = [v for v in state["days"]["2026-11-16"]["variants"].values() if v["status"] != "posted"]
-    assert not left  # yesterday's leftovers went first
+    # day two posts only its own batch, on time: nothing from day one moves over
+    assert all(v["status"] == "posted" for v in state["days"]["2026-11-17"]["variants"].values())
     assert len(graph.posts) == 13  # 5 + 8 slots on day two
 
 

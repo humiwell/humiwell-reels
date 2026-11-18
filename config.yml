@@ -25,7 +25,8 @@ max_run_minutes: 300
 # post-now request (requests/post_now.json) is acted on within this time, not at the next slot.
 nap_minutes: 5
 
-# Videos left unposted (for example after a daily limit) wait in the queue.
+# Videos left unposted (for example while audio fails) wait in the queue.
+# After a daily limit nothing waits: the rest of that day is dropped so tomorrow stays on schedule.
 # Videos older than this many days are dropped instead (an issue tells you).
 max_carry_days: 2
 

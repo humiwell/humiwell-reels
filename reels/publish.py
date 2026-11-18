@@ -454,12 +454,26 @@ def _upload(cfg, state, graph, rec, url, caption, audio, kind="broll"):
 
 
 def _limit_reached(state, today, why, dry):
+    """Stop for today and drop everything still waiting from today or earlier.
+    Nothing carries over, so tomorrow's schedule starts clean on its own batches (rule set 18 Nov 2026)."""
     tomorrow = (today + timedelta(days=1)).isoformat()
     state["paused_until"] = tomorrow
+    dropped = []
+    for d, day in sorted(state["days"].items()):
+        if key_date(d) > today.isoformat():
+            continue
+        for i, v in day["variants"].items():
+            if v["status"] in OPEN:
+                v["status"] = "skipped"
+                v["skip_reason"] = "daily limit"
+                dropped.append(f"{d} {i}")
+    left = (f"These versions were dropped, not moved to tomorrow: {', '.join(dropped)}."
+            if dropped else "Nothing else was waiting today.")
     open_issue(f"Daily limit reached on {today}",
                f"Instagram said the posting limit is reached ({why}).\n\nThe robot stopped for today. "
-               f"Unposted versions stay in the queue and go out from {tomorrow}. If this keeps "
-               "happening, remove a slot or two in config.yml.", dry)
+               f"{left} Tomorrow posts its own batches on the usual schedule. Instagram allows 10 trial "
+               "reels a day, including ones posted by hand, so if this keeps happening, remove a slot "
+               "in config.yml.", dry)
     if not dry:
         save_state(state)
 
