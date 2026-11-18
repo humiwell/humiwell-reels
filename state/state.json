@@ -296,7 +296,7 @@
         "G"
       ],
       "reel": "vitamin-d-advice",
-      "results_done": false,
+      "results_done": true,
       "variants": {
         "A": {
           "container_id": "17896573128683021",
@@ -645,7 +645,7 @@
         "B"
       ],
       "reel": "iron-twice",
-      "results_done": false,
+      "results_done": true,
       "variants": {
         "B": {
           "container_id": "17896879428683021",
