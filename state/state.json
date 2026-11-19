@@ -662,7 +662,11 @@
       "variants": {
         "A": {
           "container_id": "17897338830683021",
-          "status": "container"
+          "media_id": "18170838115516963",
+          "permalink": "https://www.instagram.com/reel/Df7p0cqEreC/",
+          "posted_at": "2026-11-19T17:48:15.899955+00:00",
+          "slot": 6,
+          "status": "posted"
         },
         "B": {
           "status": "pending"
