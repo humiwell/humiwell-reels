@@ -634,6 +634,48 @@
         }
       }
     },
+    "2026-11-19": {
+      "audio": null,
+      "kind": "broll",
+      "order": [
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "A",
+        "B",
+        "C"
+      ],
+      "reel": "dark-by-4pm",
+      "results_done": false,
+      "variants": {
+        "A": {
+          "status": "pending"
+        },
+        "B": {
+          "status": "pending"
+        },
+        "C": {
+          "status": "pending"
+        },
+        "D": {
+          "status": "pending"
+        },
+        "E": {
+          "status": "pending"
+        },
+        "F": {
+          "status": "pending"
+        },
+        "G": {
+          "status": "pending"
+        },
+        "H": {
+          "status": "pending"
+        }
+      }
+    },
     "th-2026-11-16": {
       "audio": {
         "ads_eligible": null,
@@ -771,6 +813,24 @@
           "posted_at": "2026-11-18T18:29:58.287830+00:00",
           "slot": 2,
           "status": "posted"
+        }
+      }
+    },
+    "th-2026-11-19": {
+      "audio": null,
+      "kind": "talking-head",
+      "order": [
+        "D",
+        "A"
+      ],
+      "reel": "takeaway-swaps",
+      "results_done": false,
+      "variants": {
+        "A": {
+          "status": "pending"
+        },
+        "D": {
+          "status": "pending"
         }
       }
     }
