@@ -388,7 +388,7 @@
         "H"
       ],
       "reel": "japanese-walking",
-      "results_done": false,
+      "results_done": true,
       "variants": {
         "A": {
           "container_id": "17896766364683021",
@@ -784,7 +784,7 @@
         "A"
       ],
       "reel": "meal-deal",
-      "results_done": false,
+      "results_done": true,
       "variants": {
         "A": {
           "container_id": "17897064513683021",
