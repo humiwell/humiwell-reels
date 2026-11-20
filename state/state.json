@@ -980,7 +980,17 @@
       }
     },
     "th-2026-11-20": {
-      "audio": null,
+      "audio": {
+        "ads_eligible": null,
+        "artist": "Dr. Pheel",
+        "duration_ms": 176250,
+        "id": "2477944699150252",
+        "manifest_title": "Peaceful Piano (Dr. Pheel)",
+        "note": "set in manifest",
+        "pinned": true,
+        "title": "Peaceful Piano",
+        "type": "music"
+      },
       "kind": "talking-head",
       "order": [
         "A",
@@ -990,7 +1000,8 @@
       "results_done": false,
       "variants": {
         "A": {
-          "status": "pending"
+          "container_id": "17897464515683021",
+          "status": "container"
         },
         "D": {
           "status": "pending"
