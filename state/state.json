@@ -724,6 +724,48 @@
         }
       }
     },
+    "2026-11-20": {
+      "audio": null,
+      "kind": "broll",
+      "order": [
+        "E",
+        "F",
+        "G",
+        "H",
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "reel": "what-i-eat-in-a-workday",
+      "results_done": false,
+      "variants": {
+        "A": {
+          "status": "pending"
+        },
+        "B": {
+          "status": "pending"
+        },
+        "C": {
+          "status": "pending"
+        },
+        "D": {
+          "status": "pending"
+        },
+        "E": {
+          "status": "pending"
+        },
+        "F": {
+          "status": "pending"
+        },
+        "G": {
+          "status": "pending"
+        },
+        "H": {
+          "status": "pending"
+        }
+      }
+    },
     "th-2026-11-16": {
       "audio": {
         "ads_eligible": null,
@@ -899,6 +941,24 @@
           "posted_at": "2026-11-19T13:58:24.980451+00:00",
           "slot": 1,
           "status": "posted"
+        }
+      }
+    },
+    "th-2026-11-20": {
+      "audio": null,
+      "kind": "talking-head",
+      "order": [
+        "A",
+        "D"
+      ],
+      "reel": "five-a-day",
+      "results_done": false,
+      "variants": {
+        "A": {
+          "status": "pending"
+        },
+        "D": {
+          "status": "pending"
         }
       }
     }
