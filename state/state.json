@@ -768,10 +768,13 @@
         },
         "C": {
           "container_id": "17897502387683021",
-          "status": "container"
+          "error": "HTTP 400, code 9, subcode 2207078: You've reached maximum number of trial reels that is allowed to be published by Content Publishing API.",
+          "skip_reason": "daily limit",
+          "status": "skipped"
         },
         "D": {
-          "status": "pending"
+          "skip_reason": "daily limit",
+          "status": "skipped"
         },
         "E": {
           "container_id": "17897420328683021",
@@ -1025,7 +1028,7 @@
     }
   },
   "issues": {},
-  "paused_until": "2026-11-20",
+  "paused_until": "2026-11-21",
   "post_now_done": [
     "2026-11-16T08:50",
     "2026-11-16T-vol12",
