@@ -837,7 +837,8 @@
       "results_done": false,
       "variants": {
         "A": {
-          "status": "pending"
+          "container_id": "17897613960683021",
+          "status": "container"
         },
         "B": {
           "status": "pending"
