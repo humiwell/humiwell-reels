@@ -811,7 +811,17 @@
       }
     },
     "2026-11-21": {
-      "audio": null,
+      "audio": {
+        "ads_eligible": null,
+        "artist": "Tommee Profitt, Fleurie",
+        "duration_ms": 237333,
+        "id": "2276077889353728",
+        "manifest_title": "Shallow (Tommee Profitt, Fleurie)",
+        "note": "set in manifest",
+        "pinned": true,
+        "title": "Shallow",
+        "type": "music"
+      },
       "kind": "broll",
       "order": [
         "F",
@@ -842,7 +852,8 @@
           "status": "pending"
         },
         "F": {
-          "status": "pending"
+          "container_id": "17897577732683021",
+          "status": "container"
         },
         "G": {
           "status": "pending"
