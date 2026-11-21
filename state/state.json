@@ -568,7 +568,7 @@
         "B"
       ],
       "reel": "bloated-by-3pm",
-      "results_done": false,
+      "results_done": true,
       "variants": {
         "A": {
           "container_id": "17897203962683021",
@@ -1050,7 +1050,7 @@
         "A"
       ],
       "reel": "takeaway-swaps",
-      "results_done": false,
+      "results_done": true,
       "variants": {
         "A": {
           "container_id": "17897344725683021",
