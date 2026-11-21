@@ -1099,7 +1099,17 @@
       }
     },
     "th-2026-11-21": {
-      "audio": null,
+      "audio": {
+        "ads_eligible": null,
+        "artist": "Sam Marshall",
+        "duration_ms": 183430,
+        "id": "948109820857432",
+        "manifest_title": "Piano Reflections (Sam Marshall)",
+        "note": "set in manifest",
+        "pinned": true,
+        "title": "Piano Reflections",
+        "type": "music"
+      },
       "kind": "talking-head",
       "order": [
         "D",
@@ -1112,7 +1122,8 @@
           "status": "pending"
         },
         "D": {
-          "status": "pending"
+          "container_id": "17897623563683021",
+          "status": "container"
         }
       }
     }
