@@ -838,7 +838,11 @@
       "variants": {
         "A": {
           "container_id": "17897613960683021",
-          "status": "container"
+          "media_id": "18120934807810609",
+          "permalink": "https://www.instagram.com/reel/DgAQhg3EpxT/",
+          "posted_at": "2026-11-21T12:43:35.865080+00:00",
+          "slot": 4,
+          "status": "posted"
         },
         "B": {
           "status": "pending"
