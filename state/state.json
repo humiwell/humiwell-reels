@@ -810,6 +810,48 @@
         }
       }
     },
+    "2026-11-21": {
+      "audio": null,
+      "kind": "broll",
+      "order": [
+        "F",
+        "G",
+        "H",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "reel": "sharper-brain-30s",
+      "results_done": false,
+      "variants": {
+        "A": {
+          "status": "pending"
+        },
+        "B": {
+          "status": "pending"
+        },
+        "C": {
+          "status": "pending"
+        },
+        "D": {
+          "status": "pending"
+        },
+        "E": {
+          "status": "pending"
+        },
+        "F": {
+          "status": "pending"
+        },
+        "G": {
+          "status": "pending"
+        },
+        "H": {
+          "status": "pending"
+        }
+      }
+    },
     "th-2026-11-16": {
       "audio": {
         "ads_eligible": null,
@@ -1023,6 +1065,24 @@
           "posted_at": "2026-11-20T18:03:59.969159+00:00",
           "slot": 2,
           "status": "posted"
+        }
+      }
+    },
+    "th-2026-11-21": {
+      "audio": null,
+      "kind": "talking-head",
+      "order": [
+        "D",
+        "A"
+      ],
+      "reel": "movember-nutrients",
+      "results_done": false,
+      "variants": {
+        "A": {
+          "status": "pending"
+        },
+        "D": {
+          "status": "pending"
         }
       }
     }
