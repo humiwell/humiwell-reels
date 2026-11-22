@@ -903,7 +903,17 @@
       }
     },
     "2026-11-22": {
-      "audio": null,
+      "audio": {
+        "ads_eligible": null,
+        "artist": "Yann Falquet",
+        "duration_ms": 204830,
+        "id": "510358037368479",
+        "manifest_title": "S\u00e9quoia (Yann Falquet)",
+        "note": "set in manifest",
+        "pinned": true,
+        "title": "Se\u0301quoia",
+        "type": "music"
+      },
       "kind": "broll",
       "order": [
         "G",
@@ -937,7 +947,8 @@
           "status": "pending"
         },
         "G": {
-          "status": "pending"
+          "container_id": "17897731359683021",
+          "status": "container"
         },
         "H": {
           "status": "pending"
