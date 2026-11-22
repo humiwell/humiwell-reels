@@ -930,7 +930,11 @@
       "variants": {
         "A": {
           "container_id": "17897744259683021",
-          "status": "container"
+          "media_id": "18145465405721870",
+          "permalink": "https://www.instagram.com/reel/DgCk0DmgkM4/",
+          "posted_at": "2026-11-22T10:19:17.211589+00:00",
+          "slot": 3,
+          "status": "posted"
         },
         "B": {
           "status": "pending"
