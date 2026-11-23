@@ -125,7 +125,7 @@ def test_backfill_fills_newest_missing_days_and_respects_the_call_cap(tmp_path):
     assert row["reach"] == 10 and row["profile_views"] is None and row["website_clicks"] is None
     assert row["follows"] == 7 and row["unfollows"] == 2 and row["net_follows"] == 5
     assert row["new_followers"] == 3 and row["partial"] is False
-    assert days["2026-11-23"]["partial"] is True
+    assert days["2026-11-23"]["partial"] is True and days["2026-11-23"]["new_followers"] is None
     assert days["2026-10-26"]["new_followers"] == 3 and not days["2026-10-26"].get("fetched_at")  # series only
     assert any(e.startswith("daily.profile_views refused") for e in errors)
     oldest_first_run = fetched[-1]

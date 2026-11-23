@@ -88,8 +88,10 @@ class FakeGraph:
                 first = datetime.fromtimestamp(params["since"], timezone.utc).date()
                 last = datetime.fromtimestamp(params["until"], timezone.utc).date()
                 values, d = [], first
-                while d < last:  # value for day d ends next day 08:00 UTC (midnight Pacific)
-                    values.append({"value": 3, "end_time": (d + timedelta(days=1)).strftime("%Y-%m-%dT08:00:00+0000")})
+                while d <= last:  # like Instagram: the value for day d has end_time d 08:00 UTC
+                    end = datetime(d.year, d.month, d.day, 8, tzinfo=timezone.utc)
+                    if params["since"] < end.timestamp() <= params["until"]:
+                        values.append({"value": 3, "end_time": end.strftime("%Y-%m-%dT%H:%M:%S+0000")})
                     d += timedelta(days=1)
                 return {"data": [{"name": "follower_count", "period": "day", "values": values}]}
             if metrics == ["follows_and_unfollows"]:

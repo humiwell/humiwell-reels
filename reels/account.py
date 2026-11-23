@@ -217,8 +217,8 @@ def _follower_series(budget, graph, now, errors):
         for v in row.get("values") or []:
             end = _parse_time(v.get("end_time"))
             if end is not None and v.get("value") is not None:
-                # a day value ends at the next midnight (Pacific), so it belongs to the day before end_time
-                out[(end - timedelta(days=1)).date().isoformat()] = v["value"]
+                # checked against follows_and_unfollows: the value with end_time on date D is UTC day D
+                out[end.date().isoformat()] = v["value"]
     return out
 
 
