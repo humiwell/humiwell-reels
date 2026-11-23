@@ -1022,7 +1022,11 @@
       "variants": {
         "A": {
           "container_id": "17897893272683021",
-          "status": "container"
+          "media_id": "18134716069695641",
+          "permalink": "https://www.instagram.com/reel/DgFGOWgGZJj/",
+          "posted_at": "2026-11-23T09:49:48.719331+00:00",
+          "slot": 2,
+          "status": "posted"
         },
         "B": {
           "status": "pending"
