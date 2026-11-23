@@ -1,7 +1,9 @@
 # Batch contract (for the weekly render session)
 
 This is exactly what the render session must deliver each week so the robot can post it.
-One "day" = one B-roll reel in 8 hook versions (A to H), posted on one date.
+One "day" = one B-roll reel in 4 hook versions, posted on one date. From trial date 27 Nov 2026 the versions are
+A (original), B (loss framing), F (low effort) and one challenger (C, D, E, G, H or a new idea with a new letter).
+Days up to 26 Nov 2026 have 8 versions (A to H). A day with 4 or fewer versions posts at `slots_4_versions`.
 
 ## 1. Videos go to a GitHub Release, never to the main branch
 
@@ -29,7 +31,7 @@ Path: `batches/YYYY-MM-DD/manifest.json` (folder name = posting date). Nothing e
   "contract_version": 1,
   "reel": "weekend-habits",
   "post_date": "2026-11-16",
-  "caption": "One shared caption for all 8 versions. Max 2,200 characters, max 30 hashtags.",
+  "caption": "One shared caption for all versions. Max 2,200 characters, max 30 hashtags.",
   "audio_id": "1543916142623294",
   "audio_title": "Feelinga",
   "variants": [
@@ -55,7 +57,7 @@ Field rules:
 | `caption` | The same caption is used for all versions, so only the hook differs |
 | `audio_id` | **Optional.** Instagram track id as text of digits (in quotes). Used for all versions of the day. Leave it out to use the top trending track. Get ids from `python -m reels audio-shortlist` |
 | `audio_title` | **Optional.** Track name, for people reading the issues and results. Only allowed together with `audio_id` |
-| `variants` | 1 to 8 entries, normally exactly 8 (A to H) |
+| `variants` | 1 to 8 entries, normally exactly 4 (A, B, F and the challenger) |
 | `id` | Unique letter per day |
 | `lever` | The psychology lever this hook uses (free text) |
 | `hook` | The exact on-screen hook text |
@@ -70,7 +72,7 @@ How the track is picked for a day (first one that applies):
 4. The top trending track (respecting `block_ids` and `block_words`)
 
 If Instagram refuses a chosen track before any version of the day is posted, the robot switches to
-the top trending track for all 8 versions and opens an issue "Chosen audio failed for YYYY-MM-DD"
+the top trending track for all versions and opens an issue "Chosen audio failed for YYYY-MM-DD"
 naming both tracks and the error. Videos must stay silent: the robot sets the video's own volume to 0.
 
 ## 2b. Talking-head batches (4 hooks, with voice)

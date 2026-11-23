@@ -1,24 +1,26 @@
 # Humiwell trial reel robot
 
-This repo posts Instagram Trial Reels to @humiwell: 8 B-roll versions a day with a trending sound, talking-head
+This repo posts Instagram Trial Reels to @humiwell: 4 B-roll hook versions a day with a trending sound (8 until 26 Nov 2026), talking-head
 versions with a quiet track under the voice, and one song reel a day with its own sound (see docs/BATCH_CONTRACT.md),
 and tells you which hook won, at 17:00 UK on the third day after posting. It runs for free on GitHub Actions.
 
 ## How it works
 
-1. **Every week** the render session uploads 7 days of videos (8 hook versions per day, A to H)
+1. **Every week** the render session (the humiwell-broll-a-to-z skill) uploads the days whose hooks you approved
+   in Notion: 4 hook versions per day (A original, B loss framing, F low effort, plus one challenger)
    and one small `manifest.json` per day. The rules are in [docs/BATCH_CONTRACT.md](docs/BATCH_CONTRACT.md).
 2. **Every 15 minutes** the robot wakes up (Actions tab, "Reels robot") and:
    - checks the Instagram token once a day,
    - posts any version whose time slot has arrived and that is not posted yet,
    - at 17:00 UK on the third day after a trial date (12 Nov trial, 15 Nov 17:00), judges that reel using whatever numbers exist by then.
-3. **Fair test:** all 8 versions of one reel use the same sound, picked once (the top trending
+3. **Fair test:** all versions of one reel use the same sound, picked once (the top trending
    track unless you pin one). Which version gets which time slot shifts by one every day.
 4. **Memory:** what was posted is saved in `state/state.json`, so running twice never posts twice.
 5. **Results:** saved in `results/<date>.json` and added to `results.csv`. An issue names the winner.
    You then open the trial reel in the Instagram app and tap *Share to followers* by hand.
 
-Posting slots (UK time, summer time handled): 07:00, 08:30, 10:00, 12:00, 14:00, 17:00, 19:00, 21:00.
+Posting slots (UK time, summer time handled): a 4-version day posts at 08:00, 12:30, 17:00 and 20:30
+(`slots_4_versions`). An older 8-version day uses 07:00, 08:30, 10:00, 12:00, 14:00, 17:00, 19:00, 21:00.
 GitHub starts the robot only about once an hour, so each run stays awake until the next slot (if it is within 180 minutes) and posts within a minute of it. If GitHub skips a long stretch, the robot catches up late rather than missing a post.
 
 No duplicates: before every post the robot syncs with GitHub and records the upload there first, then publishes, then records the post. If any save fails it stops posting for that run (a late post beats a duplicate) and opens an issue.
@@ -33,7 +35,7 @@ The next run uses it.
 | Pause posting | `paused: true` (back to `false` to restart) |
 | Stop everything, including results | Actions tab, "Reels robot", `...` menu, *Disable workflow* |
 | Practice without posting | `dry_run: true` |
-| Change posting times | edit the `slots:` list, for example `["08:00", "12:00", "18:00"]` |
+| Change posting times | edit `slots_4_versions:` (4-version days) or `slots:` (8-version days) |
 | Use one specific sound | put its id in `audio: pin_audio_id:` |
 | Use a sound for one day only | `pin_by_date: {"2026-11-16": "1234567890"}` |
 | Avoid a sound | add its id to `block_ids`, or a word to `block_words` |

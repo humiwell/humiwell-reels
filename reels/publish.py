@@ -208,7 +208,7 @@ def _run_lane(cfg, state, graph, manifests, now, today, kind, log, checkpoint):
     days = [d for d in sorted(state["days"]) if state["days"][d].get("kind", "broll") == kind]
 
     # How many posts are due right now in this lane?
-    slots = lane_slot_times(cfg, kind, today)
+    slots = lane_slot_times(cfg, kind, today, manifests)
     due = sum(1 for t in slots if t <= now)
     posted_today = sum(
         1 for d in days for v in state["days"][d]["variants"].values()
@@ -412,7 +412,7 @@ def next_slot_with_work(cfg, state, manifests, now):
     today = now.astimezone(tz).date()
     upcoming = sorted(t for d in (today, today + timedelta(days=1)) for kind in KINDS
                       if lane(cfg, kind).get("enabled", True)
-                      for t in lane_slot_times(cfg, kind, d) if t > now)
+                      for t in lane_slot_times(cfg, kind, d, manifests) if t > now)
     if not upcoming:
         return None
     nxt = upcoming[0]

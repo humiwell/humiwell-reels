@@ -12,6 +12,9 @@ dry_run: false
 # Posting times, UK time (summer time is handled for you).
 timezone: Europe/London
 slots: ["07:00", "08:30", "10:00", "12:00", "14:00", "17:00", "19:00", "21:00"]
+# From 27 Nov 2026 B-roll days have 4 versions (A, B, F and one challenger). A day with 4 or fewer
+# versions posts at these times instead, so they spread over the day.
+slots_4_versions: ["08:00", "12:30", "17:00", "20:30"]
 
 # If runs were missed, the robot catches up, but posts at most this many per run.
 max_posts_per_run: 2

@@ -127,8 +127,15 @@ def lane(cfg, kind):
             "audio": True}
 
 
-def lane_slot_times(cfg, kind, day):
-    return slot_times(dict(cfg, slots=lane(cfg, kind)["slots"]), day)
+def lane_slot_times(cfg, kind, day, manifests=None):
+    """Slot times for one lane on one day. A B-roll day with 4 or fewer versions uses slots_4_versions
+    (if set), so 4 versions spread over the day instead of filling the first 4 of the 8 slots."""
+    slots = lane(cfg, kind)["slots"]
+    if kind == "broll" and manifests and cfg.get("slots_4_versions"):
+        m = manifests.get(day.isoformat())
+        if m and len(m.get("variants", [])) <= 4:
+            slots = cfg["slots_4_versions"]
+    return slot_times(dict(cfg, slots=slots), day)
 
 
 def load_manifests():
