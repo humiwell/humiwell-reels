@@ -118,6 +118,10 @@ Actions tab, "Test reel", *Run workflow*:
 Once a day at 06:45 UTC a second robot (Actions tab, "Dashboard data") only reads @humiwell and never posts.
 It saves the follower count, yesterday's reach and views, the last 40 posts with their numbers and the trending sounds to `dashboard/account.json`.
 It also adds one line per day to `dashboard/followers.csv`, so the Command Center dashboard can draw follower growth.
+`dashboard/daily.json` keeps one row per day (reach, views, profile views, follows, unfollows, new followers and the follower count) for the last 90 days and never drops older days, so the dashboard can show any period and compare it with the one before.
+Each run reads the last 3 days again (Instagram updates them late) and fills older missing days, newest first, about 60 days per run.
+Follower counts before the first real snapshot are worked out backwards from daily follows and are marked `followers_estimated`.
+`dashboard/media.json` keeps the newest 300 posts with their numbers. Posts younger than 14 days get fresh numbers every run, older ones keep the numbers already saved.
 To refresh it now: Actions tab, "Dashboard data", *Run workflow*.
 
 ## Files

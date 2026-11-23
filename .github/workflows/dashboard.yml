@@ -1,5 +1,5 @@
 # Read-only: once a day, saves account numbers for the Humiwell Command Center dashboard
-# (dashboard/account.json and dashboard/followers.csv). Never posts anything.
+# (dashboard/account.json, followers.csv, daily.json and media.json). Never posts anything.
 name: Dashboard data
 
 on:
