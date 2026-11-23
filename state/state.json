@@ -995,7 +995,17 @@
       }
     },
     "2026-11-23": {
-      "audio": null,
+      "audio": {
+        "ads_eligible": null,
+        "artist": "Sugartapes",
+        "duration_ms": 135978,
+        "id": "1105711964193043",
+        "manifest_title": "Cotton Club (Sugartapes)",
+        "note": "set in manifest",
+        "pinned": true,
+        "title": "Cotton Club",
+        "type": "music"
+      },
       "kind": "broll",
       "order": [
         "H",
@@ -1032,7 +1042,8 @@
           "status": "pending"
         },
         "H": {
-          "status": "pending"
+          "container_id": "17897885598683021",
+          "status": "container"
         }
       }
     },
