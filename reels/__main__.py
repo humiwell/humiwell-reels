@@ -1,6 +1,6 @@
 """Entry point.  python -m reels <command>
 
-Commands: run (token check + publish + results), validate, audio-shortlist, snapshot,
+Commands: run (token check + publish + results), validate, audio-shortlist, snapshot, account,
           test-check, test-post, test-insights, test-th-check
 """
 import os
@@ -8,7 +8,7 @@ import sys
 import time
 from datetime import timedelta
 
-from . import publish, results, shortlist, testreel, tokencheck
+from . import account, publish, results, shortlist, testreel, tokencheck
 from .common import (commit_progress, key_date, load_config, load_manifests, load_post_now, load_state, now_utc,
                      open_issue, save_state, video_url)
 from .graph import Graph
@@ -64,6 +64,13 @@ def main(argv):
             print("IG_ACCESS_TOKEN is missing. Run it from GitHub: Actions, Test reel, step snapshot.")
             return 1
         results.snapshot(load_state(), graph)
+        return 0
+    if cmd == "account":
+        # Read-only: account numbers for the dashboard (dashboard/account.json and followers.csv).
+        if graph is None:
+            print("IG_ACCESS_TOKEN is missing. Run it from GitHub: Actions, Dashboard data.")
+            return 1
+        account.snapshot(graph, cfg)
         return 0
     if cmd.startswith("test-"):
         if graph is None:

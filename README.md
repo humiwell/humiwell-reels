@@ -113,6 +113,13 @@ Actions tab, "Test reel", *Run workflow*:
 - `post` with confirm `POST`: publishes ONE test trial reel.
 - `insights`: reads that test reel's numbers.
 
+## Dashboard data
+
+Once a day at 06:45 UTC a second robot (Actions tab, "Dashboard data") only reads @humiwell and never posts.
+It saves the follower count, yesterday's reach and views, the last 40 posts with their numbers and the trending sounds to `dashboard/account.json`.
+It also adds one line per day to `dashboard/followers.csv`, so the Command Center dashboard can draw follower growth.
+To refresh it now: Actions tab, "Dashboard data", *Run workflow*.
+
 ## Files
 
 | Path | What it is |
@@ -121,5 +128,6 @@ Actions tab, "Test reel", *Run workflow*:
 | `batches/` | One manifest per posting day (from the render session) |
 | `state/state.json` | The robot's memory. Do not edit unless asked |
 | `results/`, `results.csv` | Test results |
+| `dashboard/` | Daily account numbers for the dashboard (read-only robot) |
 | `reels/` | The code |
 | `tests/` | Practice runs against a fake Instagram |

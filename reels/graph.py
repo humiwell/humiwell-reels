@@ -97,6 +97,10 @@ class Graph:
                 continue
             raise err
 
+    def get(self, path, params=None):
+        """Read-only GET of any Graph path (used by the dashboard snapshot)."""
+        return self._call("GET", path, params)
+
     # ---- publishing ------------------------------------------------------
     def publishing_limit(self):
         body = self._call("GET", f"{self.ig_user_id}/content_publishing_limit",

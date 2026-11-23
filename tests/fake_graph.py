@@ -60,3 +60,45 @@ class FakeGraph:
 
     def token_info(self, token=None):
         return {"is_valid": True, "expires_at": 0}
+
+    # ---- read-only calls used by the dashboard snapshot (reels/account.py) ----
+    ig_user_id = "17840000000000000"
+    media_total = 45           # how many posts the fake account has (paged 25 at a time)
+    refuse_account = {"profile_views"}  # account metrics Instagram "refuses" (code 100)
+    audio_down = False
+
+    def get(self, path, params=None):
+        params = params or {}
+        self.reads = getattr(self, "reads", []) + [(path, dict(params))]
+        if path == self.ig_user_id:
+            return {"id": self.ig_user_id, "username": "humiwell", "followers_count": 1234,
+                    "follows_count": 56, "media_count": self.media_total}
+        if path == f"{self.ig_user_id}/insights":
+            metrics = params["metric"].split(",")
+            if any(m in self.refuse_account for m in metrics):
+                raise GraphError(400, 100, None, "The metric is not supported")
+            if metrics == ["follows_and_unfollows"]:
+                return {"data": [{"name": "follows_and_unfollows", "period": "day", "total_value": {
+                    "value": 9, "breakdowns": [{"dimension_keys": ["follow_type"], "results": [
+                        {"dimension_values": ["FOLLOWER"], "value": 7},
+                        {"dimension_values": ["NON_FOLLOWER"], "value": 2}]}]}}]}
+            scale = 28 if params["until"] - params["since"] > 86400 else 1
+            return {"data": [{"name": m, "period": "day", "total_value": {"value": 10 * scale}} for m in metrics]}
+        if path == f"{self.ig_user_id}/media":
+            start = int(params.get("after") or 0)
+            end = min(start + int(params.get("limit", 25)), self.media_total)
+            data = [{"id": f"m{i + 1}", "caption": "x" * 500, "media_type": "VIDEO",
+                     "media_product_type": "REELS" if i % 2 == 0 else "FEED", "permalink": f"https://p/{i}",
+                     "timestamp": "2026-11-20T10:00:00+0000", "like_count": 3, "comments_count": 1}
+                    for i in range(start, end)]
+            paging = {"cursors": {"after": str(end)}}
+            if end < self.media_total:
+                paging["next"] = "https://graph.facebook.com/next"
+            return {"data": data, "paging": paging}
+        raise GraphError(400, 100, None, f"unknown path {path}")
+
+    def audio_search_raw(self, audio_type, id_param="user_id", search=None):
+        if self.audio_down:
+            raise GraphError(500, 2, None, "audio down")
+        return {"audio": [{"audio_id": str(i), "title": f"Song {i}", "display_artist": "Band",
+                           "duration_in_ms": 30000} for i in range(30)]}
