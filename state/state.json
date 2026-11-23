@@ -748,7 +748,7 @@
         "D"
       ],
       "reel": "what-i-eat-in-a-workday",
-      "results_done": false,
+      "results_done": true,
       "variants": {
         "A": {
           "container_id": "17897464290683021",
@@ -1310,7 +1310,7 @@
         "A"
       ],
       "reel": "movember-nutrients",
-      "results_done": false,
+      "results_done": true,
       "variants": {
         "A": {
           "container_id": "17897658483683021",
