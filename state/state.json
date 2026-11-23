@@ -994,6 +994,48 @@
         }
       }
     },
+    "2026-11-23": {
+      "audio": null,
+      "kind": "broll",
+      "order": [
+        "H",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "reel": "your-nan-wellness-habits",
+      "results_done": false,
+      "variants": {
+        "A": {
+          "status": "pending"
+        },
+        "B": {
+          "status": "pending"
+        },
+        "C": {
+          "status": "pending"
+        },
+        "D": {
+          "status": "pending"
+        },
+        "E": {
+          "status": "pending"
+        },
+        "F": {
+          "status": "pending"
+        },
+        "G": {
+          "status": "pending"
+        },
+        "H": {
+          "status": "pending"
+        }
+      }
+    },
     "th-2026-11-16": {
       "audio": {
         "ads_eligible": null,
