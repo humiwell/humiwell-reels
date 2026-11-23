@@ -233,6 +233,8 @@ def test_media_cache_respects_the_call_cap_newest_first(tmp_path):
     done = [m["id"] for m in body["media"] if m["insights_at"]]
     assert done == ["m1", "m2", "m3"]  # m1 costs 10 calls (follows refused for reels), then 1 each
     assert body["pending_insights"] == 42
-    # a later run with room fills the rest
-    media, body, _, _ = _media(tmp_path, FakeGraph(), cap=150)
+    # a later run the same day with room fills the rest and does not read m1..m3 again
+    graph = FakeGraph()
+    media, body, _, _ = _media(tmp_path, graph, cap=150)
     assert body["pending_insights"] == 0 and all(m["insights_at"] for m in media.values())
+    assert not {"m1", "m2", "m3"} & set(_media_read(graph))

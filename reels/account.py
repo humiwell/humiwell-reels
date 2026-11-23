@@ -36,6 +36,7 @@ MEDIA_CACHE_MAX = 300
 MEDIA_PAGE = 50
 MEDIA_REFRESH_DAYS = 14    # younger posts get fresh numbers every run, older ones keep cached numbers
 MEDIA_CALL_CAP = 150       # insight calls per run, newest first
+MEDIA_FRESH_HOURS = 12     # numbers read this recently are not read again (extra runs on the same day)
 MEDIA_METRICS = ["views", "reach", "saved", "shares", "likes", "comments", "total_interactions",
                  "ig_reels_avg_watch_time", "follows"]
 REEL_ONLY = {"ig_reels_avg_watch_time"}
@@ -428,12 +429,13 @@ def update_media(graph, out, now, trial_ids, errors, log=print, cap=None):
     budget = Budget(graph, cap)
     refused = {"reel": set(), "other": set()}
     young_from = now - timedelta(days=MEDIA_REFRESH_DAYS)
+    fresh_from = (now - timedelta(hours=MEDIA_FRESH_HOURS)).isoformat(timespec="seconds")
     refreshed = failed = waiting = fails_in_row = 0
     first_error = None
     stopped = False
     for m in media:
         ts = _parse_time(m.get("timestamp"))
-        if m.get("insights_at") and not (ts and ts >= young_from):
+        if m.get("insights_at") and (not (ts and ts >= young_from) or m["insights_at"] >= fresh_from):
             continue
         if stopped or budget.used >= cap:
             waiting += 1
