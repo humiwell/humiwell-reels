@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-23T20:55:18+00:00",
+ "updated_at": "2026-11-23T20:58:15+00:00",
  "missing_days": 0,
  "days": [
   {
@@ -1496,7 +1496,7 @@
    "followers": 725,
    "followers_estimated": true,
    "partial": false,
-   "fetched_at": "2026-11-23T20:55:18+00:00"
+   "fetched_at": "2026-11-23T20:58:15+00:00"
   },
   {
    "date": "2026-11-21",
@@ -1513,7 +1513,7 @@
    "followers": 728,
    "followers_estimated": true,
    "partial": false,
-   "fetched_at": "2026-11-23T20:55:18+00:00"
+   "fetched_at": "2026-11-23T20:58:15+00:00"
   },
   {
    "date": "2026-11-22",
@@ -1530,12 +1530,12 @@
    "followers": 732,
    "followers_estimated": true,
    "partial": false,
-   "fetched_at": "2026-11-23T20:55:18+00:00"
+   "fetched_at": "2026-11-23T20:58:15+00:00"
   },
   {
    "date": "2026-11-23",
-   "reach": 1301,
-   "views": 2253,
+   "reach": 1331,
+   "views": 2293,
    "profile_views": 11,
    "accounts_engaged": 31,
    "total_interactions": 72,
@@ -1547,7 +1547,7 @@
    "followers": 732,
    "followers_estimated": false,
    "partial": true,
-   "fetched_at": "2026-11-23T20:55:18+00:00"
+   "fetched_at": "2026-11-23T20:58:15+00:00"
   }
  ]
 }
