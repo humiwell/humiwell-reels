@@ -1086,6 +1086,48 @@
         }
       }
     },
+    "2026-11-24": {
+      "audio": null,
+      "kind": "broll",
+      "order": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "reel": "black-friday-wellness-buys",
+      "results_done": false,
+      "variants": {
+        "A": {
+          "status": "pending"
+        },
+        "B": {
+          "status": "pending"
+        },
+        "C": {
+          "status": "pending"
+        },
+        "D": {
+          "status": "pending"
+        },
+        "E": {
+          "status": "pending"
+        },
+        "F": {
+          "status": "pending"
+        },
+        "G": {
+          "status": "pending"
+        },
+        "H": {
+          "status": "pending"
+        }
+      }
+    },
     "th-2026-11-16": {
       "audio": {
         "ads_eligible": null,
