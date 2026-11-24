@@ -1087,7 +1087,17 @@
       }
     },
     "2026-11-24": {
-      "audio": null,
+      "audio": {
+        "ads_eligible": null,
+        "artist": "Elad Marish",
+        "duration_ms": 216262,
+        "id": "393903371411311",
+        "manifest_title": "The Nerve (Elad Marish)",
+        "note": "set in manifest",
+        "pinned": true,
+        "title": "The Nerve",
+        "type": "music"
+      },
       "kind": "broll",
       "order": [
         "A",
@@ -1103,7 +1113,8 @@
       "results_done": false,
       "variants": {
         "A": {
-          "status": "pending"
+          "container_id": "17898020754683021",
+          "status": "container"
         },
         "B": {
           "status": "pending"
