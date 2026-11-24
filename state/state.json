@@ -1114,7 +1114,11 @@
       "variants": {
         "A": {
           "container_id": "17898020754683021",
-          "status": "container"
+          "media_id": "18104384711354212",
+          "permalink": "https://www.instagram.com/reel/DgHhjpimZNw/",
+          "posted_at": "2026-11-24T08:27:06.495194+00:00",
+          "slot": 1,
+          "status": "posted"
         },
         "B": {
           "status": "pending"
