@@ -1,44 +1,67 @@
 {
-  "generated_at": "2026-11-23T20:58:15+00:00",
+  "generated_at": "2026-11-24T08:07:00+00:00",
   "profile": {
     "id": "17841480490600627",
     "followers_count": 732,
-    "follows_count": 15,
+    "follows_count": 16,
     "media_count": 120,
     "username": "humiwell"
   },
   "account_day": {
-    "since": "2026-11-22T00:00:00+00:00",
-    "until": "2026-11-23T00:00:00+00:00",
-    "reach": 6989,
-    "views": 10068,
-    "profile_views": 27,
-    "accounts_engaged": 134,
-    "total_interactions": 187,
+    "since": "2026-11-23T00:00:00+00:00",
+    "until": "2026-11-24T00:00:00+00:00",
+    "reach": 1601,
+    "views": 2917,
+    "profile_views": 22,
+    "accounts_engaged": 43,
+    "total_interactions": 94,
     "follows_and_unfollows": {
       "total": null,
-      "follows": 5,
-      "unfollows": 1,
-      "net": 4
+      "follows": null,
+      "unfollows": null,
+      "net": null
     }
   },
-  "follows_1d": 4,
+  "follows_1d": null,
   "account_28d": {
-    "since": "2026-10-26T00:00:00+00:00",
-    "until": "2026-11-23T00:00:00+00:00",
-    "reach": 130879,
-    "views": 241074,
-    "profile_views": 495,
-    "accounts_engaged": 1078,
-    "total_interactions": 2219,
+    "since": "2026-10-27T00:00:00+00:00",
+    "until": "2026-11-24T00:00:00+00:00",
+    "reach": 131697,
+    "views": 242403,
+    "profile_views": 497,
+    "accounts_engaged": 1091,
+    "total_interactions": 2263,
     "follows_and_unfollows": {
       "total": null,
-      "follows": 106,
+      "follows": 104,
       "unfollows": 20,
-      "net": 86
+      "net": 84
     }
   },
   "media": [
+    {
+      "id": "18094002317242621",
+      "caption": "Some habits never needed a trend.\n\nMost of these line up with what the NHS still recommends today, like moving every day and keeping a regul",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DgGWoCZmUKa/",
+      "timestamp": "2026-11-23T21:33:00+0000",
+      "like_count": 0,
+      "comments_count": 0,
+      "is_trial": true,
+      "insights": {
+        "views": 198,
+        "reach": 145,
+        "saved": 1,
+        "shares": 0,
+        "likes": 0,
+        "comments": 0,
+        "total_interactions": 1,
+        "ig_reels_avg_watch_time": 6557,
+        "follows": null
+      },
+      "insights_at": "2026-11-24T08:07:00+00:00"
+    },
     {
       "id": "18238256995321960",
       "caption": "Some habits never needed a trend.\n\nMost of these line up with what the NHS still recommends today, like moving every day and keeping a regul",
@@ -92,8 +115,8 @@
       "media_product_type": "REELS",
       "permalink": "https://www.instagram.com/reel/DgFuUdlMCFh/",
       "timestamp": "2026-11-23T15:41:56+0000",
-      "like_count": 10,
-      "comments_count": 0,
+      "like_count": 12,
+      "comments_count": 6,
       "is_trial": false,
       "insights": {
         "views": 139,
@@ -184,7 +207,7 @@
       "media_product_type": "REELS",
       "permalink": "https://www.instagram.com/reel/DgFIsPZM7rj/",
       "timestamp": "2026-11-23T10:14:16+0000",
-      "like_count": 20,
+      "like_count": 24,
       "comments_count": 2,
       "is_trial": false,
       "insights": {
@@ -322,7 +345,7 @@
       "media_product_type": "REELS",
       "permalink": "https://www.instagram.com/reel/DgDWEPuslZj/",
       "timestamp": "2026-11-22T17:31:23+0000",
-      "like_count": 38,
+      "like_count": 39,
       "comments_count": 0,
       "is_trial": false,
       "insights": {
@@ -483,7 +506,7 @@
       "media_product_type": "REELS",
       "permalink": "https://www.instagram.com/reel/DgBMxSngDVK/",
       "timestamp": "2026-11-21T21:30:41+0000",
-      "like_count": 5,
+      "like_count": 6,
       "comments_count": 0,
       "is_trial": true,
       "insights": {
@@ -935,29 +958,6 @@
         "follows": null
       },
       "insights_at": "2026-11-23T20:55:18+00:00"
-    },
-    {
-      "id": "18039065294852535",
-      "caption": "Same takeaway night, slightly smarter order.\n\nThe latest National Diet and Nutrition Survey found that around 23% of our energy now comes fr",
-      "media_type": "VIDEO",
-      "media_product_type": "REELS",
-      "permalink": "https://www.instagram.com/reel/Df7wyC1HPWk/",
-      "timestamp": "2026-11-19T18:50:53+0000",
-      "like_count": 0,
-      "comments_count": 0,
-      "is_trial": true,
-      "insights": {
-        "views": 86,
-        "reach": 82,
-        "saved": 0,
-        "shares": 0,
-        "likes": 0,
-        "comments": 0,
-        "total_interactions": 0,
-        "ig_reels_avg_watch_time": 2199,
-        "follows": null
-      },
-      "insights_at": "2026-11-23T20:55:18+00:00"
     }
   ],
   "trending_audio": [
@@ -1165,6 +1165,6 @@
   "errors": [
     "media (reel) metrics refused: follows"
   ],
-  "daily_days": 91,
-  "media_cached": 230
+  "daily_days": 92,
+  "media_cached": 231
 }

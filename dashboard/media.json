@@ -1,7 +1,30 @@
 {
- "updated_at": "2026-11-23T20:58:15+00:00",
+ "updated_at": "2026-11-24T08:07:00+00:00",
  "pending_insights": 0,
  "media": [
+  {
+   "id": "18094002317242621",
+   "caption": "Some habits never needed a trend.\n\nMost of these line up with what the NHS still recommends today, like moving every day and keeping a regul",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DgGWoCZmUKa/",
+   "timestamp": "2026-11-23T21:33:00+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "is_trial": true,
+   "insights": {
+    "views": 198,
+    "reach": 145,
+    "saved": 1,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 1,
+    "ig_reels_avg_watch_time": 6557,
+    "follows": null
+   },
+   "insights_at": "2026-11-24T08:07:00+00:00"
+  },
   {
    "id": "18238256995321960",
    "caption": "Some habits never needed a trend.\n\nMost of these line up with what the NHS still recommends today, like moving every day and keeping a regul",
@@ -55,8 +78,8 @@
    "media_product_type": "REELS",
    "permalink": "https://www.instagram.com/reel/DgFuUdlMCFh/",
    "timestamp": "2026-11-23T15:41:56+0000",
-   "like_count": 10,
-   "comments_count": 0,
+   "like_count": 12,
+   "comments_count": 6,
    "is_trial": false,
    "insights": {
     "views": 139,
@@ -147,7 +170,7 @@
    "media_product_type": "REELS",
    "permalink": "https://www.instagram.com/reel/DgFIsPZM7rj/",
    "timestamp": "2026-11-23T10:14:16+0000",
-   "like_count": 20,
+   "like_count": 24,
    "comments_count": 2,
    "is_trial": false,
    "insights": {
@@ -285,7 +308,7 @@
    "media_product_type": "REELS",
    "permalink": "https://www.instagram.com/reel/DgDWEPuslZj/",
    "timestamp": "2026-11-22T17:31:23+0000",
-   "like_count": 38,
+   "like_count": 39,
    "comments_count": 0,
    "is_trial": false,
    "insights": {
@@ -446,7 +469,7 @@
    "media_product_type": "REELS",
    "permalink": "https://www.instagram.com/reel/DgBMxSngDVK/",
    "timestamp": "2026-11-21T21:30:41+0000",
-   "like_count": 5,
+   "like_count": 6,
    "comments_count": 0,
    "is_trial": true,
    "insights": {
@@ -1252,7 +1275,7 @@
    "permalink": "https://www.instagram.com/reel/Df4fijfFG63/",
    "timestamp": "2026-11-18T12:21:32+0000",
    "like_count": 8,
-   "comments_count": 0,
+   "comments_count": 2,
    "is_trial": true,
    "insights": {
     "views": 1898,
@@ -1596,7 +1619,7 @@
    "media_product_type": "REELS",
    "permalink": "https://www.instagram.com/reel/Df0iBrCspPM/",
    "timestamp": "2026-11-16T23:27:38+0000",
-   "like_count": 30,
+   "like_count": 31,
    "comments_count": 4,
    "is_trial": false,
    "insights": {
@@ -2217,7 +2240,7 @@
    "media_product_type": "REELS",
    "permalink": "https://www.instagram.com/reel/Dft8RW_kagr/",
    "timestamp": "2026-11-14T10:00:56+0000",
-   "like_count": 17,
+   "like_count": 18,
    "comments_count": 0,
    "is_trial": true,
    "insights": {
