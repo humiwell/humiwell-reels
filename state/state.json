@@ -1209,7 +1209,11 @@
         },
         "B": {
           "container_id": "17898156591683021",
-          "status": "container"
+          "media_id": "18127330510904388",
+          "permalink": "https://www.instagram.com/reel/DgKERybkhUs/",
+          "posted_at": "2026-11-25T08:08:57.675774+00:00",
+          "slot": 1,
+          "status": "posted"
         },
         "C": {
           "status": "pending"
