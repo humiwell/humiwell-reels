@@ -1179,7 +1179,17 @@
       }
     },
     "2026-11-25": {
-      "audio": null,
+      "audio": {
+        "ads_eligible": null,
+        "artist": "Giulio Cercato",
+        "duration_ms": 108840,
+        "id": "1418611098781784",
+        "manifest_title": "Too Cool (Giulio Cercato)",
+        "note": "set in manifest",
+        "pinned": true,
+        "title": "Too Cool",
+        "type": "music"
+      },
       "kind": "broll",
       "order": [
         "B",
@@ -1198,7 +1208,8 @@
           "status": "pending"
         },
         "B": {
-          "status": "pending"
+          "container_id": "17898156591683021",
+          "status": "container"
         },
         "C": {
           "status": "pending"
