@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-24T08:07:00+00:00",
+ "updated_at": "2026-11-25T08:11:27+00:00",
  "missing_days": 0,
  "days": [
   {
@@ -14,7 +14,7 @@
    "net_follows": 1,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 566,
+   "followers": 565,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -31,7 +31,7 @@
    "net_follows": 0,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 566,
+   "followers": 565,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -48,7 +48,7 @@
    "net_follows": 0,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 566,
+   "followers": 565,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -65,7 +65,7 @@
    "net_follows": 1,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 567,
+   "followers": 566,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -82,7 +82,7 @@
    "net_follows": 1,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 568,
+   "followers": 567,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -99,7 +99,7 @@
    "net_follows": 3,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 571,
+   "followers": 570,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -116,7 +116,7 @@
    "net_follows": 1,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 572,
+   "followers": 571,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -133,7 +133,7 @@
    "net_follows": 2,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 574,
+   "followers": 573,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -150,7 +150,7 @@
    "net_follows": 3,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 577,
+   "followers": 576,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -167,7 +167,7 @@
    "net_follows": 4,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 581,
+   "followers": 580,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -184,7 +184,7 @@
    "net_follows": 2,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 583,
+   "followers": 582,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -201,7 +201,7 @@
    "net_follows": 3,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 586,
+   "followers": 585,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -218,7 +218,7 @@
    "net_follows": 0,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 586,
+   "followers": 585,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -235,7 +235,7 @@
    "net_follows": 4,
    "new_followers": null,
    "website_clicks": 1,
-   "followers": 590,
+   "followers": 589,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -252,7 +252,7 @@
    "net_follows": 2,
    "new_followers": null,
    "website_clicks": 7,
-   "followers": 592,
+   "followers": 591,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -269,7 +269,7 @@
    "net_follows": 7,
    "new_followers": null,
    "website_clicks": 2,
-   "followers": 599,
+   "followers": 598,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -286,7 +286,7 @@
    "net_follows": 1,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 600,
+   "followers": 599,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -303,7 +303,7 @@
    "net_follows": -1,
    "new_followers": null,
    "website_clicks": 2,
-   "followers": 599,
+   "followers": 598,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -320,7 +320,7 @@
    "net_follows": 5,
    "new_followers": null,
    "website_clicks": 2,
-   "followers": 604,
+   "followers": 603,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -337,7 +337,7 @@
    "net_follows": 1,
    "new_followers": null,
    "website_clicks": 2,
-   "followers": 605,
+   "followers": 604,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -354,7 +354,7 @@
    "net_follows": 1,
    "new_followers": null,
    "website_clicks": 1,
-   "followers": 606,
+   "followers": 605,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -371,7 +371,7 @@
    "net_follows": 2,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 608,
+   "followers": 607,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -388,7 +388,7 @@
    "net_follows": -1,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 607,
+   "followers": 606,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -405,7 +405,7 @@
    "net_follows": 2,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 609,
+   "followers": 608,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -422,7 +422,7 @@
    "net_follows": 1,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 610,
+   "followers": 609,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -439,7 +439,7 @@
    "net_follows": 0,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 610,
+   "followers": 609,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -456,7 +456,7 @@
    "net_follows": 2,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 612,
+   "followers": 611,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -473,7 +473,7 @@
    "net_follows": 1,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 613,
+   "followers": 612,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -490,7 +490,7 @@
    "net_follows": 0,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 613,
+   "followers": 612,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -507,7 +507,7 @@
    "net_follows": 1,
    "new_followers": null,
    "website_clicks": 3,
-   "followers": 614,
+   "followers": 613,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -524,7 +524,7 @@
    "net_follows": 0,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 614,
+   "followers": 613,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -541,7 +541,7 @@
    "net_follows": 2,
    "new_followers": null,
    "website_clicks": 5,
-   "followers": 616,
+   "followers": 615,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:55:18+00:00"
@@ -558,7 +558,7 @@
    "net_follows": 2,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 618,
+   "followers": 617,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -575,7 +575,7 @@
    "net_follows": 3,
    "new_followers": null,
    "website_clicks": 1,
-   "followers": 621,
+   "followers": 620,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -592,7 +592,7 @@
    "net_follows": 2,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 623,
+   "followers": 622,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -609,7 +609,7 @@
    "net_follows": 2,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 625,
+   "followers": 624,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -626,7 +626,7 @@
    "net_follows": 2,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 627,
+   "followers": 626,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -643,7 +643,7 @@
    "net_follows": 0,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 627,
+   "followers": 626,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -660,7 +660,7 @@
    "net_follows": 1,
    "new_followers": null,
    "website_clicks": 3,
-   "followers": 628,
+   "followers": 627,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -677,7 +677,7 @@
    "net_follows": 2,
    "new_followers": null,
    "website_clicks": 1,
-   "followers": 630,
+   "followers": 629,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -694,7 +694,7 @@
    "net_follows": 0,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 630,
+   "followers": 629,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -711,7 +711,7 @@
    "net_follows": -1,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 629,
+   "followers": 628,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -728,7 +728,7 @@
    "net_follows": 0,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 629,
+   "followers": 628,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -745,7 +745,7 @@
    "net_follows": -1,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 628,
+   "followers": 627,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -762,7 +762,7 @@
    "net_follows": 2,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 630,
+   "followers": 629,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -779,7 +779,7 @@
    "net_follows": 0,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 630,
+   "followers": 629,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -796,7 +796,7 @@
    "net_follows": -1,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 629,
+   "followers": 628,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -813,7 +813,7 @@
    "net_follows": 0,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 629,
+   "followers": 628,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -830,7 +830,7 @@
    "net_follows": 2,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 631,
+   "followers": 630,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -847,7 +847,7 @@
    "net_follows": 1,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 632,
+   "followers": 631,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -864,7 +864,7 @@
    "net_follows": 3,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 635,
+   "followers": 634,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -881,7 +881,7 @@
    "net_follows": 2,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 637,
+   "followers": 636,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -898,7 +898,7 @@
    "net_follows": 0,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 637,
+   "followers": 636,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -915,7 +915,7 @@
    "net_follows": 1,
    "new_followers": null,
    "website_clicks": 2,
-   "followers": 638,
+   "followers": 637,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -932,7 +932,7 @@
    "net_follows": 2,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 640,
+   "followers": 639,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -949,7 +949,7 @@
    "net_follows": 0,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 640,
+   "followers": 639,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -966,7 +966,7 @@
    "net_follows": 1,
    "new_followers": null,
    "website_clicks": 2,
-   "followers": 641,
+   "followers": 640,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -983,7 +983,7 @@
    "net_follows": 1,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 642,
+   "followers": 641,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1000,7 +1000,7 @@
    "net_follows": 1,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 643,
+   "followers": 642,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1017,7 +1017,7 @@
    "net_follows": -1,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 642,
+   "followers": 641,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1034,7 +1034,7 @@
    "net_follows": 2,
    "new_followers": null,
    "website_clicks": 2,
-   "followers": 644,
+   "followers": 643,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1051,7 +1051,7 @@
    "net_follows": 2,
    "new_followers": null,
    "website_clicks": 0,
-   "followers": 646,
+   "followers": 645,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1068,7 +1068,7 @@
    "net_follows": 2,
    "new_followers": 2,
    "website_clicks": 1,
-   "followers": 648,
+   "followers": 647,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1085,7 +1085,7 @@
    "net_follows": 2,
    "new_followers": 2,
    "website_clicks": 1,
-   "followers": 650,
+   "followers": 649,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1102,7 +1102,7 @@
    "net_follows": 1,
    "new_followers": 1,
    "website_clicks": 0,
-   "followers": 651,
+   "followers": 650,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1119,7 +1119,7 @@
    "net_follows": 14,
    "new_followers": 14,
    "website_clicks": 0,
-   "followers": 665,
+   "followers": 664,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1136,7 +1136,7 @@
    "net_follows": 5,
    "new_followers": 6,
    "website_clicks": 0,
-   "followers": 670,
+   "followers": 669,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1153,7 +1153,7 @@
    "net_follows": 2,
    "new_followers": 2,
    "website_clicks": 0,
-   "followers": 672,
+   "followers": 671,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1170,7 +1170,7 @@
    "net_follows": -1,
    "new_followers": 0,
    "website_clicks": 0,
-   "followers": 671,
+   "followers": 670,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1187,7 +1187,7 @@
    "net_follows": 0,
    "new_followers": 1,
    "website_clicks": 0,
-   "followers": 671,
+   "followers": 670,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1204,7 +1204,7 @@
    "net_follows": 2,
    "new_followers": 2,
    "website_clicks": 0,
-   "followers": 673,
+   "followers": 672,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1221,7 +1221,7 @@
    "net_follows": 0,
    "new_followers": 0,
    "website_clicks": 1,
-   "followers": 673,
+   "followers": 672,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1238,7 +1238,7 @@
    "net_follows": 0,
    "new_followers": 4,
    "website_clicks": 0,
-   "followers": 673,
+   "followers": 672,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1255,7 +1255,7 @@
    "net_follows": 1,
    "new_followers": 2,
    "website_clicks": 0,
-   "followers": 674,
+   "followers": 673,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1272,7 +1272,7 @@
    "net_follows": 1,
    "new_followers": 1,
    "website_clicks": 0,
-   "followers": 675,
+   "followers": 674,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1289,7 +1289,7 @@
    "net_follows": 3,
    "new_followers": 4,
    "website_clicks": 0,
-   "followers": 678,
+   "followers": 677,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1306,7 +1306,7 @@
    "net_follows": 2,
    "new_followers": 3,
    "website_clicks": 0,
-   "followers": 680,
+   "followers": 679,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1323,7 +1323,7 @@
    "net_follows": 2,
    "new_followers": 2,
    "website_clicks": 0,
-   "followers": 682,
+   "followers": 681,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1340,7 +1340,7 @@
    "net_follows": 3,
    "new_followers": 3,
    "website_clicks": 0,
-   "followers": 685,
+   "followers": 684,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1357,7 +1357,7 @@
    "net_follows": 13,
    "new_followers": 13,
    "website_clicks": 0,
-   "followers": 698,
+   "followers": 697,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1374,7 +1374,7 @@
    "net_follows": 15,
    "new_followers": 16,
    "website_clicks": 0,
-   "followers": 713,
+   "followers": 712,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1391,7 +1391,7 @@
    "net_follows": 2,
    "new_followers": 2,
    "website_clicks": 2,
-   "followers": 715,
+   "followers": 714,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1408,7 +1408,7 @@
    "net_follows": 2,
    "new_followers": 4,
    "website_clicks": 4,
-   "followers": 717,
+   "followers": 716,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1425,7 +1425,7 @@
    "net_follows": 6,
    "new_followers": 7,
    "website_clicks": 0,
-   "followers": 723,
+   "followers": 722,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1442,7 +1442,7 @@
    "net_follows": 2,
    "new_followers": 4,
    "website_clicks": 0,
-   "followers": 725,
+   "followers": 724,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1459,7 +1459,7 @@
    "net_follows": 0,
    "new_followers": 1,
    "website_clicks": 0,
-   "followers": 725,
+   "followers": 724,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1476,7 +1476,7 @@
    "net_follows": -1,
    "new_followers": 0,
    "website_clicks": 0,
-   "followers": 724,
+   "followers": 723,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:52:30+00:00"
@@ -1493,7 +1493,7 @@
    "net_follows": 1,
    "new_followers": 1,
    "website_clicks": 0,
-   "followers": 725,
+   "followers": 724,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-23T20:58:15+00:00"
@@ -1510,7 +1510,7 @@
    "net_follows": 3,
    "new_followers": 4,
    "website_clicks": 0,
-   "followers": 728,
+   "followers": 727,
    "followers_estimated": true,
    "partial": false,
    "fetched_at": "2026-11-24T08:07:00+00:00"
@@ -1518,7 +1518,7 @@
   {
    "date": "2026-11-22",
    "reach": 6989,
-   "views": 10068,
+   "views": 10070,
    "profile_views": 27,
    "accounts_engaged": 134,
    "total_interactions": 187,
@@ -1527,32 +1527,49 @@
    "net_follows": 4,
    "new_followers": 5,
    "website_clicks": 0,
-   "followers": 732,
+   "followers": 731,
    "followers_estimated": true,
    "partial": false,
-   "fetched_at": "2026-11-24T08:07:00+00:00"
+   "fetched_at": "2026-11-25T08:11:27+00:00"
   },
   {
    "date": "2026-11-23",
-   "reach": 1601,
-   "views": 2917,
+   "reach": 1608,
+   "views": 2924,
    "profile_views": 22,
    "accounts_engaged": 43,
    "total_interactions": 94,
-   "follows": 0,
+   "follows": 1,
    "unfollows": 0,
-   "net_follows": 0,
-   "new_followers": 0,
+   "net_follows": 1,
+   "new_followers": 1,
    "website_clicks": 1,
    "followers": 732,
    "followers_estimated": false,
    "partial": false,
-   "fetched_at": "2026-11-24T08:07:00+00:00"
+   "fetched_at": "2026-11-25T08:11:27+00:00"
   },
   {
    "date": "2026-11-24",
+   "reach": 3423,
+   "views": 5341,
+   "profile_views": 30,
+   "accounts_engaged": 73,
+   "total_interactions": 142,
+   "follows": 0,
+   "unfollows": 0,
+   "net_follows": 0,
+   "new_followers": 0,
+   "website_clicks": 0,
+   "followers": 732,
+   "followers_estimated": false,
+   "partial": false,
+   "fetched_at": "2026-11-25T08:11:27+00:00"
+  },
+  {
+   "date": "2026-11-25",
    "reach": 0,
-   "views": 0,
+   "views": 2,
    "profile_views": 0,
    "accounts_engaged": 0,
    "total_interactions": 0,
@@ -1561,10 +1578,10 @@
    "net_follows": 0,
    "new_followers": 0,
    "website_clicks": 0,
-   "followers": 732,
+   "followers": 736,
    "followers_estimated": false,
    "partial": true,
-   "fetched_at": "2026-11-24T08:07:00+00:00"
+   "fetched_at": "2026-11-25T08:11:27+00:00"
   }
  ]
 }

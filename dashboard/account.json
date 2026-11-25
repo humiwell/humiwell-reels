@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-11-24T08:07:00+00:00",
+  "generated_at": "2026-11-25T08:11:27+00:00",
   "profile": {
     "id": "17841480490600627",
-    "followers_count": 732,
-    "follows_count": 16,
-    "media_count": 120,
+    "followers_count": 736,
+    "follows_count": 15,
+    "media_count": 123,
     "username": "humiwell"
   },
   "account_day": {
-    "since": "2026-11-23T00:00:00+00:00",
-    "until": "2026-11-24T00:00:00+00:00",
-    "reach": 1601,
-    "views": 2917,
-    "profile_views": 22,
-    "accounts_engaged": 43,
-    "total_interactions": 94,
+    "since": "2026-11-24T00:00:00+00:00",
+    "until": "2026-11-25T00:00:00+00:00",
+    "reach": 3423,
+    "views": 5341,
+    "profile_views": 30,
+    "accounts_engaged": 73,
+    "total_interactions": 142,
     "follows_and_unfollows": {
       "total": null,
       "follows": null,
@@ -24,21 +24,251 @@
   },
   "follows_1d": null,
   "account_28d": {
-    "since": "2026-10-27T00:00:00+00:00",
-    "until": "2026-11-24T00:00:00+00:00",
-    "reach": 131697,
-    "views": 242403,
-    "profile_views": 497,
-    "accounts_engaged": 1091,
-    "total_interactions": 2263,
+    "since": "2026-10-28T00:00:00+00:00",
+    "until": "2026-11-25T00:00:00+00:00",
+    "reach": 134663,
+    "views": 247203,
+    "profile_views": 510,
+    "accounts_engaged": 1131,
+    "total_interactions": 2380,
     "follows_and_unfollows": {
       "total": null,
-      "follows": 104,
+      "follows": 103,
       "unfollows": 20,
-      "net": 84
+      "net": 83
     }
   },
   "media": [
+    {
+      "id": "18127330510904388",
+      "caption": "A few habits worth planning before your diary fills up.\n\nNumber 3 is the one to plan now. Pick your late nights, say no to the rest, and you",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DgKERybkhUs/",
+      "timestamp": "2026-11-25T08:09:38+0000",
+      "like_count": 0,
+      "comments_count": 0,
+      "is_trial": true,
+      "insights": {
+        "views": 0,
+        "reach": 0,
+        "saved": 0,
+        "shares": 0,
+        "likes": 0,
+        "comments": 0,
+        "total_interactions": 0,
+        "ig_reels_avg_watch_time": 0,
+        "follows": null
+      },
+      "insights_at": "2026-11-25T08:11:27+00:00"
+    },
+    {
+      "id": "18102250316551356",
+      "caption": "A short list for before you open the deals.\n\nNumber 1 is my favourite. The day the phone started charging in the kitchen, my sleep got bette",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DgI8AjninN0/",
+      "timestamp": "2026-11-24T21:38:07+0000",
+      "like_count": 0,
+      "comments_count": 0,
+      "is_trial": true,
+      "insights": {
+        "views": 0,
+        "reach": 0,
+        "saved": 0,
+        "shares": 0,
+        "likes": 0,
+        "comments": 0,
+        "total_interactions": 0,
+        "ig_reels_avg_watch_time": 0,
+        "follows": null
+      },
+      "insights_at": "2026-11-25T08:11:27+00:00"
+    },
+    {
+      "id": "18472938682185547",
+      "caption": "A short list for before you open the deals.\n\nNumber 1 is my favourite. The day the phone started charging in the kitchen, my sleep got bette",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DgIvHX-jv_S/",
+      "timestamp": "2026-11-24T19:45:27+0000",
+      "like_count": 0,
+      "comments_count": 0,
+      "is_trial": true,
+      "insights": {
+        "views": 143,
+        "reach": 107,
+        "saved": 0,
+        "shares": 0,
+        "likes": 0,
+        "comments": 0,
+        "total_interactions": 0,
+        "ig_reels_avg_watch_time": 5836,
+        "follows": null
+      },
+      "insights_at": "2026-11-25T08:11:27+00:00"
+    },
+    {
+      "id": "17998608617841369",
+      "caption": "A short list for before you open the deals.\n\nNumber 1 is my favourite. The day the phone started charging in the kitchen, my sleep got bette",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DgIf4lGivXG/",
+      "timestamp": "2026-11-24T17:32:22+0000",
+      "like_count": 7,
+      "comments_count": 1,
+      "is_trial": true,
+      "insights": {
+        "views": 1601,
+        "reach": 1054,
+        "saved": 2,
+        "shares": 0,
+        "likes": 7,
+        "comments": 1,
+        "total_interactions": 10,
+        "ig_reels_avg_watch_time": 8768,
+        "follows": null
+      },
+      "insights_at": "2026-11-25T08:11:27+00:00"
+    },
+    {
+      "id": "17945561826382701",
+      "caption": "A short list for before you open the deals.\n\nNumber 1 is my favourite. The day the phone started charging in the kitchen, my sleep got bette",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DgIJO-YmnPK/",
+      "timestamp": "2026-11-24T14:14:28+0000",
+      "like_count": 0,
+      "comments_count": 0,
+      "is_trial": true,
+      "insights": {
+        "views": 155,
+        "reach": 115,
+        "saved": 0,
+        "shares": 0,
+        "likes": 0,
+        "comments": 0,
+        "total_interactions": 0,
+        "ig_reels_avg_watch_time": 6011,
+        "follows": null
+      },
+      "insights_at": "2026-11-25T08:11:27+00:00"
+    },
+    {
+      "id": "18609640600066476",
+      "caption": "A short list for before you open the deals.\n\nNumber 1 is my favourite. The day the phone started charging in the kitchen, my sleep got bette",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DgH_Kt8jhcb/",
+      "timestamp": "2026-11-24T12:46:27+0000",
+      "like_count": 0,
+      "comments_count": 0,
+      "is_trial": true,
+      "insights": {
+        "views": 141,
+        "reach": 109,
+        "saved": 1,
+        "shares": 0,
+        "likes": 0,
+        "comments": 0,
+        "total_interactions": 1,
+        "ig_reels_avg_watch_time": 5605,
+        "follows": null
+      },
+      "insights_at": "2026-11-25T08:11:27+00:00"
+    },
+    {
+      "id": "17920871001537466",
+      "caption": "A short list for before you open the deals.\n\nNumber 1 is my favourite. The day the phone started charging in the kitchen, my sleep got bette",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DgHwhV1gIbW/",
+      "timestamp": "2026-11-24T10:38:28+0000",
+      "like_count": 6,
+      "comments_count": 0,
+      "is_trial": true,
+      "insights": {
+        "views": 1658,
+        "reach": 1138,
+        "saved": 8,
+        "shares": 1,
+        "likes": 6,
+        "comments": 0,
+        "total_interactions": 15,
+        "ig_reels_avg_watch_time": 8549,
+        "follows": null
+      },
+      "insights_at": "2026-11-25T08:11:27+00:00"
+    },
+    {
+      "id": "17956966707338349",
+      "caption": "A short list for before you open the deals.\n\nNumber 1 is my favourite. The day the phone started charging in the kitchen, my sleep got bette",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DgHqCN7GX_R/",
+      "timestamp": "2026-11-24T09:41:52+0000",
+      "like_count": 0,
+      "comments_count": 0,
+      "is_trial": true,
+      "insights": {
+        "views": 152,
+        "reach": 112,
+        "saved": 0,
+        "shares": 0,
+        "likes": 0,
+        "comments": 0,
+        "total_interactions": 0,
+        "ig_reels_avg_watch_time": 7507,
+        "follows": null
+      },
+      "insights_at": "2026-11-25T08:11:27+00:00"
+    },
+    {
+      "id": "18148613287588302",
+      "caption": "Want your own number? Comment PROTEIN and we’ll send you our free calculator. Pop in your weight, height, activity and goal, then tap what y",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DgHlaZms3BR/",
+      "timestamp": "2026-11-24T09:01:49+0000",
+      "like_count": 21,
+      "comments_count": 26,
+      "is_trial": false,
+      "insights": {
+        "views": 330,
+        "reach": 217,
+        "saved": 0,
+        "shares": 2,
+        "likes": 21,
+        "comments": 26,
+        "total_interactions": 49,
+        "ig_reels_avg_watch_time": 10369,
+        "follows": null
+      },
+      "insights_at": "2026-11-25T08:11:27+00:00"
+    },
+    {
+      "id": "18104384711354212",
+      "caption": "A short list for before you open the deals.\n\nNumber 1 is my favourite. The day the phone started charging in the kitchen, my sleep got bette",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DgHhjpimZNw/",
+      "timestamp": "2026-11-24T08:27:45+0000",
+      "like_count": 0,
+      "comments_count": 0,
+      "is_trial": true,
+      "insights": {
+        "views": 131,
+        "reach": 109,
+        "saved": 0,
+        "shares": 0,
+        "likes": 0,
+        "comments": 0,
+        "total_interactions": 0,
+        "ig_reels_avg_watch_time": 6850,
+        "follows": null
+      },
+      "insights_at": "2026-11-25T08:11:27+00:00"
+    },
     {
       "id": "18094002317242621",
       "caption": "Some habits never needed a trend.\n\nMost of these line up with what the NHS still recommends today, like moving every day and keeping a regul",
@@ -46,21 +276,21 @@
       "media_product_type": "REELS",
       "permalink": "https://www.instagram.com/reel/DgGWoCZmUKa/",
       "timestamp": "2026-11-23T21:33:00+0000",
-      "like_count": 0,
+      "like_count": 2,
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 198,
-        "reach": 145,
+        "views": 460,
+        "reach": 306,
         "saved": 1,
         "shares": 0,
-        "likes": 0,
+        "likes": 2,
         "comments": 0,
-        "total_interactions": 1,
-        "ig_reels_avg_watch_time": 6557,
+        "total_interactions": 3,
+        "ig_reels_avg_watch_time": 8305,
         "follows": null
       },
-      "insights_at": "2026-11-24T08:07:00+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "18238256995321960",
@@ -73,17 +303,17 @@
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 178,
-        "reach": 90,
+        "views": 181,
+        "reach": 118,
         "saved": 0,
         "shares": 0,
         "likes": 0,
         "comments": 0,
         "total_interactions": 0,
-        "ig_reels_avg_watch_time": 8061,
+        "ig_reels_avg_watch_time": 7883,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "18059668952583302",
@@ -96,17 +326,17 @@
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 179,
-        "reach": 133,
+        "views": 289,
+        "reach": 211,
         "saved": 0,
         "shares": 0,
         "likes": 0,
         "comments": 0,
         "total_interactions": 0,
-        "ig_reels_avg_watch_time": 6628,
+        "ig_reels_avg_watch_time": 6593,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "17976986390949400",
@@ -115,21 +345,21 @@
       "media_product_type": "REELS",
       "permalink": "https://www.instagram.com/reel/DgFuUdlMCFh/",
       "timestamp": "2026-11-23T15:41:56+0000",
-      "like_count": 12,
+      "like_count": 15,
       "comments_count": 6,
       "is_trial": false,
       "insights": {
-        "views": 139,
-        "reach": 71,
-        "saved": 0,
+        "views": 249,
+        "reach": 130,
+        "saved": 1,
         "shares": 2,
-        "likes": 10,
-        "comments": 0,
-        "total_interactions": 12,
-        "ig_reels_avg_watch_time": 6584,
+        "likes": 15,
+        "comments": 6,
+        "total_interactions": 24,
+        "ig_reels_avg_watch_time": 6118,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "18155407483556979",
@@ -142,17 +372,17 @@
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 170,
-        "reach": 120,
+        "views": 172,
+        "reach": 121,
         "saved": 0,
         "shares": 0,
         "likes": 0,
         "comments": 0,
         "total_interactions": 0,
-        "ig_reels_avg_watch_time": 7365,
+        "ig_reels_avg_watch_time": 7258,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "17994115473118594",
@@ -165,17 +395,17 @@
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 193,
-        "reach": 131,
+        "views": 194,
+        "reach": 132,
         "saved": 0,
         "shares": 0,
         "likes": 0,
         "comments": 0,
         "total_interactions": 0,
-        "ig_reels_avg_watch_time": 8113,
+        "ig_reels_avg_watch_time": 8063,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "17915021319475781",
@@ -188,17 +418,17 @@
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 171,
-        "reach": 119,
+        "views": 175,
+        "reach": 122,
         "saved": 0,
         "shares": 0,
         "likes": 0,
         "comments": 0,
         "total_interactions": 0,
-        "ig_reels_avg_watch_time": 8627,
+        "ig_reels_avg_watch_time": 8622,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "17971903257225071",
@@ -207,21 +437,21 @@
       "media_product_type": "REELS",
       "permalink": "https://www.instagram.com/reel/DgFIsPZM7rj/",
       "timestamp": "2026-11-23T10:14:16+0000",
-      "like_count": 24,
+      "like_count": 27,
       "comments_count": 2,
       "is_trial": false,
       "insights": {
-        "views": 384,
-        "reach": 269,
+        "views": 519,
+        "reach": 377,
         "saved": 0,
         "shares": 4,
-        "likes": 20,
+        "likes": 27,
         "comments": 2,
-        "total_interactions": 26,
-        "ig_reels_avg_watch_time": 8361,
+        "total_interactions": 33,
+        "ig_reels_avg_watch_time": 8115,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "18134716069695641",
@@ -234,17 +464,17 @@
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 160,
-        "reach": 111,
+        "views": 161,
+        "reach": 112,
         "saved": 0,
         "shares": 0,
         "likes": 0,
         "comments": 0,
         "total_interactions": 0,
-        "ig_reels_avg_watch_time": 8310,
+        "ig_reels_avg_watch_time": 8240,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "17890385664491689",
@@ -257,17 +487,17 @@
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 157,
-        "reach": 114,
+        "views": 160,
+        "reach": 116,
         "saved": 0,
         "shares": 0,
         "likes": 0,
         "comments": 0,
         "total_interactions": 0,
-        "ig_reels_avg_watch_time": 6629,
+        "ig_reels_avg_watch_time": 6770,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "18362825254217823",
@@ -280,17 +510,17 @@
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 1794,
+        "views": 1795,
         "reach": 1103,
         "saved": 4,
         "shares": 2,
         "likes": 5,
         "comments": 0,
         "total_interactions": 11,
-        "ig_reels_avg_watch_time": 9792,
+        "ig_reels_avg_watch_time": 9784,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "18423923230155962",
@@ -303,17 +533,17 @@
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 1181,
-        "reach": 859,
+        "views": 1189,
+        "reach": 861,
         "saved": 5,
         "shares": 1,
         "likes": 6,
         "comments": 0,
         "total_interactions": 12,
-        "ig_reels_avg_watch_time": 6960,
+        "ig_reels_avg_watch_time": 6959,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "18042954173848013",
@@ -326,17 +556,17 @@
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 1719,
+        "views": 1720,
         "reach": 1102,
         "saved": 10,
         "shares": 9,
         "likes": 8,
         "comments": 0,
         "total_interactions": 27,
-        "ig_reels_avg_watch_time": 9018,
+        "ig_reels_avg_watch_time": 9010,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "18112040518924074",
@@ -345,21 +575,21 @@
       "media_product_type": "REELS",
       "permalink": "https://www.instagram.com/reel/DgDWEPuslZj/",
       "timestamp": "2026-11-22T17:31:23+0000",
-      "like_count": 39,
+      "like_count": 40,
       "comments_count": 0,
       "is_trial": false,
       "insights": {
-        "views": 1774,
-        "reach": 1372,
+        "views": 1803,
+        "reach": 1390,
         "saved": 1,
         "shares": 2,
-        "likes": 38,
+        "likes": 40,
         "comments": 0,
-        "total_interactions": 41,
-        "ig_reels_avg_watch_time": 16437,
+        "total_interactions": 43,
+        "ig_reels_avg_watch_time": 16677,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "17916461307479802",
@@ -382,7 +612,7 @@
         "ig_reels_avg_watch_time": 7322,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "18123272584997283",
@@ -391,21 +621,21 @@
       "media_product_type": "REELS",
       "permalink": "https://www.instagram.com/reel/DgDAaWFM1QG/",
       "timestamp": "2026-11-22T14:21:39+0000",
-      "like_count": 26,
+      "like_count": 29,
       "comments_count": 6,
       "is_trial": false,
       "insights": {
-        "views": 335,
-        "reach": 217,
+        "views": 351,
+        "reach": 227,
         "saved": 0,
         "shares": 0,
-        "likes": 26,
+        "likes": 29,
         "comments": 6,
-        "total_interactions": 32,
-        "ig_reels_avg_watch_time": 7393,
+        "total_interactions": 35,
+        "ig_reels_avg_watch_time": 7704,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "18170739343491797",
@@ -428,7 +658,7 @@
         "ig_reels_avg_watch_time": 8349,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "18145465405721870",
@@ -451,7 +681,7 @@
         "ig_reels_avg_watch_time": 6859,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "18647180440032422",
@@ -464,17 +694,17 @@
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 853,
+        "views": 855,
         "reach": 612,
-        "saved": 5,
+        "saved": 6,
         "shares": 0,
         "likes": 2,
         "comments": 0,
-        "total_interactions": 7,
-        "ig_reels_avg_watch_time": 7174,
+        "total_interactions": 8,
+        "ig_reels_avg_watch_time": 7180,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "18156809875530149",
@@ -497,7 +727,7 @@
         "ig_reels_avg_watch_time": 6164,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "17913863829478112",
@@ -510,17 +740,17 @@
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 1791,
-        "reach": 1184,
+        "views": 1802,
+        "reach": 1191,
         "saved": 8,
         "shares": 0,
-        "likes": 5,
+        "likes": 6,
         "comments": 0,
-        "total_interactions": 13,
-        "ig_reels_avg_watch_time": 8746,
+        "total_interactions": 14,
+        "ig_reels_avg_watch_time": 8751,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "18208793197373357",
@@ -543,7 +773,7 @@
         "ig_reels_avg_watch_time": 6470,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "18161308849450887",
@@ -566,7 +796,7 @@
         "ig_reels_avg_watch_time": 0,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "18107605352572775",
@@ -579,17 +809,17 @@
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 1514,
-        "reach": 1041,
+        "views": 1519,
+        "reach": 1043,
         "saved": 5,
         "shares": 0,
         "likes": 7,
         "comments": 0,
         "total_interactions": 13,
-        "ig_reels_avg_watch_time": 9849,
+        "ig_reels_avg_watch_time": 9857,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "18660477955008679",
@@ -598,21 +828,21 @@
       "media_product_type": "REELS",
       "permalink": "https://www.instagram.com/reel/DgAXVH9DidX/",
       "timestamp": "2026-11-21T13:44:13+0000",
-      "like_count": 0,
+      "like_count": 16,
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 111,
-        "reach": 103,
+        "views": 263,
+        "reach": 206,
         "saved": 0,
         "shares": 0,
-        "likes": 0,
+        "likes": 16,
         "comments": 0,
-        "total_interactions": 0,
-        "ig_reels_avg_watch_time": 4338,
+        "total_interactions": 16,
+        "ig_reels_avg_watch_time": 7694,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "18120934807810609",
@@ -625,17 +855,17 @@
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 1742,
-        "reach": 1215,
+        "views": 1743,
+        "reach": 1216,
         "saved": 9,
         "shares": 0,
         "likes": 8,
         "comments": 0,
         "total_interactions": 17,
-        "ig_reels_avg_watch_time": 7904,
+        "ig_reels_avg_watch_time": 7898,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "17999187645048274",
@@ -648,17 +878,17 @@
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 294,
-        "reach": 233,
+        "views": 296,
+        "reach": 235,
         "saved": 1,
         "shares": 0,
         "likes": 0,
         "comments": 0,
         "total_interactions": 1,
-        "ig_reels_avg_watch_time": 5433,
+        "ig_reels_avg_watch_time": 5416,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "17981585958133391",
@@ -681,7 +911,7 @@
         "ig_reels_avg_watch_time": 8185,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "18087598952329777",
@@ -704,7 +934,7 @@
         "ig_reels_avg_watch_time": 7057,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     },
     {
       "id": "18177444478393275",
@@ -713,292 +943,38 @@
       "media_product_type": "REELS",
       "permalink": "https://www.instagram.com/reel/Df-un0nMTD9/",
       "timestamp": "2026-11-20T22:29:41+0000",
-      "like_count": 20,
+      "like_count": 21,
       "comments_count": 2,
       "is_trial": false,
       "insights": {
-        "views": 320,
-        "reach": 211,
+        "views": 328,
+        "reach": 215,
         "saved": 0,
         "shares": 0,
-        "likes": 20,
+        "likes": 21,
         "comments": 2,
-        "total_interactions": 22,
-        "ig_reels_avg_watch_time": 8096,
+        "total_interactions": 23,
+        "ig_reels_avg_watch_time": 8262,
         "follows": null
       },
-      "insights_at": "2026-11-23T20:55:18+00:00"
-    },
-    {
-      "id": "17911557441577373",
-      "caption": "Frozen peas in the pasta, chickpeas in the curry. That's two already.\n\nOnly 17% of adults in the UK manage 5 portions of fruit and veg a day",
-      "media_type": "VIDEO",
-      "media_product_type": "REELS",
-      "permalink": "https://www.instagram.com/reel/Df-QZkKDG91/",
-      "timestamp": "2026-11-20T18:05:09+0000",
-      "like_count": 0,
-      "comments_count": 0,
-      "is_trial": true,
-      "insights": {
-        "views": 1,
-        "reach": 1,
-        "saved": 0,
-        "shares": 0,
-        "likes": 0,
-        "comments": 0,
-        "total_interactions": 0,
-        "ig_reels_avg_watch_time": 1235,
-        "follows": null
-      },
-      "insights_at": "2026-11-23T20:55:18+00:00"
-    },
-    {
-      "id": "17955744390274267",
-      "caption": "A realistic day of food, start to finish.\n\nThe 3pm crash used to get me every day. What changed it was protein at breakfast and an actual lu",
-      "media_type": "VIDEO",
-      "media_product_type": "REELS",
-      "permalink": "https://www.instagram.com/reel/Df-JyzrCnMm/",
-      "timestamp": "2026-11-20T17:07:06+0000",
-      "like_count": 0,
-      "comments_count": 0,
-      "is_trial": true,
-      "insights": {
-        "views": 161,
-        "reach": 127,
-        "saved": 0,
-        "shares": 0,
-        "likes": 0,
-        "comments": 0,
-        "total_interactions": 0,
-        "ig_reels_avg_watch_time": 6053,
-        "follows": null
-      },
-      "insights_at": "2026-11-23T20:55:18+00:00"
-    },
-    {
-      "id": "18119964938020233",
-      "caption": "Frozen peas in the pasta, chickpeas in the curry. That's two already.\n\nOnly 17% of adults in the UK manage 5 portions of fruit and veg a day",
-      "media_type": "VIDEO",
-      "media_product_type": "REELS",
-      "permalink": "https://www.instagram.com/reel/Df91jt_EyuB/",
-      "timestamp": "2026-11-20T14:10:30+0000",
-      "like_count": 0,
-      "comments_count": 0,
-      "is_trial": true,
-      "insights": {
-        "views": 99,
-        "reach": 93,
-        "saved": 1,
-        "shares": 0,
-        "likes": 0,
-        "comments": 0,
-        "total_interactions": 1,
-        "ig_reels_avg_watch_time": 2134,
-        "follows": null
-      },
-      "insights_at": "2026-11-23T20:55:18+00:00"
-    },
-    {
-      "id": "18092186306259491",
-      "caption": "A realistic day of food, start to finish.\n\nThe 3pm crash used to get me every day. What changed it was protein at breakfast and an actual lu",
-      "media_type": "VIDEO",
-      "media_product_type": "REELS",
-      "permalink": "https://www.instagram.com/reel/Df91djKEXsE/",
-      "timestamp": "2026-11-20T14:09:15+0000",
-      "like_count": 0,
-      "comments_count": 0,
-      "is_trial": true,
-      "insights": {
-        "views": 167,
-        "reach": 144,
-        "saved": 0,
-        "shares": 0,
-        "likes": 0,
-        "comments": 0,
-        "total_interactions": 0,
-        "ig_reels_avg_watch_time": 5027,
-        "follows": null
-      },
-      "insights_at": "2026-11-23T20:55:18+00:00"
-    },
-    {
-      "id": "17897271657620110",
-      "caption": "A realistic day of food, start to finish.\n\nThe 3pm crash used to get me every day. What changed it was protein at breakfast and an actual lu",
-      "media_type": "VIDEO",
-      "media_product_type": "REELS",
-      "permalink": "https://www.instagram.com/reel/Df9s5HaAmzX/",
-      "timestamp": "2026-11-20T12:54:47+0000",
-      "like_count": 0,
-      "comments_count": 0,
-      "is_trial": true,
-      "insights": {
-        "views": 145,
-        "reach": 116,
-        "saved": 0,
-        "shares": 0,
-        "likes": 0,
-        "comments": 0,
-        "total_interactions": 0,
-        "ig_reels_avg_watch_time": 5973,
-        "follows": null
-      },
-      "insights_at": "2026-11-23T20:55:18+00:00"
-    },
-    {
-      "id": "18132323192490625",
-      "caption": "“Water? In NOVEMBER?!” 😭☕️\n\nAt this point, the kettle is basically the third person in our marriage. 😂\n\nTag someone who’s 90% tea and 10% ex",
-      "media_type": "VIDEO",
-      "media_product_type": "REELS",
-      "permalink": "https://www.instagram.com/reel/Df9fgu8suop/",
-      "timestamp": "2026-11-20T10:58:03+0000",
-      "like_count": 30,
-      "comments_count": 10,
-      "is_trial": false,
-      "insights": {
-        "views": 541,
-        "reach": 309,
-        "saved": 1,
-        "shares": 1,
-        "likes": 30,
-        "comments": 10,
-        "total_interactions": 42,
-        "ig_reels_avg_watch_time": 13678,
-        "follows": null
-      },
-      "insights_at": "2026-11-23T20:55:18+00:00"
-    },
-    {
-      "id": "18118182590601579",
-      "caption": "A realistic day of food, start to finish.\n\nThe 3pm crash used to get me every day. What changed it was protein at breakfast and an actual lu",
-      "media_type": "VIDEO",
-      "media_product_type": "REELS",
-      "permalink": "https://www.instagram.com/reel/Df9e6CwDjbs/",
-      "timestamp": "2026-11-20T10:52:11+0000",
-      "like_count": 0,
-      "comments_count": 0,
-      "is_trial": true,
-      "insights": {
-        "views": 208,
-        "reach": 159,
-        "saved": 0,
-        "shares": 0,
-        "likes": 0,
-        "comments": 0,
-        "total_interactions": 0,
-        "ig_reels_avg_watch_time": 6198,
-        "follows": null
-      },
-      "insights_at": "2026-11-23T20:55:18+00:00"
-    },
-    {
-      "id": "18141081310651999",
-      "caption": "A realistic day of food, start to finish.\n\nThe 3pm crash used to get me every day. What changed it was protein at breakfast and an actual lu",
-      "media_type": "VIDEO",
-      "media_product_type": "REELS",
-      "permalink": "https://www.instagram.com/reel/Df9RkeXEs9S/",
-      "timestamp": "2026-11-20T08:55:34+0000",
-      "like_count": 4,
-      "comments_count": 0,
-      "is_trial": true,
-      "insights": {
-        "views": 708,
-        "reach": 486,
-        "saved": 3,
-        "shares": 0,
-        "likes": 4,
-        "comments": 0,
-        "total_interactions": 7,
-        "ig_reels_avg_watch_time": 7602,
-        "follows": null
-      },
-      "insights_at": "2026-11-23T20:55:18+00:00"
-    },
-    {
-      "id": "18386348314239071",
-      "caption": "A realistic day of food, start to finish.\n\nThe 3pm crash used to get me every day. What changed it was protein at breakfast and an actual lu",
-      "media_type": "VIDEO",
-      "media_product_type": "REELS",
-      "permalink": "https://www.instagram.com/reel/Df9K7xoGViP/",
-      "timestamp": "2026-11-20T07:57:41+0000",
-      "like_count": 3,
-      "comments_count": 0,
-      "is_trial": true,
-      "insights": {
-        "views": 1078,
-        "reach": 727,
-        "saved": 4,
-        "shares": 0,
-        "likes": 3,
-        "comments": 0,
-        "total_interactions": 7,
-        "ig_reels_avg_watch_time": 7917,
-        "follows": null
-      },
-      "insights_at": "2026-11-23T20:55:18+00:00"
-    },
-    {
-      "id": "18424899235158627",
-      "caption": "A few small things that make the darker weeks easier.\n\nNumber 1 has NHS backing. For seasonal affective disorder, the NHS suggests getting a",
-      "media_type": "VIDEO",
-      "media_product_type": "REELS",
-      "permalink": "https://www.instagram.com/reel/Df74SnvkmX9/",
-      "timestamp": "2026-11-19T19:55:55+0000",
-      "like_count": 1,
-      "comments_count": 0,
-      "is_trial": true,
-      "insights": {
-        "views": 464,
-        "reach": 312,
-        "saved": 1,
-        "shares": 0,
-        "likes": 1,
-        "comments": 0,
-        "total_interactions": 2,
-        "ig_reels_avg_watch_time": 9286,
-        "follows": null
-      },
-      "insights_at": "2026-11-23T20:55:18+00:00"
+      "insights_at": "2026-11-25T08:11:27+00:00"
     }
   ],
   "trending_audio": [
-    {
-      "id": "888510671021141",
-      "title": "Low budget Vagina(LBVA)Amanda",
-      "artist": "Bianca Case",
-      "type": "music",
-      "duration_ms": 161213,
-      "ads_eligible": false
-    },
-    {
-      "id": "1124230547275731",
-      "title": "GTA 6 Main Theme (EPIC Version)",
-      "artist": "Apex Sound Odyssey",
-      "type": "music",
-      "duration_ms": 134920,
-      "ads_eligible": false
-    },
-    {
-      "id": "1350757230173277",
-      "title": "GTA 6 (Grand Theft Auto Six Song)",
-      "artist": "AURIX232",
-      "type": "music",
-      "duration_ms": 136400,
-      "ads_eligible": false
-    },
-    {
-      "id": "690549269289148",
-      "title": "Grand Theft Auto: San Andreas (Official Theme Song)",
-      "artist": "Michael Hunter",
-      "type": "music",
-      "duration_ms": 88373,
-      "ads_eligible": false
-    },
     {
       "id": "1357192349720587",
       "title": "Draw You Out",
       "artist": "Noah Kahan, The Hunger Games",
       "type": "music",
       "duration_ms": 255984,
+      "ads_eligible": false
+    },
+    {
+      "id": "888510671021141",
+      "title": "Low budget Vagina(LBVA)Amanda",
+      "artist": "Bianca Case",
+      "type": "music",
+      "duration_ms": 161213,
       "ads_eligible": false
     },
     {
@@ -1010,38 +986,6 @@
       "ads_eligible": false
     },
     {
-      "id": "1619590552945205",
-      "title": "Think I'm going dumb",
-      "artist": "ACE aqugounk",
-      "type": "music",
-      "duration_ms": 128350,
-      "ads_eligible": false
-    },
-    {
-      "id": "1500358294806818",
-      "title": "Young Folks",
-      "artist": "NCWU Spectrum",
-      "type": "music",
-      "duration_ms": 282043,
-      "ads_eligible": false
-    },
-    {
-      "id": "1666155628402531",
-      "title": "Sand Drawing",
-      "artist": "Judah Earl",
-      "type": "music",
-      "duration_ms": 208851,
-      "ads_eligible": false
-    },
-    {
-      "id": "1866567821133174",
-      "title": "Flower In A Hurricane (feat. Tame Impala, SZA, King Gizzard & the Lizard Wizard) [From GTAVI: Original Score]",
-      "artist": "Justice, Tame Impala, SZA, Grand Theft Auto VI",
-      "type": "music",
-      "duration_ms": 224877,
-      "ads_eligible": false
-    },
-    {
       "id": "2256881278596733",
       "title": "Innerbloom XI",
       "artist": "RÜFÜS DU SOL, Hans Zimmer",
@@ -1050,59 +994,19 @@
       "ads_eligible": false
     },
     {
-      "id": "1669192674919295",
-      "title": "two faced",
-      "artist": "purc",
+      "id": "1619590552945205",
+      "title": "Think I'm going dumb",
+      "artist": "ACE aqugounk",
       "type": "music",
-      "duration_ms": 356758,
+      "duration_ms": 128350,
       "ads_eligible": false
     },
     {
-      "id": "2197359977180527",
-      "title": "James Bond Theme",
-      "artist": "John Barry Orchestra",
+      "id": "2519800484733231",
+      "title": "It's Beginning to Look a Lot like Christmas",
+      "artist": "Michael Bublé",
       "type": "music",
-      "duration_ms": 108204,
-      "ads_eligible": false
-    },
-    {
-      "id": "1382788023218400",
-      "title": "NON MI INNAMORERÓ (Brazilian Remix)",
-      "artist": "Pucho, Gordinho Bolado, Mia, Cristy",
-      "type": "music",
-      "duration_ms": 139764,
-      "ads_eligible": false
-    },
-    {
-      "id": "550901680308919",
-      "title": "Monkeys Spinning Monkeys",
-      "artist": "Kevin MacLeod, Kevin",
-      "type": "music",
-      "duration_ms": 125000,
-      "ads_eligible": false
-    },
-    {
-      "id": "1706806767670629",
-      "title": "Pusher (feat. Gesaffelstein) [From GTAVI: Original Score]",
-      "artist": "Justice, Gesaffelstein, Grand Theft Auto VI",
-      "type": "music",
-      "duration_ms": 424509,
-      "ads_eligible": false
-    },
-    {
-      "id": "4592557824320671",
-      "title": "FA FA FA (From \"O.M: Operation Mole\")",
-      "artist": "Sai Abhyankkar, Thamizh Aadhavan",
-      "type": "music",
-      "duration_ms": 176220,
-      "ads_eligible": false
-    },
-    {
-      "id": "798651011019094",
-      "title": "Inner Light",
-      "artist": "Elderbrook, Bob Moses",
-      "type": "music",
-      "duration_ms": 257985,
+      "duration_ms": 207199,
       "ads_eligible": false
     },
     {
@@ -1114,6 +1018,30 @@
       "ads_eligible": false
     },
     {
+      "id": "1105832515616055",
+      "title": "Go Easy (from GTAVI: The Album)",
+      "artist": "Dua Lipa, Grand Theft Auto VI",
+      "type": "music",
+      "duration_ms": 191500,
+      "ads_eligible": false
+    },
+    {
+      "id": "1669192674919295",
+      "title": "two faced",
+      "artist": "purc",
+      "type": "music",
+      "duration_ms": 356758,
+      "ads_eligible": false
+    },
+    {
+      "id": "4592557824320671",
+      "title": "FA FA FA (From \"O.M: Operation Mole\")",
+      "artist": "Sai Abhyankkar, Thamizh Aadhavan",
+      "type": "music",
+      "duration_ms": 176220,
+      "ads_eligible": false
+    },
+    {
       "id": "387447705133525",
       "title": "Step Into Christmas (Remastered 2017)",
       "artist": "Elton John",
@@ -1122,27 +1050,43 @@
       "ads_eligible": false
     },
     {
-      "id": "540374346472535",
-      "title": "Let It All Work Out (feat. Sampha)",
-      "artist": "Lil Wayne",
+      "id": "1500358294806818",
+      "title": "Young Folks",
+      "artist": "NCWU Spectrum",
       "type": "music",
-      "duration_ms": 316192,
+      "duration_ms": 282043,
       "ads_eligible": false
     },
     {
-      "id": "1519910168935169",
-      "title": "Her",
-      "artist": "The American Dawn",
+      "id": "1350757230173277",
+      "title": "GTA 6 (Grand Theft Auto Six Song)",
+      "artist": "AURIX232",
       "type": "music",
-      "duration_ms": 214086,
+      "duration_ms": 136400,
       "ads_eligible": false
     },
     {
-      "id": "1016543858172501",
-      "title": "Low Budget vaginal Amanda",
-      "artist": "JACQEBLOOM",
+      "id": "371843479985874",
+      "title": "Christmas (Baby Please Come Home)",
+      "artist": "Darlene Love",
       "type": "music",
-      "duration_ms": 222143,
+      "duration_ms": 166720,
+      "ads_eligible": false
+    },
+    {
+      "id": "1131276776292967",
+      "title": "Yellow",
+      "artist": "Coldplay",
+      "type": "music",
+      "duration_ms": 270426,
+      "ads_eligible": false
+    },
+    {
+      "id": "1382788023218400",
+      "title": "NON MI INNAMORERÓ (Brazilian Remix)",
+      "artist": "Pucho, Gordinho Bolado, Mia, Cristy",
+      "type": "music",
+      "duration_ms": 139764,
       "ads_eligible": false
     },
     {
@@ -1154,17 +1098,73 @@
       "ads_eligible": false
     },
     {
-      "id": "2418741215326959",
-      "title": "Blood In Your Eyes (from GTAVI: The Album)",
-      "artist": "Tove Lo, Grand Theft Auto VI",
+      "id": "183403658964987",
+      "title": "Last Christmas (Remastered)",
+      "artist": "Wham!",
       "type": "music",
-      "duration_ms": 161219,
+      "duration_ms": 267160,
+      "ads_eligible": false
+    },
+    {
+      "id": "1668033651645130",
+      "title": "Low Budget Vagina Amanda",
+      "artist": "Karen",
+      "type": "music",
+      "duration_ms": 181789,
+      "ads_eligible": false
+    },
+    {
+      "id": "690549269289148",
+      "title": "Grand Theft Auto: San Andreas (Official Theme Song)",
+      "artist": "Michael Hunter",
+      "type": "music",
+      "duration_ms": 88373,
+      "ads_eligible": false
+    },
+    {
+      "id": "849646104838407",
+      "title": "fashion week",
+      "artist": "SUPREX",
+      "type": "music",
+      "duration_ms": 195001,
+      "ads_eligible": false
+    },
+    {
+      "id": "1835723224002185",
+      "title": "Warm Winter Jazz",
+      "artist": "JAZZ BGMS",
+      "type": "music",
+      "duration_ms": 122879,
+      "ads_eligible": false
+    },
+    {
+      "id": "1057249653808076",
+      "title": "Sand Drawing (Slowed + Reverb)",
+      "artist": "Judah Earl",
+      "type": "music",
+      "duration_ms": 221324,
+      "ads_eligible": false
+    },
+    {
+      "id": "2460173681175690",
+      "title": "Deep In The Meadow",
+      "artist": "Jennifer Lawrence, The Hunger Games",
+      "type": "music",
+      "duration_ms": 90655,
+      "ads_eligible": false
+    },
+    {
+      "id": "831551163011127",
+      "title": "Sunday Morning",
+      "artist": "Maroon 5",
+      "type": "music",
+      "duration_ms": 242320,
       "ads_eligible": false
     }
   ],
   "errors": [
     "media (reel) metrics refused: follows"
   ],
-  "daily_days": 92,
-  "media_cached": 231
+  "daily_days": 93,
+  "media_cached": 241
 }
