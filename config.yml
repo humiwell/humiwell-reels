@@ -107,4 +107,14 @@ token:
   # Try to renew the token automatically (needs the GH_SECRETS_TOKEN secret, see README).
   auto_renew: true
 
+# Weekly hashtag research (Actions tab, "Hashtag research"). Read-only, posts nothing.
+# Instagram allows 30 different hashtags per 7 days for the account, so keep this list at 30 or fewer.
+# Write them without the # sign.
+hashtags:
+  tags: [guthealth, guthealthtips, ukwellness, wellnesstips, nutritiontips, healthyeatinguk,
+         blackseedoil, kalonji, magnesium, menopausesupport, perimenopause, fibre,
+         highprotein, mealprepuk, ultraprocessedfood]
+  # How many top posts to show per hashtag.
+  top_posts: 8
+
 graph_api_version: v27.0

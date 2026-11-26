@@ -58,6 +58,14 @@ def main(argv):
         else:
             shortlist.run(graph)
         return 0
+    if cmd == "hashtags":
+        # Read-only: weekly hashtag research (research/hashtags/<date>.md + a summary issue).
+        if graph is None:
+            print("IG_ACCESS_TOKEN is missing. Run it from GitHub: Actions, Hashtag research.")
+            return 1
+        from . import hashtags
+        _, problems_h = hashtags.run(cfg, graph, dry="--dry" in argv)
+        return 0
     if cmd == "snapshot":
         # Read-only: today's numbers for every posted version (prints one SNAP json line each).
         if graph is None:
