@@ -6,7 +6,7 @@ Writes research/hashtags/<date>.md and opens a short summary issue.
 """
 import re
 from collections import Counter
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from .common import ROOT, open_issue
@@ -16,6 +16,7 @@ FIELDS = "id,caption,media_type,comments_count,like_count,permalink,timestamp"
 OUT_DIR = ROOT / "research" / "hashtags"
 TAG_RE = re.compile(r"#(\w+)", re.UNICODE)
 RECENT_PAGES = 4  # count up to 200 posts from the last 24 hours
+RECENT_TOP_DAYS = 90  # Instagram's "top posts" are all-time; keep only recent ones
 
 
 def _score(m):
@@ -28,8 +29,20 @@ def _first_line(caption, n=110):
     return line if len(line) <= n else line[: n - 1].rstrip() + "…"
 
 
-def fetch_tag(graph, tag, top_n):
-    """Returns (top posts, number of posts in the last 24 hours, related hashtags)."""
+def _table(posts):
+    if not posts:
+        return "_None._"
+    rows = ["| # | Type | Likes | Comments | Posted | First line |", "|---|---|---|---|---|---|"]
+    for i, m in enumerate(posts, 1):
+        kind = {"VIDEO": "video", "IMAGE": "photo", "CAROUSEL_ALBUM": "carousel"}.get(m.get("media_type"), "?")
+        likes = m.get("like_count")
+        rows.append(f"| [{i}]({m.get('permalink', '')}) | {kind} | {likes if likes is not None else 'hidden'} | "
+                    f"{m.get('comments_count', 0)} | {(m.get('timestamp') or '')[:10]} | {_first_line(m.get('caption'))} |")
+    return "\n".join(rows)
+
+
+def fetch_tag(graph, tag, top_n, now):
+    """Returns (top posts of the last 90 days, hottest posts of the last 24 hours, count, related hashtags)."""
     found = graph.get("ig_hashtag_search", {"user_id": graph.ig_user_id, "q": tag})
     ids = found.get("data") or []
     if not ids:
@@ -38,7 +51,7 @@ def fetch_tag(graph, tag, top_n):
     top = graph.get(f"{hid}/top_media", {"user_id": graph.ig_user_id, "fields": FIELDS, "limit": 50}).get("data", [])
     recent, after, more = [], None, False
     for _ in range(RECENT_PAGES):  # same hashtag again does not count against the 30-a-week limit
-        params = {"user_id": graph.ig_user_id, "fields": "id,caption", "limit": 50}
+        params = {"user_id": graph.ig_user_id, "fields": FIELDS, "limit": 50}
         if after:
             params["after"] = after
         body = graph.get(f"{hid}/recent_media", params)
@@ -54,8 +67,10 @@ def fetch_tag(graph, tag, top_n):
         for t in {x.lower() for x in TAG_RE.findall(m.get("caption") or "")}:
             if t != tag.lower():
                 related[t] += 1
-    top = sorted(top, key=_score, reverse=True)[:top_n]
-    return top, recent_count, related
+    cutoff = (now - timedelta(days=RECENT_TOP_DAYS)).strftime("%Y-%m-%d")
+    top = sorted([m for m in top if (m.get("timestamp") or "")[:10] >= cutoff], key=_score, reverse=True)[:top_n]
+    hot = sorted(recent, key=_score, reverse=True)[:top_n]
+    return top, hot, recent_count, related
 
 
 def run(cfg, graph, now=None, log=print, dry=False):
@@ -71,7 +86,7 @@ def run(cfg, graph, now=None, log=print, dry=False):
     sections, summary, problems, all_related = [], [], [], Counter()
     for tag in tags:
         try:
-            top, recent_count, related = fetch_tag(graph, tag, top_n)
+            top, hot, recent_count, related = fetch_tag(graph, tag, top_n, now)
         except GraphError as e:
             problems.append(f"#{tag}: {e}")
             log(f"#{tag}: {e}")
@@ -79,24 +94,21 @@ def run(cfg, graph, now=None, log=print, dry=False):
                 break  # no access at all: the other tags will fail the same way
             continue
         all_related.update(related)
-        best = top[0] if top else {}
+        best = hot[0] if hot else (top[0] if top else {})
         summary.append((tag, recent_count, _score(best), best.get("permalink", "")))
-        rows = ["| # | Type | Likes | Comments | Posted | First line |", "|---|---|---|---|---|---|"]
-        for i, m in enumerate(top, 1):
-            kind = {"VIDEO": "video", "IMAGE": "photo", "CAROUSEL_ALBUM": "carousel"}.get(m.get("media_type"), "?")
-            likes = m.get("like_count")
-            rows.append(f"| [{i}]({m.get('permalink', '')}) | {kind} | {likes if likes is not None else 'hidden'} | "
-                        f"{m.get('comments_count', 0)} | {(m.get('timestamp') or '')[:10]} | {_first_line(m.get('caption'))} |")
         rel = ", ".join(f"#{t}" for t, _ in related.most_common(8)) or "none"
         sections.append(f"## #{tag}\n\nPosts in the last 24 hours: {recent_count}. "
-                        f"Hashtags used alongside it: {rel}\n\n" + "\n".join(rows))
-        log(f"#{tag}: {len(top)} top posts, {recent_count} in the last 24 hours")
+                        f"Hashtags used alongside it: {rel}\n\n"
+                        f"**Hot in the last 24 hours**\n\n{_table(hot)}\n\n"
+                        f"**Top posts from the last {RECENT_TOP_DAYS} days**\n\n{_table(top)}")
+        log(f"#{tag}: {len(hot)} hot, {len(top)} recent top posts, {recent_count} in the last 24 hours")
 
     lines = [f"# Hashtag research, week of {day}", "",
-             "Top posts for each hashtag (ranked by likes + 3 x comments) and how busy each tag was in the last 24 hours.",
+             "For each hashtag: the hottest posts of the last 24 hours, the top posts of the last 90 days "
+             "(ranked by likes + 3 x comments), and how busy the tag was in the last 24 hours.",
              "Use it for reel, song and carousel ideas and hook patterns. Edit the list in config.yml under `hashtags:`.", ""]
     if summary:
-        lines += ["## At a glance", "", "| Hashtag | Posts in last 24 h | Best post score | Best post |", "|---|---|---|---|"]
+        lines += ["## At a glance", "", "| Hashtag | Posts in last 24 h | Hottest post score | Hottest post |", "|---|---|---|---|"]
         lines += [f"| #{t} | {c} | {s} | {'[open](' + p + ')' if p else ''} |" for t, c, s, p in summary]
         lines += ["", "**Most common hashtags across all of them:** "
                   + (", ".join(f"#{t} ({n})" for t, n in all_related.most_common(15)) or "none"), ""]

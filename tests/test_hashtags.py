@@ -20,11 +20,13 @@ class FakeGraph:
             return {"data": [
                 {"id": "1", "caption": "Fibre hack #guthealth #fibre", "media_type": "VIDEO", "like_count": 10,
                  "comments_count": 1, "permalink": "https://instagram.com/p/1", "timestamp": "2026-11-20T10:00:00+0000"},
+                {"id": "9", "caption": "Old famous post", "media_type": "VIDEO", "like_count": 99999,
+                 "comments_count": 9, "permalink": "https://instagram.com/p/9", "timestamp": "2021-01-01T10:00:00+0000"},
                 {"id": "2", "caption": "Big one\nmore | text #fibre", "media_type": "IMAGE", "like_count": 500,
                  "comments_count": 40, "permalink": "https://instagram.com/p/2", "timestamp": "2026-11-21T10:00:00+0000"},
             ]}
         if path.endswith("/recent_media"):
-            return {"data": [{"id": "3", "caption": "#fibre #ukwellness"}]}
+            return {"data": [{"id": "3", "caption": "#fibre #ukwellness", "like_count": 4, "comments_count": 0, "permalink": "https://instagram.com/p/3", "timestamp": "2026-11-26T08:00:00+0000"}]}
         raise AssertionError(path)
 
 
@@ -34,13 +36,15 @@ CFG = {"hashtags": {"tags": ["#GutHealth", "fibre"], "top_posts": 5}}
 def test_report_ranks_posts_and_lists_related_tags(monkeypatch):
     issues = []
     monkeypatch.setattr(hashtags, "open_issue", lambda *a, **k: issues.append(a[0]))
-    text, problems = hashtags.run(CFG, FakeGraph(), dry=True)
+    from datetime import datetime, timezone
+    text, problems = hashtags.run(CFG, FakeGraph(), now=datetime(2026, 11, 26, tzinfo=timezone.utc), dry=True)
     assert problems == []
     assert "## #guthealth" in text and "## #fibre" in text
     guthealth = text.split("## #guthealth")[1]
     assert guthealth.index("Big one") < guthealth.index("Fibre hack")  # higher score first
     assert "more / text" not in text  # only the first line is shown
     assert "#ukwellness" in text
+    assert "Old famous post" not in text  # all-time posts older than 90 days are dropped
 
 
 def test_no_permission_stops_early_and_says_so(monkeypatch):
