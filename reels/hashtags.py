@@ -32,13 +32,21 @@ def _first_line(caption, n=110):
 def _table(posts):
     if not posts:
         return "_None._"
-    rows = ["| # | Type | Likes | Comments | Posted | First line |", "|---|---|---|---|---|---|"]
-    for i, m in enumerate(posts, 1):
+    rows = ["| Post | Type | Likes | Comments | Posted | First line |", "|---|---|---|---|---|---|"]
+    for m in posts:
         kind = {"VIDEO": "video", "IMAGE": "photo", "CAROUSEL_ALBUM": "carousel"}.get(m.get("media_type"), "?")
         likes = m.get("like_count")
-        rows.append(f"| [{i}]({m.get('permalink', '')}) | {kind} | {likes if likes is not None else 'hidden'} | "
+        rows.append(f"| [Open]({m.get('permalink', '')}) | {kind} | {likes if likes is not None else 'hidden'} | "
                     f"{m.get('comments_count', 0)} | {(m.get('timestamp') or '')[:10]} | {_first_line(m.get('caption'))} |")
     return "\n".join(rows)
+
+
+AD_WORDS = ("#ad ", "#ad\n", "ad -", "ad |", "advert", "sponsored", "gifted", "black friday", "discount code", "% off")
+
+
+def _is_ad(m):
+    c = (m.get("caption") or "").lower() + " "
+    return c.startswith("ad ") or any(w in c for w in AD_WORDS)
 
 
 def fetch_tag(graph, tag, top_n, now):
@@ -69,7 +77,7 @@ def fetch_tag(graph, tag, top_n, now):
                 related[t] += 1
     cutoff = (now - timedelta(days=RECENT_TOP_DAYS)).strftime("%Y-%m-%d")
     top = sorted([m for m in top if (m.get("timestamp") or "")[:10] >= cutoff], key=_score, reverse=True)[:top_n]
-    hot = sorted(recent, key=_score, reverse=True)[:top_n]
+    hot = sorted([m for m in recent if not _is_ad(m)], key=_score, reverse=True)[:top_n]
     return top, hot, recent_count, related
 
 
@@ -83,7 +91,7 @@ def run(cfg, graph, now=None, log=print, dry=False):
     now = now or datetime.now(timezone.utc)
     day = now.date().isoformat()
 
-    sections, summary, problems, all_related = [], [], [], Counter()
+    sections, summary, problems, all_related, picks = [], [], [], Counter(), []
     for tag in tags:
         try:
             top, hot, recent_count, related = fetch_tag(graph, tag, top_n, now)
@@ -96,6 +104,8 @@ def run(cfg, graph, now=None, log=print, dry=False):
         all_related.update(related)
         best = hot[0] if hot else (top[0] if top else {})
         summary.append((tag, recent_count, _score(best), best.get("permalink", "")))
+        if hot:
+            picks.append((tag, hot[0]))
         rel = ", ".join(f"#{t}" for t, _ in related.most_common(8)) or "none"
         sections.append(f"## #{tag}\n\nPosts in the last 24 hours: {recent_count}. "
                         f"Hashtags used alongside it: {rel}\n\n"
@@ -107,9 +117,18 @@ def run(cfg, graph, now=None, log=print, dry=False):
              "For each hashtag: the hottest posts of the last 24 hours, the top posts of the last 90 days "
              "(ranked by likes + 3 x comments), and how busy the tag was in the last 24 hours.",
              "Use it for reel, song and carousel ideas and hook patterns. Edit the list in config.yml under `hashtags:`.", ""]
+    if picks:
+        lines += ["## Top picks this week (start here)", "",
+                  "The five hottest posts of the last 24 hours, one per hashtag, adverts left out.", ""]
+        for tag, m in sorted(picks, key=lambda x: _score(x[1]), reverse=True)[:5]:
+            likes = m.get("like_count")
+            lines.append(f"- **#{tag}**: \"{_first_line(m.get('caption'), 90)}\" "
+                         f"({likes if likes is not None else 'hidden'} likes, {m.get('comments_count', 0)} comments) "
+                         f"[Open post]({m.get('permalink', '')})")
+        lines.append("")
     if summary:
         lines += ["## At a glance", "", "| Hashtag | Posts in last 24 h | Hottest post score | Hottest post |", "|---|---|---|---|"]
-        lines += [f"| #{t} | {c} | {s} | {'[open](' + p + ')' if p else ''} |" for t, c, s, p in summary]
+        lines += [f"| #{t} | {c} | {s} | {'[Open post](' + p + ')' if p else ''} |" for t, c, s, p in summary]
         lines += ["", "**Most common hashtags across all of them:** "
                   + (", ".join(f"#{t} ({n})" for t, n in all_related.most_common(15)) or "none"), ""]
     if problems:

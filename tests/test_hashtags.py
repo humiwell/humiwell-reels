@@ -45,6 +45,7 @@ def test_report_ranks_posts_and_lists_related_tags(monkeypatch):
     assert "more / text" not in text  # only the first line is shown
     assert "#ukwellness" in text
     assert "Old famous post" not in text  # all-time posts older than 90 days are dropped
+    assert "## Top picks this week" in text and "[Open post](https://instagram.com/p/3)" in text
 
 
 def test_no_permission_stops_early_and_says_so(monkeypatch):
