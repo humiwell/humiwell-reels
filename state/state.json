@@ -1306,8 +1306,9 @@
           "status": "posted"
         },
         "B": {
+          "container_id": "17898373242683021",
           "error": "HTTP 400, code 190, subcode 460: Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.",
-          "status": "pending"
+          "status": "container"
         },
         "C": {
           "container_id": "17898290706683021",
