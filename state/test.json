@@ -1,5 +1,5 @@
 {
-  "token_days_left_before": 59.9,
+  "token_days_left_before": 60.0,
   "audio": {
     "id": "526825256283644",
     "title": "Beautiful, You Are (Instrumental)",
@@ -11,12 +11,12 @@
     "pinned": true
   },
   "containers": {
-    "music, video_volume 100, by link": "FAILED HTTP 400, code None, subcode None: container ERROR: Error: Media upload has failed with error code 2207082",
+    "music, video_volume 100, by link": "FINISHED",
     "music, video_volume 0, by link": "FINISHED",
     "original sound, video_volume 0, by link": "FINISHED",
     "music, video_volume 0, no trial, by link": "FINISHED"
   },
-  "token_days_left_after_renew": 59.9,
+  "token_days_left_after_renew": 60.0,
   "media_id": "18111489151901865",
   "posted_at": "2026-11-11T17:05:17.187326+00:00",
   "host": "release",
