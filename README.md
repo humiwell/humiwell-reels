@@ -124,6 +124,17 @@ Follower counts before the first real snapshot are worked out backwards from dai
 `dashboard/media.json` keeps the newest 300 posts with their numbers. Posts younger than 14 days get fresh numbers once a day, older ones keep the numbers already saved.
 To refresh it now: Actions tab, "Dashboard data", *Run workflow*.
 
+## Hashtag research (weekly)
+
+Every Monday morning (Actions tab, "Hashtag research") the robot looks up public Instagram posts for the
+hashtags listed under `hashtags:` in `config.yml` and saves a report in `research/hashtags/<date>.md`:
+for each hashtag, the hottest posts of the last 24 hours, the top posts of the last 90 days, how busy the tag
+is, and which other hashtags go with it. An issue links to the report. It only reads; it never posts or comments.
+
+- Instagram allows 30 different hashtags per 7 days for the account, so keep the list at 30 or fewer.
+- Posts come from every country (Instagram has no UK filter), so expect some German or US posts.
+- Run it any time from the Actions tab with *Run workflow*.
+
 ## Files
 
 | Path | What it is |
@@ -132,6 +143,7 @@ To refresh it now: Actions tab, "Dashboard data", *Run workflow*.
 | `batches/` | One manifest per posting day (from the render session) |
 | `state/state.json` | The robot's memory. Do not edit unless asked |
 | `results/`, `results.csv` | Test results |
+| `research/hashtags/` | Weekly hashtag research reports |
 | `dashboard/` | Daily account numbers for the dashboard (read-only robot) |
 | `reels/` | The code |
 | `tests/` | Practice runs against a fake Instagram |
