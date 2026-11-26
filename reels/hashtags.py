@@ -15,6 +15,7 @@ from .graph import GraphError
 FIELDS = "id,caption,media_type,comments_count,like_count,permalink,timestamp"
 OUT_DIR = ROOT / "research" / "hashtags"
 TAG_RE = re.compile(r"#(\w+)", re.UNICODE)
+RECENT_PAGES = 4  # count up to 200 posts from the last 24 hours
 
 
 def _score(m):
@@ -35,12 +36,19 @@ def fetch_tag(graph, tag, top_n):
         raise GraphError(404, message=f"Instagram has no hashtag #{tag}")
     hid = ids[0]["id"]
     top = graph.get(f"{hid}/top_media", {"user_id": graph.ig_user_id, "fields": FIELDS, "limit": 50}).get("data", [])
-    recent_body = graph.get(f"{hid}/recent_media", {"user_id": graph.ig_user_id, "fields": "id,caption", "limit": 50})
-    recent = recent_body.get("data", [])
-    if recent_body.get("paging", {}).get("next") and len(recent) >= 50:
-        recent_count = "50+"
-    else:
-        recent_count = str(len(recent))
+    recent, after, more = [], None, False
+    for _ in range(RECENT_PAGES):  # same hashtag again does not count against the 30-a-week limit
+        params = {"user_id": graph.ig_user_id, "fields": "id,caption", "limit": 50}
+        if after:
+            params["after"] = after
+        body = graph.get(f"{hid}/recent_media", params)
+        page = body.get("data", [])
+        recent += page
+        after = (body.get("paging") or {}).get("cursors", {}).get("after")
+        more = bool((body.get("paging") or {}).get("next")) and len(page) == 50
+        if not more or not after:
+            break
+    recent_count = f"{len(recent)}+" if more else str(len(recent))
     related = Counter()
     for m in top + recent:
         for t in {x.lower() for x in TAG_RE.findall(m.get("caption") or "")}:
