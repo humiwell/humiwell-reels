@@ -1271,7 +1271,17 @@
       }
     },
     "2026-11-26": {
-      "audio": null,
+      "audio": {
+        "ads_eligible": null,
+        "artist": "Cy Curnin",
+        "duration_ms": 219000,
+        "id": "976299230340697",
+        "manifest_title": "Someday (Instrumental) (Cy Curnin)",
+        "note": "set in manifest",
+        "pinned": true,
+        "title": "Someday (Instrumental)",
+        "type": "music"
+      },
       "kind": "broll",
       "order": [
         "C",
@@ -1293,7 +1303,8 @@
           "status": "pending"
         },
         "C": {
-          "status": "pending"
+          "container_id": "17898290706683021",
+          "status": "container"
         },
         "D": {
           "status": "pending"
