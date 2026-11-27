@@ -58,6 +58,11 @@ audio:
   pin_audio_id: ""
   # Or pin a track for one day only, for example:  "2026-11-16": "1234567890"
   pin_by_date: {}
+  # B-roll trial reels only ever use these tracks (Sajjad's list, 28 Nov 2026). The robot rotates
+  # through them by date and never falls back to trending. A manifest or pin outside the list is
+  # skipped. Leave empty to go back to trending. Talking head and song reels are not affected.
+  approved_ids: ["455812557024565", "249449497488410", "305788179957624", "1930837273888588",
+                 "1701789246605792", "1830329143809311", "1115846560430696"]
   # Never use these track ids.
   block_ids: []
   # Never use tracks whose title or artist contains any of these words.

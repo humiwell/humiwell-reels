@@ -129,7 +129,7 @@ def th_check(cfg, graph, video_url, audio_id=""):
         print("Give the talking-head video link in the video_url box (a GitHub Release file).")
         return
     manifest = {"audio_id": audio_id} if audio_id else None
-    track = choose_audio(cfg, graph, "th-test", manifest=manifest)
+    track = choose_audio(cfg, graph, "th-test", manifest=manifest, kind="talking-head")
     print(f"Track: {track.get('title')} by {track.get('artist')} (id {track.get('id')}, {track.get('note')})")
     th = audio_config(cfg, track, "talking-head") or {}
     cases = [

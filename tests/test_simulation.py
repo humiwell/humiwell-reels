@@ -27,6 +27,7 @@ def env(tmp_path, monkeypatch):
     cfg = load_config()
     cfg["dry_run"] = False
     cfg["audio"]["block_ids"] = ["111"]
+    cfg["audio"]["approved_ids"] = []  # these tests cover the trending path; the approved list has its own tests
     return cfg, tmp_path
 
 

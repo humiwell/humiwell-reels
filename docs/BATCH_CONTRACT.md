@@ -55,7 +55,7 @@ Field rules:
 | `reel` | Short name of the B-roll reel, lowercase with dashes |
 | `post_date` | `YYYY-MM-DD`, same as the folder name and release tag |
 | `caption` | The same caption is used for all versions, so only the hook differs |
-| `audio_id` | **Optional.** Instagram track id as text of digits (in quotes). Used for all versions of the day. Leave it out to use the top trending track. Get ids from `python -m reels audio-shortlist` |
+| `audio_id` | **Optional.** Instagram track id as text of digits (in quotes). Used for all versions of the day. Leave it out to use the top trending track (B-roll: a track from `audio: approved_ids` instead). Get ids from `python -m reels audio-shortlist` |
 | `audio_title` | **Optional.** Track name, for people reading the issues and results. Only allowed together with `audio_id` |
 | `variants` | 1 to 8 entries, normally exactly 4 (A, B, F and the challenger) |
 | `id` | Unique letter per day |
@@ -70,6 +70,12 @@ How the track is picked for a day (first one that applies):
 2. `audio_id` in the manifest
 3. `audio: pin_audio_id` in `config.yml`
 4. The top trending track (respecting `block_ids` and `block_words`)
+
+**Approved list (B-roll, from 28 Nov 2026):** when `audio: approved_ids` in `config.yml` has tracks, a B-roll
+day only ever uses one of them. Steps 1 to 3 still apply but only for ids on the list (others are skipped),
+step 4 is replaced by rotating through the list by date, and the robot never falls back to trending. If
+Instagram refuses a track it moves to the next one on the list. Put a listed id in the manifest's
+`audio_id` to choose the track; otherwise the robot picks one. Talking head and song days are not affected.
 
 If Instagram refuses a chosen track before any version of the day is posted, the robot switches to
 the top trending track for all versions and opens an issue "Chosen audio failed for YYYY-MM-DD"

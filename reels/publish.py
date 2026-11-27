@@ -30,22 +30,41 @@ def register_day(state, manifest, key=None):
     }
 
 
-def choose_audio(cfg, graph, post_date, log=print, refused=(), manifest=None):
+def _rotation_start(post_date, n):
+    """Where to start in the approved list for this day, so consecutive days get different tracks."""
+    try:
+        return date.fromisoformat(str(post_date)[-10:]).toordinal() % n
+    except ValueError:
+        return 0
+
+
+def choose_audio(cfg, graph, post_date, log=print, refused=(), manifest=None, kind="broll"):
     """Picks ONE track for all versions of a reel, so the test stays fair.
 
     Order: config pin for this date, the manifest's audio_id, config pin for every reel, then trending.
     Tracks Instagram already refused for this reel are skipped.
+    B-roll reels with an approved list (audio.approved_ids, set by Sajjad on 28 Nov 2026) only ever use
+    tracks from that list: pins outside it are skipped, and instead of trending the robot rotates
+    through the list by date. It never falls back to trending.
     """
     a = cfg["audio"]
     if not a.get("enabled", True):
         return {"id": None, "note": "audio turned off in config"}
     manifest = manifest or {}
+    approved = [str(x) for x in (a.get("approved_ids") or []) if str(x).strip()] if kind == "broll" else []
     by_date = {str(k): str(v) for k, v in (a.get("pin_by_date") or {}).items()}
     pins = [(by_date.get(post_date), "pinned for this day in config", ""),
             (str(manifest.get("audio_id") or ""), "set in manifest", manifest.get("audio_title") or ""),
             (str(a.get("pin_audio_id") or ""), "pinned in config", "")]
+    if approved:
+        n = len(approved)
+        start = _rotation_start(post_date, n)
+        pins += [(approved[(start + i) % n], "approved list", "") for i in range(n)]
     for pin, note, title in pins:
         if not pin or pin in refused:
+            continue
+        if approved and pin not in approved:
+            log(f"  track {pin} ({note}) is not on the approved list, skipped")
             continue
         try:
             info = graph.audio_info(pin)
@@ -57,6 +76,8 @@ def choose_audio(cfg, graph, post_date, log=print, refused=(), manifest=None):
         if title:
             info["manifest_title"] = title
         return info
+    if approved:
+        return {"id": None, "note": "every track on the approved list was refused or skipped"}
     blocked_ids = {str(x) for x in a.get("block_ids") or []} | set(refused)
     blocked_words = [w.lower() for w in a.get("block_words") or []]
     first = a.get("prefer", "music")
@@ -289,7 +310,7 @@ def post_one(cfg, state, graph, manifests, d, vid, now, log=print, checkpoint=No
         if not dry:
             save_state(state)
     if day["audio"] is None:
-        audio = (choose_audio(cfg, graph, d, log, day.get("audio_refused", []), manifest) if graph
+        audio = (choose_audio(cfg, graph, d, log, day.get("audio_refused", []), manifest, day.get("kind", "broll")) if graph
                  else {"id": manifest.get("audio_id"), "title": manifest.get("audio_title"),
                        "note": "set in manifest" if manifest.get("audio_id") else "no API in dry run"})
         log(f"Audio for {d}: {audio.get('title') or '-'} by {audio.get('artist') or '-'} "
@@ -324,7 +345,7 @@ def post_one(cfg, state, graph, manifests, d, vid, now, log=print, checkpoint=No
                     if track.get("pinned") and nobody_posted:
                         # The chosen track (manifest or config) was refused: switch to trending now.
                         day.setdefault("audio_refused", []).append(track["id"])
-                        new = choose_audio(cfg, graph, d, log, day["audio_refused"], manifest)
+                        new = choose_audio(cfg, graph, d, log, day["audio_refused"], manifest, day.get("kind", "broll"))
                         log(f"  chosen track {track['id']} was refused ({e}). "
                             f"Falling back to {new.get('title') or 'nothing'} ({new['note']}).")
                         open_issue(f"Chosen audio failed for {d}",
