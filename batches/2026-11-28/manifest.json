@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "healthier-hair",
+  "post_date": "2026-11-28",
+  "caption": "Comment HAIR for your free hair health check 💇‍♀️\n\nMost of us blame the shampoo when our hair feels dry, thin or brittle. Usually it's the daily habits around it.\n\nHot showers, rough towel-drying, tight buns and high heat all add up. So does what's on your plate: hair is made of protein, and the NHS lists low iron as one cause of hair loss.\n\nThis is the first in a little hair series. What should we cover next: dandruff, greying, an itchy scalp or a receding hairline?\n\nSave this for your next wash day, and send it to the friend who straightens their hair every morning.\n\n#HairCareUK #HealthyHair #HairLossUK #HealthyHabitsUK #UKWellness",
+  "audio_id": "1115846560430696",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "YOUR SHAMPOO ISN'T THE PROBLEM. 7 HABITS FOR HEALTHIER HAIR",
+      "file": "2026-11-28_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Loss framing",
+      "hook": "7 HAIR MISTAKES THAT LEAVE IT DRY AND THIN",
+      "file": "2026-11-28_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "7 LAZY HAIR HABITS THAT TAKE NO EXTRA TIME",
+      "file": "2026-11-28_F.mp4",
+      "length_s": 10.07
+    },
+    {
+      "id": "G",
+      "lever": "Authority",
+      "hook": "A NUTRITIONIST'S 7 HABITS FOR HEALTHIER HAIR",
+      "file": "2026-11-28_G.mp4",
+      "length_s": 10.0
+    }
+  ]
+}
