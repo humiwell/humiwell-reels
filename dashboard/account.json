@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-11-26T08:09:18+00:00",
+  "generated_at": "2026-11-27T08:08:01+00:00",
   "profile": {
     "id": "17841480490600627",
-    "followers_count": 740,
+    "followers_count": 758,
     "follows_count": 11,
-    "media_count": 125,
+    "media_count": 128,
     "username": "humiwell"
   },
   "account_day": {
-    "since": "2026-11-25T00:00:00+00:00",
-    "until": "2026-11-26T00:00:00+00:00",
-    "reach": 5014,
-    "views": 7405,
-    "profile_views": 24,
-    "accounts_engaged": 79,
-    "total_interactions": 141,
+    "since": "2026-11-26T00:00:00+00:00",
+    "until": "2026-11-27T00:00:00+00:00",
+    "reach": 19825,
+    "views": 36195,
+    "profile_views": 43,
+    "accounts_engaged": 165,
+    "total_interactions": 190,
     "follows_and_unfollows": {
       "total": null,
       "follows": null,
@@ -24,31 +24,123 @@
   },
   "follows_1d": null,
   "account_28d": {
-    "since": "2026-10-29T00:00:00+00:00",
-    "until": "2026-11-26T00:00:00+00:00",
-    "reach": 138012,
-    "views": 253318,
-    "profile_views": 528,
-    "accounts_engaged": 1182,
-    "total_interactions": 2495,
+    "since": "2026-10-30T00:00:00+00:00",
+    "until": "2026-11-27T00:00:00+00:00",
+    "reach": 144427,
+    "views": 270794,
+    "profile_views": 546,
+    "accounts_engaged": 1247,
+    "total_interactions": 2568,
     "follows_and_unfollows": {
       "total": null,
-      "follows": 107,
-      "unfollows": 22,
-      "net": 85
+      "follows": 99,
+      "unfollows": 24,
+      "net": 75
     }
   },
   "media": [
     {
-      "id": "17905462905379182",
+      "id": "17917926219508929",
       "caption": "Seven small swaps for your evenings this week.\n\nNumber 4 is a small one that helps with morning puffiness. Raising your head a little lets f",
       "media_type": "VIDEO",
       "media_product_type": "REELS",
-      "permalink": "https://www.instagram.com/reel/DgMpBH9FM3a/",
-      "timestamp": "2026-11-26T08:09:10+0000",
+      "permalink": "https://www.instagram.com/reel/DgOMeoWiCVc/",
+      "timestamp": "2026-11-26T22:38:14+0000",
+      "like_count": 8,
+      "comments_count": 0,
+      "is_trial": true,
+      "insights": {
+        "views": 4139,
+        "reach": 2066,
+        "saved": 2,
+        "shares": 0,
+        "likes": 8,
+        "comments": 0,
+        "total_interactions": 10,
+        "ig_reels_avg_watch_time": 15983,
+        "follows": null
+      },
+      "insights_at": "2026-11-27T08:08:01+00:00"
+    },
+    {
+      "id": "18136253770685423",
+      "caption": "Seven small swaps for your evenings this week.\n\nNumber 4 is a small one that helps with morning puffiness. Raising your head a little lets f",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DgN5396pTrV/",
+      "timestamp": "2026-11-26T19:55:40+0000",
+      "like_count": 38,
+      "comments_count": 1,
+      "is_trial": true,
+      "insights": {
+        "views": 22729,
+        "reach": 9976,
+        "saved": 17,
+        "shares": 1,
+        "likes": 38,
+        "comments": 1,
+        "total_interactions": 63,
+        "ig_reels_avg_watch_time": 18784,
+        "follows": null
+      },
+      "insights_at": "2026-11-27T08:08:01+00:00"
+    },
+    {
+      "id": "18018421220967553",
+      "caption": "Comment GUT to get your free food-or-stress gut diary 🌿\n\nLost your appetite after an argument? That’s your gut-brain axis at work.\n\nYour bra",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DgNwlGCM9_6/",
+      "timestamp": "2026-11-26T18:35:48+0000",
+      "like_count": 0,
+      "comments_count": 2,
+      "is_trial": false,
+      "insights": {
+        "views": 114,
+        "reach": 100,
+        "saved": 0,
+        "shares": 0,
+        "likes": 0,
+        "comments": 2,
+        "total_interactions": 2,
+        "ig_reels_avg_watch_time": 5227,
+        "follows": null
+      },
+      "insights_at": "2026-11-27T08:08:01+00:00"
+    },
+    {
+      "id": "17979507936168950",
+      "caption": "Seven small swaps for your evenings this week.\n\nNumber 4 is a small one that helps with morning puffiness. Raising your head a little lets f",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DgNrj5hgqnC/",
+      "timestamp": "2026-11-26T17:50:37+0000",
+      "like_count": 4,
+      "comments_count": 0,
+      "is_trial": true,
+      "insights": {
+        "views": 1831,
+        "reach": 1097,
+        "saved": 0,
+        "shares": 0,
+        "likes": 4,
+        "comments": 0,
+        "total_interactions": 5,
+        "ig_reels_avg_watch_time": 10485,
+        "follows": null
+      },
+      "insights_at": "2026-11-27T08:08:01+00:00"
+    },
+    {
+      "id": "17989566966107285",
+      "caption": "Seven small swaps for your evenings this week.\n\nNumber 4 is a small one that helps with morning puffiness. Raising your head a little lets f",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DgNXdbygsc6/",
+      "timestamp": "2026-11-26T14:54:56+0000",
       "like_count": 0,
       "comments_count": 0,
-      "is_trial": false,
+      "is_trial": true,
       "insights": {
         "views": 0,
         "reach": 0,
@@ -60,7 +152,99 @@
         "ig_reels_avg_watch_time": 0,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
+    },
+    {
+      "id": "18107347244366351",
+      "caption": "Seven small swaps for your evenings this week.\n\nNumber 4 is a small one that helps with morning puffiness. Raising your head a little lets f",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DgNHKRbjtxC/",
+      "timestamp": "2026-11-26T12:32:53+0000",
+      "like_count": 0,
+      "comments_count": 0,
+      "is_trial": true,
+      "insights": {
+        "views": 0,
+        "reach": 0,
+        "saved": 0,
+        "shares": 0,
+        "likes": 0,
+        "comments": 0,
+        "total_interactions": 0,
+        "ig_reels_avg_watch_time": 0,
+        "follows": null
+      },
+      "insights_at": "2026-11-27T08:08:01+00:00"
+    },
+    {
+      "id": "18078233447783442",
+      "caption": "Seven small swaps for your evenings this week.\n\nNumber 4 is a small one that helps with morning puffiness. Raising your head a little lets f",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DgM5SfPk-fT/",
+      "timestamp": "2026-11-26T10:31:39+0000",
+      "like_count": 9,
+      "comments_count": 0,
+      "is_trial": true,
+      "insights": {
+        "views": 1997,
+        "reach": 1157,
+        "saved": 1,
+        "shares": 1,
+        "likes": 9,
+        "comments": 0,
+        "total_interactions": 11,
+        "ig_reels_avg_watch_time": 10767,
+        "follows": null
+      },
+      "insights_at": "2026-11-27T08:08:01+00:00"
+    },
+    {
+      "id": "18133432838479045",
+      "caption": "Seven small swaps for your evenings this week.\n\nNumber 4 is a small one that helps with morning puffiness. Raising your head a little lets f",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DgMw-uKAKG6/",
+      "timestamp": "2026-11-26T09:18:41+0000",
+      "like_count": 11,
+      "comments_count": 0,
+      "is_trial": true,
+      "insights": {
+        "views": 6326,
+        "reach": 3240,
+        "saved": 8,
+        "shares": 2,
+        "likes": 11,
+        "comments": 0,
+        "total_interactions": 21,
+        "ig_reels_avg_watch_time": 14228,
+        "follows": null
+      },
+      "insights_at": "2026-11-27T08:08:01+00:00"
+    },
+    {
+      "id": "17905462905379182",
+      "caption": "Seven small swaps for your evenings this week.\n\nNumber 4 is a small one that helps with morning puffiness. Raising your head a little lets f",
+      "media_type": "VIDEO",
+      "media_product_type": "REELS",
+      "permalink": "https://www.instagram.com/reel/DgMpBH9FM3a/",
+      "timestamp": "2026-11-26T08:09:10+0000",
+      "like_count": 8,
+      "comments_count": 0,
+      "is_trial": true,
+      "insights": {
+        "views": 3313,
+        "reach": 1698,
+        "saved": 4,
+        "shares": 0,
+        "likes": 8,
+        "comments": 0,
+        "total_interactions": 12,
+        "ig_reels_avg_watch_time": 14253,
+        "follows": null
+      },
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "18090053468687892",
@@ -73,17 +257,17 @@
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 1801,
-        "reach": 1062,
+        "views": 1855,
+        "reach": 1089,
         "saved": 0,
         "shares": 0,
         "likes": 0,
         "comments": 0,
         "total_interactions": 0,
-        "ig_reels_avg_watch_time": 12314,
+        "ig_reels_avg_watch_time": 12374,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "18024844955948406",
@@ -96,17 +280,17 @@
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 145,
+        "views": 146,
         "reach": 109,
         "saved": 0,
         "shares": 0,
         "likes": 0,
         "comments": 0,
         "total_interactions": 0,
-        "ig_reels_avg_watch_time": 6860,
+        "ig_reels_avg_watch_time": 6833,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "18122424289996732",
@@ -115,21 +299,21 @@
       "media_product_type": "REELS",
       "permalink": "https://www.instagram.com/reel/DgLEOIMsNLi/",
       "timestamp": "2026-11-25T17:31:19+0000",
-      "like_count": 0,
-      "comments_count": 0,
+      "like_count": 22,
+      "comments_count": 3,
       "is_trial": false,
       "insights": {
-        "views": 111,
-        "reach": 104,
-        "saved": 1,
+        "views": 294,
+        "reach": 208,
+        "saved": 2,
         "shares": 0,
-        "likes": 0,
-        "comments": 0,
-        "total_interactions": 1,
-        "ig_reels_avg_watch_time": 3465,
+        "likes": 22,
+        "comments": 3,
+        "total_interactions": 27,
+        "ig_reels_avg_watch_time": 8870,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "18608046244066634",
@@ -152,7 +336,7 @@
         "ig_reels_avg_watch_time": 0,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "18098266877267559",
@@ -161,21 +345,21 @@
       "media_product_type": "REELS",
       "permalink": "https://www.instagram.com/reel/DgLEHJZsijO/",
       "timestamp": "2026-11-25T17:28:30+0000",
-      "like_count": 2,
+      "like_count": 15,
       "comments_count": 0,
       "is_trial": false,
       "insights": {
-        "views": 112,
-        "reach": 104,
-        "saved": 0,
+        "views": 293,
+        "reach": 219,
+        "saved": 1,
         "shares": 0,
-        "likes": 2,
+        "likes": 15,
         "comments": 0,
-        "total_interactions": 2,
-        "ig_reels_avg_watch_time": 6731,
+        "total_interactions": 16,
+        "ig_reels_avg_watch_time": 8410,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "18251111728310721",
@@ -188,17 +372,17 @@
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 360,
-        "reach": 253,
+        "views": 406,
+        "reach": 284,
         "saved": 0,
         "shares": 0,
         "likes": 0,
         "comments": 0,
         "total_interactions": 0,
-        "ig_reels_avg_watch_time": 6733,
+        "ig_reels_avg_watch_time": 6967,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "18388182406234961",
@@ -211,17 +395,17 @@
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 281,
-        "reach": 219,
+        "views": 314,
+        "reach": 240,
         "saved": 0,
         "shares": 0,
         "likes": 0,
         "comments": 0,
         "total_interactions": 0,
-        "ig_reels_avg_watch_time": 5273,
+        "ig_reels_avg_watch_time": 5578,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "17950975476357057",
@@ -234,17 +418,17 @@
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 1801,
-        "reach": 1106,
+        "views": 1808,
+        "reach": 1111,
         "saved": 2,
         "shares": 0,
         "likes": 4,
         "comments": 0,
         "total_interactions": 6,
-        "ig_reels_avg_watch_time": 10078,
+        "ig_reels_avg_watch_time": 10085,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "18027581588927449",
@@ -257,17 +441,17 @@
       "comments_count": 28,
       "is_trial": false,
       "insights": {
-        "views": 954,
-        "reach": 766,
-        "saved": 9,
+        "views": 1037,
+        "reach": 837,
+        "saved": 14,
         "shares": 6,
         "likes": 30,
         "comments": 28,
-        "total_interactions": 74,
-        "ig_reels_avg_watch_time": 10983,
+        "total_interactions": 79,
+        "ig_reels_avg_watch_time": 10935,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "18213555613318328",
@@ -280,17 +464,17 @@
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 1162,
-        "reach": 766,
+        "views": 1178,
+        "reach": 779,
         "saved": 1,
         "shares": 1,
         "likes": 4,
         "comments": 0,
         "total_interactions": 6,
-        "ig_reels_avg_watch_time": 7536,
+        "ig_reels_avg_watch_time": 7529,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "18127330510904388",
@@ -304,16 +488,16 @@
       "is_trial": true,
       "insights": {
         "views": 395,
-        "reach": 270,
+        "reach": 273,
         "saved": 0,
         "shares": 4,
         "likes": 0,
         "comments": 0,
         "total_interactions": 4,
-        "ig_reels_avg_watch_time": 7636,
+        "ig_reels_avg_watch_time": 7615,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "18102250316551356",
@@ -336,7 +520,7 @@
         "ig_reels_avg_watch_time": 2401,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "18472938682185547",
@@ -359,7 +543,7 @@
         "ig_reels_avg_watch_time": 6009,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "17998608617841369",
@@ -372,17 +556,17 @@
       "comments_count": 1,
       "is_trial": true,
       "insights": {
-        "views": 1613,
-        "reach": 1068,
+        "views": 1614,
+        "reach": 1069,
         "saved": 2,
         "shares": 0,
         "likes": 7,
         "comments": 1,
         "total_interactions": 10,
-        "ig_reels_avg_watch_time": 8721,
+        "ig_reels_avg_watch_time": 8717,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "17945561826382701",
@@ -405,7 +589,7 @@
         "ig_reels_avg_watch_time": 6011,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "18609640600066476",
@@ -428,7 +612,7 @@
         "ig_reels_avg_watch_time": 5605,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "17920871001537466",
@@ -437,21 +621,21 @@
       "media_product_type": "REELS",
       "permalink": "https://www.instagram.com/reel/DgHwhV1gIbW/",
       "timestamp": "2026-11-24T10:38:28+0000",
-      "like_count": 6,
+      "like_count": 14,
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 1658,
-        "reach": 1138,
+        "views": 1778,
+        "reach": 1220,
         "saved": 8,
         "shares": 1,
-        "likes": 6,
+        "likes": 14,
         "comments": 0,
-        "total_interactions": 15,
-        "ig_reels_avg_watch_time": 8549,
+        "total_interactions": 23,
+        "ig_reels_avg_watch_time": 8314,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "17956966707338349",
@@ -474,7 +658,7 @@
         "ig_reels_avg_watch_time": 7507,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "18148613287588302",
@@ -487,8 +671,8 @@
       "comments_count": 30,
       "is_trial": false,
       "insights": {
-        "views": 362,
-        "reach": 236,
+        "views": 370,
+        "reach": 238,
         "saved": 1,
         "shares": 2,
         "likes": 24,
@@ -497,7 +681,7 @@
         "ig_reels_avg_watch_time": 10699,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "18104384711354212",
@@ -520,7 +704,7 @@
         "ig_reels_avg_watch_time": 6799,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "18094002317242621",
@@ -533,17 +717,17 @@
       "comments_count": 0,
       "is_trial": true,
       "insights": {
-        "views": 507,
-        "reach": 325,
+        "views": 508,
+        "reach": 326,
         "saved": 1,
         "shares": 0,
         "likes": 2,
         "comments": 0,
         "total_interactions": 3,
-        "ig_reels_avg_watch_time": 10315,
+        "ig_reels_avg_watch_time": 10289,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "18238256995321960",
@@ -566,7 +750,7 @@
         "ig_reels_avg_watch_time": 7883,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "18059668952583302",
@@ -589,7 +773,7 @@
         "ig_reels_avg_watch_time": 6593,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "17976986390949400",
@@ -598,21 +782,21 @@
       "media_product_type": "REELS",
       "permalink": "https://www.instagram.com/reel/DgFuUdlMCFh/",
       "timestamp": "2026-11-23T15:41:56+0000",
-      "like_count": 16,
+      "like_count": 17,
       "comments_count": 6,
       "is_trial": false,
       "insights": {
-        "views": 263,
-        "reach": 142,
-        "saved": 2,
+        "views": 277,
+        "reach": 146,
+        "saved": 3,
         "shares": 2,
-        "likes": 16,
+        "likes": 17,
         "comments": 6,
-        "total_interactions": 26,
-        "ig_reels_avg_watch_time": 5995,
+        "total_interactions": 28,
+        "ig_reels_avg_watch_time": 5982,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "18155407483556979",
@@ -635,7 +819,7 @@
         "ig_reels_avg_watch_time": 7258,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "17994115473118594",
@@ -658,7 +842,7 @@
         "ig_reels_avg_watch_time": 8063,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "17915021319475781",
@@ -681,7 +865,7 @@
         "ig_reels_avg_watch_time": 8622,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "17971903257225071",
@@ -694,17 +878,17 @@
       "comments_count": 2,
       "is_trial": false,
       "insights": {
-        "views": 536,
+        "views": 540,
         "reach": 389,
         "saved": 0,
         "shares": 4,
         "likes": 28,
         "comments": 2,
         "total_interactions": 34,
-        "ig_reels_avg_watch_time": 8282,
+        "ig_reels_avg_watch_time": 8219,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "18134716069695641",
@@ -727,7 +911,7 @@
         "ig_reels_avg_watch_time": 8240,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "17890385664491689",
@@ -750,7 +934,7 @@
         "ig_reels_avg_watch_time": 6770,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     },
     {
       "id": "18362825254217823",
@@ -773,208 +957,24 @@
         "ig_reels_avg_watch_time": 9781,
         "follows": null
       },
-      "insights_at": "2026-11-26T08:09:18+00:00"
-    },
-    {
-      "id": "18423923230155962",
-      "caption": "Seven small things to try together this week.\n\nThere's research behind that. A UCL study of more than 3,700 couples found that people were m",
-      "media_type": "VIDEO",
-      "media_product_type": "REELS",
-      "permalink": "https://www.instagram.com/reel/DgDi_EBjYTe/",
-      "timestamp": "2026-11-22T19:23:37+0000",
-      "like_count": 6,
-      "comments_count": 0,
-      "is_trial": true,
-      "insights": {
-        "views": 1189,
-        "reach": 861,
-        "saved": 5,
-        "shares": 1,
-        "likes": 6,
-        "comments": 0,
-        "total_interactions": 12,
-        "ig_reels_avg_watch_time": 6959,
-        "follows": null
-      },
-      "insights_at": "2026-11-26T08:09:18+00:00"
-    },
-    {
-      "id": "18042954173848013",
-      "caption": "Seven small things to try together this week.\n\nThere's research behind that. A UCL study of more than 3,700 couples found that people were m",
-      "media_type": "VIDEO",
-      "media_product_type": "REELS",
-      "permalink": "https://www.instagram.com/reel/DgDXRFJANAm/",
-      "timestamp": "2026-11-22T17:40:51+0000",
-      "like_count": 8,
-      "comments_count": 0,
-      "is_trial": true,
-      "insights": {
-        "views": 1720,
-        "reach": 1102,
-        "saved": 10,
-        "shares": 9,
-        "likes": 8,
-        "comments": 0,
-        "total_interactions": 27,
-        "ig_reels_avg_watch_time": 9010,
-        "follows": null
-      },
-      "insights_at": "2026-11-26T08:09:18+00:00"
-    },
-    {
-      "id": "18112040518924074",
-      "caption": "Can a banana simmered in warm milk replace your magnesium supplement? We asked our nutrition scientist.\n\nThe viral recipe is partly right. M",
-      "media_type": "VIDEO",
-      "media_product_type": "REELS",
-      "permalink": "https://www.instagram.com/reel/DgDWEPuslZj/",
-      "timestamp": "2026-11-22T17:31:23+0000",
-      "like_count": 41,
-      "comments_count": 0,
-      "is_trial": false,
-      "insights": {
-        "views": 1821,
-        "reach": 1398,
-        "saved": 2,
-        "shares": 2,
-        "likes": 41,
-        "comments": 0,
-        "total_interactions": 45,
-        "ig_reels_avg_watch_time": 16713,
-        "follows": null
-      },
-      "insights_at": "2026-11-26T08:09:18+00:00"
-    },
-    {
-      "id": "17916461307479802",
-      "caption": "Seven small things to try together this week.\n\nThere's research behind that. A UCL study of more than 3,700 couples found that people were m",
-      "media_type": "VIDEO",
-      "media_product_type": "REELS",
-      "permalink": "https://www.instagram.com/reel/DgDBmMNAcWn/",
-      "timestamp": "2026-11-22T14:31:50+0000",
-      "like_count": 0,
-      "comments_count": 0,
-      "is_trial": true,
-      "insights": {
-        "views": 247,
-        "reach": 183,
-        "saved": 1,
-        "shares": 0,
-        "likes": 0,
-        "comments": 0,
-        "total_interactions": 1,
-        "ig_reels_avg_watch_time": 7322,
-        "follows": null
-      },
-      "insights_at": "2026-11-26T08:09:18+00:00"
-    },
-    {
-      "id": "18123272584997283",
-      "caption": "Three sugars in every brew, and five brews before lunch. Sound familiar?\n\nThe NHS says adults should have no more than 30g of free sugars a ",
-      "media_type": "VIDEO",
-      "media_product_type": "REELS",
-      "permalink": "https://www.instagram.com/reel/DgDAaWFM1QG/",
-      "timestamp": "2026-11-22T14:21:39+0000",
-      "like_count": 30,
-      "comments_count": 6,
-      "is_trial": false,
-      "insights": {
-        "views": 364,
-        "reach": 233,
-        "saved": 1,
-        "shares": 0,
-        "likes": 30,
-        "comments": 6,
-        "total_interactions": 37,
-        "ig_reels_avg_watch_time": 7993,
-        "follows": null
-      },
-      "insights_at": "2026-11-26T08:09:18+00:00"
-    },
-    {
-      "id": "18170739343491797",
-      "caption": "Seven small things to try together this week.\n\nThere's research behind that. A UCL study of more than 3,700 couples found that people were m",
-      "media_type": "VIDEO",
-      "media_product_type": "REELS",
-      "permalink": "https://www.instagram.com/reel/DgC0-0kDkEB/",
-      "timestamp": "2026-11-22T12:41:16+0000",
-      "like_count": 7,
-      "comments_count": 0,
-      "is_trial": true,
-      "insights": {
-        "views": 1814,
-        "reach": 1243,
-        "saved": 5,
-        "shares": 6,
-        "likes": 7,
-        "comments": 0,
-        "total_interactions": 18,
-        "ig_reels_avg_watch_time": 8343,
-        "follows": null
-      },
-      "insights_at": "2026-11-26T08:09:18+00:00"
-    },
-    {
-      "id": "18145465405721870",
-      "caption": "Seven small things to try together this week.\n\nThere's research behind that. A UCL study of more than 3,700 couples found that people were m",
-      "media_type": "VIDEO",
-      "media_product_type": "REELS",
-      "permalink": "https://www.instagram.com/reel/DgCk0DmgkM4/",
-      "timestamp": "2026-11-22T10:20:27+0000",
-      "like_count": 1,
-      "comments_count": 0,
-      "is_trial": true,
-      "insights": {
-        "views": 154,
-        "reach": 120,
-        "saved": 0,
-        "shares": 0,
-        "likes": 1,
-        "comments": 0,
-        "total_interactions": 1,
-        "ig_reels_avg_watch_time": 6859,
-        "follows": null
-      },
-      "insights_at": "2026-11-26T08:09:18+00:00"
-    },
-    {
-      "id": "18647180440032422",
-      "caption": "Seven small things to try together this week.\n\nThere's research behind that. A UCL study of more than 3,700 couples found that people were m",
-      "media_type": "VIDEO",
-      "media_product_type": "REELS",
-      "permalink": "https://www.instagram.com/reel/DgCYppiju6c/",
-      "timestamp": "2026-11-22T08:33:45+0000",
-      "like_count": 2,
-      "comments_count": 0,
-      "is_trial": true,
-      "insights": {
-        "views": 855,
-        "reach": 612,
-        "saved": 6,
-        "shares": 0,
-        "likes": 2,
-        "comments": 0,
-        "total_interactions": 8,
-        "ig_reels_avg_watch_time": 7180,
-        "follows": null
-      },
-      "insights_at": "2026-11-26T08:09:18+00:00"
+      "insights_at": "2026-11-27T08:08:01+00:00"
     }
   ],
   "trending_audio": [
-    {
-      "id": "1357192349720587",
-      "title": "Draw You Out",
-      "artist": "Noah Kahan, The Hunger Games",
-      "type": "music",
-      "duration_ms": 255984,
-      "ads_eligible": false
-    },
     {
       "id": "1134460562715470",
       "title": "Huss Huss Huss",
       "artist": "Virexo Aelvix",
       "type": "music",
       "duration_ms": 75189,
+      "ads_eligible": false
+    },
+    {
+      "id": "1581306749288707",
+      "title": "Gurpurab",
+      "artist": "Ranjit Bawa",
+      "type": "music",
+      "duration_ms": 298324,
       "ads_eligible": false
     },
     {
@@ -986,11 +986,19 @@
       "ads_eligible": false
     },
     {
-      "id": "2519800484733231",
-      "title": "It's Beginning to Look a Lot like Christmas",
-      "artist": "Michael Bublé",
+      "id": "1961393680621601",
+      "title": "Aar Nanak Paar Nanak",
+      "artist": "Diljit Dosanjh",
       "type": "music",
-      "duration_ms": 207199,
+      "duration_ms": 278785,
+      "ads_eligible": false
+    },
+    {
+      "id": "1681688443632597",
+      "title": "Ishqa (From \"Dar-E-Nijaat\")",
+      "artist": "Naveed Nashad, Osaf Fateh Ali Khan, Nabeel Shaukat Ali",
+      "type": "music",
+      "duration_ms": 251818,
       "ads_eligible": false
     },
     {
@@ -1002,67 +1010,35 @@
       "ads_eligible": false
     },
     {
-      "id": "888510671021141",
-      "title": "Low budget Vagina(LBVA)Amanda",
-      "artist": "Bianca Case",
+      "id": "1124014413002269",
+      "title": "SatGur Nanak Pargateya | Gurubani Shabad",
+      "artist": "GurTone",
       "type": "music",
-      "duration_ms": 161213,
+      "duration_ms": 237599,
       "ads_eligible": false
     },
     {
-      "id": "4592557824320671",
-      "title": "FA FA FA (From \"O.M: Operation Mole\")",
-      "artist": "Sai Abhyankkar, Thamizh Aadhavan",
+      "id": "29982976461385866",
+      "title": "Burn This Shit Down",
+      "artist": "Travis Scott",
       "type": "music",
-      "duration_ms": 176220,
+      "duration_ms": 260000,
       "ads_eligible": false
     },
     {
-      "id": "1619590552945205",
-      "title": "Think I'm going dumb",
-      "artist": "ACE aqugounk",
+      "id": "2018351915690371",
+      "title": "Nanak Aadh Jugaadh Jiyo",
+      "artist": "Diljit Dosanjh",
       "type": "music",
-      "duration_ms": 128350,
+      "duration_ms": 279207,
       "ads_eligible": false
     },
     {
-      "id": "183403658964987",
-      "title": "Last Christmas (Remastered)",
-      "artist": "Wham!",
+      "id": "1357192349720587",
+      "title": "Draw You Out",
+      "artist": "Noah Kahan, The Hunger Games",
       "type": "music",
-      "duration_ms": 267160,
-      "ads_eligible": false
-    },
-    {
-      "id": "1500358294806818",
-      "title": "Young Folks",
-      "artist": "NCWU Spectrum",
-      "type": "music",
-      "duration_ms": 282043,
-      "ads_eligible": false
-    },
-    {
-      "id": "387447705133525",
-      "title": "Step Into Christmas (Remastered 2017)",
-      "artist": "Elton John",
-      "type": "music",
-      "duration_ms": 269758,
-      "ads_eligible": false
-    },
-    {
-      "id": "1669192674919295",
-      "title": "two faced",
-      "artist": "purc",
-      "type": "music",
-      "duration_ms": 356758,
-      "ads_eligible": false
-    },
-    {
-      "id": "786348501796071",
-      "title": "It's Beginning To Look A Lot Like Christmas",
-      "artist": "Bing Crosby, London Symphony Orchestra",
-      "type": "music",
-      "duration_ms": 186440,
+      "duration_ms": 255984,
       "ads_eligible": false
     },
     {
@@ -1082,14 +1058,6 @@
       "ads_eligible": false
     },
     {
-      "id": "552360985884236",
-      "title": "Vice City",
-      "artist": "Neon Dust",
-      "type": "music",
-      "duration_ms": 185714,
-      "ads_eligible": false
-    },
-    {
       "id": "1835723224002185",
       "title": "Warm Winter Jazz",
       "artist": "JAZZ BGMS",
@@ -1098,51 +1066,11 @@
       "ads_eligible": false
     },
     {
-      "id": "849646104838407",
-      "title": "fashion week",
-      "artist": "SUPREX",
+      "id": "1105832515616055",
+      "title": "Go Easy (from GTAVI: The Album)",
+      "artist": "Dua Lipa, Grand Theft Auto VI",
       "type": "music",
-      "duration_ms": 195001,
-      "ads_eligible": false
-    },
-    {
-      "id": "1637651271422090",
-      "title": "Rinse & Repeat (Again)",
-      "artist": "Kolter, Riton, Kah-Lo",
-      "type": "music",
-      "duration_ms": 160909,
-      "ads_eligible": false
-    },
-    {
-      "id": "289316868425025",
-      "title": "Fairytale of New York (feat. Kirsty MacColl)",
-      "artist": "The Pogues",
-      "type": "music",
-      "duration_ms": 272626,
-      "ads_eligible": false
-    },
-    {
-      "id": "1924822242216699",
-      "title": "Crazy For You",
-      "artist": "Lana Del Rey",
-      "type": "music",
-      "duration_ms": 223683,
-      "ads_eligible": false
-    },
-    {
-      "id": "1581306749288707",
-      "title": "Gurpurab",
-      "artist": "Ranjit Bawa",
-      "type": "music",
-      "duration_ms": 298324,
-      "ads_eligible": false
-    },
-    {
-      "id": "1382788023218400",
-      "title": "NON MI INNAMORERÓ (Brazilian Remix)",
-      "artist": "Pucho, Gordinho Bolado, Mia, Cristy",
-      "type": "music",
-      "duration_ms": 139764,
+      "duration_ms": 191500,
       "ads_eligible": false
     },
     {
@@ -1154,17 +1082,89 @@
       "ads_eligible": false
     },
     {
-      "id": "1681688443632597",
-      "title": "Ishqa (From \"Dar-E-Nijaat\")",
-      "artist": "Naveed Nashad, Osaf Fateh Ali Khan, Nabeel Shaukat Ali",
+      "id": "1669192674919295",
+      "title": "two faced",
+      "artist": "purc",
       "type": "music",
-      "duration_ms": 251818,
+      "duration_ms": 356758,
+      "ads_eligible": false
+    },
+    {
+      "id": "1637651271422090",
+      "title": "Rinse & Repeat (Again)",
+      "artist": "Kolter, Riton, Kah-Lo",
+      "type": "music",
+      "duration_ms": 160909,
+      "ads_eligible": false
+    },
+    {
+      "id": "552360985884236",
+      "title": "Vice City",
+      "artist": "Neon Dust",
+      "type": "music",
+      "duration_ms": 185714,
+      "ads_eligible": false
+    },
+    {
+      "id": "183403658964987",
+      "title": "Last Christmas (Remastered)",
+      "artist": "Wham!",
+      "type": "music",
+      "duration_ms": 267160,
+      "ads_eligible": false
+    },
+    {
+      "id": "4592557824320671",
+      "title": "FA FA FA (From \"O.M: Operation Mole\")",
+      "artist": "Sai Abhyankkar, Thamizh Aadhavan",
+      "type": "music",
+      "duration_ms": 176220,
+      "ads_eligible": false
+    },
+    {
+      "id": "1619590552945205",
+      "title": "Think I'm going dumb",
+      "artist": "ACE aqugounk",
+      "type": "music",
+      "duration_ms": 128350,
+      "ads_eligible": false
+    },
+    {
+      "id": "2519800484733231",
+      "title": "It's Beginning to Look a Lot like Christmas",
+      "artist": "Michael Bublé",
+      "type": "music",
+      "duration_ms": 207199,
+      "ads_eligible": false
+    },
+    {
+      "id": "1500358294806818",
+      "title": "Young Folks",
+      "artist": "NCWU Spectrum",
+      "type": "music",
+      "duration_ms": 282043,
+      "ads_eligible": false
+    },
+    {
+      "id": "1382788023218400",
+      "title": "NON MI INNAMORERÓ (Brazilian Remix)",
+      "artist": "Pucho, Gordinho Bolado, Mia, Cristy",
+      "type": "music",
+      "duration_ms": 139764,
+      "ads_eligible": false
+    },
+    {
+      "id": "888510671021141",
+      "title": "Low budget Vagina(LBVA)Amanda",
+      "artist": "Bianca Case",
+      "type": "music",
+      "duration_ms": 161213,
       "ads_eligible": false
     }
   ],
   "errors": [
     "media (reel) metrics refused: follows"
   ],
-  "daily_days": 94,
-  "media_cached": 252
+  "daily_days": 95,
+  "media_cached": 260
 }
