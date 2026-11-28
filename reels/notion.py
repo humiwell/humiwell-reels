@@ -65,7 +65,8 @@ class Notion:
 
 
 def make_client():
-    token = os.environ.get("NOTION_TOKEN", "").strip()
+    # strip() also drops the invisible BOM Windows PowerShell adds when a secret is piped to gh.
+    token = os.environ.get("NOTION_TOKEN", "").replace("﻿", "").strip()
     return Notion(token) if token else None
 
 
