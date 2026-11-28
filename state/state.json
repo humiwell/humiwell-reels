@@ -1363,6 +1363,32 @@
         }
       }
     },
+    "2026-11-28": {
+      "audio": null,
+      "kind": "broll",
+      "order": [
+        "A",
+        "B",
+        "F",
+        "G"
+      ],
+      "reel": "healthier-hair",
+      "results_done": false,
+      "variants": {
+        "A": {
+          "status": "pending"
+        },
+        "B": {
+          "status": "pending"
+        },
+        "F": {
+          "status": "pending"
+        },
+        "G": {
+          "status": "pending"
+        }
+      }
+    },
     "th-2026-11-16": {
       "audio": {
         "ads_eligible": null,
