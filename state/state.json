@@ -1407,7 +1407,11 @@
         },
         "B": {
           "container_id": "17898573624683021",
-          "status": "container"
+          "media_id": "18215236756367767",
+          "permalink": "https://www.instagram.com/reel/DgSRAqkgA1P/",
+          "posted_at": "2026-11-28T12:33:53.504838+00:00",
+          "slot": 2,
+          "status": "posted"
         },
         "F": {
           "status": "pending"
