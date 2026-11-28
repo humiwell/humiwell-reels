@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "shortest-day",
+  "post_date": "2026-12-18",
+  "caption": "Comment WINTER for your free daylight planner ☀️\n\n21 December is the shortest day of the year. London gets about 7 hours 49 minutes of daylight, according to Royal Museums Greenwich, and further north gets even less.\n\nFrom tomorrow the days get longer, a little at a time.\n\nSAD lamps are popular, but the NHS says there isn't enough evidence for them to be offered on the NHS, although many people find them helpful. Daylight is free, so number 1 comes first.\n\nWhat's the first thing you'll do when the evenings get lighter?\n\nSave this for the next dark afternoon, and send it to the friend who hates winter.\n\n#WinterSolstice #SADAwareness #WinterHealthUK #ShortestDay #UKWellness",
+  "audio_id": "1830329143809311",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "TODAY HAS UNDER 8 HOURS OF DAYLIGHT. 6 HABITS FOR THE DARKEST WEEK",
+      "file": "2026-12-18_A.mp4",
+      "length_s": 10.27
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "6 DARK WEEK MISTAKES THAT DRAIN YOUR MOOD",
+      "file": "2026-12-18_B.mp4",
+      "length_s": 10.0
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "6 LAZY HABITS FOR THE DARKEST WEEK OF THE YEAR",
+      "file": "2026-12-18_F.mp4",
+      "length_s": 9.0
+    },
+    {
+      "id": "H",
+      "lever": "Timely + local",
+      "hook": "THE SHORTEST DAY IS ALMOST HERE. 6 HABITS FOR IT",
+      "file": "2026-12-18_H.mp4",
+      "length_s": 9.37
+    }
+  ]
+}

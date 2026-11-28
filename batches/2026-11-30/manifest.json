@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "men-die-before-75",
+  "post_date": "2026-11-30",
+  "caption": "Comment MOT for your free men's health MOT 🩺\n\nMen rarely die young because of one big thing. Usually it's the appointment they kept putting off.\n\nMovember's 2026 report for England says 36% of men die before 75, and men are 1.6 times as likely as women to die early.\n\nNumber 6 sounds silly. A 2022 study in the British Journal of Sports Medicine found adults aged 51 to 75 who couldn't stand on one leg for 10 seconds had a higher risk of dying over the next 7 years.\n\nWhich one have you been putting off?\n\nSave this for the next time you say you're fine, and send it to the man in your life who hasn't seen a GP in years.\n\n#MensHealthUK #Movember #HealthCheckUK #HealthyHabitsUK #UKWellness",
+  "audio_id": "249449497488410",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "MORE THAN 1 IN 3 MEN IN ENGLAND DIE BEFORE 75. 6 WAYS TO BEAT THE ODDS",
+      "file": "2026-11-30_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "6 HEALTH MISTAKES MOST MEN KEEP MAKING",
+      "file": "2026-11-30_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "6 LAZY WAYS MEN CAN LIVE LONGER",
+      "file": "2026-11-30_F.mp4",
+      "length_s": 9.57
+    },
+    {
+      "id": "D",
+      "lever": "Identity call-out + number",
+      "hook": "MEN OVER 40: 6 HABITS FOR A LONGER LIFE",
+      "file": "2026-11-30_D.mp4",
+      "length_s": 10.07
+    }
+  ]
+}

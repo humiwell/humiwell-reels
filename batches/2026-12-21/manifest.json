@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "eating-out-christmas",
+  "post_date": "2026-12-21",
+  "caption": "Christmas is eating-out season: work lunches, family meals and catch-ups with friends, sometimes three in one week.\n\nYou don't need to skip anything or count anything. A few small choices before and during the meal stop one dinner turning into three days of feeling stuffed.\n\nNumber 2 is my favourite. Deciding what I want before I arrive means I don't order everything on the menu when I'm hungry.\n\nWhat's the one dish you always order when you eat out?\n\nSave this for your next booking, and send it to the friend you're eating out with this week.\n\n#EatingOutUK #HealthyChristmas #MindfulEating #HealthyHabitsUK #UKWellness",
+  "audio_id": "249449497488410",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "EATING OUT THIS CHRISTMAS? 7 WAYS TO ENJOY IT WITHOUT OVERDOING IT",
+      "file": "2026-12-21_A.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "7 EATING OUT MISTAKES THAT LEAVE YOU STUFFED",
+      "file": "2026-12-21_B.mp4",
+      "length_s": 10.2
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "7 LAZY WAYS TO EAT OUT WITHOUT OVERDOING IT",
+      "file": "2026-12-21_F.mp4",
+      "length_s": 9.2
+    },
+    {
+      "id": "G",
+      "lever": "Authority",
+      "hook": "A NUTRITIONIST'S 7 TIPS FOR EATING OUT",
+      "file": "2026-12-21_G.mp4",
+      "length_s": 10.0
+    }
+  ]
+}

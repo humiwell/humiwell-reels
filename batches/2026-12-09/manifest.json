@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "partner-habits",
+  "post_date": "2026-12-09",
+  "caption": "You think your habits are your own. Research says your partner has a lot to do with them.\n\nA UCL study of more than 3,700 couples found people were more likely to make a healthy change when their partner made it too.\n\nIt works both ways: the late-night scrolling and the Friday takeaway spread just as easily as the walks.\n\nWho's the healthier one in your relationship? Tag them.\n\nSave this for date night, and send it to your other half.\n\n#CouplesGoals #HealthyCouple #RelationshipsUK #HealthyHabitsUK #UKWellness",
+  "audio_id": "1930837273888588",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "YOUR PARTNER'S HABITS ARE BECOMING YOURS. 6 WORTH SHARING",
+      "file": "2026-12-09_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "6 HABITS COUPLES GET WRONG TOGETHER",
+      "file": "2026-12-09_B.mp4",
+      "length_s": 10.33
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "6 LAZY HABITS TO SHARE WITH YOUR PARTNER",
+      "file": "2026-12-09_F.mp4",
+      "length_s": 9.33
+    },
+    {
+      "id": "D",
+      "lever": "Identity call-out + number",
+      "hook": "COUPLES: 6 HEALTHY HABITS WORTH SHARING",
+      "file": "2026-12-09_D.mp4",
+      "length_s": 9.83
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "tired-isnt-a-personality",
+  "post_date": "2026-12-01",
+  "caption": "At some point we all decided being knackered was just who we are.\n\nThe Bupa Wellbeing Index 2026 found 57% of UK workers keep working when they're exhausted, and 56% have put off getting help to avoid time off.\n\nNumber 7 comes first for me. Tiredness that doesn't lift is worth a blood test. The other six are what I do while I find out whether it's just December.\n\nWhat time of day do you hit the wall?\n\nSave this for your next 3pm slump, and send it to the friend who says \"I'm just tired\" every time you ask.\n\n#EnergyBoost #TiredAllTheTime #WorkLifeUK #HealthyHabitsUK #UKWellness",
+  "audio_id": "305788179957624",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "TIRED ALL THE TIME ISN'T A PERSONALITY. 7 THINGS TO CHECK FIRST",
+      "file": "2026-12-01_A.mp4",
+      "length_s": 10.5
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "7 ENERGY MISTAKES THAT LEAVE YOU TIRED ALL DAY",
+      "file": "2026-12-01_B.mp4",
+      "length_s": 10.23
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "7 LAZY FIXES FOR FEELING LESS TIRED",
+      "file": "2026-12-01_F.mp4",
+      "length_s": 9.23
+    },
+    {
+      "id": "E",
+      "lever": "Contrarian",
+      "hook": "SKIP THE ENERGY DRINK. CHECK THESE 7 FIRST",
+      "file": "2026-12-01_E.mp4",
+      "length_s": 9.5
+    }
+  ]
+}

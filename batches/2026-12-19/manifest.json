@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "christmas-gut",
+  "post_date": "2026-12-19",
+  "caption": "Comment BLOAT for your free bloat test 🌿\n\nEvery December someone tells you you'll put on half a stone by New Year. The research says it's usually much less.\n\nA review cited in the BMJ's Winter Weight Watch study put average holiday weight gain at about 0.4 to 0.9kg. In that trial, people who weighed themselves regularly and had a few simple tips didn't gain weight over Christmas.\n\nSo enjoy the dinner. What I notice after Christmas is less the weight and more the bloating from eating fast and barely moving for three days.\n\nSprouts: love them or hate them?\n\nSave this for Christmas Day, and send it to whoever's cooking.\n\n#GutHealthUK #ChristmasDinner #HealthyChristmas #HealthyHabitsUK #UKWellness",
+  "audio_id": "1115846560430696",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "YOU WON'T GAIN A STONE THIS CHRISTMAS. 6 HABITS FOR A HAPPY GUT",
+      "file": "2026-12-19_A.mp4",
+      "length_s": 10.37
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "6 CHRISTMAS DINNER MISTAKES THAT CAUSE THE BLOAT",
+      "file": "2026-12-19_B.mp4",
+      "length_s": 10.1
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "6 LAZY HABITS FOR A HAPPIER CHRISTMAS GUT",
+      "file": "2026-12-19_F.mp4",
+      "length_s": 9.1
+    },
+    {
+      "id": "G",
+      "lever": "Authority",
+      "hook": "A NUTRITIONIST'S 6 TIPS FOR CHRISTMAS DINNER",
+      "file": "2026-12-19_G.mp4",
+      "length_s": 9.97
+    }
+  ]
+}

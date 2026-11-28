@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "sleep-reset",
+  "post_date": "2026-12-23",
+  "caption": "Four days off, late films and a fridge full of food at midnight. No wonder Boxing Day sleep feels broken.\n\nThis year the bank holiday moves to Monday 28 December, so you've got a long weekend to get back on track.\n\nThe Aviva 2025 sleep survey found 75% of UK adults have caffeine after 2pm. Over Christmas that includes the coffee with pudding and the chocolate tin.\n\nWhat time did you go to bed last night? Be honest.\n\nSave this for tonight, and send it to the night owl in your house.\n\n#SleepTipsUK #BoxingDay #SleepReset #HealthyHabitsUK #UKWellness",
+  "audio_id": "1930837273888588",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "SLEPT BADLY SINCE CHRISTMAS? 7 WAYS TO RESET YOUR SLEEP BY NEW YEAR",
+      "file": "2026-12-23_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "7 CHRISTMAS SLEEP MISTAKES TO FIX NOW",
+      "file": "2026-12-23_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "7 LAZY WAYS TO RESET YOUR SLEEP",
+      "file": "2026-12-23_F.mp4",
+      "length_s": 9.73
+    },
+    {
+      "id": "E",
+      "lever": "Contrarian",
+      "hook": "SKIP THE LONG LIE-IN. 7 SLEEP RESETS INSTEAD",
+      "file": "2026-12-23_E.mp4",
+      "length_s": 10.0
+    }
+  ]
+}

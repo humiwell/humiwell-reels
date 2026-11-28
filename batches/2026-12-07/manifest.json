@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "cold-home-heart",
+  "post_date": "2026-12-07",
+  "caption": "Most winter deaths in the UK aren't from hypothermia. They're heart attacks and strokes.\n\nUKHSA says hypothermia directly causes about 50 deaths a year, while the cold's strain on the heart does far more harm. Health effects start when it's only 4 to 8°C outside, and indoors below 18°C.\n\nYou don't need 21°C everywhere. UKHSA's advice is at least 18°C in the rooms you use, and lots of thin layers instead of one thick one.\n\nWhat's your thermostat set to right now?\n\nSave this for the next cold snap, and send it to someone who lives alone.\n\n#WinterHealthUK #ColdWeatherUK #KeepWarm #HealthyHabitsUK #UKWellness",
+  "audio_id": "249449497488410",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "A COLD HOME IS HARD ON YOUR HEART. 6 WAYS TO STAY WARM AND WELL",
+      "file": "2026-12-07_A.mp4",
+      "length_s": 10.37
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "6 WINTER MISTAKES THAT STRAIN YOUR HEART",
+      "file": "2026-12-07_B.mp4",
+      "length_s": 10.1
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "6 LAZY WAYS TO STAY WARM THIS WINTER",
+      "file": "2026-12-07_F.mp4",
+      "length_s": 9.1
+    },
+    {
+      "id": "H",
+      "lever": "Timely + local",
+      "hook": "UK COLD SNAP? 6 WAYS TO STAY WARM AND WELL",
+      "file": "2026-12-07_H.mp4",
+      "length_s": 9.47
+    }
+  ]
+}

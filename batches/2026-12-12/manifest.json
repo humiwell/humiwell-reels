@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "expensive-skincare-tired-face",
+  "post_date": "2026-12-12",
+  "caption": "Comment GLOW for your free look-less-tired picks ✨\n\nThe most expensive thing in most bathroom cabinets is doing the least work.\n\nI've bought the serums. What changed my face in the mirror was boring: earlier nights, less scrolling in bed, and actually taking my makeup off.\n\nThe Aviva 2025 sleep survey found 94% of Brits use a screen in the hour before bed, and the average adult sleeps 6.7 hours. That's where a tired face starts, long before it reaches the moisturiser.\n\nWhich would you give up first: your skincare or your phone in bed?\n\nSave this for your next \"I look exhausted\" morning, and send it to the friend with the 12-step routine.\n\n#WomensWellnessUK #SkincareUK #BeautySleep #HealthyHabitsUK #UKWellness",
+  "audio_id": "1115846560430696",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "EXPENSIVE SKINCARE WON'T FIX A TIRED FACE. 5 FREE HABITS THAT HELP",
+      "file": "2026-12-12_A.mp4",
+      "length_s": 10.33
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "5 NIGHT MISTAKES THAT SHOW UP ON YOUR FACE",
+      "file": "2026-12-12_B.mp4",
+      "length_s": 10.07
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "5 LAZY HABITS FOR A LESS TIRED FACE",
+      "file": "2026-12-12_F.mp4",
+      "length_s": 9.07
+    },
+    {
+      "id": "E",
+      "lever": "Contrarian / price anchor",
+      "hook": "SKIP THE £60 SERUM. DO THESE 5 INSTEAD",
+      "file": "2026-12-12_E.mp4",
+      "length_s": 9.33
+    }
+  ]
+}

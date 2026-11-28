@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "skin-doesnt-need-10-steps",
+  "post_date": "2026-12-17",
+  "caption": "The colder and drier the air gets, the more products we pile on. Winter skin usually wants the opposite.\n\nThe NHS advice for dry skin is simple: moisturise often, skip perfumed products, and wash with warm rather than hot water.\n\nNumber 7 saves money as well as your face. If something irritates your skin, you'll know which one did it.\n\nHow many steps is your routine right now?\n\nSave this for the next frosty morning, and send it to the friend whose bathroom shelf looks like a shop.\n\n#SkincareUK #WinterSkin #DrySkinCare #HealthyHabitsUK #UKWellness",
+  "audio_id": "1701789246605792",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "YOUR SKIN DOESN'T NEED 10 STEPS THIS WINTER. 7 SIMPLE HABITS",
+      "file": "2026-12-17_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "7 WINTER SKIN MISTAKES MOST OF US MAKE",
+      "file": "2026-12-17_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "7 LAZY HABITS FOR CALMER WINTER SKIN",
+      "file": "2026-12-17_F.mp4",
+      "length_s": 10.07
+    },
+    {
+      "id": "C",
+      "lever": "Curiosity gap",
+      "hook": "WINTER SKIN WANTS FEWER PRODUCTS",
+      "file": "2026-12-17_C.mp4",
+      "length_s": 10.4
+    }
+  ]
+}

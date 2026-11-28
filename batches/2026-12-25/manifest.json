@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "twixmas-focus",
+  "post_date": "2026-12-25",
+  "caption": "Twixmas: the days between Christmas and New Year when nobody knows the date and dinner is a selection box.\n\nIt's lovely for two days. After that most of us feel foggy, and going back to work feels harder than it should.\n\nNumber 4 does more than a full plan. Three things is enough to wake your brain up without ruining the holiday.\n\nWhat's the strangest Twixmas meal you've had?\n\nSave this for tomorrow morning, and send it to the friend who's been in pyjamas since the 24th.\n\n#Twixmas #FocusTips #NewYearPrep #HealthyHabitsUK #UKWellness",
+  "audio_id": "1830329143809311",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "DON'T KNOW WHAT DAY IT IS? 7 HABITS TO GET YOUR FOCUS BACK",
+      "file": "2026-12-25_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "7 TWIXMAS MISTAKES THAT FOG YOUR BRAIN",
+      "file": "2026-12-25_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "7 LAZY WAYS TO GET YOUR FOCUS BACK",
+      "file": "2026-12-25_F.mp4",
+      "length_s": 10.07
+    },
+    {
+      "id": "C",
+      "lever": "Curiosity gap",
+      "hook": "YOUR FOCUS COMES BACK WITH ROUTINE",
+      "file": "2026-12-25_C.mp4",
+      "length_s": 10.4
+    }
+  ]
+}

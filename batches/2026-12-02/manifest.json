@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "skip-collagen-gummies",
+  "post_date": "2026-12-02",
+  "caption": "Comment SUPPS for your free supplement check 💊\n\nPeople are cutting their food shop to pay for supplements an influencer told them to buy.\n\nBupa's 2026 research found 60% of people who buy supplements recommended on social media fund them by cutting back on groceries, clothes or eating out.\n\nI'm not against supplements. I just think the basics come first, and none of these five cost more than a pack of gummies.\n\nHave you ever bought something because an influencer swore by it?\n\nSave this for your next big shop, and send it to the friend with a cupboard full of gummies.\n\n#SkincareUK #HealthySkin #SupplementsUK #HealthyHabitsUK #UKWellness",
+  "audio_id": "1930837273888588",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "SKIP THE COLLAGEN GUMMIES. 5 THINGS YOUR SKIN NEEDS INSTEAD",
+      "file": "2026-12-02_A.mp4",
+      "length_s": 10.43
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "5 SKIN MISTAKES GUMMIES WON'T FIX",
+      "file": "2026-12-02_B.mp4",
+      "length_s": 10.17
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "5 LAZY HABITS FOR BETTER SKIN THIS WINTER",
+      "file": "2026-12-02_F.mp4",
+      "length_s": 9.17
+    },
+    {
+      "id": "G",
+      "lever": "Authority",
+      "hook": "A NUTRITIONIST'S 5 SKIN HABITS BEFORE SUPPLEMENTS",
+      "file": "2026-12-02_G.mp4",
+      "length_s": 10.0
+    }
+  ]
+}

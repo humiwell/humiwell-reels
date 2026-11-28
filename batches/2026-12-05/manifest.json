@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "menopause-industry",
+  "post_date": "2026-12-05",
+  "caption": "Comment MENO for your free symptom diary 🌸\n\nMenopause has become one of the most profitable words in wellness.\n\nThe Guardian reported this month on a review of more than 200 menopause supplements that found limited evidence they work. UCL's Professor Joyce Harper has warned that women risk being exploited.\n\nThe things with real backing are less exciting to sell: a GP conversation about HRT, strength work, vitamin D and knowing your triggers. Most of them cost nothing.\n\nWhat's the most expensive thing you've bought for perimenopause or menopause?\n\nSave this for your next GP appointment, and send it to a friend going through it.\n\n#MenopauseUK #PerimenopauseSupport #WomensHealthUK #HRT #UKWellness",
+  "audio_id": "1115846560430696",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "THE MENOPAUSE INDUSTRY WANTS YOUR MONEY. 6 THINGS TO TRY FIRST",
+      "file": "2026-12-05_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "6 MENOPAUSE MISTAKES THAT COST YOU MONEY",
+      "file": "2026-12-05_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "6 EASY THINGS TO TRY BEFORE BUYING SUPPLEMENTS",
+      "file": "2026-12-05_F.mp4",
+      "length_s": 9.73
+    },
+    {
+      "id": "G",
+      "lever": "Authority",
+      "hook": "A NUTRITIONIST'S 6 MENOPAUSE STEPS TO TRY FIRST",
+      "file": "2026-12-05_G.mp4",
+      "length_s": 10.0
+    }
+  ]
+}

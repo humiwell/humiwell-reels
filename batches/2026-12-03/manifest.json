@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "dont-need-to-maxx",
+  "post_date": "2026-12-03",
+  "caption": "Sleepmaxxing, fibremaxxing, looksmaxxing. Dictionary.com made \"maxxing\" its word of the year for 2026, and you can see why.\n\nBupa found 37% of UK adults feel pressured by these trends, and 31% say the content makes them more anxious about their health.\n\nThe habits with the best evidence are dull. They don't trend because nobody can sell them to you.\n\nWhich trend are you most tired of seeing?\n\nSave this for the next time your feed makes you feel behind, and send it to the friend who has tried every trend this year.\n\n#MentalWellbeingUK #SelfCareUK #WellnessTrends #SlowLiving #UKWellness",
+  "audio_id": "1701789246605792",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "YOU DON'T NEED TO 'MAXX' ANYTHING. 6 BORING HABITS INSTEAD",
+      "file": "2026-12-03_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "6 WELLNESS MISTAKES FROM TRYING TOO HARD",
+      "file": "2026-12-03_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "6 LAZY HABITS THAT BEAT EVERY TREND",
+      "file": "2026-12-03_F.mp4",
+      "length_s": 9.73
+    },
+    {
+      "id": "H",
+      "lever": "Timely + local",
+      "hook": "THIS DECEMBER, SKIP THE TRENDS. 6 BORING HABITS",
+      "file": "2026-12-03_H.mp4",
+      "length_s": 9.9
+    }
+  ]
+}

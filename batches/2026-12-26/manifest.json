@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "men-forget-resolutions",
+  "post_date": "2026-12-26",
+  "caption": "Most resolutions are too big. Gym every day, no sugar, run a marathon. Most of us know how that goes by February.\n\nSmall habits last longer. These seven take a few minutes each, and none of them need a membership.\n\nNumber 7 is the one men skip. ONS figures show around 3 in 4 suicides in England and Wales are men. A weekly call with a mate is a small thing that can mean a lot.\n\nLads, what's your one change for 2027?\n\nSave this for New Year's Day, and send it to the man who says he'll start on Monday.\n\n#MensHealthUK #NewYearsResolution #MensMentalHealth #HealthyHabitsUK #UKWellness",
+  "audio_id": "1115846560430696",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "MEN, FORGET THE NEW YEAR'S RESOLUTION. 7 SMALL HABITS INSTEAD",
+      "file": "2026-12-26_A.mp4",
+      "length_s": 10.3
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "7 RESOLUTION MISTAKES MEN MAKE EVERY JANUARY",
+      "file": "2026-12-26_B.mp4",
+      "length_s": 10.03
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "7 LAZY HABITS FOR MEN IN 2027",
+      "file": "2026-12-26_F.mp4",
+      "length_s": 9.03
+    },
+    {
+      "id": "D",
+      "lever": "Identity call-out + number",
+      "hook": "MEN OVER 30: 7 SMALL HABITS FOR 2027",
+      "file": "2026-12-26_D.mp4",
+      "length_s": 9.53
+    }
+  ]
+}

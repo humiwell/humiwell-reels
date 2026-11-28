@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "woman-looks-by-christmas",
+  "post_date": "2026-12-14",
+  "caption": "The best thing for your Christmas photos happens eight days before them.\n\nI used to try to fix my face on the morning of a big day. It never works. Sleep, clean skin and less salt show up after a week, not a morning.\n\nNumber 6 surprised me most. A salty dinner leaves my face puffier the next morning, every time.\n\nWhich one are you starting tonight?\n\nSave this for your Christmas countdown, and send it to the friend who's hosting this year.\n\n#WomensWellnessUK #ChristmasGlow #BeautySleep #HealthyHabitsUK #UKWellness",
+  "audio_id": "249449497488410",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "6 HABITS THAT CAN CHANGE HOW A WOMAN LOOKS BY CHRISTMAS DAY",
+      "file": "2026-12-14_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "6 MISTAKES THAT SHOW ON YOUR FACE BY CHRISTMAS",
+      "file": "2026-12-14_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "6 LAZY HABITS FOR A FRESHER FACE BY CHRISTMAS",
+      "file": "2026-12-14_F.mp4",
+      "length_s": 9.73
+    },
+    {
+      "id": "D",
+      "lever": "Identity call-out + number",
+      "hook": "WOMEN OVER 30: 6 HABITS FOR CHRISTMAS DAY",
+      "file": "2026-12-14_D.mp4",
+      "length_s": 10.23
+    }
+  ]
+}

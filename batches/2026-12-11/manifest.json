@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "men-blame-their-age",
+  "post_date": "2026-12-11",
+  "caption": "Men will blame their age for years before they blame the takeaway at 11pm.\n\nThe habits that change how a man looks are the same ones that change how he feels: sleep, food, training and a bit of care for your skin. The face shows it first.\n\nNumber 2 is the big one. The Aviva 2025 sleep survey found the average UK adult sleeps 6.7 hours a night.\n\nLads, which one are you worst at?\n\nSave this for the Christmas photos, and send it to your brother, your mate or your dad.\n\n#MensHealthUK #MensWellness #GroomingUK #HealthyHabitsUK #UKWellness",
+  "audio_id": "1830329143809311",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "MOST MEN BLAME THEIR AGE. 6 HABITS THAT CHANGE HOW A MAN LOOKS",
+      "file": "2026-12-11_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "6 MISTAKES THAT MAKE MEN LOOK OLDER",
+      "file": "2026-12-11_B.mp4",
+      "length_s": 10.37
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "6 LAZY HABITS THAT CHANGE HOW A MAN LOOKS",
+      "file": "2026-12-11_F.mp4",
+      "length_s": 9.37
+    },
+    {
+      "id": "H",
+      "lever": "Timely + local",
+      "hook": "CHRISTMAS PHOTOS ARE COMING. 6 HABITS FOR MEN",
+      "file": "2026-12-11_H.mp4",
+      "length_s": 9.73
+    }
+  ]
+}

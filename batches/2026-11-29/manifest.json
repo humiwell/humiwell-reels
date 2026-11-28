@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "mouth-taping-sleep",
+  "post_date": "2026-11-29",
+  "caption": "Half of TikTok is taping their mouths shut at night. The research hasn't caught up with the hype.\n\nA 2025 review in PLOS One looked at 10 studies and found no good evidence that mouth taping improves sleep. If your nose blocks in the night, it can be risky.\n\nThe boring habits have better backing. A Baylor University study found people who wrote a to-do list before bed fell asleep faster.\n\nHave you tried mouth taping? Did it do anything for you?\n\nSave this for your next 3am wake-up, and send it to the friend who buys every sleep gadget.\n\n#SleepTipsUK #SleepBetter #MouthTaping #HealthyHabitsUK #UKWellness",
+  "audio_id": "455812557024565",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "MOUTH TAPING WON'T FIX YOUR SLEEP. 6 HABITS WITH BETTER EVIDENCE",
+      "file": "2026-11-29_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "6 SLEEP MISTAKES KEEPING YOU AWAKE AT NIGHT",
+      "file": "2026-11-29_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "6 LAZY HABITS FOR BETTER SLEEP TONIGHT",
+      "file": "2026-11-29_F.mp4",
+      "length_s": 10.07
+    },
+    {
+      "id": "C",
+      "lever": "Curiosity gap",
+      "hook": "BETTER SLEEP STARTS THE MOMENT YOU WAKE",
+      "file": "2026-11-29_C.mp4",
+      "length_s": 10.4
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "brain-doesnt-need-puzzles",
+  "post_date": "2026-12-16",
+  "caption": "Comment WORRY for your free worry time planner 📝\n\nBrain stacking is all over TikTok: back-to-back puzzles, reading and journalling to build a better brain.\n\nA Swansea University psychologist writing in The Conversation this month said there's little evidence it boosts brainpower. Getting better at a puzzle mostly makes you better at that puzzle. The enjoyment is real, which is why number 6 stays.\n\nThe Aviva 2025 sleep survey found 59% of us are kept awake by a busy mind. That's a better place to start than another app.\n\nDo you do a daily puzzle? Wordle counts.\n\nSave this for your next overthinking evening, and send it to the friend with five brain-training apps.\n\n#MentalWellbeingUK #CalmMind #BrainHealth #HealthyHabitsUK #UKWellness",
+  "audio_id": "1930837273888588",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "YOUR BRAIN DOESN'T NEED MORE PUZZLES. 6 HABITS FOR A CLEARER HEAD",
+      "file": "2026-12-16_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "6 BRAIN MISTAKES THAT LEAVE YOU FOGGY",
+      "file": "2026-12-16_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "6 LAZY HABITS FOR A CLEARER HEAD",
+      "file": "2026-12-16_F.mp4",
+      "length_s": 10.03
+    },
+    {
+      "id": "E",
+      "lever": "Contrarian",
+      "hook": "SKIP THE BRAIN APP. 6 HABITS INSTEAD",
+      "file": "2026-12-16_E.mp4",
+      "length_s": 10.2
+    }
+  ]
+}

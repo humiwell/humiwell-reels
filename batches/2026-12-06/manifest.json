@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "you-dont-need-10000-steps",
+  "post_date": "2026-12-06",
+  "caption": "The 10,000 steps rule has made a lot of people feel like they've failed by 4pm.\n\nA 2025 analysis in The Lancet Public Health pooled 57 studies of about 160,000 adults. Compared with 2,000 steps a day, 7,000 was linked to a 47% lower risk of death and a 38% lower risk of dementia. Going up to 10,000 added little for most outcomes.\n\nNumber 1 is my favourite. Three 10-minute walks after meals gets you most of the way there without ever \"going for a walk\".\n\nWhat's your daily average right now? Check your phone.\n\nSave this for your next lazy Sunday, and send it to the friend who gives up when they don't hit 10k.\n\n#WalkingUK #StepCount #WalkingForHealth #HealthyHabitsUK #UKWellness",
+  "audio_id": "455812557024565",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "YOU DON'T NEED 10,000 STEPS. 7,000 IS ENOUGH. HERE'S HOW TO HIT IT",
+      "file": "2026-12-06_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "THE 10,000 STEPS MISTAKE MOST PEOPLE MAKE",
+      "file": "2026-12-06_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "6 LAZY WAYS TO HIT 7,000 STEPS A DAY",
+      "file": "2026-12-06_F.mp4",
+      "length_s": 9.73
+    },
+    {
+      "id": "C",
+      "lever": "Curiosity gap",
+      "hook": "YOUR STEP GOAL IS PROBABLY TOO HIGH",
+      "file": "2026-12-06_C.mp4",
+      "length_s": 10.4
+    }
+  ]
+}

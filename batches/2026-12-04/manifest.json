@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "work-stress-evenings",
+  "post_date": "2026-12-04",
+  "caption": "Comment CALM for your free guided switch-off 🌙\n\nWe call it a busy season. HSE's latest figures call it something else.\n\n891,000 workers in Great Britain had work-related stress, depression or anxiety in 2025/26. That's about half of all work-related ill health, and 18.2 million working days lost.\n\nNumber 2 changed my evenings. Writing down where I left things means my brain stops carrying it home.\n\nDo you check work messages after hours? Be honest.\n\nSave this for your next Sunday night, and send it to the colleague who replies to emails at 11pm.\n\n#WorkLifeBalanceUK #StressAwareness #WorkStress #MentalHealthUK #UKWellness",
+  "audio_id": "1830329143809311",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "HALF OF WORK ILLNESS IS STRESS OR ANXIETY. 6 WAYS TO PROTECT YOUR EVENINGS",
+      "file": "2026-12-04_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "6 AFTER-WORK MISTAKES THAT STEAL YOUR EVENING",
+      "file": "2026-12-04_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "6 LAZY WAYS TO SWITCH OFF AFTER WORK",
+      "file": "2026-12-04_F.mp4",
+      "length_s": 9.73
+    },
+    {
+      "id": "D",
+      "lever": "Identity call-out + number",
+      "hook": "DESK JOB? 6 WAYS TO PROTECT YOUR EVENINGS",
+      "file": "2026-12-04_D.mp4",
+      "length_s": 10.23
+    }
+  ]
+}

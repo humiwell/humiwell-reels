@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "parents-school-holidays",
+  "post_date": "2026-12-15",
+  "caption": "Nobody admits it, but plenty of parents find the Christmas holidays more tiring than term time.\n\nNo school run, but also no routine, more sugar, later nights and a diary full of family. Kids feel it too.\n\nNumber 6 isn't selfish. A parent running on empty doesn't make Christmas better for anyone.\n\nParents, honest answer: are the holidays restful in your house?\n\nSave this for the first day of the holidays, and send it to a parent who needs a break.\n\n#ParentingUK #MumLife #DadLife #ChristmasHolidays #UKWellness",
+  "audio_id": "305788179957624",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "SCHOOL'S OUT. 7 HABITS SO PARENTS DON'T BURN OUT BY BOXING DAY",
+      "file": "2026-12-15_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "7 HOLIDAY MISTAKES THAT EXHAUST PARENTS",
+      "file": "2026-12-15_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "7 LAZY WAYS TO SURVIVE THE SCHOOL HOLIDAYS",
+      "file": "2026-12-15_F.mp4",
+      "length_s": 9.73
+    },
+    {
+      "id": "H",
+      "lever": "Timely + local",
+      "hook": "CHRISTMAS HOLIDAYS START NOW. 7 HABITS FOR PARENTS",
+      "file": "2026-12-15_H.mp4",
+      "length_s": 9.9
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "lie-in-monday",
+  "post_date": "2026-12-10",
+  "caption": "Comment SLEEP for your free bedtime calculator 😴\n\nTwo extra hours in bed on Sunday feels like rest. Your body clock treats it more like a short flight east.\n\nShifting your sleep at weekends and snapping back on Monday is often called social jet lag. The Aviva 2025 sleep survey found only 17% of UK adults keep a regular sleep schedule.\n\nYou don't have to give up the lie-in. Keeping it to an hour is the trick.\n\nLie-in lover or up at the same time every day?\n\nSave this for Sunday night, and send it to the friend who sleeps till noon at weekends.\n\n#SleepTipsUK #SundayReset #BodyClock #HealthyHabitsUK #UKWellness",
+  "audio_id": "1701789246605792",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "YOUR LIE-IN COULD BE WHY MONDAY FEELS AWFUL. 5 SUNDAY FIXES",
+      "file": "2026-12-10_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "THE SUNDAY LIE-IN MISTAKE THAT RUINS MONDAY",
+      "file": "2026-12-10_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "5 LAZY SUNDAY FIXES FOR AN EASIER MONDAY",
+      "file": "2026-12-10_F.mp4",
+      "length_s": 9.73
+    },
+    {
+      "id": "C",
+      "lever": "Curiosity gap",
+      "hook": "MONDAY MORNING STARTS ON SUNDAY",
+      "file": "2026-12-10_C.mp4",
+      "length_s": 10.4
+    }
+  ]
+}

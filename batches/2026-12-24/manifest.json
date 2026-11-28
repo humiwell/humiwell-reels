@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "skip-the-january-detox",
+  "post_date": "2026-12-24",
+  "caption": "Comment FIVEADAY for your free 5 A Day counter 🥦\n\nYour liver and kidneys already detox you, every day, for free. A juice cleanse mostly detoxes your bank account.\n\nThe habits that change how you look and feel are slow and boring, which is exactly why January plans fall apart. People try to change everything at once.\n\nNumber 7 is the real trick. One habit that lasts beats seven that last a week.\n\nAre you doing a January reset this year?\n\nSave this for New Year's Day, and send it to the friend planning a juice cleanse.\n\n#WomensWellnessUK #NewYearNewHabits #NoDetox #HealthyHabitsUK #UKWellness",
+  "audio_id": "1701789246605792",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "SKIP THE JANUARY DETOX. 7 HABITS THAT DO MORE THAN A JUICE CLEANSE",
+      "file": "2026-12-24_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "7 JANUARY MISTAKES A DETOX WON'T FIX",
+      "file": "2026-12-24_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "7 LAZY HABITS THAT BEAT A JUICE CLEANSE",
+      "file": "2026-12-24_F.mp4",
+      "length_s": 9.93
+    },
+    {
+      "id": "G",
+      "lever": "Authority",
+      "hook": "A NUTRITIONIST'S 7 HABITS INSTEAD OF A DETOX",
+      "file": "2026-12-24_G.mp4",
+      "length_s": 10.0
+    }
+  ]
+}

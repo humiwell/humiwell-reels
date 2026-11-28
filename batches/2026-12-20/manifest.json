@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "running-on-fumes",
+  "post_date": "2026-12-20",
+  "caption": "Most of us arrive at Christmas Day already exhausted, then wonder why we can't enjoy it.\n\nThe cost doesn't help. MoneySuperMarket estimates Christmas costs the average UK household £1,681 this year, and searches for \"how to afford Christmas\" are up 261%.\n\nNumber 1 is the one I'm doing today. Half that list was never going to make anyone's Christmas better.\n\nWhat's still on your to-do list right now?\n\nSave this for the final countdown, and send it to the person doing all the Christmas planning in your family.\n\n#ChristmasStress #EnergyBoost #ChristmasPrep #HealthyHabitsUK #UKWellness",
+  "audio_id": "455812557024565",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "RUNNING ON FUMES BEFORE CHRISTMAS? 7 HABITS FOR THE LAST 48 HOURS",
+      "file": "2026-12-20_A.mp4",
+      "length_s": 10.53
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "7 CHRISTMAS MISTAKES THAT LEAVE YOU RUNNING ON FUMES",
+      "file": "2026-12-20_B.mp4",
+      "length_s": 10.27
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "7 LAZY WAYS TO SURVIVE THE CHRISTMAS RUSH",
+      "file": "2026-12-20_F.mp4",
+      "length_s": 9.27
+    },
+    {
+      "id": "C",
+      "lever": "Curiosity gap",
+      "hook": "CHRISTMAS GETS EASIER WHEN YOU DO LESS",
+      "file": "2026-12-20_C.mp4",
+      "length_s": 10.03
+    }
+  ]
+}

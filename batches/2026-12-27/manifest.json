@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "snoring",
+  "post_date": "2026-12-27",
+  "caption": "Comment SNORE for your free snoring check 💤\n\nSnoring is the joke in every relationship, until you're the one lying awake at 2am.\n\nThe NHS says sleeping on your side, cutting out alcohol and keeping to a healthy weight can all help. If someone notices you stop breathing, gasp or choke in your sleep, see your GP, as it can be a sign of sleep apnoea.\n\nWho's the snorer in your house? Be honest.\n\nSave this for tonight, and send it to the person who keeps you awake.\n\n#SnoringUK #SleepTipsUK #SleepApnoea #HealthyHabitsUK #UKWellness",
+  "audio_id": "455812557024565",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "SNORING KEEPS TWO PEOPLE AWAKE. 7 HABITS THAT CAN HELP",
+      "file": "2026-12-27_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "7 SNORING MISTAKES THAT KEEP YOU BOTH AWAKE",
+      "file": "2026-12-27_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "7 LAZY WAYS TO SNORE LESS TONIGHT",
+      "file": "2026-12-27_F.mp4",
+      "length_s": 9.73
+    },
+    {
+      "id": "C",
+      "lever": "Curiosity gap",
+      "hook": "QUIETER NIGHTS START WITH HOW YOU SLEEP",
+      "file": "2026-12-27_C.mp4",
+      "length_s": 10.4
+    }
+  ]
+}

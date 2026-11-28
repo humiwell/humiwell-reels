@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "christmas-full-house",
+  "post_date": "2026-12-22",
+  "caption": "Comment CALM for your free 10-minute switch-off 🕯️\n\nChristmas Day is lovely, and it's also a lot. Noise, food all day, late nights and very little time to yourself.\n\nLooking after yourself doesn't mean missing out. It's the small things: water, a quiet 10 minutes, a smaller bowl of sweets and a normal bedtime.\n\nNumber 3 is the one I need most. Ten minutes on my own and I'm back to enjoying everyone.\n\nWhat's your Christmas Day survival trick?\n\nSave this for today, and send it to the family group chat. Merry Christmas from us both.\n\n#ChristmasDay #SelfCareUK #HealthyChristmas #MentalWellbeingUK #UKWellness",
+  "audio_id": "305788179957624",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "CHRISTMAS WITH A FULL HOUSE? 7 WAYS TO STILL LOOK AFTER YOURSELF",
+      "file": "2026-12-22_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "7 CHRISTMAS DAY MISTAKES THAT WEAR YOU OUT",
+      "file": "2026-12-22_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "7 LAZY WAYS TO LOOK AFTER YOURSELF AT CHRISTMAS",
+      "file": "2026-12-22_F.mp4",
+      "length_s": 10.03
+    },
+    {
+      "id": "D",
+      "lever": "Identity call-out + number",
+      "hook": "HOSTING THIS YEAR? 7 WAYS TO LOOK AFTER YOURSELF",
+      "file": "2026-12-22_D.mp4",
+      "length_s": 10.27
+    }
+  ]
+}

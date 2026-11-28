@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "over-65-protein",
+  "post_date": "2026-12-13",
+  "caption": "Comment PROTEIN for your free protein calculator 🥚\n\nEveryone in their 20s is drinking protein shakes. The people who might need more protein are their grandparents.\n\nMost UK adults already get enough, but older adults are different: one South Yorkshire study found 36% of people aged 65 to 89 fell short.\n\nMuscle matters more with age, for strength, balance and staying independent. Number 6 is the one people skip, and it's the one that makes the protein count.\n\nIs there someone in your family who should read this?\n\nSave this for your next food shop, and send it to your mum, dad or nan.\n\n#Over50sHealth #HealthyAgeingUK #ProteinUK #HealthyHabitsUK #UKWellness",
+  "audio_id": "455812557024565",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "OVER 65? PROTEIN IS THE ONE YOU MIGHT BE MISSING. 6 EASY WAYS TO ADD IT",
+      "file": "2026-12-13_A.mp4",
+      "length_s": 10.1
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "THE PROTEIN MISTAKE MANY OVER 65s MAKE",
+      "file": "2026-12-13_B.mp4",
+      "length_s": 9.83
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "6 LAZY WAYS TO ADD PROTEIN AFTER 65",
+      "file": "2026-12-13_F.mp4",
+      "length_s": 8.83
+    },
+    {
+      "id": "G",
+      "lever": "Authority",
+      "hook": "A NUTRITIONIST'S 6 PROTEIN TIPS FOR OVER 65s",
+      "file": "2026-12-13_G.mp4",
+      "length_s": 9.7
+    }
+  ]
+}

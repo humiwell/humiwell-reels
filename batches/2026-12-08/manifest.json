@@ -1,0 +1,37 @@
+{
+  "contract_version": 1,
+  "reel": "fibre-swaps-not-protein",
+  "post_date": "2026-12-08",
+  "caption": "Comment FIBRE for your free 30g fibre counter 🥣\n\nThe supermarket says we need protein in everything, from crisps to coffee. The UK data tells a different story.\n\nThe UK fibre target is 30g a day, and the British Nutrition Foundation says only around 4% of adults hit it. Fibre feeds the good bacteria in your gut and keeps things moving. (The exception on protein is older adults, who are more likely to fall short.)\n\nEvery swap here costs less than a protein bar.\n\nTeam protein or team fibre?\n\nSave this for your next Tesco shop, and send it to the friend whose cupboard is full of protein bars.\n\n#GutHealthUK #FibreUK #ProteinMyths #HealthyEatingUK #UKWellness",
+  "audio_id": "305788179957624",
+  "variants": [
+    {
+      "id": "A",
+      "lever": "Original (control)",
+      "hook": "YOU PROBABLY DON'T NEED MORE PROTEIN. 6 FIBRE SWAPS INSTEAD",
+      "file": "2026-12-08_A.mp4",
+      "length_s": 10.6
+    },
+    {
+      "id": "B",
+      "lever": "Mistake / loss framing",
+      "hook": "6 FIBRE MISTAKES IN YOUR WEEKLY SHOP",
+      "file": "2026-12-08_B.mp4",
+      "length_s": 10.47
+    },
+    {
+      "id": "F",
+      "lever": "Low effort",
+      "hook": "6 LAZY SWAPS FOR MORE FIBRE TODAY",
+      "file": "2026-12-08_F.mp4",
+      "length_s": 10.07
+    },
+    {
+      "id": "E",
+      "lever": "Contrarian",
+      "hook": "SKIP THE PROTEIN BAR. 6 SWAPS INSTEAD",
+      "file": "2026-12-08_E.mp4",
+      "length_s": 10.2
+    }
+  ]
+}
