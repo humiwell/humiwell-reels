@@ -1364,7 +1364,16 @@
       }
     },
     "2026-11-28": {
-      "audio": null,
+      "audio": {
+        "ads_eligible": null,
+        "artist": "Giulio Cercato",
+        "duration_ms": 108840,
+        "id": "1418611098781784",
+        "note": "approved list",
+        "pinned": true,
+        "title": "Too Cool",
+        "type": "music"
+      },
       "audio_refused": [
         "1115846560430696",
         "455812557024565",
@@ -1385,8 +1394,9 @@
       "results_done": false,
       "variants": {
         "A": {
+          "container_id": "17898556830683021",
           "error": "HTTP 400, code 100, subcode 2207065: audio_id is not a valid parameter for the media type, REELS.",
-          "status": "pending"
+          "status": "container"
         },
         "B": {
           "status": "pending"
