@@ -1395,8 +1395,11 @@
       "variants": {
         "A": {
           "container_id": "17898556830683021",
-          "error": "HTTP 400, code 100, subcode 2207065: audio_id is not a valid parameter for the media type, REELS.",
-          "status": "container"
+          "media_id": "18074606738497390",
+          "permalink": "https://www.instagram.com/reel/DgR9csSgl_-/",
+          "posted_at": "2026-11-28T09:43:09.022384+00:00",
+          "slot": 1,
+          "status": "posted"
         },
         "B": {
           "status": "pending"
