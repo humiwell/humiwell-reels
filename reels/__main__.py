@@ -8,7 +8,7 @@ import sys
 import time
 from datetime import timedelta
 
-from . import account, publish, results, shortlist, testreel, tokencheck
+from . import account, notion, publish, results, shortlist, testreel, tokencheck
 from .common import (commit_progress, key_date, load_config, load_manifests, load_post_now, load_state, now_utc,
                      open_issue, save_state, video_url)
 from .graph import Graph
@@ -129,6 +129,10 @@ def main(argv):
         publish.run(cfg, state, graph, manifests, now, checkpoint=checkpoint if live else None, post_now=post_now)
         if graph is not None:
             results.run(cfg, state, graph, manifests, now)
+        try:
+            notion.run(cfg, state, manifests)
+        except Exception as e:  # noqa: BLE001 - Notion must never stop posting
+            print(f"Notion step failed: {e}")
         if live and not checkpoint():
             return _sync_failed("after posting", cfg)
         nxt = publish.next_slot_with_work(cfg, state, manifests, now)

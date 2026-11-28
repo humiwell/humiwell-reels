@@ -106,6 +106,24 @@ results:
   # Unit Instagram uses for average watch time: ms or s
   avg_watch_time_unit: ms
 
+# Notion calendars (28 Nov 2026). When every version of a day is posted, its Notion row gets Status "Posted".
+# When the winner issue is written (B-roll and talking head), the row gets Winner / Winner hook /
+# Winner link / Winner note (whichever the database has). Needs the NOTION_TOKEN secret. Posting never waits for it.
+notion:
+  enabled: true
+  posted_status: "Posted"
+  # Only days with a trial date on or after this are updated (older rows were tidied by hand).
+  start_date: "2026-11-28"
+  broll:
+    data_source: "396a51a3-46ad-49e7-945d-e6d69fcf7253"   # Reels
+    days_after_trial: 3                                   # Notion date = trial date + 3
+  talking_head:
+    data_source: "419f6635-23bd-816f-bb0f-000b800d400d"   # Talking heads
+    days_after_trial: 0
+  song:
+    data_source: "41bf6635-23bd-8168-aac1-000b28cdafb6"   # Songs
+    days_after_trial: 0
+
 token:
   # Open a reminder issue this many days before the Instagram token runs out.
   warn_days_before_expiry: 10

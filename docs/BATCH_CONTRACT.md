@@ -57,6 +57,7 @@ Field rules:
 | `caption` | The same caption is used for all versions, so only the hook differs |
 | `audio_id` | **Optional.** Instagram track id as text of digits (in quotes). Used for all versions of the day. Leave it out to use the top trending track (B-roll: a track from `audio: approved_ids` instead). Get ids from `python -m reels audio-shortlist` |
 | `audio_title` | **Optional.** Track name, for people reading the issues and results. Only allowed together with `audio_id` |
+| `notion_page` | **Optional.** The Notion row's link or page id. Without it the robot finds the row by date (B-roll: Reels row dated trial date + 3; talking head and song: row dated the trial date). Once every version is posted the row gets Status "Posted", and once the winner issue is written it gets Winner, Winner hook, Winner link and Winner note (B-roll and talking head) |
 | `variants` | 1 to 8 entries, normally exactly 4 (A, B, F and the challenger) |
 | `id` | Unique letter per day |
 | `lever` | The psychology lever this hook uses (free text) |

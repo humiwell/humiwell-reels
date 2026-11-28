@@ -42,6 +42,7 @@ jobs:
           FB_APP_SECRET: ${{ secrets.FB_APP_SECRET }}
           GH_SECRETS_TOKEN: ${{ secrets.GH_SECRETS_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           FORCE_DRY_RUN: ${{ inputs.dry_run && 'true' || 'false' }}
         run: python -m reels run
       - name: Save progress
