@@ -47,6 +47,9 @@ def test_talking_head_and_empty_list_keep_the_old_behaviour():
     assert choose_audio(cfg, g, "2026-11-28", lambda *_: None)["id"] == "222"
 
 
-def test_live_config_has_sajjads_seven_tracks():
+def test_live_config_uses_robot_track_ids():
+    # The app link ids (instagram.com/reels/audio/<id>) were refused on 28 Nov 2026 (2207065).
     ids = load_config()["audio"]["approved_ids"]
-    assert len(ids) == 7 and all(i.isdigit() for i in ids)
+    app_link_ids = {"455812557024565", "249449497488410", "305788179957624", "1930837273888588",
+                    "1701789246605792", "1830329143809311", "1115846560430696"}
+    assert ids and all(i.isdigit() for i in ids) and not set(ids) & app_link_ids
