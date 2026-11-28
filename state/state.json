@@ -1,5 +1,5 @@
 {
-  "audio_retry_after": "2026-11-26T22:37:00.081995+00:00",
+  "audio_retry_after": "2026-11-28T09:08:53.640087+00:00",
   "days": {
     "2026-11-12": {
       "audio": {
@@ -1365,6 +1365,15 @@
     },
     "2026-11-28": {
       "audio": null,
+      "audio_refused": [
+        "1115846560430696",
+        "455812557024565",
+        "249449497488410",
+        "305788179957624",
+        "1930837273888588",
+        "1701789246605792",
+        "1830329143809311"
+      ],
       "kind": "broll",
       "order": [
         "A",
@@ -1376,6 +1385,7 @@
       "results_done": false,
       "variants": {
         "A": {
+          "error": "HTTP 400, code 100, subcode 2207065: audio_id is not a valid parameter for the media type, REELS.",
           "status": "pending"
         },
         "B": {
