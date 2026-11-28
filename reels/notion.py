@@ -138,6 +138,35 @@ def _report(key):
     return json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
 
 
+def check(cfg, manifests, client=None, log=print):
+    """Read-only: for each lane, opens the database and finds the row for its first trial day from today."""
+    client = client or make_client()
+    if client is None:
+        log("NOTION_TOKEN is not set.")
+        return 1
+    n_cfg = cfg.get("notion") or {}
+    today = date.today().isoformat()
+    bad = 0
+    for kind, lane in LANE_KEYS.items():
+        lane_cfg = n_cfg.get(lane) or {}
+        if not lane_cfg.get("data_source"):
+            continue
+        try:
+            schema = client.schema(lane_cfg["data_source"])
+            missing = [p for p in ("Status", "Date") if p not in schema]
+            log(f"{lane}: database OK ({len(schema)} properties){'; missing ' + str(missing) if missing else ''}")
+            keys = sorted(k for k in manifests if key_kind(k) == kind and key_date(k) >= today)
+            if keys:
+                pid = find_row(client, lane_cfg, keys[0], manifests.get(keys[0]))
+                log(f"  next day {keys[0]} -> row {pid}")
+            else:
+                log("  no upcoming batch to look up")
+        except (NotionError, requests.RequestException) as e:
+            bad += 1
+            log(f"{lane}: PROBLEM {e}")
+    return 1 if bad else 0
+
+
 def run(cfg, state, manifests, client=None, log=print):
     n_cfg = cfg.get("notion") or {}
     if not n_cfg.get("enabled", False):

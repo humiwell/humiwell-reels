@@ -47,6 +47,10 @@ def main(argv):
         print(f"{len(manifests)} good batch day(s): {', '.join(sorted(manifests)) or 'none'}")
         return 1 if problems else 0
 
+    if cmd == "notion-check":
+        # Read-only: can the robot see each Notion database, and which row would it update next?
+        return notion.check(cfg, manifests)
+
     graph = make_graph(cfg)
     if cmd == "audio-shortlist":
         if graph is None:
