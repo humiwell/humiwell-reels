@@ -112,7 +112,7 @@ results:
   # Unit Instagram uses for average watch time: ms or s
   avg_watch_time_unit: ms
 
-# Notion calendars (28 Nov 2026). When every version of a day is posted, its Notion row gets Status "Posted".
+# Notion calendars (28 Nov 2026). As soon as the first version of a day is posted, its Notion row gets Status "Posted".
 # When the winner issue is written (B-roll and talking head), the row gets Winner / Winner hook /
 # Winner link / Winner note (whichever the database has). Needs the NOTION_TOKEN secret. Posting never waits for it.
 notion:

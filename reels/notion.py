@@ -1,6 +1,6 @@
 """Keeps the Notion calendars in step with the robot.
 
-- When every version of a day has been posted, the day's Notion row gets Status "Posted".
+- As soon as the first version of a day has been posted, the day's Notion row gets Status "Posted".
 - When the results issue for a day with several versions is written (B-roll and talking head), the row
   gets the winner: whichever of "Winner", "Winner hook", "Winner link" and "Winner note" the database has.
 
@@ -21,7 +21,6 @@ from .common import key_date, key_kind, open_issue
 
 API = "https://api.notion.com/v1"
 VERSION = "2025-09-03"
-OPEN = ("pending", "container")
 # When a date has more than one row, these statuses mark the one the robot is posting.
 LIVE_STATUSES = ("Approved", "Scheduled", "Posted", "Hooks approved")
 LANE_KEYS = {"broll": "broll", "talking-head": "talking_head", "song": "song"}
@@ -129,9 +128,9 @@ def winner_fields(report):
             "Winner link": top.get("permalink"), "Winner note": note.strip()}
 
 
-def _done_posting(day):
-    statuses = [v.get("status") for v in day.get("variants", {}).values()]
-    return bool(statuses) and not any(s in OPEN for s in statuses) and "posted" in statuses
+def _started_posting(day):
+    """True once any version of the day is live (Sajjad, 28 Nov 2026: Posted from the first version)."""
+    return any(v.get("status") == "posted" for v in day.get("variants", {}).values())
 
 
 def _report(key):
@@ -185,7 +184,7 @@ def run(cfg, state, manifests, client=None, log=print):
         if key_date(key) < start or not lane_cfg.get("data_source"):
             continue
         rec = day.setdefault("notion", {})
-        want_posted = not rec.get("posted") and _done_posting(day)
+        want_posted = not rec.get("posted") and _started_posting(day)
         report = _report(key) if day.get("results_done") and not rec.get("winner") else None
         want_winner = bool(report and report.get("winner") and len(report.get("variants", [])) > 1)
         if not (want_posted or want_winner):

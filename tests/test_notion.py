@@ -1,4 +1,4 @@
-"""Notion rows get Status "Posted" once a day is fully posted, and the winner once results are in."""
+"""Notion rows get Status "Posted" once the first version of a day is posted, and the winner once results are in."""
 from datetime import datetime, timedelta, timezone
 
 from reels import common, notion, results
@@ -64,14 +64,17 @@ def test_broll_day_posted_then_winner(tmp_path, monkeypatch):
     fake = FakeNotion({(REELS, "2026-12-02"): [page("p" * 32)]})
     start = datetime(2026, 11, 29, 0, 0, tzinfo=timezone.utc)
 
-    # Halfway through the day nothing is written: two versions are still to post.
-    tick_through(cfg, state, graph, manifests, start, start + timedelta(hours=13), lambda *_: None)
+    # Before 08:00 nothing is live, so nothing is written.
+    tick_through(cfg, state, graph, manifests, start, start + timedelta(hours=7), lambda *_: None)
     notion.run(cfg, state, manifests, client=fake, log=lambda *_: None)
     assert fake.updates == []
 
-    # After the last slot the row (dated trial + 3) is set to Posted, once.
-    tick_through(cfg, state, graph, manifests, start + timedelta(hours=13), start + timedelta(hours=23), lambda *_: None)
+    # Once the first version (08:00) is live the row (dated trial + 3) is set to Posted, once only,
+    # even though three versions are still to post.
+    tick_through(cfg, state, graph, manifests, start + timedelta(hours=7), start + timedelta(hours=9), lambda *_: None)
+    assert any(v["status"] == "pending" for v in state["days"][D]["variants"].values())
     notion.run(cfg, state, manifests, client=fake, log=lambda *_: None)
+    tick_through(cfg, state, graph, manifests, start + timedelta(hours=9), start + timedelta(hours=23), lambda *_: None)
     notion.run(cfg, state, manifests, client=fake, log=lambda *_: None)
     assert fake.queries == [(REELS, "2026-12-02")]
     assert fake.updates == [("p" * 32, {"Status": {"select": {"name": "Posted"}}})]
