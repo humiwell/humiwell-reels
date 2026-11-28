@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-27T08:08:01+00:00",
+ "updated_at": "2026-11-28T07:57:00+00:00",
  "missing_days": 0,
  "days": [
   {
@@ -1581,32 +1581,32 @@
    "followers": 736,
    "followers_estimated": false,
    "partial": false,
-   "fetched_at": "2026-11-27T08:08:01+00:00"
+   "fetched_at": "2026-11-28T07:57:00+00:00"
   },
   {
    "date": "2026-11-26",
-   "reach": 19825,
-   "views": 36195,
+   "reach": 19841,
+   "views": 36241,
    "profile_views": 43,
    "accounts_engaged": 165,
-   "total_interactions": 190,
-   "follows": 0,
-   "unfollows": 0,
-   "net_follows": 0,
-   "new_followers": 0,
+   "total_interactions": 188,
+   "follows": 20,
+   "unfollows": 1,
+   "net_follows": 19,
+   "new_followers": 20,
    "website_clicks": 0,
    "followers": 740,
    "followers_estimated": false,
    "partial": false,
-   "fetched_at": "2026-11-27T08:08:01+00:00"
+   "fetched_at": "2026-11-28T07:57:00+00:00"
   },
   {
    "date": "2026-11-27",
-   "reach": 0,
-   "views": 0,
-   "profile_views": 0,
-   "accounts_engaged": 0,
-   "total_interactions": 0,
+   "reach": 2184,
+   "views": 4654,
+   "profile_views": 23,
+   "accounts_engaged": 39,
+   "total_interactions": 57,
    "follows": 0,
    "unfollows": 0,
    "net_follows": 0,
@@ -1614,8 +1614,25 @@
    "website_clicks": 0,
    "followers": 758,
    "followers_estimated": false,
+   "partial": false,
+   "fetched_at": "2026-11-28T07:57:00+00:00"
+  },
+  {
+   "date": "2026-11-28",
+   "reach": null,
+   "views": null,
+   "profile_views": null,
+   "accounts_engaged": null,
+   "total_interactions": null,
+   "follows": null,
+   "unfollows": null,
+   "net_follows": null,
+   "new_followers": null,
+   "website_clicks": null,
+   "followers": 761,
+   "followers_estimated": false,
    "partial": true,
-   "fetched_at": "2026-11-27T08:08:01+00:00"
+   "fetched_at": "2026-11-28T07:57:00+00:00"
   }
  ]
 }
